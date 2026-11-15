@@ -1,0 +1,88 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Python tooling
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.pyright/
+.coverage
+.coverage.*
+htmlcov/
+.ipynb_checkpoints/
+
+# Datasets
+data/raw/
+data/processed/
+data/samples/
+
+# Trained models and preprocessing artifacts
+models/
+*.joblib
+*.pkl
+*.pickle
+*.onnx
+
+# Runtime data
+runtime/
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+*.db-wal
+*.db-shm
+
+# Generated reports
+reports/dataset_analysis/*
+reports/model_evaluation/*
+reports/benchmarks/*
+reports/test_sessions/*
+
+# Preserve report directories
+!reports/dataset_analysis/.gitkeep
+!reports/model_evaluation/.gitkeep
+!reports/benchmarks/.gitkeep
+!reports/test_sessions/.gitkeep
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+
+# Codex local configuration
+.codex/
+
+# Keep project configuration and dependency lockfile
+!uv.lock
+!pyproject.toml
+!AGENTS.md
