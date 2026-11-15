@@ -3,7 +3,13 @@
 import plotly.express as px
 import plotly.graph_objects as go
 
-from cyberguard.dashboard.theme import CLASS_COLORS, CYAN, PURPLE, chart_theme
+from cyberguard.dashboard.theme import (
+    CLASS_COLORS,
+    CYAN,
+    MODEL_COLORS,
+    PURPLE,
+    chart_theme,
+)
 
 
 def probabilities(values):
@@ -12,7 +18,7 @@ def probabilities(values):
             x=list(values.values()),
             y=list(values),
             orientation="h",
-            marker_color=[CLASS_COLORS[label] for label in values],
+            marker_color=[MODEL_COLORS.get(label, CYAN) for label in values],
             text=[f"{p:.1%}" for p in values.values()],
             textposition="outside",
             cliponaxis=False,
@@ -124,7 +130,7 @@ def distribution(counts):
         go.Bar(
             x=list(counts.index),
             y=counts["Predicted records"],
-            marker_color=[CLASS_COLORS[label] for label in counts.index],
+            marker_color=[MODEL_COLORS.get(label, CYAN) for label in counts.index],
             text=[f"{count:,}" for count in counts["Predicted records"]],
             textposition="outside",
             cliponaxis=False,

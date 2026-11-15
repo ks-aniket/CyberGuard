@@ -6,6 +6,25 @@ from cyberguard.dashboard.ui import report_or_warning
 
 
 def render(client, connection, report, report_error):
+    if connection.selected is not None:
+        from cyberguard.dashboard.pages import registry_overview
+
+        registry_overview.render(connection)
+        if (
+            report is not None
+            and connection.selected.input_contract_version == "bot-iot-header-v1"
+        ):
+            visuals.section("Offline validation snapshot", "03")
+            summary(report, overview=True)
+            st.caption(
+                f"{report.total:,} historical validation rows, including repetitions; only {int(report.per_class.loc['Normal', 'support']):,} Normal rows. Independent-session generalization is not established."
+            )
+            with st.expander("Per-class recall & validation support"):
+                st.dataframe(
+                    report.per_class[["recall", "support"]].rename_axis("Class"),
+                    width="stretch",
+                )
+        return
     visuals.heading(
         "Network Intelligence Console",
         "Experimental ML-powered network traffic classification. A focused workspace for testing, inspection and evidence.",

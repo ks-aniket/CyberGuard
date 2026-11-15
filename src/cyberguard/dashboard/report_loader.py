@@ -104,3 +104,71 @@ def load_validation(root=PROJECT_ROOT):
         raise ReportError(
             "Historical validation artifacts are unreadable or inconsistent. Check the saved JSON and confusion CSV; metrics have not been regenerated."
         ) from None
+
+
+@dataclass(frozen=True)
+class FinalReport:
+    metrics: dict
+    families: pd.DataFrame
+    figures: dict[str, str]
+    model_sha256: str
+
+
+def load_nf_final(root=PROJECT_ROOT, *, expected_version=None):
+    """Read and verify only a fixed allowlist of published evaluation artifacts."""
+    import hashlib
+
+    directory = root / "reports/model_evaluation/nf_cse_binary/final_test"
+    try:
+        manifest = json.loads((directory / "evaluation_manifest.json").read_text())
+        if manifest["status"] != "complete":
+            raise ValueError("Incomplete report")
+        digest = manifest["model_metadata"]["artifact_sha256"]
+        if expected_version is not None and expected_version != "sha256:" + digest:
+            raise ValueError("Report model mismatch")
+
+        def checked(name):
+            path = directory / name
+            data = path.read_bytes()
+            if hashlib.sha256(data).hexdigest() != manifest["outputs"][name]:
+                raise ValueError("Report checksum mismatch")
+            return data
+
+        metrics = json.loads(checked("test_metrics.json"))["thresholds"]
+        import io
+
+        families = pd.read_csv(io.BytesIO(checked("attack_family_recall.csv")))
+        required_family_columns = {
+            "attack_family",
+            "mode",
+            "recall",
+            "original_records",
+        }
+        if not required_family_columns.issubset(families.columns):
+            raise ValueError("Incomplete family metadata")
+        for mode in ("high_sensitivity", "lower_false_alarm"):
+            value = metrics[mode]
+            if value["threshold"] != manifest["thresholds"][mode] or value[
+                "confusion_order"
+            ] != ["Benign", "Attack"]:
+                raise ValueError("Metric contract mismatch")
+            for metric in (
+                "recall",
+                "benign_fpr",
+                "precision",
+                "f1",
+                "roc_auc",
+                "average_precision",
+            ):
+                if not math.isfinite(value[metric]) or not 0 <= value[metric] <= 1:
+                    raise ValueError("Invalid metric")
+        figures = {}
+        for name in ("roc", "precision_recall", "family_recall"):
+            relative = "figures/" + name + ".svg"
+            if relative in manifest["outputs"] and (directory / relative).exists():
+                figures[name] = checked(relative).decode("utf-8")
+        return FinalReport(metrics, families, figures, digest)
+    except (OSError, ValueError, TypeError, KeyError, IndexError):
+        raise ReportError(
+            "Frozen NF-CSE performance artifacts are missing, inconsistent or do not match the selected model. Restore the published report; no metrics have been regenerated."
+        ) from None

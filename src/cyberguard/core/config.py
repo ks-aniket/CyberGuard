@@ -11,6 +11,13 @@ DEFAULT_MODEL = PROJECT_ROOT / "models/network/bot_iot_restricted_baseline.jobli
 @dataclass(frozen=True)
 class Settings:
     network_model_path: Path = DEFAULT_MODEL
+    nf_cse_model_path: Path = (
+        PROJECT_ROOT / "models/network/nf_cse_binary_completed_flow.joblib"
+    )
+    nf_cse_evaluation_dir: Path = (
+        PROJECT_ROOT / "reports/model_evaluation/nf_cse_binary/final_test"
+    )
+    max_model_request_bytes: int = 1048576
     api_host: str = "127.0.0.1"
     api_port: int = 8000
     max_batch_size: int = 1000
@@ -19,6 +26,14 @@ class Settings:
     def __post_init__(self):
         path = Path(self.network_model_path).expanduser()
         object.__setattr__(self, "network_model_path", (PROJECT_ROOT / path).resolve())
+        for name in ("nf_cse_model_path", "nf_cse_evaluation_dir"):
+            object.__setattr__(
+                self,
+                name,
+                (PROJECT_ROOT / Path(getattr(self, name)).expanduser()).resolve(),
+            )
+        if self.max_model_request_bytes < 1:
+            raise ValueError("CYBERGUARD_MAX_MODEL_REQUEST_BYTES must be positive")
         object.__setattr__(self, "log_level", self.log_level.upper())
         if not self.api_host.strip():
             raise ValueError("CYBERGUARD_API_HOST must not be blank")
@@ -42,6 +57,27 @@ class Settings:
         return cls(
             network_model_path=Path(
                 os.environ.get("CYBERGUARD_NETWORK_MODEL_PATH", str(DEFAULT_MODEL))
+            ),
+            nf_cse_model_path=Path(
+                os.environ.get(
+                    "CYBERGUARD_NF_CSE_MODEL_PATH",
+                    str(
+                        PROJECT_ROOT
+                        / "models/network/nf_cse_binary_completed_flow.joblib"
+                    ),
+                )
+            ),
+            nf_cse_evaluation_dir=Path(
+                os.environ.get(
+                    "CYBERGUARD_NF_CSE_EVALUATION_DIR",
+                    str(
+                        PROJECT_ROOT
+                        / "reports/model_evaluation/nf_cse_binary/final_test"
+                    ),
+                )
+            ),
+            max_model_request_bytes=integer(
+                "CYBERGUARD_MAX_MODEL_REQUEST_BYTES", 1048576
             ),
             api_host=os.environ.get("CYBERGUARD_API_HOST", "127.0.0.1"),
             api_port=integer("CYBERGUARD_API_PORT", 8000),

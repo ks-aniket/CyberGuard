@@ -33,7 +33,7 @@ data/samples/
 
 # Trained models and preprocessing artifacts
 models/
-*.joblib
+#*.joblib
 *.pkl
 *.pickle
 *.onnx
@@ -58,10 +58,14 @@ reports/test_sessions/*
 !reports/dataset_analysis/*.md
 !reports/dataset_analysis/*.svg
 !reports/dataset_analysis/*_correlations.csv
+!reports/dataset_analysis/nf_cse_cic_ids2018/
+!reports/dataset_analysis/nf_cse_cic_ids2018/**
 !reports/model_evaluation/.gitkeep
 !reports/model_evaluation/bot_iot_*.md
 !reports/model_evaluation/bot_iot_*.json
 !reports/model_evaluation/bot_iot_*.csv
+!reports/model_evaluation/nf_cse_binary/
+!reports/model_evaluation/nf_cse_binary/**
 !reports/benchmarks/.gitkeep
 !reports/test_sessions/.gitkeep
 

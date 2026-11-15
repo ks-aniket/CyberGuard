@@ -4,7 +4,7 @@ from html import escape
 
 import streamlit as st
 
-from cyberguard.dashboard.theme import CLASS_COLORS, CYAN
+from cyberguard.dashboard.theme import CYAN, MODEL_COLORS
 
 SHIELD = '<span class="cg-logo" aria-hidden="true"></span>'
 
@@ -82,7 +82,7 @@ def banner(title, message, *, info=False):
 
 
 def prediction_card(result):
-    color = CLASS_COLORS.get(result.prediction, CYAN)
+    color = MODEL_COLORS.get(result.prediction, CYAN)
     st.html(
         f'<div class="cg-prediction" style="--cg-class-color:{color}"><span class="cg-eyebrow">PREDICTED CLASS · EXPERIMENTAL</span><strong>{text(result.prediction)}</strong><small>MODEL / {text(result.model)}</small></div>'
     )
@@ -103,9 +103,9 @@ def capability(label, title, description):
 def architecture():
     nodes = [
         ("01 / INTERFACE", "Streamlit Dashboard", "Input & visual analysis"),
-        ("02 / HTTP", "FastAPI Backend", "Validated request contract"),
-        ("03 / INFERENCE", "Inference Service", "Shared model execution"),
-        ("04 / ARTIFACT", "ML Pipeline", "Fitted preprocessing + model"),
+        ("02 / HTTP", "FastAPI Model Registry", "Model-specific validated contracts"),
+        ("03 / INFERENCE", "Inference Service", "Independent model adapters"),
+        ("04 / ARTIFACT", "BoT-IoT / NF-CSE", "Separate frozen pipelines"),
     ]
     st.html(
         '<div class="cg-architecture" aria-label="Architecture, in request order">'

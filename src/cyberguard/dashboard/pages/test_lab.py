@@ -7,6 +7,10 @@ from cyberguard.dashboard.ui import available, prediction_failed
 
 
 def render(client, connection, report, report_error):
+    if connection.selected is not None:
+        from cyberguard.dashboard.model_ui import interactive
+
+        return interactive(client, connection)
     visuals.heading(
         "Interactive Testing",
         "Inspect one header record. Read the model's response alongside the exact input you submitted.",

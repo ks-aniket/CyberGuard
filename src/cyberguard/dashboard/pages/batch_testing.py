@@ -17,6 +17,10 @@ from cyberguard.dashboard.ui import available, prediction_failed
 
 
 def render(client, connection, report, report_error):
+    if connection.selected is not None:
+        from cyberguard.dashboard.model_ui import batch_testing
+
+        return batch_testing(client, connection)
     visuals.heading(
         "Batch Testing",
         "From header records to ordered predictions. Inspect your data, run bounded inference and export the complete result.",

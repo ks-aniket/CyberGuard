@@ -1,0 +1,293 @@
+{
+  "dataset_identity": {
+    "dictionary_sha256": "778271c208e0eb0c5de21f43ac6b13dea3e7b78625349fe915b36e6f814bcc39",
+    "feature_contract_sha256": "b0c705300f3348fa06c3f39774cfa175124e9b36f401615141a6001dedc42d46",
+    "implementation_sha256": {
+      "nf_cse.py": "874c4c27c20e92fd0ace11b6932e8db7f340ed0f8afde15e6eed4f16ad1fca78",
+      "nf_cse_preparation.py": "47408c7f8fe6ea799c5568e52fa36f1ae5c7c820d955a00582d007d07d741907"
+    },
+    "preprocessing_version": "nf-cse-normalization-v1",
+    "schema_version": "nf-cse-netflow-v1-completed-flow-v1",
+    "seed": 20261115,
+    "source_sha256": "ed3387646fda24084889f07788cd22da2978b860f5b3d2d6f1210a4e3d7998e0",
+    "split_method": "sha256(schema_version,seed,canonical_integer_vector); first64; <floor(3*2^64/5) train; <floor(4*2^64/5) validation; else test",
+    "storage_version": "nf-cse-compact-npz-v1"
+  },
+  "evaluated_utc": "2026-11-15T15:46:51.954769+00:00",
+  "evaluator_sha256": "dfe2173d365fdea8089fac68520fb51eba68085f9b13dcd4454dd18ad2025d50",
+  "inference_code_sha256": "9c8f39bc0dbabf6aab69912fc9ddf39d596292346c6144f8bcc259ff75d7f250",
+  "integrity_checks": {
+    "class_mapping": "passed",
+    "contract": "passed",
+    "embedded_metadata": "passed",
+    "expected_population": "passed",
+    "frozen_thresholds": "passed",
+    "inference_without_fit": "passed",
+    "inputs_unchanged": "passed",
+    "manifest_checksum": "passed",
+    "model_checksum": "passed",
+    "preprocessing_source": "passed",
+    "test_inventory_checksums": "passed"
+  },
+  "metric_code_sha256": "34c0d4e4bb7fa1b41ebd5aec99dc010836117763746cfd2f7a549ba9f739afe2",
+  "model_metadata": {
+    "artifact_bytes": 228278,
+    "artifact_sha256": "598129ae5580ad386937f78f4a9d7f8a668557e63cd15db20fcbde9696665e7a",
+    "class_mapping": {
+      "0": "Benign",
+      "1": "Attack"
+    },
+    "development_training_fraction": 1.0,
+    "encoded_feature_order": [
+      "PROTOCOL",
+      "L4_SRC_PORT",
+      "L4_DST_PORT",
+      "IN_BYTES",
+      "OUT_BYTES",
+      "IN_PKTS",
+      "OUT_PKTS",
+      "L4_SRC_PORT_status",
+      "L4_DST_PORT_status",
+      "IN_BYTES_status",
+      "OUT_BYTES_status",
+      "IN_PKTS_status",
+      "OUT_PKTS_status"
+    ],
+    "feature_contract_version": "nf-cse-netflow-v1-completed-flow-v1",
+    "feature_order": [
+      "PROTOCOL",
+      "L4_SRC_PORT",
+      "L4_DST_PORT",
+      "IN_BYTES",
+      "OUT_BYTES",
+      "IN_PKTS",
+      "OUT_PKTS"
+    ],
+    "model_id": "nf_cse_binary_completed_flow",
+    "model_type": "hist_gradient_boosting",
+    "partition_manifest_sha256": "1eda7639ceb8e37ab4da75c80c7d209557a9bfb35cb8ccbaea8f7a49299201ce",
+    "preprocessing_version": "nf-cse-normalization-v1",
+    "random_seed": 20261115,
+    "resources": {
+      "peak_rss_mib": 2153.94140625,
+      "timing_scope": "Through fitting, validation, serialization and fresh-process verification; excludes report rendering/publication.",
+      "wall_seconds": 30.76100351200148
+    },
+    "selected_threshold": 0.03090052128234102,
+    "selection_rationale": "Ranked by validation recall at FPR<=1%, then precision, AP, minimum family recall, compact-record throughput, smaller artifact. Exactly two configured fits; no search.",
+    "source_dataset_sha256": "ed3387646fda24084889f07788cd22da2978b860f5b3d2d6f1210a4e3d7998e0",
+    "split_seed": 20261115,
+    "threads": 4,
+    "threshold_rule": "Maximize weighted validation attack recall with benign FPR <=0.01; tie: lower FPR then higher threshold. Score >= threshold is Attack. No split/test tuning.",
+    "training_configuration": {
+      "balance_classes": false,
+      "hist_gradient_boosting": {
+        "l2_regularization": 1.0,
+        "learning_rate": 0.1,
+        "max_iter": 150,
+        "max_leaf_nodes": 31,
+        "min_samples_leaf": 20
+      },
+      "logistic": {
+        "C": 1.0,
+        "max_iter": 200,
+        "tol": 0.0001
+      }
+    },
+    "training_population": {
+      "binary_mass": [
+        4426247,
+        612207
+      ],
+      "compact_records": 2855997,
+      "original_record_mass": 5038454
+    },
+    "training_timestamp_utc": "2026-11-15T15:21:56.601151+00:00",
+    "validation_metrics": {
+      "accuracy": 0.985254260093996,
+      "attack_detection_rate": 0.9510715690129768,
+      "average_precision": 0.9730074894880559,
+      "balanced_accuracy": 0.9705423265727959,
+      "benign_fpr": 0.009986915867384925,
+      "classification_report": {
+        "Attack": {
+          "f1-score": 0.9403479782270606,
+          "precision": 0.9298635140330642,
+          "recall": 0.9510715690129768,
+          "support": 203440.0
+        },
+        "Benign": {
+          "f1-score": 0.9915873424939958,
+          "precision": 0.9931666154082731,
+          "recall": 0.9900130841326151,
+          "support": 1461312.0
+        },
+        "accuracy": 0.985254260093996,
+        "macro avg": {
+          "f1-score": 0.9659676603605283,
+          "precision": 0.9615150647206687,
+          "recall": 0.9705423265727959,
+          "support": 1664752.0
+        },
+        "weighted avg": {
+          "f1-score": 0.9853256673216787,
+          "precision": 0.9854306986208041,
+          "recall": 0.985254260093996,
+          "support": 1664752.0
+        }
+      },
+      "compact_records": 953316,
+      "confusion_matrix": [
+        [
+          1446718,
+          14594
+        ],
+        [
+          9954,
+          193486
+        ]
+      ],
+      "confusion_order": [
+        "Benign",
+        "Attack"
+      ],
+      "f1": 0.9403479782270606,
+      "false_negative_rate": 0.0489284309870232,
+      "false_positives_per_10000_benign": 99.86915867384926,
+      "macro_f1": 0.9659676603605283,
+      "original_records": 1664752,
+      "precision": 0.9298635140330642,
+      "recall": 0.9510715690129768,
+      "roc_auc": 0.9891473437309155,
+      "threshold": 0.03090052128234102
+    },
+    "validation_population": {
+      "compact_records": 953316,
+      "original_record_mass": 1664752
+    },
+    "versions": {
+      "numpy": "2.5.4",
+      "pandas": "3.1.1",
+      "python": "3.13.12",
+      "sklearn": "1.9.1"
+    },
+    "warning": "Offline group-disjoint validation on NF-CSE-CIC-IDS2018. Completed-flow bidirectional exports only; uncalibrated scores. No independent-capture, packet-level or live deployment performance is established. Not integrated into the API/dashboard."
+  },
+  "outputs": {
+    "attack_family_recall.csv": "98097cd705b6d06566e456eb2a8f9f50b4d52f685910b3cbc9f5e75cc8f2de06",
+    "confusion_matrices.csv": "895444e8bde89ad937028b10fb2efbb75c03c95988e72697c7b59accba6e528f",
+    "evaluation_report.md": "dc9a8daa16275b777a36ab7822f53ea3da579c3856085d69547129f30c241382",
+    "figures/confusion_high_sensitivity.svg": "1c0d6b7a7c48ed2a1b5da80392752dc1839f269e45c1c1f385ac596ae6ae556f",
+    "figures/confusion_lower_false_alarm.svg": "2fb4b0bb4ecf699eb7d28d611e138cad753aa8559bd1299a9ea741994d28d3fb",
+    "figures/family_recall.svg": "edf8c59cde7bd7b24be59fa2518f5c86c4efff443e558f72baf3c89af00ad41f",
+    "figures/precision_recall.svg": "9d1f87bd0a409aadb1cec0429a30edfaf8d3690ee9849597a89686d79b630b12",
+    "figures/roc.svg": "30b09acd083206e0ba3b3d7b87e56e55460b27ba8b2b9ce26973673944d289da",
+    "figures/score_Bot.svg": "eedfa2f238f93e95e5a8ae77e186d03b67137c66c6eb7e02c1176cba2dcffe51",
+    "figures/score_Brute_Force__Web.svg": "7a36dbf2fec2aeb613dfff44a90171467b287b713594bd92b09a9d5d292ce0cc",
+    "figures/score_Brute_Force__XSS.svg": "1e8009ad79619e931096d9c968e972d66e755ff7f7ec9103935bbd56d8e17749",
+    "figures/score_DDOS_attack_HOIC.svg": "9046ddac4c71fe463c0951c44f4b18101d874f2fc3c4b8478f54daddc4397eec",
+    "figures/score_DDOS_attack_LOIC_UDP.svg": "19de2fb3def0e06d52676f8f65f61fa32f688e8688d98ac541a341b0f458c368",
+    "figures/score_DDoS_attacks_LOIC_HTTP.svg": "0a64c96d4bfd49a0e611b26b4d5e303ee7a6001598dc71e48d49d9c3c89c608d",
+    "figures/score_DoS_attacks_GoldenEye.svg": "e75c22b6ca8d8bc61ba597442c6df73db1dfeb355951e0482ed26583c20d98d4",
+    "figures/score_DoS_attacks_Hulk.svg": "8da076f3c365e00f3912fba6508c3c9bb8c307d92c4772ef12431a61de1b2de6",
+    "figures/score_DoS_attacks_SlowHTTPTest.svg": "bf47e0a760e9f583720f15b75a5a4ce26fd50424e51cc183eddf825cbc1fe108",
+    "figures/score_DoS_attacks_Slowloris.svg": "34c248cb037cd4c018c715f3cee3579104419a3d021464d9cc976ade187866a8",
+    "figures/score_FTP_BruteForce.svg": "2a092f620b869cb1867b7c0d773b23ae60a8f12ce55402ec3c36ce233d51c74b",
+    "figures/score_Infilteration.svg": "0407e42656b6d2a487b2e9a5ead6bd2ff32972c0818865294ffebb1159829709",
+    "figures/score_SQL_Injection.svg": "e8e67b22e3b95f2de897f3f14f76b00ba016a959f372ac799da373befdda3885",
+    "figures/score_SSH_Bruteforce.svg": "87c416cf3ea7d09aad41c5ef0e5f41bd20e4bab99abb87d771ecbb990b3a7bc6",
+    "figures/score_distributions.svg": "facffe8e6f5ce8a3c84c3d29c23fce5eccce0323fd6ef4b664325c6de61b27c3",
+    "figures/score_overlap_high_sensitivity.svg": "14149250274b4cac15770f89c88eb15bca9f188c738df2a093bac99cf6a9111c",
+    "figures/score_overlap_lower_false_alarm.svg": "1a94b43da590a3dbfc95f079b1ed8f30bed35dc14f55dcfb7d2a6961d6e79332",
+    "score_summary.csv": "98adc49d1b1784616e91a9d377bb84dcd58df5bee14d398807224153beea2108",
+    "test_metrics.json": "450293973648151c1246ed9a6452c855a07b27a244140e9a9dfed7f97e528949",
+    "threshold_comparison.csv": "628d972be51f6dd881108edb7fe081d068d51c45232e349f2699aaae2383aed8",
+    "validation_test_comparison.csv": "befd31e4f63e5b948cd3665464a8cc5e590f177bfe049e3151a5c1adde6b31c6"
+  },
+  "report_review": {
+    "scope": "Narrative-only review of published metrics; no inference repeated or numeric outputs changed.",
+    "tests": "256 passed in 8.66s; 13 new synthetic tests"
+  },
+  "resources": {
+    "batch_size": 50000,
+    "compact_records_per_second": 637962.0673392987,
+    "peak_rss_mib": 559.16796875,
+    "prediction_seconds": 1.4948866849990736,
+    "serialized_model_bytes": 228278,
+    "threads": 4,
+    "timing_scope": "Integrity, loading, scoring, metrics, plots and rehashes; excludes final markdown/manifest publication.",
+    "wall_seconds": 6.563726153999596
+  },
+  "source_artifact_sha256": {
+    "/home/redstar/CyberGuard/data/processed/nf_cse_cic_ids2018/metadata/feature_contract.json": "b0c705300f3348fa06c3f39774cfa175124e9b36f401615141a6001dedc42d46",
+    "/home/redstar/CyberGuard/data/processed/nf_cse_cic_ids2018/metadata/preprocessing_manifest.json": "644043888290a62f2f2d9fe7b44c5239419854b65edf2a6f6be92b66f1095988",
+    "/home/redstar/CyberGuard/data/processed/nf_cse_cic_ids2018/metadata/split_manifest.json": "1eda7639ceb8e37ab4da75c80c7d209557a9bfb35cb8ccbaea8f7a49299201ce",
+    "/home/redstar/CyberGuard/data/processed/nf_cse_cic_ids2018/metadata/split_manifest.sha256": "b9839b83a99493c94b3d2fec297de1968624854d4bde2a36e1fb816408793f09",
+    "/home/redstar/CyberGuard/data/processed/nf_cse_cic_ids2018/test/part-00000.npz": "c2f7d8a89f74471f433c3d60eb49b1d81169a35e08770738a82924dcdb136322",
+    "/home/redstar/CyberGuard/data/processed/nf_cse_cic_ids2018/test/part-00001.npz": "84cd1713e2382b9fa2d2ac477beb0afa2898acf6e9cbd807fa46651a6b8e6950",
+    "/home/redstar/CyberGuard/data/processed/nf_cse_cic_ids2018/test/part-00002.npz": "c8b02f7948e5e28d0d4882ced2f187453921c7d7c8d4ac47ab77cbb94d390c83",
+    "/home/redstar/CyberGuard/data/processed/nf_cse_cic_ids2018/test/part-00003.npz": "e7350c9fbee325caf157ea5d61f2e0841acd5462c9e9a79d2d2a09c2748b686c",
+    "/home/redstar/CyberGuard/data/processed/nf_cse_cic_ids2018/test/part-00004.npz": "ed349842899ed880f12c2a0b3e350bdfb4b8ca4ee8225c122a8282ea10cc05d7",
+    "/home/redstar/CyberGuard/data/processed/nf_cse_cic_ids2018/test/part-00005.npz": "1db3a7a00d23fe9e5c6e104c04f4aaca12e5976359fb7533ce5fc81062569556",
+    "/home/redstar/CyberGuard/data/processed/nf_cse_cic_ids2018/test/part-00006.npz": "323ddc2097969dcab23a3ad14a487bfc305c808f0f0031603d5e7daf470e7505",
+    "/home/redstar/CyberGuard/data/processed/nf_cse_cic_ids2018/test/part-00007.npz": "c0039f3daabeb53a8274f015500a1f239da1f68b356af8c40039e5134e88bbf0",
+    "/home/redstar/CyberGuard/data/processed/nf_cse_cic_ids2018/test/part-00008.npz": "425353ac41cf54dea6956361dd2911fe95c698f3e3513fa6876c51ae211b1581",
+    "/home/redstar/CyberGuard/data/processed/nf_cse_cic_ids2018/test/part-00009.npz": "88b271902aab2e4f86e37a4114cc0d664ca82bedca1e6bed1248e2a2d45bbf34",
+    "/home/redstar/CyberGuard/data/processed/nf_cse_cic_ids2018/test/part-00010.npz": "c7e79af88da5cc8e0905d8237abddfc1d2ef639b5ff36bf9d00dd58c750a4a65",
+    "/home/redstar/CyberGuard/data/processed/nf_cse_cic_ids2018/test/part-00011.npz": "f3113b2adfba549962a2027bca28e628b8308bd9d0d9513dc6907c1ab713b471",
+    "/home/redstar/CyberGuard/data/processed/nf_cse_cic_ids2018/test/part-00012.npz": "af80125c75f64997de35626ee06121881df93c6db0f4f56c7581f9d2bd1d8d71",
+    "/home/redstar/CyberGuard/data/processed/nf_cse_cic_ids2018/test/part-00013.npz": "97f5d1d573d9f9cdd454fccec89aa0d3aabd8f88c98a2eae7365eeca83f22c2a",
+    "/home/redstar/CyberGuard/data/processed/nf_cse_cic_ids2018/test/part-00014.npz": "d16f161d011fb44bb86b557f50639caf5eb27790cbab24b4d21abbf8210c1da1",
+    "/home/redstar/CyberGuard/data/processed/nf_cse_cic_ids2018/test/part-00015.npz": "74b569f6a50fde7b94e76838eb00dac01a8c56f85dd73e7e5da33077c650a2fb",
+    "/home/redstar/CyberGuard/data/processed/nf_cse_cic_ids2018/test/part-00016.npz": "fda58ef99a4d426c927a92aeb730d5cf1178f25826f74debb0795131ce870b7d",
+    "/home/redstar/CyberGuard/data/processed/nf_cse_cic_ids2018/test/part-00017.npz": "0a73758be6db3018ec0ab6b765e85dd680aaadfa76779b43d5c94c1f73c86f95",
+    "/home/redstar/CyberGuard/data/processed/nf_cse_cic_ids2018/test/part-00018.npz": "533d00bfcd826366d6e520179b39f94b79f24695ca44892f9574ce41fc73dced",
+    "/home/redstar/CyberGuard/data/processed/nf_cse_cic_ids2018/test/part-00019.npz": "552ad990c68c0c255dc32c295aa256f6e4213b7352c1362daaf16fb8cd9bcc85",
+    "/home/redstar/CyberGuard/models/network/nf_cse_binary_completed_flow.joblib": "598129ae5580ad386937f78f4a9d7f8a668557e63cd15db20fcbde9696665e7a",
+    "/home/redstar/CyberGuard/models/network/nf_cse_binary_completed_flow.metadata.json": "7af9de08fd21b97f4c24ef164b8652ae84e1b1ca9bc0983ae568ca88ea2635d5",
+    "/home/redstar/CyberGuard/reports/model_evaluation/nf_cse_binary/validation_metrics.json": "f79fc0a39e2155082c9f05ae94cbce26708b2d438b8b6a2f5099796002dd6648"
+  },
+  "status": "complete",
+  "test_population": {
+    "Attack_counts": {
+      "Benign": 1485639,
+      "Bot": 3055,
+      "Brute Force -Web": 834,
+      "Brute Force -XSS": 21,
+      "DDOS attack-HOIC": 48,
+      "DDOS attack-LOIC-UDP": 353,
+      "DDoS attacks-LOIC-HTTP": 75363,
+      "DoS attacks-GoldenEye": 6594,
+      "DoS attacks-Hulk": 21544,
+      "DoS attacks-SlowHTTPTest": 21046,
+      "DoS attacks-Slowloris": 4663,
+      "FTP-BruteForce": 38629,
+      "Infilteration": 12437,
+      "SQL Injection": 5,
+      "SSH-Bruteforce": 18964
+    },
+    "binary_counts": {
+      "0": 1485639,
+      "1": 203556
+    },
+    "binary_group_support": {
+      "0": 877289,
+      "1": 73513
+    },
+    "compact_records": 953681,
+    "groups": 947108,
+    "row_fraction": 0.20127672640999875,
+    "rows": 1689195
+  },
+  "thresholds": {
+    "high_sensitivity": 0.03090052128234102,
+    "lower_false_alarm": 0.5
+  },
+  "versions": {
+    "numpy": "2.5.4",
+    "pandas": "3.1.1",
+    "python": "3.13.12",
+    "sklearn": "1.9.1"
+  },
+  "warning": "Offline completed bidirectional flows only. Feature-group separation does not establish capture/session/host/time independence. Service signatures, collection artifacts, conflicting vectors and exporter parity remain limitations. Scores are uncalibrated; benign predictions do not prove safety. No API/dashboard integration or live/packet-level performance is established."
+}

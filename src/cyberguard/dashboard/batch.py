@@ -21,7 +21,20 @@ class UploadError(ValueError):
     pass
 
 
-def parse_csv(data):
+def parse_csv(data, *, model=None):
+    features = tuple(model.required_features) if model is not None else FEATURES
+    output_columns = (
+        OUTPUT_COLUMNS
+        | {
+            "model_version",
+            "operating_mode",
+            "applied_threshold",
+            "positive_class_score",
+            "input_contract_version",
+            "inference_timestamp",
+        }
+        | ({f"score_{c}" for c in model.classes} if model is not None else set())
+    )
     if len(data) > MAX_UPLOAD_BYTES:
         raise UploadError("Upload exceeds 5 MiB. Split it into smaller CSV files.")
     if not data:
@@ -38,11 +51,11 @@ def parse_csv(data):
             or len(set(header)) != len(header)
         ):
             raise UploadError("CSV headers must be unique and nonempty.")
-        if not set(FEATURES).issubset(header):
+        if not set(features).issubset(header):
             raise UploadError(
-                "CSV requires the exact column names proto, sport, dport."
+                "CSV requires the exact column names " + ", ".join(features) + "."
             )
-        if OUTPUT_COLUMNS.intersection(header):
+        if output_columns.intersection(header):
             raise UploadError(
                 "Rename columns that conflict with prediction, model, warning or probability output columns."
             )
@@ -59,14 +72,25 @@ def parse_csv(data):
                 )
         if not rows:
             raise UploadError("The CSV has no data records.")
-        return pd.DataFrame(rows, columns=header, dtype=str)
+        frame = pd.DataFrame(rows, columns=header, dtype=str)
+        if model is not None:
+            from cyberguard.dashboard.contracts import validate_record
+
+            for index, record in enumerate(
+                frame[list(features)].to_dict("records"), start=1
+            ):
+                try:
+                    validate_record(model, record)
+                except ValueError as exc:
+                    raise UploadError(f"CSV record {index}: {exc}") from None
+        return frame
     except (UnicodeError, csv.Error):
         raise UploadError(
             "Malformed CSV: use UTF-8, valid quoting and consistent field counts."
         ) from None
 
 
-def results_frame(inputs, predictions):
+def results_frame(inputs, predictions, *, model=None):
     if len(inputs) != len(predictions):
         raise UploadError(
             "Incomplete predictions; a complete result cannot be exported."
@@ -75,6 +99,26 @@ def results_frame(inputs, predictions):
     output["prediction"] = [p.prediction for p in predictions]
     output["model"] = [p.model for p in predictions]
     output["warning"] = [p.warning for p in predictions]
+    if model is not None:
+        for name in (
+            "model_version",
+            "operating_mode",
+            "applied_threshold",
+            "input_contract_version",
+            "inference_timestamp",
+        ):
+            output[name] = [getattr(p, name) for p in predictions]
+        if any(p.positive_class_score is not None for p in predictions):
+            output["positive_class_score"] = [
+                p.positive_class_score for p in predictions
+            ]
+        if any(p.class_scores is not None for p in predictions):
+            for label in model.classes:
+                output[f"score_{label}"] = [
+                    p.class_scores.get(label) if p.class_scores else None
+                    for p in predictions
+                ]
+        return output
     for label in ("Normal", "DoS", "DDoS", "Reconnaissance"):
         if any(p.probabilities is not None for p in predictions):
             output[f"probability_{label}"] = [

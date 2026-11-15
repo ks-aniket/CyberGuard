@@ -10,6 +10,7 @@ CLASS_COLORS = {
     "DDoS": "#ff617b",
     "Reconnaissance": "#b89bff",
 }
+MODEL_COLORS = {**CLASS_COLORS, "Benign": "#43b89a", "Attack": "#ffb454"}
 CYAN = "#38def5"
 PURPLE = "#b89bff"
 TEXT = "#edf3ff"

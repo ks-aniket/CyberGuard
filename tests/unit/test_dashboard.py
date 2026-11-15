@@ -452,7 +452,7 @@ def test_app_offline_and_explicit_refresh_only(monkeypatch):
         calls.append(1)
         return Connection(error="Cannot connect to the API.")
 
-    monkeypatch.setattr(APIClient, "check_connection", offline)
+    monkeypatch.setattr(APIClient, "check_models", offline)
     # Avoid AppTest's legacy pages/ rediscovery between runs of callable pages.
     # The same entrypoint contents execute; real file launch is also browser-tested.
     app = AppTest.from_string(

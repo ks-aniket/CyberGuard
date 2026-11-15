@@ -9,12 +9,14 @@ from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
 from starlette.exceptions import HTTPException
 
+from cyberguard.api.body_limit import ModelRequestBodyLimit
 from cyberguard.api.dependencies import APIError
 from cyberguard.api.routes.health import router as health_router
+from cyberguard.api.routes.models import model_router
 from cyberguard.api.routes.predictions import prediction_router
 from cyberguard.core.config import PROJECT_ROOT, Settings
 from cyberguard.core.logging import configure_logging
-from cyberguard.inference.model_loader import load_network_detector
+from cyberguard.inference.model_registry import BOT_ID, ModelRegistry
 
 logger = logging.getLogger(__name__)
 
@@ -27,22 +29,26 @@ def create_app(settings=None):
         configure_logging(settings.log_level)
         logger.info("application_startup service=cyberguard-api")
         try:
-            application.state.detector = load_network_detector(
-                settings.network_model_path, PROJECT_ROOT
-            )
+            application.state.registry = ModelRegistry(settings, PROJECT_ROOT)
+            application.state.registry.load()
+            legacy = application.state.registry.entries[BOT_ID].adapter
+            application.state.detector = legacy.detector if legacy is not None else None
             yield
         finally:
             application.state.detector = None
+            if application.state.registry is not None:
+                application.state.registry.close()
             logger.info("application_shutdown service=cyberguard-api")
 
     application = FastAPI(
         title="CyberGuard Network Inference API",
         version="0.1.0",
         lifespan=lifespan,
-        description="Experimental protocol/port predictions. Uncalibrated probabilities; no live packet capture. Theft and unknown attacks are unsupported.",
+        description="Experimental BoT protocol/port and NF-CSE completed-bidirectional-flow inference. Uncalibrated scores; no live packet capture. Legacy endpoints remain BoT-only.",
     )
     application.state.settings = settings
     application.state.detector = None
+    application.state.registry = None
     application.state.prediction_requests = count(1)
 
     @application.exception_handler(APIError)
@@ -100,6 +106,10 @@ def create_app(settings=None):
             },
         )
 
+    application.add_middleware(
+        ModelRequestBodyLimit, maximum=settings.max_model_request_bytes
+    )
+    application.include_router(model_router(settings))
     application.include_router(health_router)
     application.include_router(prediction_router(settings))
     return application

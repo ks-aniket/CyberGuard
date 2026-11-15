@@ -1,0 +1,29 @@
+attack_family,distinct_feature_groups,false_negatives,recall,original_records,mode,threshold,true_positives
+Bot,2910,0,1.0,3055,high_sensitivity,0.03090052128234102,3055
+Brute Force -Web,24,4,0.9952038369304557,834,high_sensitivity,0.03090052128234102,830
+Brute Force -XSS,21,2,0.9047619047619048,21,high_sensitivity,0.03090052128234102,19
+DDOS attack-HOIC,48,8,0.8333333333333334,48,high_sensitivity,0.03090052128234102,40
+DDOS attack-LOIC-UDP,353,0,1.0,353,high_sensitivity,0.03090052128234102,353
+DDoS attacks-LOIC-HTTP,9882,0,1.0,75363,high_sensitivity,0.03090052128234102,75363
+DoS attacks-GoldenEye,6537,0,1.0,6594,high_sensitivity,0.03090052128234102,6594
+DoS attacks-Hulk,21543,0,1.0,21544,high_sensitivity,0.03090052128234102,21544
+DoS attacks-SlowHTTPTest,2819,0,1.0,21046,high_sensitivity,0.03090052128234102,21046
+DoS attacks-Slowloris,3448,0,1.0,4663,high_sensitivity,0.03090052128234102,4663
+FTP-BruteForce,2819,0,1.0,38629,high_sensitivity,0.03090052128234102,38629
+Infilteration,11661,10177,0.18171584787328135,12437,high_sensitivity,0.03090052128234102,2260
+SQL Injection,5,2,0.6,5,high_sensitivity,0.03090052128234102,3
+SSH-Bruteforce,14322,0,1.0,18964,high_sensitivity,0.03090052128234102,18964
+Bot,2910,5,0.9983633387888707,3055,lower_false_alarm,0.5,3050
+Brute Force -Web,24,11,0.986810551558753,834,lower_false_alarm,0.5,823
+Brute Force -XSS,21,3,0.8571428571428571,21,lower_false_alarm,0.5,18
+DDOS attack-HOIC,48,19,0.6041666666666666,48,lower_false_alarm,0.5,29
+DDOS attack-LOIC-UDP,353,0,1.0,353,lower_false_alarm,0.5,353
+DDoS attacks-LOIC-HTTP,9882,6,0.9999203853349787,75363,lower_false_alarm,0.5,75357
+DoS attacks-GoldenEye,6537,4,0.9993933879284198,6594,lower_false_alarm,0.5,6590
+DoS attacks-Hulk,21543,13,0.9993965837356108,21544,lower_false_alarm,0.5,21531
+DoS attacks-SlowHTTPTest,2819,0,1.0,21046,lower_false_alarm,0.5,21046
+DoS attacks-Slowloris,3448,0,1.0,4663,lower_false_alarm,0.5,4663
+FTP-BruteForce,2819,0,1.0,38629,lower_false_alarm,0.5,38629
+Infilteration,11661,11422,0.08161132105813299,12437,lower_false_alarm,0.5,1015
+SQL Injection,5,5,0.0,5,lower_false_alarm,0.5,0
+SSH-Bruteforce,14322,0,1.0,18964,lower_false_alarm,0.5,18964

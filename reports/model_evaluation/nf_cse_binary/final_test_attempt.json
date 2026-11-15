@@ -1,0 +1,6 @@
+{
+  "started_utc": "2026-11-15T15:46:45.380089+00:00",
+  "output": "/home/redstar/CyberGuard/reports/model_evaluation/nf_cse_binary/final_test",
+  "model": "/home/redstar/CyberGuard/models/network/nf_cse_binary_completed_flow.joblib",
+  "policy": "FINAL TEST: one frozen evaluation only. Never use these results to tune or calibrate this model; repeated test-based development consumes the benchmark."
+}

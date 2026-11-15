@@ -29,8 +29,20 @@ class Connection:
     error: str | None = None
     live: bool = False
 
+    models: tuple = ()
+    selected: object | None = None
+    mode: str | None = None
+    batch_limits: dict | None = None
+
     @property
     def ready(self):
+        if self.selected is not None:
+            return (
+                self.live
+                and self.selected.readiness == "ready"
+                and bool(self.batch_limit)
+                and not self.error
+            )
         return self.info is not None and self.batch_limit is not None and not self.error
 
 
@@ -85,6 +97,8 @@ class APIClient:
             # Server response bodies can contain sensitive diagnostics. Never render them.
             messages = {
                 422: "The backend rejected the input schema or batch size. Check the records and refresh connection details.",
+                413: "The backend rejected the request size. Split the CSV into smaller files.",
+                404: "The selected model is no longer registered. Refresh model details.",
                 503: "The backend model is unavailable. Check the API and retry the connection.",
             }
             raise APIError(
@@ -225,3 +239,241 @@ class APIClient:
                 progress(len(predictions), len(records))
         # The caller receives nothing until every chunk succeeds. No automatic retries.
         return predictions
+
+    def list_models(self):
+        from cyberguard.dashboard.contracts import ModelMetadata
+
+        try:
+            result = self._request("/api/v1/models")
+            models = [ModelMetadata.model_validate(v) for v in result["models"]]
+            if len({m.id for m in models}) != len(models):
+                raise ValueError("Duplicate IDs")
+            return models
+        except APIError:
+            raise
+        except (ValidationError, KeyError, TypeError, ValueError):
+            raise APIError(
+                "The model registry response is invalid or incompatible."
+            ) from None
+
+    def model_info(self, model_id):
+        from urllib.parse import quote
+
+        from cyberguard.dashboard.contracts import ModelMetadata
+
+        try:
+            model = ModelMetadata.model_validate(
+                self._request("/api/v1/models/" + quote(model_id, safe=""))
+            )
+            if model.id != model_id:
+                raise ValueError("Model mismatch")
+            return model
+        except APIError:
+            raise
+        except (ValidationError, KeyError, TypeError, ValueError):
+            raise APIError(
+                "The selected model metadata is invalid or incompatible."
+            ) from None
+
+    def model_ready(self, model_id):
+        from urllib.parse import quote
+
+        result = self._request("/api/v1/models/" + quote(model_id, safe="") + "/ready")
+        if result != {"model_id": model_id, "status": "ready", "model_loaded": True}:
+            raise APIError("The selected model readiness response is invalid.")
+        return True
+
+    def check_models(self):
+        live = False
+        try:
+            if self._request("/health") != {
+                "status": "ok",
+                "service": "cyberguard-api",
+            }:
+                raise APIError("The API liveness response is incompatible.")
+            live = True
+            models = self.list_models()
+            spec = self._request("/openapi.json")
+            # Same typed alternatives used by both model-specific endpoints.
+            schema = spec["paths"]["/api/v1/models/{model_id}/predict/batch"]["post"][
+                "requestBody"
+            ]["content"]["application/json"]["schema"]
+            alternatives = schema.get("anyOf", schema.get("oneOf", [schema]))
+            limits = {}
+            for item in alternatives:
+                item = self._resolve(spec, item["$ref"]) if "$ref" in item else item
+                records = item["properties"]["records"]
+                limit = records["maxItems"]
+                if type(limit) is not int or limit < 1:
+                    raise ValueError("Invalid batch bound")
+                record = records["items"]
+                record = (
+                    self._resolve(spec, record["$ref"]) if "$ref" in record else record
+                )
+                for model in models:
+                    if set(record["required"]) == set(model.required_features):
+                        limits[model.id] = limit
+            return Connection(models=tuple(models), batch_limits=limits, live=True)
+        except APIError as exc:
+            return Connection(error=str(exc), live=live)
+        except (KeyError, TypeError, ValueError):
+            return Connection(
+                error="The registry or model batch schema is invalid.", live=live
+            )
+
+    def select_model(self, connection, model_id, mode=None):
+        from dataclasses import replace
+
+        try:
+            model = self.model_info(model_id)
+            if model.readiness != "ready":
+                return replace(
+                    connection,
+                    selected=model,
+                    mode=mode or model.default_operating_mode,
+                    batch_limit=(connection.batch_limits or {}).get(model_id),
+                    error="Selected model is unavailable. Choose another model or refresh after restoring it.",
+                )
+            self.model_ready(model_id)
+            mode = mode or model.default_operating_mode
+            model.threshold(mode)
+            if model_id not in (connection.batch_limits or {}):
+                raise APIError(
+                    "No compatible advertised batch limit for the selected model."
+                )
+            return replace(
+                connection,
+                selected=model,
+                mode=mode,
+                batch_limit=connection.batch_limits[model_id],
+                live=True,
+                error=None,
+            )
+        except APIError as exc:
+            return replace(
+                connection,
+                selected=next((m for m in connection.models if m.id == model_id), None),
+                error=str(exc),
+            )
+        except ValueError:
+            return replace(
+                connection,
+                error="The selected operating mode is unavailable. Refresh model details.",
+            )
+
+    def _model_prediction(self, body, model, mode):
+        from cyberguard.dashboard.contracts import ModelPrediction
+
+        try:
+            result = ModelPrediction.model_validate(body)
+            if (
+                result.model_id != model.id
+                or result.model_version != model.model_version
+                or result.task != model.task
+                or result.input_contract_version != model.input_contract_version
+                or result.operating_mode != mode
+                or result.applied_threshold != model.threshold(mode)
+                or result.predicted_class not in model.classes
+                or not result.inference_timestamp
+                or not result.limitations
+                or not result.score_semantics
+            ):
+                raise ValueError("Prediction metadata mismatch")
+            if result.class_scores is not None:
+                values = list(result.class_scores.values())
+                if (
+                    list(result.class_scores) != model.classes
+                    or any(not math.isfinite(p) or not 0 <= p <= 1 for p in values)
+                    or not math.isclose(sum(values), 1, abs_tol=1e-6)
+                ):
+                    raise ValueError("Invalid class scores")
+            if result.positive_class_score is not None:
+                if (
+                    not math.isfinite(result.positive_class_score)
+                    or not 0 <= result.positive_class_score <= 1
+                    or result.class_scores is None
+                    or result.positive_class_score
+                    != result.class_scores[model.classes[-1]]
+                ):
+                    raise ValueError("Invalid positive-class score")
+            elif model.task == "binary":
+                raise ValueError("Missing binary score")
+            return result
+        except (ValidationError, ValueError, KeyError, TypeError):
+            raise APIError(
+                "Prediction response does not match the selected model/version/mode. Refresh connection details."
+            ) from None
+
+    def predict_model(self, model, record, mode):
+        from urllib.parse import quote
+
+        from cyberguard.dashboard.contracts import validate_record
+
+        try:
+            validate_record(model, record)
+            model.threshold(mode)
+        except ValueError as exc:
+            raise APIError(str(exc)) from None
+        return self._model_prediction(
+            self._request(
+                "/api/v1/models/" + quote(model.id, safe="") + "/predict",
+                {"record": record, "operating_mode": mode},
+            ),
+            model,
+            mode,
+        )
+
+    def predict_model_batch(self, model, records, mode):
+        from urllib.parse import quote
+
+        from cyberguard.dashboard.contracts import validate_record
+
+        try:
+            model.threshold(mode)
+            for record in records:
+                validate_record(model, record)
+        except ValueError as exc:
+            raise APIError(str(exc)) from None
+        body = self._request(
+            "/api/v1/models/" + quote(model.id, safe="") + "/predict/batch",
+            {"records": records, "operating_mode": mode},
+        )
+        try:
+            if (
+                type(body["count"]) is not int
+                or body["count"] != len(records)
+                or len(body["predictions"]) != len(records)
+            ):
+                raise ValueError("Incomplete batch")
+            return [self._model_prediction(p, model, mode) for p in body["predictions"]]
+        except APIError:
+            raise
+        except (KeyError, TypeError, ValueError):
+            raise APIError(
+                "The API returned an incomplete or invalid batch. No complete result is available."
+            ) from None
+
+    def predict_model_chunks(self, model, records, mode, *, batch_limit, progress=None):
+        from cyberguard.dashboard.contracts import validate_record
+
+        if type(batch_limit) is not int or batch_limit < 1 or not records:
+            raise APIError(
+                "A positive advertised batch limit and nonempty input are required."
+            )
+        # Validate the entire upload before the first request, never after partial inference.
+        try:
+            for record in records:
+                validate_record(model, record)
+            model.threshold(mode)
+        except ValueError as exc:
+            raise APIError(str(exc)) from None
+        result = []
+        for start in range(0, len(records), min(batch_limit, 250)):
+            result.extend(
+                self.predict_model_batch(
+                    model, records[start : start + min(batch_limit, 250)], mode
+                )
+            )
+            if progress:
+                progress(len(result), len(records))
+        return result

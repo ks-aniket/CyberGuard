@@ -1,0 +1,17 @@
+model,operating_point,actual,predicted,original_records
+logistic,fixed_0_5,Benign,Benign,1431670
+logistic,fixed_0_5,Benign,Attack,29642
+logistic,fixed_0_5,Attack,Benign,16273
+logistic,fixed_0_5,Attack,Attack,187167
+logistic,selected,Benign,Benign,1446705
+logistic,selected,Benign,Attack,14607
+logistic,selected,Attack,Benign,61832
+logistic,selected,Attack,Attack,141608
+hist_gradient_boosting,fixed_0_5,Benign,Benign,1460845
+hist_gradient_boosting,fixed_0_5,Benign,Attack,467
+hist_gradient_boosting,fixed_0_5,Attack,Benign,11321
+hist_gradient_boosting,fixed_0_5,Attack,Attack,192119
+hist_gradient_boosting,selected,Benign,Benign,1446718
+hist_gradient_boosting,selected,Benign,Attack,14594
+hist_gradient_boosting,selected,Attack,Benign,9954
+hist_gradient_boosting,selected,Attack,Attack,193486

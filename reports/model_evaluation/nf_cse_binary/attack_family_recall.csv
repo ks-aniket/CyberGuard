@@ -1,0 +1,57 @@
+model,operating_point,threshold,attack_family,validation_records,distinct_feature_groups,false_negatives,recall
+logistic,fixed_0_5,0.5,Bot,3148,2958,3148,0.0
+logistic,fixed_0_5,0.5,Brute Force -Web,436,28,436,0.0
+logistic,fixed_0_5,0.5,Brute Force -XSS,424,16,424,0.0
+logistic,fixed_0_5,0.5,DDOS attack-HOIC,47,47,47,0.0
+logistic,fixed_0_5,0.5,DDOS attack-LOIC-UDP,340,340,0,1.0
+logistic,fixed_0_5,0.5,DDoS attacks-LOIC-HTTP,75369,9878,0,1.0
+logistic,fixed_0_5,0.5,DoS attacks-GoldenEye,6587,6532,0,1.0
+logistic,fixed_0_5,0.5,DoS attacks-Hulk,21624,21623,0,1.0
+logistic,fixed_0_5,0.5,DoS attacks-SlowHTTPTest,21067,2818,0,1.0
+logistic,fixed_0_5,0.5,DoS attacks-Slowloris,4546,3380,0,1.0
+logistic,fixed_0_5,0.5,FTP-BruteForce,38611,2818,0,1.0
+logistic,fixed_0_5,0.5,Infilteration,12292,11573,12211,0.006589651806052717
+logistic,fixed_0_5,0.5,SQL Injection,7,7,7,0.0
+logistic,fixed_0_5,0.5,SSH-Bruteforce,18942,14303,0,1.0
+logistic,selected,0.7545034151200577,Bot,3148,2958,3148,0.0
+logistic,selected,0.7545034151200577,Brute Force -Web,436,28,436,0.0
+logistic,selected,0.7545034151200577,Brute Force -XSS,424,16,424,0.0
+logistic,selected,0.7545034151200577,DDOS attack-HOIC,47,47,47,0.0
+logistic,selected,0.7545034151200577,DDOS attack-LOIC-UDP,340,340,186,0.45294117647058824
+logistic,selected,0.7545034151200577,DDoS attacks-LOIC-HTTP,75369,9878,9755,0.870570128302087
+logistic,selected,0.7545034151200577,DoS attacks-GoldenEye,6587,6532,644,0.9022316684378321
+logistic,selected,0.7545034151200577,DoS attacks-Hulk,21624,21623,6,0.9997225305216426
+logistic,selected,0.7545034151200577,DoS attacks-SlowHTTPTest,21067,2818,12170,0.4223192671002041
+logistic,selected,0.7545034151200577,DoS attacks-Slowloris,4546,3380,1352,0.702595688517378
+logistic,selected,0.7545034151200577,FTP-BruteForce,38611,2818,21407,0.4455725052446194
+logistic,selected,0.7545034151200577,Infilteration,12292,11573,12250,0.003416856492027335
+logistic,selected,0.7545034151200577,SQL Injection,7,7,7,0.0
+logistic,selected,0.7545034151200577,SSH-Bruteforce,18942,14303,0,1.0
+hist_gradient_boosting,fixed_0_5,0.5,Bot,3148,2958,5,0.9984116899618806
+hist_gradient_boosting,fixed_0_5,0.5,Brute Force -Web,436,28,12,0.9724770642201835
+hist_gradient_boosting,fixed_0_5,0.5,Brute Force -XSS,424,16,3,0.9929245283018868
+hist_gradient_boosting,fixed_0_5,0.5,DDOS attack-HOIC,47,47,20,0.574468085106383
+hist_gradient_boosting,fixed_0_5,0.5,DDOS attack-LOIC-UDP,340,340,0,1.0
+hist_gradient_boosting,fixed_0_5,0.5,DDoS attacks-LOIC-HTTP,75369,9878,5,0.9999336597274742
+hist_gradient_boosting,fixed_0_5,0.5,DoS attacks-GoldenEye,6587,6532,4,0.9993927432822226
+hist_gradient_boosting,fixed_0_5,0.5,DoS attacks-Hulk,21624,21623,7,0.999676285608583
+hist_gradient_boosting,fixed_0_5,0.5,DoS attacks-SlowHTTPTest,21067,2818,0,1.0
+hist_gradient_boosting,fixed_0_5,0.5,DoS attacks-Slowloris,4546,3380,0,1.0
+hist_gradient_boosting,fixed_0_5,0.5,FTP-BruteForce,38611,2818,0,1.0
+hist_gradient_boosting,fixed_0_5,0.5,Infilteration,12292,11573,11255,0.08436381386267491
+hist_gradient_boosting,fixed_0_5,0.5,SQL Injection,7,7,6,0.14285714285714285
+hist_gradient_boosting,fixed_0_5,0.5,SSH-Bruteforce,18942,14303,4,0.9997888290571217
+hist_gradient_boosting,selected,0.03090052128234102,Bot,3148,2958,0,1.0
+hist_gradient_boosting,selected,0.03090052128234102,Brute Force -Web,436,28,2,0.9954128440366973
+hist_gradient_boosting,selected,0.03090052128234102,Brute Force -XSS,424,16,2,0.9952830188679245
+hist_gradient_boosting,selected,0.03090052128234102,DDOS attack-HOIC,47,47,6,0.8723404255319149
+hist_gradient_boosting,selected,0.03090052128234102,DDOS attack-LOIC-UDP,340,340,0,1.0
+hist_gradient_boosting,selected,0.03090052128234102,DDoS attacks-LOIC-HTTP,75369,9878,0,1.0
+hist_gradient_boosting,selected,0.03090052128234102,DoS attacks-GoldenEye,6587,6532,0,1.0
+hist_gradient_boosting,selected,0.03090052128234102,DoS attacks-Hulk,21624,21623,0,1.0
+hist_gradient_boosting,selected,0.03090052128234102,DoS attacks-SlowHTTPTest,21067,2818,0,1.0
+hist_gradient_boosting,selected,0.03090052128234102,DoS attacks-Slowloris,4546,3380,0,1.0
+hist_gradient_boosting,selected,0.03090052128234102,FTP-BruteForce,38611,2818,0,1.0
+hist_gradient_boosting,selected,0.03090052128234102,Infilteration,12292,11573,9942,0.19118125610152945
+hist_gradient_boosting,selected,0.03090052128234102,SQL Injection,7,7,2,0.7142857142857143
+hist_gradient_boosting,selected,0.03090052128234102,SSH-Bruteforce,18942,14303,0,1.0

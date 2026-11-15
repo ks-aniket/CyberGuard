@@ -10,7 +10,13 @@ from cyberguard.inference.model_loader import sha256
 
 @pytest.fixture
 def application(api_model_path):
-    return create_app(Settings(network_model_path=api_model_path, max_batch_size=2))
+    return create_app(
+        Settings(
+            network_model_path=api_model_path,
+            nf_cse_model_path=api_model_path.parent / "missing_nf.joblib",
+            max_batch_size=2,
+        )
+    )
 
 
 @pytest.fixture
@@ -36,13 +42,20 @@ def test_startup_readiness_health_and_shutdown_without_request_inference(applica
     assert application.state.detector is None
 
 
-def test_missing_model_fails_startup(tmp_path):
-    application = create_app(Settings(network_model_path=tmp_path / "missing.joblib"))
-    with (
-        pytest.raises(RuntimeError, match="Unable to initialize"),
-        TestClient(application),
-    ):
-        pass
+def test_missing_models_leave_process_healthy(tmp_path):
+    application = create_app(
+        Settings(
+            network_model_path=tmp_path / "missing.joblib",
+            nf_cse_model_path=tmp_path / "missing_nf.joblib",
+        )
+    )
+    with TestClient(application) as client:
+        assert client.get("/health").status_code == 200
+        assert client.get("/health/ready").status_code == 503
+        assert all(
+            m["readiness"] == "unavailable"
+            for m in client.get("/api/v1/models").json()["models"]
+        )
 
 
 def test_model_info_and_swagger_do_not_leak_local_paths(client, api_model_path):
@@ -207,7 +220,12 @@ def test_one_load_across_requests_no_refit_no_model_changes(
 
     monkeypatch.setattr(loader.joblib, "load", load)
     before = sha256(api_model_path)
-    application = create_app(Settings(network_model_path=api_model_path))
+    application = create_app(
+        Settings(
+            network_model_path=api_model_path,
+            nf_cse_model_path=api_model_path.parent / "missing_nf.joblib",
+        )
+    )
     assert not loads
     with TestClient(application) as client:
         assert len(loads) == 1

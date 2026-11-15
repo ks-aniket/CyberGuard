@@ -6,6 +6,26 @@ from cyberguard.dashboard.ui import report_or_warning
 
 
 def render(client, connection, report, report_error):
+    if (
+        connection.selected is not None
+        and connection.selected.input_contract_version
+        == "nf-cse-netflow-v1-completed-flow-v1"
+    ):
+        from cyberguard.dashboard.pages import final_performance
+
+        return final_performance.render(connection, report, report_error)
+    if (
+        connection.selected is not None
+        and connection.selected.input_contract_version != "bot-iot-header-v1"
+    ):
+        visuals.heading(
+            "Model Performance", "Performance metadata for the selected contract."
+        )
+        if connection.selected.performance_metadata:
+            st.json(connection.selected.performance_metadata)
+        else:
+            st.info("No matched performance metadata is available for this model.")
+        return
     visuals.heading(
         "Model Performance",
         "Saved evidence, clearly bounded. Historical report artifacts remain available independently of the inference API.",

@@ -6,7 +6,10 @@ from cyberguard.dashboard.api_client import Connection
 
 
 def prediction_failed(error):
-    st.session_state.connection = Connection(error=str(error))
+    from dataclasses import replace
+
+    previous = st.session_state.get("connection", Connection())
+    st.session_state.connection = replace(previous, error=str(error))
     st.session_state.pop("single_result", None)
     st.session_state.pop("batch_result", None)
     st.error(str(error))

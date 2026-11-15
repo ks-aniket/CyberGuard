@@ -1,0 +1,9 @@
+mode,actual,predicted,original_records
+high_sensitivity,Benign,Benign,1467201
+high_sensitivity,Benign,Attack,18438
+high_sensitivity,Attack,Benign,10193
+high_sensitivity,Attack,Attack,193363
+lower_false_alarm,Benign,Benign,1484989
+lower_false_alarm,Benign,Attack,650
+lower_false_alarm,Attack,Benign,11488
+lower_false_alarm,Attack,Attack,192068
