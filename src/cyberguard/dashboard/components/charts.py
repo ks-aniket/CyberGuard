@@ -1,17 +1,32 @@
-"""Charts use supplied report counts or API outputs, never generated telemetry."""
+"""Consistent figures from supplied report counts or actual API outputs."""
 
 import plotly.express as px
 import plotly.graph_objects as go
 
+from cyberguard.dashboard.theme import CLASS_COLORS, CYAN, PURPLE, chart_theme
+
 
 def probabilities(values):
-    figure = px.bar(
-        x=list(values),
-        y=list(values.values()),
-        labels={"x": "Model class", "y": "Uncalibrated probability"},
-        color_discrete_sequence=["#60a5fa"],
+    figure = go.Figure(
+        go.Bar(
+            x=list(values.values()),
+            y=list(values),
+            orientation="h",
+            marker_color=[CLASS_COLORS[label] for label in values],
+            text=[f"{p:.1%}" for p in values.values()],
+            textposition="outside",
+            cliponaxis=False,
+            hovertemplate="%{y}<br>Uncalibrated probability: %{x:.4%}<extra></extra>",
+        )
     )
-    figure.update_yaxes(range=[0, 1], tickformat=".0%")
+    chart_theme(figure, height=260)
+    figure.update_xaxes(
+        range=[0, 1.15],
+        tickvals=[0, 0.25, 0.5, 0.75, 1],
+        tickformat=".0%",
+        title="Uncalibrated probability",
+    )
+    figure.update_yaxes(autorange="reversed", title=None)
     return figure
 
 
@@ -24,13 +39,17 @@ def class_performance(report):
     )
     figure = px.bar(
         frame,
-        x="Class",
-        y="Value",
+        x="Value",
+        y="Class",
         color="Metric",
+        orientation="h",
         barmode="group",
-        color_discrete_sequence=["#60a5fa", "#34d399", "#c4b5fd"],
+        color_discrete_sequence=[CYAN, PURPLE, "#4776ff"],
+        hover_data={"Value": ":.2%"},
     )
-    figure.update_yaxes(range=[0, 1], tickformat=".0%")
+    chart_theme(figure, height=360)
+    figure.update_xaxes(range=[0, 1], tickformat=".0%", title="Precision / recall / F1")
+    figure.update_yaxes(autorange="reversed", title=None)
     return figure
 
 
@@ -47,13 +66,25 @@ def confusion(report, normalized=False):
             y=list(report.confusion.index),
             text=text,
             texttemplate="%{text}",
-            textfont={"color": "white"},
+            textfont={"color": "#f1f5ff", "size": 13},
             customdata=counts,
-            colorscale=[[0, "#101827"], [1, "#2563eb"]],
+            colorscale=[[0, "#111b30"], [0.4, "#223b69"], [1, "#306ca2"]],
+            xgap=3,
+            ygap=3,
+            colorbar={
+                "thickness": 9,
+                "tickformat": ".0%" if normalized else ",",
+                "outlinewidth": 0,
+            },
             hovertemplate="Actual: %{y}<br>Predicted: %{x}<br>Records: %{customdata:,}<extra></extra>",
         )
     )
-    figure.update_layout(xaxis_title="Predicted class", yaxis_title="Actual class")
+    chart_theme(figure, height=400)
+    figure.update_layout(
+        xaxis_title="Predicted class",
+        yaxis_title="Actual class",
+        margin={"l": 12, "r": 12, "t": 15, "b": 20},
+    )
     figure.update_yaxes(autorange="reversed")
     return figure
 
@@ -67,10 +98,44 @@ def support(report):
         orientation="h",
         log_x=True,
         text="support",
+        color="Class",
+        color_discrete_map=CLASS_COLORS,
         labels={"support": "Validation records (log scale)"},
-        color_discrete_sequence=["#60a5fa"],
     )
+    chart_theme(figure, height=330)
     figure.update_traces(
-        texttemplate="%{x:,.0f}", textposition="outside", cliponaxis=False
+        texttemplate="%{x:,.0f}",
+        textposition="outside",
+        cliponaxis=False,
+        hovertemplate="%{y}<br>Recorded validation rows: %{x:,}<extra></extra>",
+    )
+    figure.update_layout(showlegend=False, margin={"l": 12, "r": 65, "t": 15, "b": 20})
+    figure.update_yaxes(
+        autorange="reversed",
+        title=None,
+        categoryorder="array",
+        categoryarray=list(report.per_class.index),
+    )
+    return figure
+
+
+def distribution(counts):
+    figure = go.Figure(
+        go.Bar(
+            x=list(counts.index),
+            y=counts["Predicted records"],
+            marker_color=[CLASS_COLORS[label] for label in counts.index],
+            text=[f"{count:,}" for count in counts["Predicted records"]],
+            textposition="outside",
+            cliponaxis=False,
+            customdata=counts["Percentage"],
+            hovertemplate="%{x}<br>Model assignments: %{y:,}<br>Share: %{customdata:.1f}%<extra></extra>",
+        )
+    )
+    chart_theme(figure, height=280)
+    figure.update_yaxes(
+        title="Predicted records",
+        rangemode="tozero",
+        dtick=1 if counts["Predicted records"].max() < 10 else None,
     )
     return figure

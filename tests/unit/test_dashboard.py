@@ -376,6 +376,7 @@ def test_report_counts_axes_and_normalization(saved_report):
     assert list(figure.data[0].z[2]) == [0, 0, 3, 0]
     assert charts.confusion(report, True).data[0].text[2][2] == "100.0%"
     assert charts.support(report).layout.xaxis.type == "log"
+    assert list(charts.support(report).layout.yaxis.categoryarray) == LABELS
     assert len(charts.class_performance(report).data) == 3
 
 
@@ -496,12 +497,14 @@ client = APIClient()
     if page_name == "batch_testing":
         app.button[0].click().run()
     button = next(
-        b for b in app.button if b.label in ("Predict record", "Classify CSV")
+        b for b in app.button if b.label in ("Analyze traffic", "Classify CSV")
     )
     button.click().run()
     assert not app.exception
     if page_name == "test_lab":
-        assert any(m.value == "DoS" for m in app.metric)
+        assert any(
+            "<strong>DoS</strong>" in element.proto.body for element in app.get("html")
+        )
         assert len(app.get("plotly_chart")) == 1
     else:
         assert len(seen) == 4
@@ -530,7 +533,7 @@ from cyberguard.dashboard.report_loader import load_validation
     app = AppTest.from_string(script).run(timeout=10)
     assert not app.exception
     for button in app.button:
-        if button.label == "Predict record":
+        if button.label == "Analyze traffic":
             assert button.disabled
     if page_name == "batch_testing":
         app.button[0].click().run()

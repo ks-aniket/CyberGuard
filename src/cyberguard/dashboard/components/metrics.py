@@ -1,46 +1,51 @@
 import streamlit as st
 
+from cyberguard.dashboard.components import visuals
+
 HISTORICAL = "Historical offline validation — not live detection performance."
 
 
-def summary(report):
+def summary(report, *, overview=False):
     st.caption(HISTORICAL)
-    columns = st.columns(4)
-    for column, label, value in zip(
-        columns,
-        [
-            "Macro-F1",
-            "Balanced accuracy",
-            "Benign false-positive rate",
-            "Validation records",
-        ],
-        [
-            f"{report.evaluation['macro_f1']:.2%}",
-            f"{report.evaluation['balanced_accuracy']:.2%}",
-            f"{report.evaluation['benign_false_positive_rate']:.2%}",
-            f"{report.total:,}",
-        ],
+    labels = [
+        "Macro-F1",
+        "Balanced accuracy",
+        "Benign FPR",
+        "Supported classes" if overview else "Validation records",
+    ]
+    values = [
+        f"{report.evaluation['macro_f1']:.2%}",
+        f"{report.evaluation['balanced_accuracy']:.2%}",
+        f"{report.evaluation['benign_false_positive_rate']:.2%}",
+        str(len(report.per_class)) if overview else f"{report.total:,}",
+    ]
+    with st.container(key="metric_row_summary"):
+        columns = st.columns(4)
+    for index, (column, label, value, tone) in enumerate(
+        zip(columns, labels, values, ["cyan", "blue", "warning", "purple"])
     ):
-        column.metric(label, value)
+        with column:
+            visuals.metric_card(label, value, key=f"summary_{index}", tone=tone)
 
 
 def methodology(report):
     normal = int(report.per_class.loc["Normal", "support"])
-    st.warning(
-        f"Internal validation from the original BoT-IoT training file uses a deterministic group-aware partition. Only {normal:,} Normal records are present. Extreme imbalance and related capture records limit the evidence; these results do not establish independent-session generalization. The official test split remains reserved. Predictions are not evidence of live attack detection."
+    visuals.banner(
+        "EVIDENCE BOUNDARY / INTERNAL VALIDATION",
+        f"Results come from the original BoT-IoT training file using a deterministic group-aware partition. Only {normal:,} Normal records are present. Extreme imbalance and related capture records limit the evidence; independent-session generalization is not established. The official test split remains reserved. Predictions are not evidence of live attack detection.",
     )
 
 
 def capabilities():
-    for column, heading, text in zip(
+    for column, label, title, description in zip(
         st.columns(3),
-        ["Implemented", "Planned", "Unsupported"],
+        ["AVAILABLE NOW", "ROADMAP", "OUT OF SCOPE"],
+        ["Offline intelligence", "Operational context", "No safety guarantees"],
         [
-            "HTTP model serving · interactive and CSV testing · historical validation charts",
-            "Packet/flow ingestion · causal streaming replay · alert storage and operational evaluation",
-            "Live attack detection · DNS classification · Theft / unknown attack identification · safety guarantees",
+            "HTTP inference, interactive & CSV testing, historical validation charts.",
+            "Causal streaming replay, packet/flow ingestion and alert persistence remain planned.",
+            "Live attack detection, DNS classification, Theft and unknown attack identification are unsupported.",
         ],
     ):
         with column:
-            st.subheader(heading)
-            st.write(text)
+            visuals.capability(label, title, description)
