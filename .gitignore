@@ -55,6 +55,9 @@ reports/test_sessions/*
 
 # Preserve report directories
 !reports/dataset_analysis/.gitkeep
+!reports/dataset_analysis/*.md
+!reports/dataset_analysis/*.svg
+!reports/dataset_analysis/*_correlations.csv
 !reports/model_evaluation/.gitkeep
 !reports/benchmarks/.gitkeep
 !reports/test_sessions/.gitkeep
