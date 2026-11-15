@@ -1,0 +1,1 @@
+Whenever you introduce or modify a user-facing script, CLI command, application entry point, configuration requirement, or development workflow, update the root README.md with accurate usage instructions. Verify that documented commands work. Clearly distinguish implemented features from planned features.
