@@ -1,0 +1,57 @@
+candidate,mode,family,validation_records,validation_groups,binary_detected,conditional_family_correct,end_to_end_family_correct,correct_among_detected
+linear,standard,Bot,3148,2958,3143,0,0,0.0
+linear,standard,Brute Force -Web,436,28,424,0,0,0.0
+linear,standard,Brute Force -XSS,424,16,421,0,0,0.0
+linear,standard,DDOS attack-HOIC,47,47,27,0,0,0.0
+linear,standard,DDOS attack-LOIC-UDP,340,340,340,0,0,0.0
+linear,standard,DDoS attacks-LOIC-HTTP,75369,9878,75364,128,128,0.001698423650549334
+linear,standard,DoS attacks-GoldenEye,6587,6532,6583,12,12,0.0018228771077016558
+linear,standard,DoS attacks-Hulk,21624,21623,21617,15954,15954,0.7380302539667855
+linear,standard,DoS attacks-SlowHTTPTest,21067,2818,21067,5394,5394,0.2560402525276499
+linear,standard,DoS attacks-Slowloris,4546,3380,4546,2595,2595,0.5708315002199736
+linear,standard,FTP-BruteForce,38611,2818,38611,29062,29062,0.7526870580922536
+linear,standard,Infilteration,12292,11573,1037,12091,966,0.9315332690453231
+linear,standard,SQL Injection,7,7,1,0,0,0.0
+linear,standard,SSH-Bruteforce,18942,14303,18938,0,0,0.0
+linear,high_sensitivity,Bot,3148,2958,3148,0,0,0.0
+linear,high_sensitivity,Brute Force -Web,436,28,434,0,0,0.0
+linear,high_sensitivity,Brute Force -XSS,424,16,422,0,0,0.0
+linear,high_sensitivity,DDOS attack-HOIC,47,47,41,0,0,0.0
+linear,high_sensitivity,DDOS attack-LOIC-UDP,340,340,340,0,0,0.0
+linear,high_sensitivity,DDoS attacks-LOIC-HTTP,75369,9878,75369,128,128,0.001698310976661492
+linear,high_sensitivity,DoS attacks-GoldenEye,6587,6532,6587,12,12,0.0018217701533323211
+linear,high_sensitivity,DoS attacks-Hulk,21624,21623,21624,15954,15954,0.7377913429522752
+linear,high_sensitivity,DoS attacks-SlowHTTPTest,21067,2818,21067,5394,5394,0.2560402525276499
+linear,high_sensitivity,DoS attacks-Slowloris,4546,3380,4546,2595,2595,0.5708315002199736
+linear,high_sensitivity,FTP-BruteForce,38611,2818,38611,29062,29062,0.7526870580922536
+linear,high_sensitivity,Infilteration,12292,11573,2350,12091,2259,0.9612765957446808
+linear,high_sensitivity,SQL Injection,7,7,5,0,0,0.0
+linear,high_sensitivity,SSH-Bruteforce,18942,14303,18942,0,0,0.0
+histogram,standard,Bot,3148,2958,3143,3148,3143,1.0
+histogram,standard,Brute Force -Web,436,28,424,413,411,0.9693396226415094
+histogram,standard,Brute Force -XSS,424,16,421,2,2,0.004750593824228029
+histogram,standard,DDOS attack-HOIC,47,47,27,34,21,0.7777777777777778
+histogram,standard,DDOS attack-LOIC-UDP,340,340,340,335,335,0.9852941176470589
+histogram,standard,DDoS attacks-LOIC-HTTP,75369,9878,75364,75356,75352,0.999840772782761
+histogram,standard,DoS attacks-GoldenEye,6587,6532,6583,6499,6495,0.9866322345435212
+histogram,standard,DoS attacks-Hulk,21624,21623,21617,20978,20972,0.9701623722070593
+histogram,standard,DoS attacks-SlowHTTPTest,21067,2818,21067,0,0,0.0
+histogram,standard,DoS attacks-Slowloris,4546,3380,4546,4540,4540,0.9986801583809943
+histogram,standard,FTP-BruteForce,38611,2818,38611,38611,38611,1.0
+histogram,standard,Infilteration,12292,11573,1037,12273,1036,0.9990356798457087
+histogram,standard,SQL Injection,7,7,1,5,0,0.0
+histogram,standard,SSH-Bruteforce,18942,14303,18938,18937,18933,0.9997359805681698
+histogram,high_sensitivity,Bot,3148,2958,3148,3148,3148,1.0
+histogram,high_sensitivity,Brute Force -Web,436,28,434,413,413,0.9516129032258065
+histogram,high_sensitivity,Brute Force -XSS,424,16,422,2,2,0.004739336492890996
+histogram,high_sensitivity,DDOS attack-HOIC,47,47,41,34,29,0.7073170731707317
+histogram,high_sensitivity,DDOS attack-LOIC-UDP,340,340,340,335,335,0.9852941176470589
+histogram,high_sensitivity,DDoS attacks-LOIC-HTTP,75369,9878,75369,75356,75356,0.9998275152914328
+histogram,high_sensitivity,DoS attacks-GoldenEye,6587,6532,6587,6499,6499,0.9866403522088963
+histogram,high_sensitivity,DoS attacks-Hulk,21624,21623,21624,20978,20978,0.970125786163522
+histogram,high_sensitivity,DoS attacks-SlowHTTPTest,21067,2818,21067,0,0,0.0
+histogram,high_sensitivity,DoS attacks-Slowloris,4546,3380,4546,4540,4540,0.9986801583809943
+histogram,high_sensitivity,FTP-BruteForce,38611,2818,38611,38611,38611,1.0
+histogram,high_sensitivity,Infilteration,12292,11573,2350,12273,2349,0.9995744680851064
+histogram,high_sensitivity,SQL Injection,7,7,5,5,4,0.8
+histogram,high_sensitivity,SSH-Bruteforce,18942,14303,18942,18937,18937,0.9997360363214022

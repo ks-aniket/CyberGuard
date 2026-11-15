@@ -1,4 +1,4 @@
-"""Bound additive model prediction request bodies before JSON parsing, including chunks."""
+"""Bound model prediction and simulation POST bodies before JSON parsing."""
 
 from starlette.responses import JSONResponse
 
@@ -12,7 +12,10 @@ class ModelRequestBodyLimit:
         if (
             scope["type"] != "http"
             or scope.get("method") != "POST"
-            or not scope["path"].startswith("/api/v1/models/")
+            or not (
+                scope["path"].startswith("/api/v1/models/")
+                or scope["path"].startswith("/api/v1/simulations")
+            )
         ):
             return await self.app(scope, receive, send)
         body = bytearray()

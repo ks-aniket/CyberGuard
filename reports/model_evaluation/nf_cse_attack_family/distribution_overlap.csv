@@ -1,0 +1,841 @@
+split,family_a,family_b,distribution,total_variation
+train,Benign,Bot,protocol,0.29423798536322077
+train,Benign,Brute Force -Web,protocol,0.6501188791870007
+train,Benign,Brute Force -XSS,protocol,0.679687010236889
+train,Benign,DDOS attack-HOIC,protocol,0.29423798536322077
+train,Benign,DDOS attack-LOIC-UDP,protocol,0.7096870102368891
+train,Benign,DDoS attacks-LOIC-HTTP,protocol,0.29269930063092997
+train,Benign,DoS attacks-GoldenEye,protocol,0.29423798536322077
+train,Benign,DoS attacks-Hulk,protocol,0.29423798536322077
+train,Benign,DoS attacks-SlowHTTPTest,protocol,0.29423798536322077
+train,Benign,DoS attacks-Slowloris,protocol,0.29423798536322077
+train,Benign,FTP-BruteForce,protocol,0.29423798536322077
+train,Benign,Infilteration,protocol,0.2617583489081261
+train,Benign,SQL Injection,protocol,0.29423798536322077
+train,Benign,SSH-Bruteforce,protocol,0.29423798536322077
+train,Bot,Brute Force -Web,protocol,0.9404318689501117
+train,Bot,Brute Force -XSS,protocol,0.97
+train,Bot,DDOS attack-HOIC,protocol,0.0
+train,Bot,DDOS attack-LOIC-UDP,protocol,1.0
+train,Bot,DDoS attacks-LOIC-HTTP,protocol,0.0015386847322908168
+train,Bot,DoS attacks-GoldenEye,protocol,0.0
+train,Bot,DoS attacks-Hulk,protocol,0.0
+train,Bot,DoS attacks-SlowHTTPTest,protocol,0.0
+train,Bot,DoS attacks-Slowloris,protocol,0.0
+train,Bot,FTP-BruteForce,protocol,0.0
+train,Bot,Infilteration,protocol,0.5520713386712369
+train,Bot,SQL Injection,protocol,0.0
+train,Bot,SSH-Bruteforce,protocol,0.0
+train,Brute Force -Web,Brute Force -XSS,protocol,0.029568131049888313
+train,Brute Force -Web,DDOS attack-HOIC,protocol,0.9404318689501117
+train,Brute Force -Web,DDOS attack-LOIC-UDP,protocol,0.059568131049888326
+train,Brute Force -Web,DDoS attacks-LOIC-HTTP,protocol,0.9388931842178209
+train,Brute Force -Web,DoS attacks-GoldenEye,protocol,0.9404318689501117
+train,Brute Force -Web,DoS attacks-Hulk,protocol,0.9404318689501117
+train,Brute Force -Web,DoS attacks-SlowHTTPTest,protocol,0.9404318689501117
+train,Brute Force -Web,DoS attacks-Slowloris,protocol,0.9404318689501117
+train,Brute Force -Web,FTP-BruteForce,protocol,0.9404318689501117
+train,Brute Force -Web,Infilteration,protocol,0.38836053027887474
+train,Brute Force -Web,SQL Injection,protocol,0.9404318689501117
+train,Brute Force -Web,SSH-Bruteforce,protocol,0.9404318689501117
+train,Brute Force -XSS,DDOS attack-HOIC,protocol,0.97
+train,Brute Force -XSS,DDOS attack-LOIC-UDP,protocol,0.030000000000000013
+train,Brute Force -XSS,DDoS attacks-LOIC-HTTP,protocol,0.9684613152677092
+train,Brute Force -XSS,DoS attacks-GoldenEye,protocol,0.97
+train,Brute Force -XSS,DoS attacks-Hulk,protocol,0.97
+train,Brute Force -XSS,DoS attacks-SlowHTTPTest,protocol,0.97
+train,Brute Force -XSS,DoS attacks-Slowloris,protocol,0.97
+train,Brute Force -XSS,FTP-BruteForce,protocol,0.97
+train,Brute Force -XSS,Infilteration,protocol,0.41792866132876305
+train,Brute Force -XSS,SQL Injection,protocol,0.97
+train,Brute Force -XSS,SSH-Bruteforce,protocol,0.97
+train,DDOS attack-HOIC,DDOS attack-LOIC-UDP,protocol,1.0
+train,DDOS attack-HOIC,DDoS attacks-LOIC-HTTP,protocol,0.0015386847322908168
+train,DDOS attack-HOIC,DoS attacks-GoldenEye,protocol,0.0
+train,DDOS attack-HOIC,DoS attacks-Hulk,protocol,0.0
+train,DDOS attack-HOIC,DoS attacks-SlowHTTPTest,protocol,0.0
+train,DDOS attack-HOIC,DoS attacks-Slowloris,protocol,0.0
+train,DDOS attack-HOIC,FTP-BruteForce,protocol,0.0
+train,DDOS attack-HOIC,Infilteration,protocol,0.5520713386712369
+train,DDOS attack-HOIC,SQL Injection,protocol,0.0
+train,DDOS attack-HOIC,SSH-Bruteforce,protocol,0.0
+train,DDOS attack-LOIC-UDP,DDoS attacks-LOIC-HTTP,protocol,0.9984613152677092
+train,DDOS attack-LOIC-UDP,DoS attacks-GoldenEye,protocol,1.0
+train,DDOS attack-LOIC-UDP,DoS attacks-Hulk,protocol,1.0
+train,DDOS attack-LOIC-UDP,DoS attacks-SlowHTTPTest,protocol,1.0
+train,DDOS attack-LOIC-UDP,DoS attacks-Slowloris,protocol,1.0
+train,DDOS attack-LOIC-UDP,FTP-BruteForce,protocol,1.0
+train,DDOS attack-LOIC-UDP,Infilteration,protocol,0.4479286613287631
+train,DDOS attack-LOIC-UDP,SQL Injection,protocol,1.0
+train,DDOS attack-LOIC-UDP,SSH-Bruteforce,protocol,1.0
+train,DDoS attacks-LOIC-HTTP,DoS attacks-GoldenEye,protocol,0.0015386847322908168
+train,DDoS attacks-LOIC-HTTP,DoS attacks-Hulk,protocol,0.0015386847322908168
+train,DDoS attacks-LOIC-HTTP,DoS attacks-SlowHTTPTest,protocol,0.0015386847322908168
+train,DDoS attacks-LOIC-HTTP,DoS attacks-Slowloris,protocol,0.0015386847322908168
+train,DDoS attacks-LOIC-HTTP,FTP-BruteForce,protocol,0.0015386847322908168
+train,DDoS attacks-LOIC-HTTP,Infilteration,protocol,0.5505326539389461
+train,DDoS attacks-LOIC-HTTP,SQL Injection,protocol,0.0015386847322908168
+train,DDoS attacks-LOIC-HTTP,SSH-Bruteforce,protocol,0.0015386847322908168
+train,DoS attacks-GoldenEye,DoS attacks-Hulk,protocol,0.0
+train,DoS attacks-GoldenEye,DoS attacks-SlowHTTPTest,protocol,0.0
+train,DoS attacks-GoldenEye,DoS attacks-Slowloris,protocol,0.0
+train,DoS attacks-GoldenEye,FTP-BruteForce,protocol,0.0
+train,DoS attacks-GoldenEye,Infilteration,protocol,0.5520713386712369
+train,DoS attacks-GoldenEye,SQL Injection,protocol,0.0
+train,DoS attacks-GoldenEye,SSH-Bruteforce,protocol,0.0
+train,DoS attacks-Hulk,DoS attacks-SlowHTTPTest,protocol,0.0
+train,DoS attacks-Hulk,DoS attacks-Slowloris,protocol,0.0
+train,DoS attacks-Hulk,FTP-BruteForce,protocol,0.0
+train,DoS attacks-Hulk,Infilteration,protocol,0.5520713386712369
+train,DoS attacks-Hulk,SQL Injection,protocol,0.0
+train,DoS attacks-Hulk,SSH-Bruteforce,protocol,0.0
+train,DoS attacks-SlowHTTPTest,DoS attacks-Slowloris,protocol,0.0
+train,DoS attacks-SlowHTTPTest,FTP-BruteForce,protocol,0.0
+train,DoS attacks-SlowHTTPTest,Infilteration,protocol,0.5520713386712369
+train,DoS attacks-SlowHTTPTest,SQL Injection,protocol,0.0
+train,DoS attacks-SlowHTTPTest,SSH-Bruteforce,protocol,0.0
+train,DoS attacks-Slowloris,FTP-BruteForce,protocol,0.0
+train,DoS attacks-Slowloris,Infilteration,protocol,0.5520713386712369
+train,DoS attacks-Slowloris,SQL Injection,protocol,0.0
+train,DoS attacks-Slowloris,SSH-Bruteforce,protocol,0.0
+train,FTP-BruteForce,Infilteration,protocol,0.5520713386712369
+train,FTP-BruteForce,SQL Injection,protocol,0.0
+train,FTP-BruteForce,SSH-Bruteforce,protocol,0.0
+train,Infilteration,SQL Injection,protocol,0.5520713386712369
+train,Infilteration,SSH-Bruteforce,protocol,0.5520713386712369
+train,SQL Injection,SSH-Bruteforce,protocol,0.0
+train,Benign,Bot,source_port,0.6196051068929547
+train,Benign,Brute Force -Web,source_port,0.9942412181771736
+train,Benign,Brute Force -XSS,source_port,0.9972294813190494
+train,Benign,DDOS attack-HOIC,source_port,0.993802198566867
+train,Benign,DDOS attack-LOIC-UDP,source_port,0.9954555179591197
+train,Benign,DDoS attacks-LOIC-HTTP,source_port,0.4845369462500846
+train,Benign,DoS attacks-GoldenEye,source_port,0.7555782936823103
+train,Benign,DoS attacks-Hulk,source_port,0.7316842212891964
+train,Benign,DoS attacks-SlowHTTPTest,source_port,0.8215007201865224
+train,Benign,DoS attacks-Slowloris,source_port,0.8982803152155546
+train,Benign,FTP-BruteForce,source_port,0.8214773144412193
+train,Benign,Infilteration,source_port,0.5027741386330522
+train,Benign,SQL Injection,source_port,0.9989004228638843
+train,Benign,SSH-Bruteforce,source_port,0.7378291218105048
+train,Bot,Brute Force -Web,source_port,0.9950421940928269
+train,Bot,Brute Force -XSS,source_port,0.9976793248945149
+train,Bot,DDOS attack-HOIC,source_port,0.9914556962025318
+train,Bot,DDOS attack-LOIC-UDP,source_port,0.9948312236286923
+train,Bot,DDoS attacks-LOIC-HTTP,source_port,0.46390619762362156
+train,Bot,DoS attacks-GoldenEye,source_port,0.7727650742145377
+train,Bot,DoS attacks-Hulk,source_port,0.7738638613128334
+train,Bot,DoS attacks-SlowHTTPTest,source_port,0.7930314064872763
+train,Bot,DoS attacks-Slowloris,source_port,0.92950989652283
+train,Bot,FTP-BruteForce,source_port,0.7915595099496957
+train,Bot,Infilteration,source_port,0.568735262490239
+train,Bot,SQL Injection,source_port,0.9979957805907175
+train,Bot,SSH-Bruteforce,source_port,0.7651670090147544
+train,Brute Force -Web,Brute Force -XSS,source_port,0.05956813104988831
+train,Brute Force -Web,DDOS attack-HOIC,source_port,0.9419210722263589
+train,Brute Force -Web,DDOS attack-LOIC-UDP,source_port,1.0
+train,Brute Force -Web,DDoS attacks-LOIC-HTTP,source_port,0.9949487178359937
+train,Brute Force -Web,DoS attacks-GoldenEye,source_port,0.9976104529971022
+train,Brute Force -Web,DoS attacks-Hulk,source_port,0.9975064647210934
+train,Brute Force -Web,DoS attacks-SlowHTTPTest,source_port,0.9974935763040498
+train,Brute Force -Web,DoS attacks-Slowloris,source_port,0.9988249118683901
+train,Brute Force -Web,FTP-BruteForce,source_port,0.9973561832586979
+train,Brute Force -Web,Infilteration,source_port,0.9883244517044694
+train,Brute Force -Web,SQL Injection,source_port,0.9970215934475055
+train,Brute Force -Web,SSH-Bruteforce,source_port,0.9973194155970956
+train,Brute Force -XSS,DDOS attack-HOIC,source_port,0.97
+train,Brute Force -XSS,DDOS attack-LOIC-UDP,source_port,0.9999999999999999
+train,Brute Force -XSS,DDoS attacks-LOIC-HTTP,source_port,0.9980832384477748
+train,Brute Force -XSS,DoS attacks-GoldenEye,source_port,0.9990340129137222
+train,Brute Force -XSS,DoS attacks-Hulk,source_port,0.9992457825390961
+train,Brute Force -XSS,DoS attacks-SlowHTTPTest,source_port,0.9991014707505085
+train,Brute Force -XSS,DoS attacks-Slowloris,source_port,0.9998531139835487
+train,Brute Force -XSS,FTP-BruteForce,source_port,0.9990354805373751
+train,Brute Force -XSS,Infilteration,source_port,0.991484347802801
+train,Brute Force -XSS,SQL Injection,source_port,0.9999999999999999
+train,Brute Force -XSS,SSH-Bruteforce,source_port,0.9991656459143277
+train,DDOS attack-HOIC,DDOS attack-LOIC-UDP,source_port,1.0
+train,DDOS attack-HOIC,DDoS attacks-LOIC-HTTP,source_port,0.992293387612269
+train,DDOS attack-HOIC,DoS attacks-GoldenEye,source_port,0.9961868930804821
+train,DDOS attack-HOIC,DoS attacks-Hulk,source_port,0.996367442433198
+train,DDOS attack-HOIC,DoS attacks-SlowHTTPTest,source_port,0.9962009552784652
+train,DDOS attack-HOIC,DoS attacks-Slowloris,source_port,0.998090481786134
+train,DDOS attack-HOIC,FTP-BruteForce,source_port,0.9960213572166723
+train,DDOS attack-HOIC,Infilteration,source_port,0.9913504539003294
+train,DDOS attack-HOIC,SQL Injection,source_port,0.8222222222222222
+train,DDOS attack-HOIC,SSH-Bruteforce,source_port,0.9961655216488257
+train,DDOS attack-LOIC-UDP,DDoS attacks-LOIC-HTTP,source_port,0.995203699877345
+train,DDOS attack-LOIC-UDP,DoS attacks-GoldenEye,source_port,0.9970003558899793
+train,DDOS attack-LOIC-UDP,DoS attacks-Hulk,source_port,0.9976449944588105
+train,DDOS attack-LOIC-UDP,DoS attacks-SlowHTTPTest,source_port,0.9974147579488313
+train,DDOS attack-LOIC-UDP,DoS attacks-Slowloris,source_port,0.9995593419506462
+train,DDOS attack-LOIC-UDP,FTP-BruteForce,source_port,0.9972872890113675
+train,DDOS attack-LOIC-UDP,Infilteration,source_port,0.9946174651206383
+train,DDOS attack-LOIC-UDP,SQL Injection,source_port,0.9999999999999999
+train,DDOS attack-LOIC-UDP,SSH-Bruteforce,source_port,0.9972306545241518
+train,DDoS attacks-LOIC-HTTP,DoS attacks-GoldenEye,source_port,0.7309282872730322
+train,DDoS attacks-LOIC-HTTP,DoS attacks-Hulk,source_port,0.7083353230375337
+train,DDoS attacks-LOIC-HTTP,DoS attacks-SlowHTTPTest,source_port,0.7802643821822854
+train,DDoS attacks-LOIC-HTTP,DoS attacks-Slowloris,source_port,0.9431705675755697
+train,DDoS attacks-LOIC-HTTP,FTP-BruteForce,source_port,0.7776190118577099
+train,DDoS attacks-LOIC-HTTP,Infilteration,source_port,0.457436991653686
+train,DDoS attacks-LOIC-HTTP,SQL Injection,source_port,0.9988921469927505
+train,DDoS attacks-LOIC-HTTP,SSH-Bruteforce,source_port,0.7100485435727142
+train,DoS attacks-GoldenEye,DoS attacks-Hulk,source_port,0.2769119313757325
+train,DoS attacks-GoldenEye,DoS attacks-SlowHTTPTest,source_port,0.424340780552153
+train,DoS attacks-GoldenEye,DoS attacks-Slowloris,source_port,0.6352158929460001
+train,DoS attacks-GoldenEye,FTP-BruteForce,source_port,0.42437967155948697
+train,DoS attacks-GoldenEye,Infilteration,source_port,0.7709062748714017
+train,DoS attacks-GoldenEye,SQL Injection,source_port,0.9992882200416899
+train,DoS attacks-GoldenEye,SSH-Bruteforce,source_port,0.2966519807953801
+train,DoS attacks-Hulk,DoS attacks-SlowHTTPTest,source_port,0.3999964702556929
+train,DoS attacks-Hulk,DoS attacks-Slowloris,source_port,0.5924165359686794
+train,DoS attacks-Hulk,FTP-BruteForce,source_port,0.4000304503495889
+train,DoS attacks-Hulk,Infilteration,source_port,0.7548545925079304
+train,DoS attacks-Hulk,SQL Injection,source_port,0.9993535278906539
+train,DoS attacks-Hulk,SSH-Bruteforce,source_port,0.21153417828890775
+train,DoS attacks-SlowHTTPTest,DoS attacks-Slowloris,source_port,0.6312369330327579
+train,DoS attacks-SlowHTTPTest,FTP-BruteForce,source_port,0.02951567584138569
+train,DoS attacks-SlowHTTPTest,Infilteration,source_port,0.8169212251467388
+train,DoS attacks-SlowHTTPTest,SQL Injection,source_port,0.9992748711319893
+train,DoS attacks-SlowHTTPTest,SSH-Bruteforce,source_port,0.4028287469038631
+train,DoS attacks-Slowloris,FTP-BruteForce,source_port,0.6428281068289905
+train,DoS attacks-Slowloris,Infilteration,source_port,0.9276333193859206
+train,DoS attacks-Slowloris,SQL Injection,source_port,0.9993390129259693
+train,DoS attacks-Slowloris,SSH-Bruteforce,source_port,0.6043273505449711
+train,FTP-BruteForce,Infilteration,source_port,0.8133922480033504
+train,FTP-BruteForce,SQL Injection,source_port,0.9992766104030313
+train,FTP-BruteForce,SSH-Bruteforce,source_port,0.4011352579449064
+train,Infilteration,SQL Injection,source_port,0.9988485124387435
+train,Infilteration,SSH-Bruteforce,source_port,0.7565280037396338
+train,SQL Injection,SSH-Bruteforce,source_port,0.9995029379915144
+train,Benign,Bot,destination_port,0.999498672351543
+train,Benign,Brute Force -Web,destination_port,0.9399856197387458
+train,Benign,Brute Force -XSS,destination_port,0.968810052850643
+train,Benign,DDOS attack-HOIC,destination_port,0.9388373491131425
+train,Benign,DDOS attack-LOIC-UDP,destination_port,0.9388373491131425
+train,Benign,DDoS attacks-LOIC-HTTP,destination_port,0.9388373491131425
+train,Benign,DoS attacks-GoldenEye,destination_port,0.9388373491131425
+train,Benign,DoS attacks-Hulk,destination_port,0.9388373491131425
+train,Benign,DoS attacks-SlowHTTPTest,destination_port,0.9999277039894067
+train,Benign,DoS attacks-Slowloris,destination_port,0.9388373491131425
+train,Benign,FTP-BruteForce,destination_port,0.9999277039894067
+train,Benign,Infilteration,destination_port,0.40015605235843654
+train,Benign,SQL Injection,destination_port,0.9388373491131425
+train,Benign,SSH-Bruteforce,destination_port,0.9980353559121306
+train,Bot,Brute Force -Web,destination_port,1.0
+train,Bot,Brute Force -XSS,destination_port,1.0
+train,Bot,DDOS attack-HOIC,destination_port,1.0
+train,Bot,DDOS attack-LOIC-UDP,destination_port,1.0
+train,Bot,DDoS attacks-LOIC-HTTP,destination_port,1.0
+train,Bot,DoS attacks-GoldenEye,destination_port,1.0
+train,Bot,DoS attacks-Hulk,destination_port,1.0
+train,Bot,DoS attacks-SlowHTTPTest,destination_port,1.0
+train,Bot,DoS attacks-Slowloris,destination_port,1.0
+train,Bot,FTP-BruteForce,destination_port,1.0
+train,Bot,Infilteration,destination_port,0.9998125485365397
+train,Bot,SQL Injection,destination_port,1.0
+train,Bot,SSH-Bruteforce,destination_port,1.0
+train,Brute Force -Web,Brute Force -XSS,destination_port,0.029568131049888292
+train,Brute Force -Web,DDOS attack-HOIC,destination_port,0.9419210722263589
+train,Brute Force -Web,DDOS attack-LOIC-UDP,destination_port,0.9419210722263589
+train,Brute Force -Web,DDoS attacks-LOIC-HTTP,destination_port,0.9419210722263589
+train,Brute Force -Web,DoS attacks-GoldenEye,destination_port,0.9419210722263589
+train,Brute Force -Web,DoS attacks-Hulk,destination_port,0.9419210722263589
+train,Brute Force -Web,DoS attacks-SlowHTTPTest,destination_port,1.0
+train,Brute Force -Web,DoS attacks-Slowloris,destination_port,0.9419210722263589
+train,Brute Force -Web,FTP-BruteForce,destination_port,1.0
+train,Brute Force -Web,Infilteration,destination_port,0.9667459588417521
+train,Brute Force -Web,SQL Injection,destination_port,0.9419210722263589
+train,Brute Force -Web,SSH-Bruteforce,destination_port,0.9992553983618765
+train,Brute Force -XSS,DDOS attack-HOIC,destination_port,0.97
+train,Brute Force -XSS,DDOS attack-LOIC-UDP,destination_port,0.97
+train,Brute Force -XSS,DDoS attacks-LOIC-HTTP,destination_port,0.97
+train,Brute Force -XSS,DoS attacks-GoldenEye,destination_port,0.97
+train,Brute Force -XSS,DoS attacks-Hulk,destination_port,0.97
+train,Brute Force -XSS,DoS attacks-SlowHTTPTest,destination_port,1.0
+train,Brute Force -XSS,DoS attacks-Slowloris,destination_port,0.97
+train,Brute Force -XSS,FTP-BruteForce,destination_port,1.0
+train,Brute Force -XSS,Infilteration,destination_port,0.9674905604798756
+train,Brute Force -XSS,SQL Injection,destination_port,0.97
+train,Brute Force -XSS,SSH-Bruteforce,destination_port,1.0
+train,DDOS attack-HOIC,DDOS attack-LOIC-UDP,destination_port,0.0
+train,DDOS attack-HOIC,DDoS attacks-LOIC-HTTP,destination_port,0.0
+train,DDOS attack-HOIC,DoS attacks-GoldenEye,destination_port,0.0
+train,DDOS attack-HOIC,DoS attacks-Hulk,destination_port,0.0
+train,DDOS attack-HOIC,DoS attacks-SlowHTTPTest,destination_port,1.0
+train,DDOS attack-HOIC,DoS attacks-Slowloris,destination_port,0.0
+train,DDOS attack-HOIC,FTP-BruteForce,destination_port,1.0
+train,DDOS attack-HOIC,Infilteration,destination_port,0.9734622285301125
+train,DDOS attack-HOIC,SQL Injection,destination_port,0.0
+train,DDOS attack-HOIC,SSH-Bruteforce,destination_port,1.0
+train,DDOS attack-LOIC-UDP,DDoS attacks-LOIC-HTTP,destination_port,0.0
+train,DDOS attack-LOIC-UDP,DoS attacks-GoldenEye,destination_port,0.0
+train,DDOS attack-LOIC-UDP,DoS attacks-Hulk,destination_port,0.0
+train,DDOS attack-LOIC-UDP,DoS attacks-SlowHTTPTest,destination_port,1.0
+train,DDOS attack-LOIC-UDP,DoS attacks-Slowloris,destination_port,0.0
+train,DDOS attack-LOIC-UDP,FTP-BruteForce,destination_port,1.0
+train,DDOS attack-LOIC-UDP,Infilteration,destination_port,0.9734622285301125
+train,DDOS attack-LOIC-UDP,SQL Injection,destination_port,0.0
+train,DDOS attack-LOIC-UDP,SSH-Bruteforce,destination_port,1.0
+train,DDoS attacks-LOIC-HTTP,DoS attacks-GoldenEye,destination_port,0.0
+train,DDoS attacks-LOIC-HTTP,DoS attacks-Hulk,destination_port,0.0
+train,DDoS attacks-LOIC-HTTP,DoS attacks-SlowHTTPTest,destination_port,1.0
+train,DDoS attacks-LOIC-HTTP,DoS attacks-Slowloris,destination_port,0.0
+train,DDoS attacks-LOIC-HTTP,FTP-BruteForce,destination_port,1.0
+train,DDoS attacks-LOIC-HTTP,Infilteration,destination_port,0.9734622285301125
+train,DDoS attacks-LOIC-HTTP,SQL Injection,destination_port,0.0
+train,DDoS attacks-LOIC-HTTP,SSH-Bruteforce,destination_port,1.0
+train,DoS attacks-GoldenEye,DoS attacks-Hulk,destination_port,0.0
+train,DoS attacks-GoldenEye,DoS attacks-SlowHTTPTest,destination_port,1.0
+train,DoS attacks-GoldenEye,DoS attacks-Slowloris,destination_port,0.0
+train,DoS attacks-GoldenEye,FTP-BruteForce,destination_port,1.0
+train,DoS attacks-GoldenEye,Infilteration,destination_port,0.9734622285301125
+train,DoS attacks-GoldenEye,SQL Injection,destination_port,0.0
+train,DoS attacks-GoldenEye,SSH-Bruteforce,destination_port,1.0
+train,DoS attacks-Hulk,DoS attacks-SlowHTTPTest,destination_port,1.0
+train,DoS attacks-Hulk,DoS attacks-Slowloris,destination_port,0.0
+train,DoS attacks-Hulk,FTP-BruteForce,destination_port,1.0
+train,DoS attacks-Hulk,Infilteration,destination_port,0.9734622285301125
+train,DoS attacks-Hulk,SQL Injection,destination_port,0.0
+train,DoS attacks-Hulk,SSH-Bruteforce,destination_port,1.0
+train,DoS attacks-SlowHTTPTest,DoS attacks-Slowloris,destination_port,1.0
+train,DoS attacks-SlowHTTPTest,FTP-BruteForce,destination_port,0.0
+train,DoS attacks-SlowHTTPTest,Infilteration,destination_port,0.9998928848780224
+train,DoS attacks-SlowHTTPTest,SQL Injection,destination_port,1.0
+train,DoS attacks-SlowHTTPTest,SSH-Bruteforce,destination_port,0.9996804601374022
+train,DoS attacks-Slowloris,FTP-BruteForce,destination_port,1.0
+train,DoS attacks-Slowloris,Infilteration,destination_port,0.9734622285301125
+train,DoS attacks-Slowloris,SQL Injection,destination_port,0.0
+train,DoS attacks-Slowloris,SSH-Bruteforce,destination_port,1.0
+train,FTP-BruteForce,Infilteration,destination_port,0.9998928848780224
+train,FTP-BruteForce,SQL Injection,destination_port,1.0
+train,FTP-BruteForce,SSH-Bruteforce,destination_port,0.9996804601374022
+train,Infilteration,SQL Injection,destination_port,0.9734622285301125
+train,Infilteration,SSH-Bruteforce,destination_port,0.9976166885360038
+train,SQL Injection,SSH-Bruteforce,destination_port,1.0
+train,Benign,Bot,protocol_port_pair,0.999947811317353
+train,Benign,Brute Force -Web,protocol_port_pair,0.998469809750789
+train,Benign,Brute Force -XSS,protocol_port_pair,0.9987232976379314
+train,Benign,DDOS attack-HOIC,protocol_port_pair,0.9994234393155194
+train,Benign,DDOS attack-LOIC-UDP,protocol_port_pair,1.0
+train,Benign,DDoS attacks-LOIC-HTTP,protocol_port_pair,0.944642198666504
+train,Benign,DoS attacks-GoldenEye,protocol_port_pair,0.972599134210088
+train,Benign,DoS attacks-Hulk,protocol_port_pair,0.96944046792067
+train,Benign,DoS attacks-SlowHTTPTest,protocol_port_pair,0.9999889296733778
+train,Benign,DoS attacks-Slowloris,protocol_port_pair,0.982127296556202
+train,Benign,FTP-BruteForce,protocol_port_pair,0.9999889296733779
+train,Benign,Infilteration,protocol_port_pair,0.7058075811925024
+train,Benign,SQL Injection,protocol_port_pair,0.9998612820296744
+train,Benign,SSH-Bruteforce,protocol_port_pair,0.9992343400628116
+train,Bot,Brute Force -Web,protocol_port_pair,1.0
+train,Bot,Brute Force -XSS,protocol_port_pair,1.0
+train,Bot,DDOS attack-HOIC,protocol_port_pair,1.0
+train,Bot,DDOS attack-LOIC-UDP,protocol_port_pair,1.0
+train,Bot,DDoS attacks-LOIC-HTTP,protocol_port_pair,1.0
+train,Bot,DoS attacks-GoldenEye,protocol_port_pair,1.0
+train,Bot,DoS attacks-Hulk,protocol_port_pair,1.0
+train,Bot,DoS attacks-SlowHTTPTest,protocol_port_pair,1.0
+train,Bot,DoS attacks-Slowloris,protocol_port_pair,0.9999999999999999
+train,Bot,FTP-BruteForce,protocol_port_pair,1.0
+train,Bot,Infilteration,protocol_port_pair,0.9998928848780226
+train,Bot,SQL Injection,protocol_port_pair,0.9999999999999999
+train,Bot,SSH-Bruteforce,protocol_port_pair,1.0
+train,Brute Force -Web,Brute Force -XSS,protocol_port_pair,0.05956813104988831
+train,Brute Force -Web,DDOS attack-HOIC,protocol_port_pair,0.941921072226359
+train,Brute Force -Web,DDOS attack-LOIC-UDP,protocol_port_pair,1.0
+train,Brute Force -Web,DDoS attacks-LOIC-HTTP,protocol_port_pair,0.9949487178359939
+train,Brute Force -Web,DoS attacks-GoldenEye,protocol_port_pair,0.9976612944226956
+train,Brute Force -Web,DoS attacks-Hulk,protocol_port_pair,0.9975988178795715
+train,Brute Force -Web,DoS attacks-SlowHTTPTest,protocol_port_pair,1.0
+train,Brute Force -Web,DoS attacks-Slowloris,protocol_port_pair,0.9988249118683902
+train,Brute Force -Web,FTP-BruteForce,protocol_port_pair,1.0
+train,Brute Force -Web,Infilteration,protocol_port_pair,0.9939212168277857
+train,Brute Force -Web,SQL Injection,protocol_port_pair,0.9970215934475055
+train,Brute Force -Web,SSH-Bruteforce,protocol_port_pair,0.9999289911416449
+train,Brute Force -XSS,DDOS attack-HOIC,protocol_port_pair,0.9700000000000001
+train,Brute Force -XSS,DDOS attack-LOIC-UDP,protocol_port_pair,1.0
+train,Brute Force -XSS,DDoS attacks-LOIC-HTTP,protocol_port_pair,0.9981008234161439
+train,Brute Force -XSS,DoS attacks-GoldenEye,protocol_port_pair,0.9990340129137221
+train,Brute Force -XSS,DoS attacks-Hulk,protocol_port_pair,0.9992457825390962
+train,Brute Force -XSS,DoS attacks-SlowHTTPTest,protocol_port_pair,1.0
+train,Brute Force -XSS,DoS attacks-Slowloris,protocol_port_pair,0.9998531139835488
+train,Brute Force -XSS,FTP-BruteForce,protocol_port_pair,1.0
+train,Brute Force -XSS,Infilteration,protocol_port_pair,0.9940015531692685
+train,Brute Force -XSS,SQL Injection,protocol_port_pair,1.0
+train,Brute Force -XSS,SSH-Bruteforce,protocol_port_pair,1.0
+train,DDOS attack-HOIC,DDOS attack-LOIC-UDP,protocol_port_pair,1.0
+train,DDOS attack-HOIC,DDoS attacks-LOIC-HTTP,protocol_port_pair,0.9923109725806382
+train,DDOS attack-HOIC,DoS attacks-GoldenEye,protocol_port_pair,0.996186893080482
+train,DDOS attack-HOIC,DoS attacks-Hulk,protocol_port_pair,0.9963674424331979
+train,DDOS attack-HOIC,DoS attacks-SlowHTTPTest,protocol_port_pair,1.0
+train,DDOS attack-HOIC,DoS attacks-Slowloris,protocol_port_pair,0.9980904817861339
+train,DDOS attack-HOIC,FTP-BruteForce,protocol_port_pair,1.0
+train,DDOS attack-HOIC,Infilteration,protocol_port_pair,0.9997054334145624
+train,DDOS attack-HOIC,SQL Injection,protocol_port_pair,0.8222222222222222
+train,DDOS attack-HOIC,SSH-Bruteforce,protocol_port_pair,1.0
+train,DDOS attack-LOIC-UDP,DDoS attacks-LOIC-HTTP,protocol_port_pair,1.0
+train,DDOS attack-LOIC-UDP,DoS attacks-GoldenEye,protocol_port_pair,1.0
+train,DDOS attack-LOIC-UDP,DoS attacks-Hulk,protocol_port_pair,1.0
+train,DDOS attack-LOIC-UDP,DoS attacks-SlowHTTPTest,protocol_port_pair,1.0
+train,DDOS attack-LOIC-UDP,DoS attacks-Slowloris,protocol_port_pair,1.0
+train,DDOS attack-LOIC-UDP,FTP-BruteForce,protocol_port_pair,1.0
+train,DDOS attack-LOIC-UDP,Infilteration,protocol_port_pair,1.0000000000000002
+train,DDOS attack-LOIC-UDP,SQL Injection,protocol_port_pair,1.0
+train,DDOS attack-LOIC-UDP,SSH-Bruteforce,protocol_port_pair,1.0
+train,DDoS attacks-LOIC-HTTP,DoS attacks-GoldenEye,protocol_port_pair,0.7313518287327665
+train,DDoS attacks-LOIC-HTTP,DoS attacks-Hulk,protocol_port_pair,0.7086761868266298
+train,DDoS attacks-LOIC-HTTP,DoS attacks-SlowHTTPTest,protocol_port_pair,1.0
+train,DDoS attacks-LOIC-HTTP,DoS attacks-Slowloris,protocol_port_pair,0.9431705675755697
+train,DDoS attacks-LOIC-HTTP,FTP-BruteForce,protocol_port_pair,1.0000000000000002
+train,DDoS attacks-LOIC-HTTP,Infilteration,protocol_port_pair,0.9760679620841858
+train,DDoS attacks-LOIC-HTTP,SQL Injection,protocol_port_pair,0.9988921469927505
+train,DDoS attacks-LOIC-HTTP,SSH-Bruteforce,protocol_port_pair,1.0
+train,DoS attacks-GoldenEye,DoS attacks-Hulk,protocol_port_pair,0.27691193137573245
+train,DoS attacks-GoldenEye,DoS attacks-SlowHTTPTest,protocol_port_pair,0.9999999999999999
+train,DoS attacks-GoldenEye,DoS attacks-Slowloris,protocol_port_pair,0.6352158929460001
+train,DoS attacks-GoldenEye,FTP-BruteForce,protocol_port_pair,1.0
+train,DoS attacks-GoldenEye,Infilteration,protocol_port_pair,0.9887804561197865
+train,DoS attacks-GoldenEye,SQL Injection,protocol_port_pair,0.9992882200416899
+train,DoS attacks-GoldenEye,SSH-Bruteforce,protocol_port_pair,1.0
+train,DoS attacks-Hulk,DoS attacks-SlowHTTPTest,protocol_port_pair,1.0
+train,DoS attacks-Hulk,DoS attacks-Slowloris,protocol_port_pair,0.5924165359686794
+train,DoS attacks-Hulk,FTP-BruteForce,protocol_port_pair,1.0
+train,DoS attacks-Hulk,Infilteration,protocol_port_pair,0.9872923203103682
+train,DoS attacks-Hulk,SQL Injection,protocol_port_pair,0.9993535278906539
+train,DoS attacks-Hulk,SSH-Bruteforce,protocol_port_pair,1.0
+train,DoS attacks-SlowHTTPTest,DoS attacks-Slowloris,protocol_port_pair,0.9999999999999999
+train,DoS attacks-SlowHTTPTest,FTP-BruteForce,protocol_port_pair,0.029515675841385685
+train,DoS attacks-SlowHTTPTest,Infilteration,protocol_port_pair,0.9999732212195058
+train,DoS attacks-SlowHTTPTest,SQL Injection,protocol_port_pair,1.0
+train,DoS attacks-SlowHTTPTest,SSH-Bruteforce,protocol_port_pair,0.9996804601374022
+train,DoS attacks-Slowloris,FTP-BruteForce,protocol_port_pair,1.0
+train,DoS attacks-Slowloris,Infilteration,protocol_port_pair,0.9961239701615787
+train,DoS attacks-Slowloris,SQL Injection,protocol_port_pair,0.9993390129259695
+train,DoS attacks-Slowloris,SSH-Bruteforce,protocol_port_pair,1.0
+train,FTP-BruteForce,Infilteration,protocol_port_pair,0.9999732212195058
+train,FTP-BruteForce,SQL Injection,protocol_port_pair,1.0
+train,FTP-BruteForce,SSH-Bruteforce,protocol_port_pair,0.9996804601374022
+train,Infilteration,SQL Injection,protocol_port_pair,1.0000000000000002
+train,Infilteration,SSH-Bruteforce,protocol_port_pair,0.9989914329071209
+train,SQL Injection,SSH-Bruteforce,protocol_port_pair,0.9999999999999999
+validation,Benign,Bot,protocol,0.29204235645775856
+validation,Benign,Brute Force -Web,protocol,0.6468864337368616
+validation,Benign,Brute Force -XSS,protocol,0.6734356807508828
+validation,Benign,DDOS attack-HOIC,protocol,0.29204235645775856
+validation,Benign,DDOS attack-LOIC-UDP,protocol,0.7088130392414488
+validation,Benign,DDoS attacks-LOIC-HTTP,protocol,0.29034404548109705
+validation,Benign,DoS attacks-GoldenEye,protocol,0.29204235645775856
+validation,Benign,DoS attacks-Hulk,protocol,0.29204235645775856
+validation,Benign,DoS attacks-SlowHTTPTest,protocol,0.29204235645775856
+validation,Benign,DoS attacks-Slowloris,protocol,0.29204235645775856
+validation,Benign,FTP-BruteForce,protocol,0.29204235645775856
+validation,Benign,Infilteration,protocol,0.243469726517726
+validation,Benign,SQL Injection,protocol,0.29204235645775856
+validation,Benign,SSH-Bruteforce,protocol,0.29204235645775856
+validation,Bot,Brute Force -Web,protocol,0.9380733944954128
+validation,Bot,Brute Force -XSS,protocol,0.964622641509434
+validation,Bot,DDOS attack-HOIC,protocol,0.0
+validation,Bot,DDOS attack-LOIC-UDP,protocol,1.0
+validation,Bot,DDoS attacks-LOIC-HTTP,protocol,0.001698310976661501
+validation,Bot,DoS attacks-GoldenEye,protocol,0.0
+validation,Bot,DoS attacks-Hulk,protocol,0.0
+validation,Bot,DoS attacks-SlowHTTPTest,protocol,0.0
+validation,Bot,DoS attacks-Slowloris,protocol,0.0
+validation,Bot,FTP-BruteForce,protocol,0.0
+validation,Bot,Infilteration,protocol,0.5346566872762772
+validation,Bot,SQL Injection,protocol,0.0
+validation,Bot,SSH-Bruteforce,protocol,0.0
+validation,Brute Force -Web,Brute Force -XSS,protocol,0.026549247014021147
+validation,Brute Force -Web,DDOS attack-HOIC,protocol,0.9380733944954128
+validation,Brute Force -Web,DDOS attack-LOIC-UDP,protocol,0.061926605504587166
+validation,Brute Force -Web,DDoS attacks-LOIC-HTTP,protocol,0.9363750835187513
+validation,Brute Force -Web,DoS attacks-GoldenEye,protocol,0.9380733944954128
+validation,Brute Force -Web,DoS attacks-Hulk,protocol,0.9380733944954128
+validation,Brute Force -Web,DoS attacks-SlowHTTPTest,protocol,0.9380733944954128
+validation,Brute Force -Web,DoS attacks-Slowloris,protocol,0.9380733944954128
+validation,Brute Force -Web,FTP-BruteForce,protocol,0.9380733944954128
+validation,Brute Force -Web,Infilteration,protocol,0.4034167072191356
+validation,Brute Force -Web,SQL Injection,protocol,0.9380733944954128
+validation,Brute Force -Web,SSH-Bruteforce,protocol,0.9380733944954128
+validation,Brute Force -XSS,DDOS attack-HOIC,protocol,0.964622641509434
+validation,Brute Force -XSS,DDOS attack-LOIC-UDP,protocol,0.035377358490566016
+validation,Brute Force -XSS,DDoS attacks-LOIC-HTTP,protocol,0.9629243305327725
+validation,Brute Force -XSS,DoS attacks-GoldenEye,protocol,0.964622641509434
+validation,Brute Force -XSS,DoS attacks-Hulk,protocol,0.964622641509434
+validation,Brute Force -XSS,DoS attacks-SlowHTTPTest,protocol,0.964622641509434
+validation,Brute Force -XSS,DoS attacks-Slowloris,protocol,0.964622641509434
+validation,Brute Force -XSS,FTP-BruteForce,protocol,0.964622641509434
+validation,Brute Force -XSS,Infilteration,protocol,0.42996595423315676
+validation,Brute Force -XSS,SQL Injection,protocol,0.964622641509434
+validation,Brute Force -XSS,SSH-Bruteforce,protocol,0.964622641509434
+validation,DDOS attack-HOIC,DDOS attack-LOIC-UDP,protocol,1.0
+validation,DDOS attack-HOIC,DDoS attacks-LOIC-HTTP,protocol,0.001698310976661501
+validation,DDOS attack-HOIC,DoS attacks-GoldenEye,protocol,0.0
+validation,DDOS attack-HOIC,DoS attacks-Hulk,protocol,0.0
+validation,DDOS attack-HOIC,DoS attacks-SlowHTTPTest,protocol,0.0
+validation,DDOS attack-HOIC,DoS attacks-Slowloris,protocol,0.0
+validation,DDOS attack-HOIC,FTP-BruteForce,protocol,0.0
+validation,DDOS attack-HOIC,Infilteration,protocol,0.5346566872762772
+validation,DDOS attack-HOIC,SQL Injection,protocol,0.0
+validation,DDOS attack-HOIC,SSH-Bruteforce,protocol,0.0
+validation,DDOS attack-LOIC-UDP,DDoS attacks-LOIC-HTTP,protocol,0.9983016890233385
+validation,DDOS attack-LOIC-UDP,DoS attacks-GoldenEye,protocol,1.0
+validation,DDOS attack-LOIC-UDP,DoS attacks-Hulk,protocol,1.0
+validation,DDOS attack-LOIC-UDP,DoS attacks-SlowHTTPTest,protocol,1.0
+validation,DDOS attack-LOIC-UDP,DoS attacks-Slowloris,protocol,1.0
+validation,DDOS attack-LOIC-UDP,FTP-BruteForce,protocol,1.0
+validation,DDOS attack-LOIC-UDP,Infilteration,protocol,0.46534331272372276
+validation,DDOS attack-LOIC-UDP,SQL Injection,protocol,1.0
+validation,DDOS attack-LOIC-UDP,SSH-Bruteforce,protocol,1.0
+validation,DDoS attacks-LOIC-HTTP,DoS attacks-GoldenEye,protocol,0.001698310976661501
+validation,DDoS attacks-LOIC-HTTP,DoS attacks-Hulk,protocol,0.001698310976661501
+validation,DDoS attacks-LOIC-HTTP,DoS attacks-SlowHTTPTest,protocol,0.001698310976661501
+validation,DDoS attacks-LOIC-HTTP,DoS attacks-Slowloris,protocol,0.001698310976661501
+validation,DDoS attacks-LOIC-HTTP,FTP-BruteForce,protocol,0.001698310976661501
+validation,DDoS attacks-LOIC-HTTP,Infilteration,protocol,0.5329583762996157
+validation,DDoS attacks-LOIC-HTTP,SQL Injection,protocol,0.001698310976661501
+validation,DDoS attacks-LOIC-HTTP,SSH-Bruteforce,protocol,0.001698310976661501
+validation,DoS attacks-GoldenEye,DoS attacks-Hulk,protocol,0.0
+validation,DoS attacks-GoldenEye,DoS attacks-SlowHTTPTest,protocol,0.0
+validation,DoS attacks-GoldenEye,DoS attacks-Slowloris,protocol,0.0
+validation,DoS attacks-GoldenEye,FTP-BruteForce,protocol,0.0
+validation,DoS attacks-GoldenEye,Infilteration,protocol,0.5346566872762772
+validation,DoS attacks-GoldenEye,SQL Injection,protocol,0.0
+validation,DoS attacks-GoldenEye,SSH-Bruteforce,protocol,0.0
+validation,DoS attacks-Hulk,DoS attacks-SlowHTTPTest,protocol,0.0
+validation,DoS attacks-Hulk,DoS attacks-Slowloris,protocol,0.0
+validation,DoS attacks-Hulk,FTP-BruteForce,protocol,0.0
+validation,DoS attacks-Hulk,Infilteration,protocol,0.5346566872762772
+validation,DoS attacks-Hulk,SQL Injection,protocol,0.0
+validation,DoS attacks-Hulk,SSH-Bruteforce,protocol,0.0
+validation,DoS attacks-SlowHTTPTest,DoS attacks-Slowloris,protocol,0.0
+validation,DoS attacks-SlowHTTPTest,FTP-BruteForce,protocol,0.0
+validation,DoS attacks-SlowHTTPTest,Infilteration,protocol,0.5346566872762772
+validation,DoS attacks-SlowHTTPTest,SQL Injection,protocol,0.0
+validation,DoS attacks-SlowHTTPTest,SSH-Bruteforce,protocol,0.0
+validation,DoS attacks-Slowloris,FTP-BruteForce,protocol,0.0
+validation,DoS attacks-Slowloris,Infilteration,protocol,0.5346566872762772
+validation,DoS attacks-Slowloris,SQL Injection,protocol,0.0
+validation,DoS attacks-Slowloris,SSH-Bruteforce,protocol,0.0
+validation,FTP-BruteForce,Infilteration,protocol,0.5346566872762772
+validation,FTP-BruteForce,SQL Injection,protocol,0.0
+validation,FTP-BruteForce,SSH-Bruteforce,protocol,0.0
+validation,Infilteration,SQL Injection,protocol,0.5346566872762772
+validation,Infilteration,SSH-Bruteforce,protocol,0.5346566872762772
+validation,SQL Injection,SSH-Bruteforce,protocol,0.0
+validation,Benign,Bot,source_port,0.8691601703026187
+validation,Benign,Brute Force -Web,source_port,0.9988407677484346
+validation,Benign,Brute Force -XSS,source_port,0.9994313329391671
+validation,Benign,DDOS attack-HOIC,source_port,0.9979675798186834
+validation,Benign,DDOS attack-LOIC-UDP,source_port,0.9946753328515744
+validation,Benign,DDoS attacks-LOIC-HTTP,source_port,0.6912543609304612
+validation,Benign,DoS attacks-GoldenEye,source_port,0.8762554375812507
+validation,Benign,DoS attacks-Hulk,source_port,0.7792855998213735
+validation,Benign,DoS attacks-SlowHTTPTest,source_port,0.9383472936276196
+validation,Benign,DoS attacks-Slowloris,source_port,0.948170000476306
+validation,Benign,FTP-BruteForce,source_port,0.9383815933384212
+validation,Benign,Infilteration,source_port,0.6663015747634292
+validation,Benign,SQL Injection,source_port,0.9996024120790085
+validation,Benign,SSH-Bruteforce,source_port,0.8136649846724882
+validation,Bot,Brute Force -Web,source_port,0.9987293519695044
+validation,Bot,Brute Force -XSS,source_port,0.9993646759847523
+validation,Bot,DDOS attack-HOIC,source_port,0.9977763659466329
+validation,Bot,DDOS attack-LOIC-UDP,source_port,0.9945997458703939
+validation,Bot,DDoS attacks-LOIC-HTTP,source_port,0.8196831268262647
+validation,Bot,DoS attacks-GoldenEye,source_port,0.9200615397198557
+validation,Bot,DoS attacks-Hulk,source_port,0.918331483536811
+validation,Bot,DoS attacks-SlowHTTPTest,source_port,0.9216614909688814
+validation,Bot,DoS attacks-Slowloris,source_port,0.9705003379264121
+validation,Bot,FTP-BruteForce,source_port,0.9211843709272073
+validation,Bot,Infilteration,source_port,0.8368317158379476
+validation,Bot,SQL Injection,source_port,0.999682337992376
+validation,Bot,SSH-Bruteforce,source_port,0.9172209903917222
+validation,Brute Force -Web,Brute Force -XSS,source_port,0.059633027522935804
+validation,Brute Force -Web,DDOS attack-HOIC,source_port,0.9380733944954128
+validation,Brute Force -Web,DDOS attack-LOIC-UDP,source_port,1.0
+validation,Brute Force -Web,DDoS attacks-LOIC-HTTP,source_port,0.9993896694927622
+validation,Brute Force -Web,DoS attacks-GoldenEye,source_port,0.9995445574616668
+validation,Brute Force -Web,DoS attacks-Hulk,source_port,0.9994450610432852
+validation,Brute Force -Web,DoS attacks-SlowHTTPTest,source_port,1.0
+validation,Brute Force -Web,DoS attacks-Slowloris,source_port,1.0
+validation,Brute Force -Web,FTP-BruteForce,source_port,1.0
+validation,Brute Force -Web,Infilteration,source_port,0.9985356329319883
+validation,Brute Force -Web,SQL Injection,source_port,0.9977064220183485
+validation,Brute Force -Web,SSH-Bruteforce,source_port,0.9994720726428044
+validation,Brute Force -XSS,DDOS attack-HOIC,source_port,0.964622641509434
+validation,Brute Force -XSS,DDOS attack-LOIC-UDP,source_port,1.0
+validation,Brute Force -XSS,DDoS attacks-LOIC-HTTP,source_port,0.9993100611657313
+validation,Brute Force -XSS,DoS attacks-GoldenEye,source_port,0.9996963716411112
+validation,Brute Force -XSS,DoS attacks-Hulk,source_port,0.9998150203477618
+validation,Brute Force -XSS,DoS attacks-SlowHTTPTest,source_port,1.0
+validation,Brute Force -XSS,DoS attacks-Slowloris,source_port,0.9997800263968324
+validation,Brute Force -XSS,FTP-BruteForce,source_port,1.0
+validation,Brute Force -XSS,Infilteration,source_port,0.9991864627399936
+validation,Brute Force -XSS,SQL Injection,source_port,1.0
+validation,Brute Force -XSS,SSH-Bruteforce,source_port,1.0
+validation,DDOS attack-HOIC,DDOS attack-LOIC-UDP,source_port,0.9999999999999999
+validation,DDOS attack-HOIC,DDoS attacks-LOIC-HTTP,source_port,0.998500709840916
+validation,DDOS attack-HOIC,DoS attacks-GoldenEye,source_port,0.9990891149233337
+validation,DDOS attack-HOIC,DoS attacks-Hulk,source_port,0.9990751017388088
+validation,DDOS attack-HOIC,DoS attacks-SlowHTTPTest,source_port,0.9992405183462286
+validation,DDOS attack-HOIC,DoS attacks-Slowloris,source_port,0.9993400791904972
+validation,DDOS attack-HOIC,FTP-BruteForce,source_port,0.9992748180570302
+validation,DDOS attack-HOIC,Infilteration,source_port,0.9978034493979825
+validation,DDOS attack-HOIC,SQL Injection,source_port,0.8510638297872339
+validation,DDOS attack-HOIC,SSH-Bruteforce,source_port,0.9994720726428042
+validation,DDOS attack-LOIC-UDP,DDoS attacks-LOIC-HTTP,source_port,0.992967931112261
+validation,DDOS attack-LOIC-UDP,DoS attacks-GoldenEye,source_port,0.9971155305905571
+validation,DDOS attack-LOIC-UDP,DoS attacks-Hulk,source_port,0.9973640399556049
+validation,DDOS attack-LOIC-UDP,DoS attacks-SlowHTTPTest,source_port,0.9976266198319647
+validation,DDOS attack-LOIC-UDP,DoS attacks-Slowloris,source_port,0.9995600527936647
+validation,DDOS attack-LOIC-UDP,FTP-BruteForce,source_port,0.9975395612649245
+validation,DDOS attack-LOIC-UDP,Infilteration,source_port,0.9936544093719493
+validation,DDOS attack-LOIC-UDP,SQL Injection,source_port,1.0
+validation,DDOS attack-LOIC-UDP,SSH-Bruteforce,source_port,0.9969380213282651
+validation,DDoS attacks-LOIC-HTTP,DoS attacks-GoldenEye,source_port,0.8681768166085135
+validation,DDoS attacks-LOIC-HTTP,DoS attacks-Hulk,source_port,0.8360046595169083
+validation,DDoS attacks-LOIC-HTTP,DoS attacks-SlowHTTPTest,source_port,0.9250170772432345
+validation,DDoS attacks-LOIC-HTTP,DoS attacks-Slowloris,source_port,0.9716872909030057
+validation,DDoS attacks-LOIC-HTTP,FTP-BruteForce,source_port,0.9248095059202786
+validation,DDoS attacks-LOIC-HTTP,Infilteration,source_port,0.6966529307545676
+validation,DDoS attacks-LOIC-HTTP,SQL Injection,source_port,0.9998009791824224
+validation,DDoS attacks-LOIC-HTTP,SSH-Bruteforce,source_port,0.8436112655373404
+validation,DoS attacks-GoldenEye,DoS attacks-Hulk,source_port,0.6092781126245537
+validation,DoS attacks-GoldenEye,DoS attacks-SlowHTTPTest,source_port,0.7997067544136818
+validation,DoS attacks-GoldenEye,DoS attacks-Slowloris,source_port,0.8263992167911157
+validation,DoS attacks-GoldenEye,FTP-BruteForce,source_port,0.7997353264415937
+validation,DoS attacks-GoldenEye,Infilteration,source_port,0.8761185921188728
+validation,DoS attacks-GoldenEye,SQL Injection,source_port,0.9998481858205557
+validation,DoS attacks-GoldenEye,SSH-Bruteforce,source_port,0.6303335390062018
+validation,DoS attacks-Hulk,DoS attacks-SlowHTTPTest,source_port,0.799898261191269
+validation,DoS attacks-Hulk,DoS attacks-Slowloris,source_port,0.7942614274374385
+validation,DoS attacks-Hulk,FTP-BruteForce,source_port,0.799898261191269
+validation,DoS attacks-Hulk,Infilteration,source_port,0.8282459715308309
+validation,DoS attacks-Hulk,SQL Injection,source_port,0.9998150203477617
+validation,DoS attacks-Hulk,SSH-Bruteforce,source_port,0.48362560938695853
+validation,DoS attacks-SlowHTTPTest,DoS attacks-Slowloris,source_port,0.868158533274863
+validation,DoS attacks-SlowHTTPTest,FTP-BruteForce,source_port,0.029446895513935537
+validation,DoS attacks-SlowHTTPTest,Infilteration,source_port,0.9302114087805428
+validation,DoS attacks-SlowHTTPTest,SQL Injection,source_port,0.9992405183462285
+validation,DoS attacks-SlowHTTPTest,SSH-Bruteforce,source_port,0.7983007159328466
+validation,DoS attacks-Slowloris,FTP-BruteForce,source_port,0.8701115551197699
+validation,DoS attacks-Slowloris,Infilteration,source_port,0.9659664042397568
+validation,DoS attacks-Slowloris,SQL Injection,source_port,0.9995600527936646
+validation,DoS attacks-Slowloris,SSH-Bruteforce,source_port,0.8036988406919625
+validation,FTP-BruteForce,Infilteration,source_port,0.9300638020035852
+validation,FTP-BruteForce,SQL Injection,source_port,0.9992748180570304
+validation,FTP-BruteForce,SSH-Bruteforce,source_port,0.798265979792033
+validation,Infilteration,SQL Injection,source_port,1.0
+validation,Infilteration,SSH-Bruteforce,source_port,0.8478790548488864
+validation,SQL Injection,SSH-Bruteforce,source_port,0.9999999999999999
+validation,Benign,Bot,destination_port,0.9997796500678843
+validation,Benign,Brute Force -Web,destination_port,0.9382233226032499
+validation,Benign,Brute Force -XSS,destination_port,0.9646123767610438
+validation,Benign,DDOS attack-HOIC,destination_port,0.9382335873516405
+validation,Benign,DDOS attack-LOIC-UDP,destination_port,0.9382335873516405
+validation,Benign,DDoS attacks-LOIC-HTTP,destination_port,0.9382335873516405
+validation,Benign,DoS attacks-GoldenEye,destination_port,0.9382335873516405
+validation,Benign,DoS attacks-Hulk,destination_port,0.9382335873516405
+validation,Benign,DoS attacks-SlowHTTPTest,destination_port,0.9999199349625544
+validation,Benign,DoS attacks-Slowloris,destination_port,0.9382335873516405
+validation,Benign,FTP-BruteForce,destination_port,0.9999199349625544
+validation,Benign,Infilteration,destination_port,0.40948064711973886
+validation,Benign,SQL Injection,destination_port,0.9382335873516405
+validation,Benign,SSH-Bruteforce,destination_port,0.9978847775150004
+validation,Bot,Brute Force -Web,destination_port,1.0
+validation,Bot,Brute Force -XSS,destination_port,1.0
+validation,Bot,DDOS attack-HOIC,destination_port,1.0
+validation,Bot,DDOS attack-LOIC-UDP,destination_port,1.0
+validation,Bot,DDoS attacks-LOIC-HTTP,destination_port,1.0
+validation,Bot,DoS attacks-GoldenEye,destination_port,1.0
+validation,Bot,DoS attacks-Hulk,destination_port,1.0
+validation,Bot,DoS attacks-SlowHTTPTest,destination_port,1.0
+validation,Bot,DoS attacks-Slowloris,destination_port,1.0
+validation,Bot,FTP-BruteForce,destination_port,1.0
+validation,Bot,Infilteration,destination_port,0.9999186462739995
+validation,Bot,SQL Injection,destination_port,1.0
+validation,Bot,SSH-Bruteforce,destination_port,1.0
+validation,Brute Force -Web,Brute Force -XSS,destination_port,0.026549247014021147
+validation,Brute Force -Web,DDOS attack-HOIC,destination_port,0.9380733944954128
+validation,Brute Force -Web,DDOS attack-LOIC-UDP,destination_port,0.9380733944954128
+validation,Brute Force -Web,DDoS attacks-LOIC-HTTP,destination_port,0.9380733944954128
+validation,Brute Force -Web,DoS attacks-GoldenEye,destination_port,0.9380733944954128
+validation,Brute Force -Web,DoS attacks-Hulk,destination_port,0.9380733944954128
+validation,Brute Force -Web,DoS attacks-SlowHTTPTest,destination_port,1.0
+validation,Brute Force -Web,DoS attacks-Slowloris,destination_port,0.9380733944954128
+validation,Brute Force -Web,FTP-BruteForce,destination_port,1.0
+validation,Brute Force -Web,Infilteration,destination_port,0.973153270419785
+validation,Brute Force -Web,SQL Injection,destination_port,0.9380733944954128
+validation,Brute Force -Web,SSH-Bruteforce,destination_port,1.0
+validation,Brute Force -XSS,DDOS attack-HOIC,destination_port,0.964622641509434
+validation,Brute Force -XSS,DDOS attack-LOIC-UDP,destination_port,0.964622641509434
+validation,Brute Force -XSS,DDoS attacks-LOIC-HTTP,destination_port,0.964622641509434
+validation,Brute Force -XSS,DoS attacks-GoldenEye,destination_port,0.964622641509434
+validation,Brute Force -XSS,DoS attacks-Hulk,destination_port,0.964622641509434
+validation,Brute Force -XSS,DoS attacks-SlowHTTPTest,destination_port,1.0
+validation,Brute Force -XSS,DoS attacks-Slowloris,destination_port,0.964622641509434
+validation,Brute Force -XSS,FTP-BruteForce,destination_port,1.0
+validation,Brute Force -XSS,Infilteration,destination_port,0.9731532704197849
+validation,Brute Force -XSS,SQL Injection,destination_port,0.964622641509434
+validation,Brute Force -XSS,SSH-Bruteforce,destination_port,1.0
+validation,DDOS attack-HOIC,DDOS attack-LOIC-UDP,destination_port,0.0
+validation,DDOS attack-HOIC,DDoS attacks-LOIC-HTTP,destination_port,0.0
+validation,DDOS attack-HOIC,DoS attacks-GoldenEye,destination_port,0.0
+validation,DDOS attack-HOIC,DoS attacks-Hulk,destination_port,0.0
+validation,DDOS attack-HOIC,DoS attacks-SlowHTTPTest,destination_port,1.0
+validation,DDOS attack-HOIC,DoS attacks-Slowloris,destination_port,0.0
+validation,DDOS attack-HOIC,FTP-BruteForce,destination_port,1.0
+validation,DDOS attack-HOIC,Infilteration,destination_port,0.9733159778717861
+validation,DDOS attack-HOIC,SQL Injection,destination_port,0.0
+validation,DDOS attack-HOIC,SSH-Bruteforce,destination_port,1.0
+validation,DDOS attack-LOIC-UDP,DDoS attacks-LOIC-HTTP,destination_port,0.0
+validation,DDOS attack-LOIC-UDP,DoS attacks-GoldenEye,destination_port,0.0
+validation,DDOS attack-LOIC-UDP,DoS attacks-Hulk,destination_port,0.0
+validation,DDOS attack-LOIC-UDP,DoS attacks-SlowHTTPTest,destination_port,1.0
+validation,DDOS attack-LOIC-UDP,DoS attacks-Slowloris,destination_port,0.0
+validation,DDOS attack-LOIC-UDP,FTP-BruteForce,destination_port,1.0
+validation,DDOS attack-LOIC-UDP,Infilteration,destination_port,0.9733159778717861
+validation,DDOS attack-LOIC-UDP,SQL Injection,destination_port,0.0
+validation,DDOS attack-LOIC-UDP,SSH-Bruteforce,destination_port,1.0
+validation,DDoS attacks-LOIC-HTTP,DoS attacks-GoldenEye,destination_port,0.0
+validation,DDoS attacks-LOIC-HTTP,DoS attacks-Hulk,destination_port,0.0
+validation,DDoS attacks-LOIC-HTTP,DoS attacks-SlowHTTPTest,destination_port,1.0
+validation,DDoS attacks-LOIC-HTTP,DoS attacks-Slowloris,destination_port,0.0
+validation,DDoS attacks-LOIC-HTTP,FTP-BruteForce,destination_port,1.0
+validation,DDoS attacks-LOIC-HTTP,Infilteration,destination_port,0.9733159778717861
+validation,DDoS attacks-LOIC-HTTP,SQL Injection,destination_port,0.0
+validation,DDoS attacks-LOIC-HTTP,SSH-Bruteforce,destination_port,1.0
+validation,DoS attacks-GoldenEye,DoS attacks-Hulk,destination_port,0.0
+validation,DoS attacks-GoldenEye,DoS attacks-SlowHTTPTest,destination_port,1.0
+validation,DoS attacks-GoldenEye,DoS attacks-Slowloris,destination_port,0.0
+validation,DoS attacks-GoldenEye,FTP-BruteForce,destination_port,1.0
+validation,DoS attacks-GoldenEye,Infilteration,destination_port,0.9733159778717861
+validation,DoS attacks-GoldenEye,SQL Injection,destination_port,0.0
+validation,DoS attacks-GoldenEye,SSH-Bruteforce,destination_port,1.0
+validation,DoS attacks-Hulk,DoS attacks-SlowHTTPTest,destination_port,1.0
+validation,DoS attacks-Hulk,DoS attacks-Slowloris,destination_port,0.0
+validation,DoS attacks-Hulk,FTP-BruteForce,destination_port,1.0
+validation,DoS attacks-Hulk,Infilteration,destination_port,0.9733159778717861
+validation,DoS attacks-Hulk,SQL Injection,destination_port,0.0
+validation,DoS attacks-Hulk,SSH-Bruteforce,destination_port,1.0
+validation,DoS attacks-SlowHTTPTest,DoS attacks-Slowloris,destination_port,1.0
+validation,DoS attacks-SlowHTTPTest,FTP-BruteForce,destination_port,0.0
+validation,DoS attacks-SlowHTTPTest,Infilteration,destination_port,0.9999999999999999
+validation,DoS attacks-SlowHTTPTest,SQL Injection,destination_port,1.0
+validation,DoS attacks-SlowHTTPTest,SSH-Bruteforce,destination_port,0.9997360363214022
+validation,DoS attacks-Slowloris,FTP-BruteForce,destination_port,1.0
+validation,DoS attacks-Slowloris,Infilteration,destination_port,0.9733159778717861
+validation,DoS attacks-Slowloris,SQL Injection,destination_port,0.0
+validation,DoS attacks-Slowloris,SSH-Bruteforce,destination_port,1.0
+validation,FTP-BruteForce,Infilteration,destination_port,0.9999999999999999
+validation,FTP-BruteForce,SQL Injection,destination_port,1.0
+validation,FTP-BruteForce,SSH-Bruteforce,destination_port,0.9997360363214022
+validation,Infilteration,SQL Injection,destination_port,0.9733159778717861
+validation,Infilteration,SSH-Bruteforce,destination_port,0.9983729254799868
+validation,SQL Injection,SSH-Bruteforce,destination_port,1.0
+validation,Benign,Bot,protocol_port_pair,0.9999760489204222
+validation,Benign,Brute Force -Web,protocol_port_pair,0.9998583464722113
+validation,Benign,Brute Force -XSS,protocol_port_pair,0.9999623625892349
+validation,Benign,DDOS attack-HOIC,protocol_port_pair,0.9997365381246441
+validation,Benign,DDOS attack-LOIC-UDP,protocol_port_pair,1.0
+validation,Benign,DDoS attacks-LOIC-HTTP,protocol_port_pair,0.9705762192833054
+validation,Benign,DoS attacks-GoldenEye,protocol_port_pair,0.9876747744492621
+validation,Benign,DoS attacks-Hulk,protocol_port_pair,0.9746664612228354
+validation,Benign,DoS attacks-SlowHTTPTest,protocol_port_pair,0.9999931568344064
+validation,Benign,DoS attacks-Slowloris,protocol_port_pair,0.9915616925064599
+validation,Benign,FTP-BruteForce,protocol_port_pair,0.9999931568344064
+validation,Benign,Infilteration,protocol_port_pair,0.844064046965168
+validation,Benign,SQL Injection,protocol_port_pair,0.9998768230193141
+validation,Benign,SSH-Bruteforce,protocol_port_pair,0.9995408235886656
+validation,Bot,Brute Force -Web,protocol_port_pair,1.0
+validation,Bot,Brute Force -XSS,protocol_port_pair,1.0
+validation,Bot,DDOS attack-HOIC,protocol_port_pair,1.0
+validation,Bot,DDOS attack-LOIC-UDP,protocol_port_pair,1.0000000000000002
+validation,Bot,DDoS attacks-LOIC-HTTP,protocol_port_pair,0.9999999999999999
+validation,Bot,DoS attacks-GoldenEye,protocol_port_pair,0.9999999999999999
+validation,Bot,DoS attacks-Hulk,protocol_port_pair,1.0
+validation,Bot,DoS attacks-SlowHTTPTest,protocol_port_pair,1.0
+validation,Bot,DoS attacks-Slowloris,protocol_port_pair,1.0
+validation,Bot,FTP-BruteForce,protocol_port_pair,1.0
+validation,Bot,Infilteration,protocol_port_pair,1.0
+validation,Bot,SQL Injection,protocol_port_pair,0.9999999999999999
+validation,Bot,SSH-Bruteforce,protocol_port_pair,1.0
+validation,Brute Force -Web,Brute Force -XSS,protocol_port_pair,0.059633027522935804
+validation,Brute Force -Web,DDOS attack-HOIC,protocol_port_pair,0.9380733944954129
+validation,Brute Force -Web,DDOS attack-LOIC-UDP,protocol_port_pair,1.0
+validation,Brute Force -Web,DDoS attacks-LOIC-HTTP,protocol_port_pair,0.9993896694927622
+validation,Brute Force -Web,DoS attacks-GoldenEye,protocol_port_pair,0.9995445574616669
+validation,Brute Force -Web,DoS attacks-Hulk,protocol_port_pair,0.9994450610432852
+validation,Brute Force -Web,DoS attacks-SlowHTTPTest,protocol_port_pair,1.0
+validation,Brute Force -Web,DoS attacks-Slowloris,protocol_port_pair,1.0
+validation,Brute Force -Web,FTP-BruteForce,protocol_port_pair,1.0
+validation,Brute Force -Web,Infilteration,protocol_port_pair,0.9999186462739993
+validation,Brute Force -Web,SQL Injection,protocol_port_pair,0.9977064220183485
+validation,Brute Force -Web,SSH-Bruteforce,protocol_port_pair,1.0
+validation,Brute Force -XSS,DDOS attack-HOIC,protocol_port_pair,0.9646226415094339
+validation,Brute Force -XSS,DDOS attack-LOIC-UDP,protocol_port_pair,1.0
+validation,Brute Force -XSS,DDoS attacks-LOIC-HTTP,protocol_port_pair,0.9993100611657313
+validation,Brute Force -XSS,DoS attacks-GoldenEye,protocol_port_pair,0.9996963716411114
+validation,Brute Force -XSS,DoS attacks-Hulk,protocol_port_pair,0.9998150203477618
+validation,Brute Force -XSS,DoS attacks-SlowHTTPTest,protocol_port_pair,1.0
+validation,Brute Force -XSS,DoS attacks-Slowloris,protocol_port_pair,0.9997800263968325
+validation,Brute Force -XSS,FTP-BruteForce,protocol_port_pair,1.0
+validation,Brute Force -XSS,Infilteration,protocol_port_pair,1.0
+validation,Brute Force -XSS,SQL Injection,protocol_port_pair,1.0
+validation,Brute Force -XSS,SSH-Bruteforce,protocol_port_pair,1.0
+validation,DDOS attack-HOIC,DDOS attack-LOIC-UDP,protocol_port_pair,0.9999999999999999
+validation,DDOS attack-HOIC,DDoS attacks-LOIC-HTTP,protocol_port_pair,0.998500709840916
+validation,DDOS attack-HOIC,DoS attacks-GoldenEye,protocol_port_pair,0.9990891149233339
+validation,DDOS attack-HOIC,DoS attacks-Hulk,protocol_port_pair,0.9990751017388089
+validation,DDOS attack-HOIC,DoS attacks-SlowHTTPTest,protocol_port_pair,1.0
+validation,DDOS attack-HOIC,DoS attacks-Slowloris,protocol_port_pair,0.9993400791904972
+validation,DDOS attack-HOIC,FTP-BruteForce,protocol_port_pair,1.0
+validation,DDOS attack-HOIC,Infilteration,protocol_port_pair,0.9999186462739993
+validation,DDOS attack-HOIC,SQL Injection,protocol_port_pair,0.8510638297872339
+validation,DDOS attack-HOIC,SSH-Bruteforce,protocol_port_pair,0.9999999999999998
+validation,DDOS attack-LOIC-UDP,DDoS attacks-LOIC-HTTP,protocol_port_pair,1.0
+validation,DDOS attack-LOIC-UDP,DoS attacks-GoldenEye,protocol_port_pair,0.9999999999999999
+validation,DDOS attack-LOIC-UDP,DoS attacks-Hulk,protocol_port_pair,1.0
+validation,DDOS attack-LOIC-UDP,DoS attacks-SlowHTTPTest,protocol_port_pair,1.0
+validation,DDOS attack-LOIC-UDP,DoS attacks-Slowloris,protocol_port_pair,1.0
+validation,DDOS attack-LOIC-UDP,FTP-BruteForce,protocol_port_pair,1.0
+validation,DDOS attack-LOIC-UDP,Infilteration,protocol_port_pair,1.0
+validation,DDOS attack-LOIC-UDP,SQL Injection,protocol_port_pair,1.0
+validation,DDOS attack-LOIC-UDP,SSH-Bruteforce,protocol_port_pair,1.0
+validation,DDoS attacks-LOIC-HTTP,DoS attacks-GoldenEye,protocol_port_pair,0.8685085179711427
+validation,DDoS attacks-LOIC-HTTP,DoS attacks-Hulk,protocol_port_pair,0.8364288507056565
+validation,DDoS attacks-LOIC-HTTP,DoS attacks-SlowHTTPTest,protocol_port_pair,1.0
+validation,DDoS attacks-LOIC-HTTP,DoS attacks-Slowloris,protocol_port_pair,0.9716872909030057
+validation,DDoS attacks-LOIC-HTTP,FTP-BruteForce,protocol_port_pair,1.0
+validation,DDoS attacks-LOIC-HTTP,Infilteration,protocol_port_pair,0.988064032477296
+validation,DDoS attacks-LOIC-HTTP,SQL Injection,protocol_port_pair,0.9998009791824226
+validation,DDoS attacks-LOIC-HTTP,SSH-Bruteforce,protocol_port_pair,1.0
+validation,DoS attacks-GoldenEye,DoS attacks-Hulk,protocol_port_pair,0.6092781126245537
+validation,DoS attacks-GoldenEye,DoS attacks-SlowHTTPTest,protocol_port_pair,1.0
+validation,DoS attacks-GoldenEye,DoS attacks-Slowloris,protocol_port_pair,0.8263992167911158
+validation,DoS attacks-GoldenEye,FTP-BruteForce,protocol_port_pair,0.9999999999999999
+validation,DoS attacks-GoldenEye,Infilteration,protocol_port_pair,0.9940125040936225
+validation,DoS attacks-GoldenEye,SQL Injection,protocol_port_pair,0.9998481858205555
+validation,DoS attacks-GoldenEye,SSH-Bruteforce,protocol_port_pair,1.0
+validation,DoS attacks-Hulk,DoS attacks-SlowHTTPTest,protocol_port_pair,1.0
+validation,DoS attacks-Hulk,DoS attacks-Slowloris,protocol_port_pair,0.7942614274374385
+validation,DoS attacks-Hulk,FTP-BruteForce,protocol_port_pair,1.0
+validation,DoS attacks-Hulk,Infilteration,protocol_port_pair,0.9910312859402581
+validation,DoS attacks-Hulk,SQL Injection,protocol_port_pair,0.9998150203477617
+validation,DoS attacks-Hulk,SSH-Bruteforce,protocol_port_pair,1.0
+validation,DoS attacks-SlowHTTPTest,DoS attacks-Slowloris,protocol_port_pair,1.0
+validation,DoS attacks-SlowHTTPTest,FTP-BruteForce,protocol_port_pair,0.029446895513935548
+validation,DoS attacks-SlowHTTPTest,Infilteration,protocol_port_pair,1.0
+validation,DoS attacks-SlowHTTPTest,SQL Injection,protocol_port_pair,1.0
+validation,DoS attacks-SlowHTTPTest,SSH-Bruteforce,protocol_port_pair,0.9997360363214023
+validation,DoS attacks-Slowloris,FTP-BruteForce,protocol_port_pair,1.0
+validation,DoS attacks-Slowloris,Infilteration,protocol_port_pair,0.9979661568499837
+validation,DoS attacks-Slowloris,SQL Injection,protocol_port_pair,0.9995600527936646
+validation,DoS attacks-Slowloris,SSH-Bruteforce,protocol_port_pair,1.0
+validation,FTP-BruteForce,Infilteration,protocol_port_pair,1.0
+validation,FTP-BruteForce,SQL Injection,protocol_port_pair,0.9999999999999998
+validation,FTP-BruteForce,SSH-Bruteforce,protocol_port_pair,0.9997360363214022
+validation,Infilteration,SQL Injection,protocol_port_pair,1.0
+validation,Infilteration,SSH-Bruteforce,protocol_port_pair,0.9994590849082765
+validation,SQL Injection,SSH-Bruteforce,protocol_port_pair,1.0

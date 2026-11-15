@@ -1,0 +1,49 @@
+{
+  "phase": "7A",
+  "seed": 20261115,
+  "population": "Full sealed train and validation, original multiplicities; no test records",
+  "taxonomy": "Benign plus every original Attack name in training; no merges",
+  "feature_contract": "nf-cse-netflow-v1-completed-flow-v1",
+  "fits": [
+    "direct_linear",
+    "family_linear",
+    "direct_histogram",
+    "family_histogram"
+  ],
+  "linear": {
+    "loss": "log_loss",
+    "alpha": 0.0001,
+    "epochs": 5,
+    "batch_rows": 50000,
+    "weighting": "original multiplicity; SGD order shuffled within compact shard batches, fixed seed"
+  },
+  "histogram": {
+    "max_iter": 60,
+    "max_leaf_nodes": 15,
+    "learning_rate": 0.1,
+    "l2_regularization": 1.0,
+    "min_samples_leaf": 20,
+    "early_stopping": false
+  },
+  "class_balance": false,
+  "abstention_score_cutoffs": [
+    0.0,
+    0.5,
+    0.7,
+    0.9,
+    0.95
+  ],
+  "selection": "No search or refit; report all four fits and both frozen binary modes. Validation reused exploratorily, no independent selection estimate.",
+  "criteria": {
+    "macro_f1_min": 0.8,
+    "benign_fpr_max": 0.01,
+    "attack_detection_recall_min": 0.9,
+    "supported_family_recall_min": 0.7,
+    "reliable_validation_groups_min": 100,
+    "reliable_validation_records_min": 100,
+    "peak_rss_mib_max": 12288,
+    "total_wall_seconds_max": 1800,
+    "all_family_go": "All original families must meet recall/support gates; rare families block an unqualified GO.",
+    "conditional_go": "At least half the attack families meet recall and support gates; an end-to-end candidate meets detection/FPR gates and resource budget. Unsupported families must remain explicit/experimental."
+  }
+}

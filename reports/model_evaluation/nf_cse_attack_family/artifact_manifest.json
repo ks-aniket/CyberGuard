@@ -1,0 +1,52 @@
+{
+  "status": "complete",
+  "artifacts": {
+    "abstention_analysis.json": "f9c7b6eaf2b35b2f07cc28bd74dba1f65b6af02b6db2a00eec2a1e8b079862ec",
+    "class_inventory.csv": "70662011a7077777bb1e2f51cb901b0dea272a9b56789fc9cdf5c95521f00c07",
+    "class_mapping.json": "864bd99884ef36b619d825d895428464c36ba972ce998513b476a09886be3eda",
+    "collision_analysis.json": "7563670ca63739b2600a2b7f090785bbfb9ec9a65769ce3b917fbec1aa125974",
+    "comparison.csv": "aa8a79cadc996c1fe07058dc597f58af7944c487abec5d960dcac91a6fd0d3f8",
+    "conditional_family_metrics.json": "ab72da4b7b7f0f468aaa343bcc9903880e16c78e4840857d6e65806390285a01",
+    "decision.json": "d7fe7a3ffd74f259019080c1d7ebe7ad70f2016d664b97cac22b43d032d43eef",
+    "direct_multiclass_metrics.json": "3928474c27670738c996fb81fc2480f25073f0b9c87cd42d553ffc39d3d892af",
+    "distribution_overlap.csv": "b635614a1f0d6a2d26f55a27c149b8e38791a153e73694fa6b58a2f527228006",
+    "experiment_plan.json": "5bb4d902e007beacba345aa4e7ba24e8a6b10e646faa4371ebc6277abfdbf770",
+    "family_error_decomposition.csv": "a00344613a3983ca9149495c1fb759a3f621aa3bb64ddb812a4464ceac7fc0a0",
+    "feasibility_report.md": "8cd84ef2e2b0cd1cdb1ae4b1bd7eb43ffb0230faa0bd42b7c4bc064158e76daa",
+    "feature_overlap.csv": "76b3313439442287b2f105fff1de07d6fcf49b931f1e44171e339cfe4bdaa4da",
+    "figures/counter_medians.svg": "26469269135cbfc749fd56a9522bac6d2b3c9f69b71bd680176bd8e5598dde39",
+    "figures/direct_histogram_confusion.svg": "b12a837dea0436a9ec7ca930eb2b0fae7a50116ded93ff2b5b9fafeb939b004f",
+    "figures/direct_linear_confusion.svg": "5bf7fa55f6aa2392ae0dbf016b18ed22930731d36db430eb8001f13598428afc",
+    "figures/family_histogram_high_sensitivity_confusion.svg": "cf1db7bf6f8d4b094d9e2e60092336d2a932f00c77e01ebc2e2cb65d69def11e",
+    "figures/family_histogram_standard_confusion.svg": "0cf9dde8661c5b9efad9daa09a6c669569a6a78d921b64e4238d057f357ab833",
+    "figures/family_linear_high_sensitivity_confusion.svg": "860cfc0f95d0a57d58d0caa23fc29e5115fcc4c786c0e2dfec5c0fe8696ffd4d",
+    "figures/family_linear_standard_confusion.svg": "6064ee2af7ecd214c13fa7b4d5516e54ba38d0dd3185c67fae8fa19166a3723a",
+    "figures/family_recall.svg": "9751d8ff5181f61caebbe4fc7f23c908bd0899e36409a13e8ef25b9feec0580e",
+    "hierarchical_metrics.json": "a42a209a8f55d6972db21ac242e2330e3725adc39d18bb69ab24c0d3e21e8444",
+    "integrity.json": "ed8812518a711026e73964432bb0646b9420f1843c5ae61866903db1b1cc3577",
+    "per_family_metrics.csv": "fb0802752633c57c6fca10051c0cd11f8c9cbf52294c7a6feaf2e04f1edb47b7",
+    "resources.json": "266da3f2c87928f6e8e85d6fe3e2b483689445041040f832df9885a8e4d395ae",
+    "software_verification.json": "7681ace761a3f07b0cfbf98e03df989b106845ca74743dc87a4edeca20653ee0",
+    "train_conditioned_distributions.csv": "3f54eb15f90b6cd72fe21b7bfa4cd37025e4a5623236c4cb8c0f06f7fad492eb",
+    "train_counter_distributions.csv": "ca4a9d8dca63add0b8b9c9d94140adf8a9dbe997e0367eecde7094e157b6979a",
+    "train_discrete_distributions.csv": "820d3dfea4d1aa49e497ad0089c32471a13d3b0de08c66e45d91f69ca227703b",
+    "train_relationships.csv": "ede62dcdaa42c8271d083ac6ee2c84aa990c645adbc3a61bef09346d9dadfed9",
+    "validation_conditioned_distributions.csv": "a32fc720606d4c59c734b9a5197607a910f528f82a1b34a6f151c2752e3e6157",
+    "validation_counter_distributions.csv": "ed8953117d3b8425367b182b5ef7361748809711add9a4811ff8edf3b3f8da86",
+    "validation_discrete_distributions.csv": "65fc42975153210f67a7e5cd6a9c1dfdcb8f7c68b87389f81eaef154b4f6531e",
+    "validation_relationships.csv": "8ba53627154c4af0069cfdc2646ce35fc01ca161374108dc5a08dd2d947ac926"
+  },
+  "reproducibility": "Deterministic arrays/scores/config/metrics; wall times/RSS vary. No experimental estimator registered or serialized.",
+  "software": {
+    "python": "3.13.12",
+    "numpy": "2.5.4",
+    "pandas": "3.1.1",
+    "sklearn": "1.9.1",
+    "joblib": "1.6.0",
+    "implementation_sha256": {
+      "attack_family.py": "6ceb35000cfbcf113ca3ef18559454a61a81e11d381e45b7b70408e9ab1e2688",
+      "study_attack_families.py": "381bbf2cf00701d9cc7160ef009caf1046aa5b2bf2745bef6d0b4eb3c4025d36",
+      "nf_cse.py": "874c4c27c20e92fd0ace11b6932e8db7f340ed0f8afde15e6eed4f16ad1fca78"
+    }
+  }
+}

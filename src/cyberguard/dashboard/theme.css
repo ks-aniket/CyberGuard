@@ -128,3 +128,9 @@ p,li,label {line-height:1.55;} [data-testid="stCaptionContainer"] {color:var(--c
 @media (prefers-reduced-motion:reduce) {
   *,*::before,*::after {animation:none!important; transition:none!important; scroll-behavior:auto!important;}
 }
+
+/* Simulation Lab only: compact monospace identity alongside the existing badge. */
+.cg-sim-status {display:flex; flex-wrap:wrap; align-items:center; gap:12px; margin:1rem 0;}
+.cg-sim-status > span:last-child {font:11px var(--cg-mono); color:var(--cg-secondary); overflow-wrap:anywhere;}
+[class*="st-key-metric_"][class*="_sim_"] [data-testid="stMetricLabel"] p {white-space:normal; overflow:visible; min-height:2.6em; line-height:1.3;}
+[class*="st-key-metric_purple_sim_1_Latency"] [data-testid="stMetricValue"] {font-size:clamp(.9rem,1.35vw,1.35rem);}

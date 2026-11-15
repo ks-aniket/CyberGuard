@@ -1,0 +1,2200 @@
+{
+  "audit_seconds": 2.773370822003926,
+  "build_seconds": 5.726202386998921,
+  "peak_rss_mib_linux": 607.4296875,
+  "profile_build_and_initial_audit_peak_rss_mib_linux": 567.16796875,
+  "profile_metadata": {
+    "artifacts": {
+      "labels.npy": {
+        "bytes": 2856125,
+        "sha256": "170e1beef34f2e43cc9daa49e0370c19c4ac6baed79deea6cbdac180717b4521"
+      },
+      "membership.sqlite": {
+        "bytes": 192937984,
+        "sha256": "9940ac47fe942b83c02a3c8eebbefd56a7817307ffa0b92ea0d04578a6d8600d"
+      },
+      "vectors.npy": {
+        "bytes": 159935960,
+        "sha256": "ad3bee38e91845d2a4947af0e66361669e40bd7e6374d58d234cdf9a30fcf032"
+      },
+      "weights.npy": {
+        "bytes": 22848104,
+        "sha256": "ce2ff516865670d6dc82f6b3fd300012e3a9015faf7c71b5595726a517f74751"
+      }
+    },
+    "compact_records": 2855997,
+    "contract": "nf-cse-netflow-v1-completed-flow-v1",
+    "feature_order": [
+      "PROTOCOL",
+      "L4_SRC_PORT",
+      "L4_DST_PORT",
+      "IN_BYTES",
+      "OUT_BYTES",
+      "IN_PKTS",
+      "OUT_PKTS"
+    ],
+    "generator_version": "nf-simulation-v1",
+    "method": "Multiplicity-weighted complete-vector anchors; synthetic mode shares one bounded scale across all four counters, retaining protocol/ports and structural zeros.",
+    "opened_source_files": [
+      "metadata/feature_contract.json",
+      "metadata/split_manifest.json",
+      "metadata/split_manifest.sha256",
+      "train/part-00000.npz",
+      "train/part-00001.npz",
+      "train/part-00002.npz",
+      "train/part-00003.npz",
+      "train/part-00004.npz",
+      "train/part-00005.npz",
+      "train/part-00006.npz",
+      "train/part-00007.npz",
+      "train/part-00008.npz",
+      "train/part-00009.npz",
+      "train/part-00010.npz",
+      "train/part-00011.npz",
+      "train/part-00012.npz",
+      "train/part-00013.npz",
+      "train/part-00014.npz",
+      "train/part-00015.npz",
+      "train/part-00016.npz",
+      "train/part-00017.npz",
+      "train/part-00018.npz",
+      "train/part-00019.npz",
+      "train/part-00020.npz",
+      "train/part-00021.npz",
+      "train/part-00022.npz",
+      "train/part-00023.npz",
+      "train/part-00024.npz",
+      "train/part-00025.npz",
+      "train/part-00026.npz",
+      "train/part-00027.npz",
+      "train/part-00028.npz",
+      "train/part-00029.npz",
+      "train/part-00030.npz",
+      "train/part-00031.npz",
+      "train/part-00032.npz",
+      "train/part-00033.npz",
+      "train/part-00034.npz",
+      "train/part-00035.npz",
+      "train/part-00036.npz",
+      "train/part-00037.npz",
+      "train/part-00038.npz",
+      "train/part-00039.npz",
+      "train/part-00040.npz",
+      "train/part-00041.npz",
+      "train/part-00042.npz",
+      "train/part-00043.npz",
+      "train/part-00044.npz",
+      "train/part-00045.npz",
+      "train/part-00046.npz",
+      "train/part-00047.npz",
+      "train/part-00048.npz",
+      "train/part-00049.npz",
+      "train/part-00050.npz",
+      "train/part-00051.npz",
+      "train/part-00052.npz",
+      "train/part-00053.npz",
+      "train/part-00054.npz",
+      "train/part-00055.npz",
+      "train/part-00056.npz",
+      "train/part-00057.npz"
+    ],
+    "preprocessing_version": "nf-cse-normalization-v1",
+    "profile_original_rows": {
+      "attack": 612207,
+      "benign": 4426247
+    },
+    "profile_version": "nf-training-profiles-v1",
+    "representation": "Complete canonical vectors exported to API scalars; nontransport ports -3 -> raw 0; sentinel -4 -> raw -1. Model information preserved, discarded raw ports unrecoverable. No excluded rows; unsupported statuses fail closed.",
+    "software": {
+      "numpy": "2.5.4",
+      "python": "3.13.12"
+    },
+    "source_identity": {
+      "dictionary_sha256": "778271c208e0eb0c5de21f43ac6b13dea3e7b78625349fe915b36e6f814bcc39",
+      "feature_contract_sha256": "b0c705300f3348fa06c3f39774cfa175124e9b36f401615141a6001dedc42d46",
+      "implementation_sha256": {
+        "nf_cse.py": "874c4c27c20e92fd0ace11b6932e8db7f340ed0f8afde15e6eed4f16ad1fca78",
+        "nf_cse_preparation.py": "47408c7f8fe6ea799c5568e52fa36f1ae5c7c820d955a00582d007d07d741907"
+      },
+      "preprocessing_version": "nf-cse-normalization-v1",
+      "schema_version": "nf-cse-netflow-v1-completed-flow-v1",
+      "seed": 20261115,
+      "source_sha256": "ed3387646fda24084889f07788cd22da2978b860f5b3d2d6f1210a4e3d7998e0",
+      "split_method": "sha256(schema_version,seed,canonical_integer_vector); first64; <floor(3*2^64/5) train; <floor(4*2^64/5) validation; else test",
+      "storage_version": "nf-cse-compact-npz-v1"
+    },
+    "source_manifest_sha256": "1eda7639ceb8e37ab4da75c80c7d209557a9bfb35cb8ccbaea8f7a49299201ce",
+    "training_artifacts": {
+      "train/part-00000.npz": {
+        "bytes": 2083270,
+        "sha256": "5b44720c793db43d8a58cef371ca97fccd2df51b4d8566ef1021c511769d280c"
+      },
+      "train/part-00001.npz": {
+        "bytes": 2071239,
+        "sha256": "036ea5ff4858dea9f9d7c2c51d4f298dfa2e473b417d6d984473c3700c8041c3"
+      },
+      "train/part-00002.npz": {
+        "bytes": 2073025,
+        "sha256": "6999ff2afd501535afdd300b31d5654572fd97b77139f4567bb731b41b6bb950"
+      },
+      "train/part-00003.npz": {
+        "bytes": 2071509,
+        "sha256": "3d38c0865cb5db39120083f11b8415bb349cc077ccfbedc5495a1746e46fa0b6"
+      },
+      "train/part-00004.npz": {
+        "bytes": 2078202,
+        "sha256": "a8e6b3b36479912dbe289657bf4b531667df38a62a064c2eb7b9e4a7207cfaa2"
+      },
+      "train/part-00005.npz": {
+        "bytes": 2078882,
+        "sha256": "d69057e955da99ecc89e5855906018d98de6b63d486f078fd61baed2e7182e8d"
+      },
+      "train/part-00006.npz": {
+        "bytes": 2080190,
+        "sha256": "3ac466bd44807f40f25926e1d7466305bc2871f80119ec0f9577ea316e98c017"
+      },
+      "train/part-00007.npz": {
+        "bytes": 2070298,
+        "sha256": "313f47433e8d09aadc416342cc54d7d8b18c834586e1e3db30bfd96fe5ebbab2"
+      },
+      "train/part-00008.npz": {
+        "bytes": 2079699,
+        "sha256": "62fb2a0593416d94c7ed1c141ab121d8936bd4d5f3169678da6f943e92de39c1"
+      },
+      "train/part-00009.npz": {
+        "bytes": 2080037,
+        "sha256": "b0a6c264885265fd5081550e60da21eaaa1565138b250208d5c5ee6fc1664acb"
+      },
+      "train/part-00010.npz": {
+        "bytes": 2078941,
+        "sha256": "6a76e75e04f6ef81f4a4db640cc562f9ff3bf001c5f690d6d696aad8f6df9262"
+      },
+      "train/part-00011.npz": {
+        "bytes": 2080098,
+        "sha256": "ccdfb02804d78b8596b29aa090c821873b56e45d18c69cc5d62cf96db3527d8d"
+      },
+      "train/part-00012.npz": {
+        "bytes": 2079546,
+        "sha256": "093ca9febde4fc607c602d5e9c0b70cbf9967e45ef589af76b3d33e46648eb9f"
+      },
+      "train/part-00013.npz": {
+        "bytes": 2071795,
+        "sha256": "ab4342de6ec7ca8b5ce2482855c925b4a3a0546c7cb99c89a86f6d2d5098b82b"
+      },
+      "train/part-00014.npz": {
+        "bytes": 2077323,
+        "sha256": "4fc53b63bcc9d8723c39eedbb9ea1fc168586120a80cbe826720b2d9fdc80859"
+      },
+      "train/part-00015.npz": {
+        "bytes": 2070298,
+        "sha256": "20176c0830d2767eed63dbd6f0546b4062e925abf872243e6b9e062f1540f58a"
+      },
+      "train/part-00016.npz": {
+        "bytes": 2077831,
+        "sha256": "104599e809c8b27deda2c5194ae16c0ef8fc4c8cb0789f305d50888f936d30f6"
+      },
+      "train/part-00017.npz": {
+        "bytes": 2071801,
+        "sha256": "49b88fc163ff6583b17a7365c017bed81e99fbeadbdb035b8e605597cc596c30"
+      },
+      "train/part-00018.npz": {
+        "bytes": 2070360,
+        "sha256": "7c54c267a98044c40cbfbfc92a25d785f4fc9c9c9fe3131c74ee8c44c540c07c"
+      },
+      "train/part-00019.npz": {
+        "bytes": 2078544,
+        "sha256": "5be009a6611b108e0d78ad9bd0c6a8f4f7a662eb74845fda3a1c1c10a1d4d864"
+      },
+      "train/part-00020.npz": {
+        "bytes": 2091583,
+        "sha256": "b777fbeb56f49cb077689703089f3bb4d2c62055481fdc3954e722bfc4f77346"
+      },
+      "train/part-00021.npz": {
+        "bytes": 2090259,
+        "sha256": "1ca6b5b37fbe3105c06e3fbeee9e39bcbfe49e33b00360650601557257809ce4"
+      },
+      "train/part-00022.npz": {
+        "bytes": 2040063,
+        "sha256": "1916c19bc6f223a3fa918d86dbcb1101a151f32706289ea2d807015da65df0e6"
+      },
+      "train/part-00023.npz": {
+        "bytes": 2094488,
+        "sha256": "4f341c39a5b734ae7d9871e46b144d3142e6359d8218973d23179e8c7b49c9de"
+      },
+      "train/part-00024.npz": {
+        "bytes": 2083838,
+        "sha256": "a55688024390571f562b5c3a213ec592841b0fa9733b87ec21b7f88020ae6749"
+      },
+      "train/part-00025.npz": {
+        "bytes": 2063940,
+        "sha256": "1fe8b4e46627121fb1520c9b03245805cbe455fe23d0c63f5780b769e6ebb454"
+      },
+      "train/part-00026.npz": {
+        "bytes": 2112610,
+        "sha256": "71ac95e4eb10ad7b56dfda876a2715da9a3413354374adc54596e0b3f41d74cf"
+      },
+      "train/part-00027.npz": {
+        "bytes": 2110935,
+        "sha256": "488b14fbacaa260366a6304fb9774210db1608bf59e748f1fcf2a7f812957674"
+      },
+      "train/part-00028.npz": {
+        "bytes": 2129968,
+        "sha256": "63ef02915a4b3e3a6ec7d0b41142e32db13025ca527910de7dde8ba83036759b"
+      },
+      "train/part-00029.npz": {
+        "bytes": 2117857,
+        "sha256": "b8870c5bac2a77245047b97622014ffc66345cdd672711a9b1087377f18e5959"
+      },
+      "train/part-00030.npz": {
+        "bytes": 2107291,
+        "sha256": "c60f64d2020b887078d7b3faa9a5dc1846432ae04cf6a8ed9b4ea85e04c6d4d2"
+      },
+      "train/part-00031.npz": {
+        "bytes": 2202786,
+        "sha256": "e6815e320984d5eaca1bdc2f1db0709d54bc64fc06907c16f25e5a8dc27382d5"
+      },
+      "train/part-00032.npz": {
+        "bytes": 2239532,
+        "sha256": "8554e0da82824e5e8db2d5f58c113379b3d508fa4cb1f9adc20fa631618f38cd"
+      },
+      "train/part-00033.npz": {
+        "bytes": 2231349,
+        "sha256": "6ace65b9397749a41198e1029c32bc4466742358c9063edcf13c3cd2a5749476"
+      },
+      "train/part-00034.npz": {
+        "bytes": 2244084,
+        "sha256": "f2a89a39cd358d14c9312742120c9a906c9ae02ec8103719bd01b12c85081f55"
+      },
+      "train/part-00035.npz": {
+        "bytes": 2234984,
+        "sha256": "59097b9d0767ff7fedf2b2a0c09d8a523e5b48d2735e558f8d17af3a9c9901ad"
+      },
+      "train/part-00036.npz": {
+        "bytes": 2232482,
+        "sha256": "02861d920ea51547d08b67e119ff4e00f8f6259a20961cfa671556ff19f3b490"
+      },
+      "train/part-00037.npz": {
+        "bytes": 2226537,
+        "sha256": "ae65bdb5b261302bd7c87c5312d9315f5e3d05f33485683cbc8c30a99a989301"
+      },
+      "train/part-00038.npz": {
+        "bytes": 2223873,
+        "sha256": "0bccfd4eb89d56917fac2bb11c5a5cb03a58d628147bfde6a967d5ea65ea2c8c"
+      },
+      "train/part-00039.npz": {
+        "bytes": 2228783,
+        "sha256": "0dfba07b13dfabd5d89f1b3c16ee3a1a6c5c0701a121bd8bb5e433d055e820d7"
+      },
+      "train/part-00040.npz": {
+        "bytes": 2222814,
+        "sha256": "254b0c0bccec1b8ca5576008d6ad521d4c49201132d5392f4baa5d9451e0db4a"
+      },
+      "train/part-00041.npz": {
+        "bytes": 2224070,
+        "sha256": "596206b23b64faee3cfa6b8ba9615c2f933426ad5fddd7411a0a2bf7fb0ac347"
+      },
+      "train/part-00042.npz": {
+        "bytes": 2221247,
+        "sha256": "9a58defb4592c30107e73d80bbe85aac9a458e4c2907bcf88a5e677a368d53bc"
+      },
+      "train/part-00043.npz": {
+        "bytes": 2217360,
+        "sha256": "350577fdc01ad7bad666fbee2846801db2c3038a6ab1d3feda91f7b356e085f4"
+      },
+      "train/part-00044.npz": {
+        "bytes": 2210914,
+        "sha256": "c4461edd6cfad1457f8741db7f3e914e7b4b9bfc8578800104622a44cf005fe3"
+      },
+      "train/part-00045.npz": {
+        "bytes": 2190840,
+        "sha256": "eb0f2d7a6f5369a1896e0d7bb2d6f6d14e26f9550d59707e7ddaca99579bae4b"
+      },
+      "train/part-00046.npz": {
+        "bytes": 2185336,
+        "sha256": "380f201606df9fc908a1146812b416b5bcadcdf8bd2f102e7a293f1fa2cee348"
+      },
+      "train/part-00047.npz": {
+        "bytes": 2164292,
+        "sha256": "d37196102e7997ece3298661728672b832c15d3e8ae75b7b614f41111a5ba497"
+      },
+      "train/part-00048.npz": {
+        "bytes": 2126062,
+        "sha256": "1a286e2a59349b737198a39dbb1c306c5fcd713b60c8067424d0e9e8bc3f66a3"
+      },
+      "train/part-00049.npz": {
+        "bytes": 2122677,
+        "sha256": "893576b8e0a39b6e7187c3867c8683e549bea43b74c13e3af90871dc6d6bf275"
+      },
+      "train/part-00050.npz": {
+        "bytes": 2107840,
+        "sha256": "6047d18fee207480bd340f6553abd7e4f7fbc63a4cd7efc3777f5938c38c924b"
+      },
+      "train/part-00051.npz": {
+        "bytes": 2118113,
+        "sha256": "443dd4280a49f6861d6830964ef27c080efd9d51d958a72bc6ba7b14f330e171"
+      },
+      "train/part-00052.npz": {
+        "bytes": 2109843,
+        "sha256": "e7b4280aa2cbfa4c7867dcea1fd12ce16ac847158864d0deb2541358ac47cf6b"
+      },
+      "train/part-00053.npz": {
+        "bytes": 2101284,
+        "sha256": "276d790492b0c8011d552d63624e1bf1a1f44bbd13abe68bd054a5de6836447c"
+      },
+      "train/part-00054.npz": {
+        "bytes": 2103450,
+        "sha256": "264cca53a6e5fb39886845ae8c830e738c6aa535f585f3de8cd2d609725565ce"
+      },
+      "train/part-00055.npz": {
+        "bytes": 2025627,
+        "sha256": "164ac4fdc884572605e8e6d1a0d03eb2b70f797f4c90f9b382e37a2e98eb7837"
+      },
+      "train/part-00056.npz": {
+        "bytes": 2047105,
+        "sha256": "1ff726326931f7247fe4b69f98336531ee47e6214081a9a2acaa4bf9d58eaf75"
+      },
+      "train/part-00057.npz": {
+        "bytes": 252575,
+        "sha256": "94779ffb9d687fe43b70bd6eeb8503226e76da046ba082583737a288e5f0bf71"
+      }
+    },
+    "unique_training_vectors": 2836328,
+    "weighted_protocol_counts": {
+      "attack": {
+        "17": 24464,
+        "6": 587743
+      },
+      "benign": {
+        "1": 6448,
+        "17": 1284997,
+        "2": 5569,
+        "47": 5,
+        "58": 5351,
+        "6": 3123877
+      }
+    }
+  },
+  "profiles": {
+    "attack": {
+      "full_training_discrete": {
+        "L4_DST_PORT": {
+          "top_10": [
+            [
+              80,
+              327961
+            ],
+            [
+              21,
+              179579
+            ],
+            [
+              22,
+              56399
+            ],
+            [
+              53,
+              19805
+            ],
+            [
+              8080,
+              9487
+            ],
+            [
+              443,
+              8805
+            ],
+            [
+              500,
+              2439
+            ],
+            [
+              3389,
+              2108
+            ],
+            [
+              445,
+              968
+            ],
+            [
+              123,
+              500
+            ]
+          ],
+          "unique": 1233
+        },
+        "L4_SRC_PORT": {
+          "top_10": [
+            [
+              1024,
+              1624
+            ],
+            [
+              1028,
+              810
+            ],
+            [
+              58834,
+              658
+            ],
+            [
+              58692,
+              649
+            ],
+            [
+              33918,
+              607
+            ],
+            [
+              58829,
+              604
+            ],
+            [
+              58179,
+              576
+            ],
+            [
+              49671,
+              534
+            ],
+            [
+              123,
+              498
+            ],
+            [
+              68,
+              308
+            ]
+          ],
+          "unique": 24966
+        },
+        "PROTOCOL": {
+          "top_10": [
+            [
+              6,
+              587743
+            ],
+            [
+              17,
+              24464
+            ]
+          ],
+          "unique": 2
+        }
+      },
+      "full_weighted_counter_means": {
+        "IN_BYTES": 16559.075833827446,
+        "IN_PKTS": 262.1324895011001,
+        "OUT_BYTES": 147.23128124964268,
+        "OUT_PKTS": 0.35782504937055604
+      },
+      "full_weighted_counter_pearson": [
+        [
+          0.9999999999999998,
+          0.00016761999907601683,
+          0.9999757961675267,
+          -0.002158313154980844
+        ],
+        [
+          0.00016761999907601686,
+          1.0,
+          -0.0005180270401285484,
+          0.9459725759824335
+        ],
+        [
+          0.9999757961675267,
+          -0.0005180270401285485,
+          1.0000000000000002,
+          -0.0028387231498909924
+        ],
+        [
+          -0.0021583131549808435,
+          0.9459725759824335,
+          -0.0028387231498909924,
+          0.9999999999999998
+        ]
+      ],
+      "modes": {
+        "empirical": {
+          "IN_BYTES": {
+            "mean": 14276.6196,
+            "quantiles_p0_p50_p90_p99_p100": [
+              40.0,
+              192.0,
+              3272.0,
+              19054.050000000003,
+              7345380.0
+            ]
+          },
+          "IN_PKTS": {
+            "mean": 223.9936,
+            "quantiles_p0_p50_p90_p99_p100": [
+              1.0,
+              4.0,
+              26.0,
+              148.0,
+              122423.0
+            ]
+          },
+          "L4_DST_PORT": {
+            "top_10": [
+              [
+                80,
+                2747
+              ],
+              [
+                21,
+                1436
+              ],
+              [
+                22,
+                445
+              ],
+              [
+                53,
+                148
+              ],
+              [
+                443,
+                76
+              ],
+              [
+                8080,
+                62
+              ],
+              [
+                500,
+                26
+              ],
+              [
+                3389,
+                17
+              ],
+              [
+                445,
+                4
+              ],
+              [
+                123,
+                4
+              ]
+            ],
+            "unique": 43
+          },
+          "L4_SRC_PORT": {
+            "top_10": [
+              [
+                1024,
+                14
+              ],
+              [
+                1028,
+                11
+              ],
+              [
+                49671,
+                8
+              ],
+              [
+                58692,
+                7
+              ],
+              [
+                33918,
+                6
+              ],
+              [
+                50913,
+                4
+              ],
+              [
+                58834,
+                4
+              ],
+              [
+                38454,
+                4
+              ],
+              [
+                56536,
+                4
+              ],
+              [
+                58179,
+                4
+              ]
+            ],
+            "unique": 4364
+          },
+          "OUT_BYTES": {
+            "mean": 170.2186,
+            "quantiles_p0_p50_p90_p99_p100": [
+              0.0,
+              0.0,
+              0.0,
+              1873.0,
+              399805.0
+            ]
+          },
+          "OUT_PKTS": {
+            "mean": 0.3954,
+            "quantiles_p0_p50_p90_p99_p100": [
+              0.0,
+              0.0,
+              0.0,
+              7.010000000000218,
+              298.0
+            ]
+          },
+          "PROTOCOL": {
+            "top_10": [
+              [
+                6,
+                4810
+              ],
+              [
+                17,
+                190
+              ]
+            ],
+            "unique": 2
+          },
+          "counter_correlation_order": [
+            "IN_BYTES",
+            "OUT_BYTES",
+            "IN_PKTS",
+            "OUT_PKTS"
+          ],
+          "counter_pearson": [
+            [
+              1.0000000000000002,
+              -0.00040892702332310404,
+              0.9999673893613918,
+              -0.002267841727587849
+            ],
+            [
+              -0.00040892702332310404,
+              0.9999999999999999,
+              -0.0007983949976030436,
+              0.9183894278287796
+            ],
+            [
+              0.9999673893613918,
+              -0.0007983949976030437,
+              1.0,
+              -0.003040305461759022
+            ],
+            [
+              -0.0022678417275878485,
+              0.9183894278287797,
+              -0.0030403054617590226,
+              1.0
+            ]
+          ],
+          "discrete_total_variation_vs_full_training": {
+            "L4_DST_PORT": 0.021650448622769745,
+            "L4_SRC_PORT": 0.7618233920879702,
+            "PROTOCOL": 0.0019603402117257633
+          },
+          "duplicate_rate": 0.04600000000000004,
+          "invalid_rate": 0.0,
+          "max_counter_correlation_difference_vs_full_training": 0.027583148153653814,
+          "max_counter_correlation_difference_vs_paired_anchors": 0.0,
+          "max_counter_correlation_difference_vs_reference_sample": 0.06316166459479522,
+          "novel_rate_all_training": 0.0,
+          "source_composition": {
+            "attack": 5000
+          }
+        },
+        "synthetic": {
+          "IN_BYTES": {
+            "mean": 14301.6636,
+            "quantiles_p0_p50_p90_p99_p100": [
+              36.0,
+              203.0,
+              3427.0,
+              19722.02,
+              7783468.0
+            ]
+          },
+          "IN_PKTS": {
+            "mean": 224.4054,
+            "quantiles_p0_p50_p90_p99_p100": [
+              1.0,
+              4.0,
+              26.0,
+              153.01000000000022,
+              129724.0
+            ]
+          },
+          "L4_DST_PORT": {
+            "top_10": [
+              [
+                80,
+                2747
+              ],
+              [
+                21,
+                1436
+              ],
+              [
+                22,
+                445
+              ],
+              [
+                53,
+                148
+              ],
+              [
+                443,
+                76
+              ],
+              [
+                8080,
+                62
+              ],
+              [
+                500,
+                26
+              ],
+              [
+                3389,
+                17
+              ],
+              [
+                445,
+                4
+              ],
+              [
+                123,
+                4
+              ]
+            ],
+            "unique": 43
+          },
+          "L4_SRC_PORT": {
+            "top_10": [
+              [
+                1024,
+                14
+              ],
+              [
+                1028,
+                11
+              ],
+              [
+                49671,
+                8
+              ],
+              [
+                58692,
+                7
+              ],
+              [
+                33918,
+                6
+              ],
+              [
+                50913,
+                4
+              ],
+              [
+                58834,
+                4
+              ],
+              [
+                38454,
+                4
+              ],
+              [
+                56536,
+                4
+              ],
+              [
+                58179,
+                4
+              ]
+            ],
+            "unique": 4364
+          },
+          "OUT_BYTES": {
+            "mean": 167.4504,
+            "quantiles_p0_p50_p90_p99_p100": [
+              0.0,
+              0.0,
+              0.0,
+              1819.1600000000035,
+              392257.0
+            ]
+          },
+          "OUT_PKTS": {
+            "mean": 0.3922,
+            "quantiles_p0_p50_p90_p99_p100": [
+              0.0,
+              0.0,
+              0.0,
+              8.0,
+              292.0
+            ]
+          },
+          "PROTOCOL": {
+            "top_10": [
+              [
+                6,
+                4810
+              ],
+              [
+                17,
+                190
+              ]
+            ],
+            "unique": 2
+          },
+          "counter_correlation_order": [
+            "IN_BYTES",
+            "OUT_BYTES",
+            "IN_PKTS",
+            "OUT_PKTS"
+          ],
+          "counter_pearson": [
+            [
+              0.9999999999999998,
+              -0.00044300240670755995,
+              0.9999678106002501,
+              -0.0023417977598621186
+            ],
+            [
+              -0.00044300240670756,
+              0.9999999999999999,
+              -0.0008120167350567062,
+              0.9169808080719316
+            ],
+            [
+              0.9999678106002502,
+              -0.0008120167350567061,
+              1.0000000000000002,
+              -0.0030821328139575875
+            ],
+            [
+              -0.002341797759862118,
+              0.9169808080719316,
+              -0.003082132813957588,
+              1.0000000000000002
+            ]
+          ],
+          "discrete_total_variation_vs_full_training": {
+            "L4_DST_PORT": 0.021650448622769745,
+            "L4_SRC_PORT": 0.7618233920879702,
+            "PROTOCOL": 0.0019603402117257633
+          },
+          "duplicate_rate": 0.0016000000000000458,
+          "invalid_rate": 0.0,
+          "max_counter_correlation_difference_vs_full_training": 0.028991767910501842,
+          "max_counter_correlation_difference_vs_paired_anchors": 0.0014086197568481396,
+          "max_counter_correlation_difference_vs_reference_sample": 0.06457028435164325,
+          "novel_rate_all_training": 0.9516,
+          "source_composition": {
+            "attack": 5000
+          }
+        }
+      },
+      "paired_anchor_reference": {
+        "IN_BYTES": {
+          "mean": 14276.6196,
+          "quantiles_p0_p50_p90_p99_p100": [
+            40.0,
+            192.0,
+            3272.0,
+            19054.050000000003,
+            7345380.0
+          ]
+        },
+        "IN_PKTS": {
+          "mean": 223.9936,
+          "quantiles_p0_p50_p90_p99_p100": [
+            1.0,
+            4.0,
+            26.0,
+            148.0,
+            122423.0
+          ]
+        },
+        "L4_DST_PORT": {
+          "top_10": [
+            [
+              80,
+              2747
+            ],
+            [
+              21,
+              1436
+            ],
+            [
+              22,
+              445
+            ],
+            [
+              53,
+              148
+            ],
+            [
+              443,
+              76
+            ],
+            [
+              8080,
+              62
+            ],
+            [
+              500,
+              26
+            ],
+            [
+              3389,
+              17
+            ],
+            [
+              445,
+              4
+            ],
+            [
+              123,
+              4
+            ]
+          ],
+          "unique": 43
+        },
+        "L4_SRC_PORT": {
+          "top_10": [
+            [
+              1024,
+              14
+            ],
+            [
+              1028,
+              11
+            ],
+            [
+              49671,
+              8
+            ],
+            [
+              58692,
+              7
+            ],
+            [
+              33918,
+              6
+            ],
+            [
+              50913,
+              4
+            ],
+            [
+              58834,
+              4
+            ],
+            [
+              38454,
+              4
+            ],
+            [
+              56536,
+              4
+            ],
+            [
+              58179,
+              4
+            ]
+          ],
+          "unique": 4364
+        },
+        "OUT_BYTES": {
+          "mean": 170.2186,
+          "quantiles_p0_p50_p90_p99_p100": [
+            0.0,
+            0.0,
+            0.0,
+            1873.0,
+            399805.0
+          ]
+        },
+        "OUT_PKTS": {
+          "mean": 0.3954,
+          "quantiles_p0_p50_p90_p99_p100": [
+            0.0,
+            0.0,
+            0.0,
+            7.010000000000218,
+            298.0
+          ]
+        },
+        "PROTOCOL": {
+          "top_10": [
+            [
+              6,
+              4810
+            ],
+            [
+              17,
+              190
+            ]
+          ],
+          "unique": 2
+        },
+        "counter_correlation_order": [
+          "IN_BYTES",
+          "OUT_BYTES",
+          "IN_PKTS",
+          "OUT_PKTS"
+        ],
+        "counter_pearson": [
+          [
+            1.0000000000000002,
+            -0.00040892702332310404,
+            0.9999673893613918,
+            -0.002267841727587849
+          ],
+          [
+            -0.00040892702332310404,
+            0.9999999999999999,
+            -0.0007983949976030436,
+            0.9183894278287796
+          ],
+          [
+            0.9999673893613918,
+            -0.0007983949976030437,
+            1.0,
+            -0.003040305461759022
+          ],
+          [
+            -0.0022678417275878485,
+            0.9183894278287797,
+            -0.0030403054617590226,
+            1.0
+          ]
+        ]
+      },
+      "weighted_training_reference_sample": {
+        "IN_BYTES": {
+          "mean": 8070.4314,
+          "quantiles_p0_p50_p90_p99_p100": [
+            40.0,
+            192.0,
+            3236.0,
+            19137.03,
+            8324580.0
+          ]
+        },
+        "IN_PKTS": {
+          "mean": 120.9004,
+          "quantiles_p0_p50_p90_p99_p100": [
+            1.0,
+            4.0,
+            25.0,
+            148.0,
+            138743.0
+          ]
+        },
+        "L4_DST_PORT": {
+          "top_10": [
+            [
+              80,
+              2639
+            ],
+            [
+              21,
+              1497
+            ],
+            [
+              22,
+              450
+            ],
+            [
+              53,
+              154
+            ],
+            [
+              8080,
+              91
+            ],
+            [
+              443,
+              77
+            ],
+            [
+              500,
+              26
+            ],
+            [
+              3389,
+              17
+            ],
+            [
+              445,
+              6
+            ],
+            [
+              135,
+              3
+            ]
+          ],
+          "unique": 49
+        },
+        "L4_SRC_PORT": {
+          "top_10": [
+            [
+              1024,
+              15
+            ],
+            [
+              1028,
+              11
+            ],
+            [
+              58829,
+              9
+            ],
+            [
+              58692,
+              8
+            ],
+            [
+              58834,
+              6
+            ],
+            [
+              58179,
+              5
+            ],
+            [
+              45420,
+              4
+            ],
+            [
+              57596,
+              4
+            ],
+            [
+              42470,
+              4
+            ],
+            [
+              37930,
+              4
+            ]
+          ],
+          "unique": 4343
+        },
+        "OUT_BYTES": {
+          "mean": 326.6518,
+          "quantiles_p0_p50_p90_p99_p100": [
+            0.0,
+            0.0,
+            0.0,
+            1429.2100000000046,
+            634164.0
+          ]
+        },
+        "OUT_PKTS": {
+          "mean": 0.482,
+          "quantiles_p0_p50_p90_p99_p100": [
+            0.0,
+            0.0,
+            0.0,
+            7.0,
+            447.0
+          ]
+        },
+        "PROTOCOL": {
+          "top_10": [
+            [
+              6,
+              4812
+            ],
+            [
+              17,
+              188
+            ]
+          ],
+          "unique": 2
+        },
+        "counter_correlation_order": [
+          "IN_BYTES",
+          "OUT_BYTES",
+          "IN_PKTS",
+          "OUT_PKTS"
+        ],
+        "counter_pearson": [
+          [
+            1.0000000000000002,
+            0.0010540025972937117,
+            0.9999493942298546,
+            -0.00012799941682337072
+          ],
+          [
+            0.0010540025972937115,
+            1.0,
+            0.00027338936560390714,
+            0.9815510924235749
+          ],
+          [
+            0.9999493942298547,
+            0.0002733893656039071,
+            1.0,
+            -0.0007493120550343797
+          ],
+          [
+            -0.00012799941682337072,
+            0.9815510924235749,
+            -0.0007493120550343797,
+            0.9999999999999999
+          ]
+        ]
+      }
+    },
+    "benign": {
+      "full_training_discrete": {
+        "L4_DST_PORT": {
+          "top_10": [
+            [
+              53,
+              1208425
+            ],
+            [
+              443,
+              840252
+            ],
+            [
+              3389,
+              779547
+            ],
+            [
+              80,
+              270721
+            ],
+            [
+              445,
+              212011
+            ],
+            [
+              23,
+              25809
+            ],
+            [
+              0,
+              17374
+            ],
+            [
+              138,
+              16056
+            ],
+            [
+              5355,
+              15964
+            ],
+            [
+              135,
+              12470
+            ]
+          ],
+          "unique": 53002
+        },
+        "L4_SRC_PORT": {
+          "top_10": [
+            [
+              80,
+              273753
+            ],
+            [
+              3389,
+              263873
+            ],
+            [
+              21,
+              180333
+            ],
+            [
+              22,
+              57307
+            ],
+            [
+              443,
+              45677
+            ],
+            [
+              0,
+              17373
+            ],
+            [
+              138,
+              16030
+            ],
+            [
+              49672,
+              14136
+            ],
+            [
+              49673,
+              13402
+            ],
+            [
+              123,
+              9053
+            ]
+          ],
+          "unique": 64829
+        },
+        "PROTOCOL": {
+          "top_10": [
+            [
+              6,
+              3123877
+            ],
+            [
+              17,
+              1284997
+            ],
+            [
+              1,
+              6448
+            ],
+            [
+              2,
+              5569
+            ],
+            [
+              58,
+              5351
+            ],
+            [
+              47,
+              5
+            ]
+          ],
+          "unique": 6
+        }
+      },
+      "full_weighted_counter_means": {
+        "IN_BYTES": 1940.6286831710927,
+        "IN_PKTS": 8.06313633197605,
+        "OUT_BYTES": 4845.535580368651,
+        "OUT_PKTS": 6.6025863445939645
+      },
+      "full_weighted_counter_pearson": [
+        [
+          1.0000000000000002,
+          0.03902264333119856,
+          0.564195110913432,
+          0.04003643962702723
+        ],
+        [
+          0.03902264333119856,
+          0.9999999999999998,
+          0.682420823955975,
+          0.9969336504476062
+        ],
+        [
+          0.564195110913432,
+          0.682420823955975,
+          1.0,
+          0.6841404235542325
+        ],
+        [
+          0.04003643962702723,
+          0.9969336504476061,
+          0.6841404235542325,
+          1.0000000000000002
+        ]
+      ],
+      "modes": {
+        "empirical": {
+          "IN_BYTES": {
+            "mean": 2244.188,
+            "quantiles_p0_p50_p90_p99_p100": [
+              34.0,
+              148.0,
+              1921.2000000000007,
+              16849.270000000157,
+              4377511.0
+            ]
+          },
+          "IN_PKTS": {
+            "mean": 8.63,
+            "quantiles_p0_p50_p90_p99_p100": [
+              1.0,
+              2.0,
+              14.0,
+              91.02000000000044,
+              2928.0
+            ]
+          },
+          "L4_DST_PORT": {
+            "top_10": [
+              [
+                53,
+                1398
+              ],
+              [
+                443,
+                920
+              ],
+              [
+                3389,
+                888
+              ],
+              [
+                80,
+                284
+              ],
+              [
+                445,
+                245
+              ],
+              [
+                23,
+                29
+              ],
+              [
+                138,
+                25
+              ],
+              [
+                0,
+                20
+              ],
+              [
+                5355,
+                15
+              ],
+              [
+                22,
+                12
+              ]
+            ],
+            "unique": 1085
+          },
+          "L4_SRC_PORT": {
+            "top_10": [
+              [
+                80,
+                317
+              ],
+              [
+                3389,
+                287
+              ],
+              [
+                21,
+                207
+              ],
+              [
+                22,
+                61
+              ],
+              [
+                443,
+                48
+              ],
+              [
+                138,
+                25
+              ],
+              [
+                49672,
+                23
+              ],
+              [
+                0,
+                20
+              ],
+              [
+                49673,
+                14
+              ],
+              [
+                53,
+                12
+              ]
+            ],
+            "unique": 3471
+          },
+          "OUT_BYTES": {
+            "mean": 10559.4726,
+            "quantiles_p0_p50_p90_p99_p100": [
+              0.0,
+              132.0,
+              2103.0,
+              28887.850000000064,
+              35862602.0
+            ]
+          },
+          "OUT_PKTS": {
+            "mean": 10.4832,
+            "quantiles_p0_p50_p90_p99_p100": [
+              0.0,
+              1.0,
+              9.0,
+              35.0,
+              24216.0
+            ]
+          },
+          "PROTOCOL": {
+            "top_10": [
+              [
+                6,
+                3489
+              ],
+              [
+                17,
+                1491
+              ],
+              [
+                2,
+                8
+              ],
+              [
+                1,
+                7
+              ],
+              [
+                58,
+                5
+              ]
+            ],
+            "unique": 5
+          },
+          "counter_correlation_order": [
+            "IN_BYTES",
+            "OUT_BYTES",
+            "IN_PKTS",
+            "OUT_PKTS"
+          ],
+          "counter_pearson": [
+            [
+              1.0,
+              0.013320237782003459,
+              0.7212539178715659,
+              0.013302750359897446
+            ],
+            [
+              0.013320237782003459,
+              1.0,
+              0.3382669379451043,
+              0.9993562567594605
+            ],
+            [
+              0.721253917871566,
+              0.33826693794510426,
+              1.0000000000000002,
+              0.33954453272142077
+            ],
+            [
+              0.013302750359897444,
+              0.9993562567594605,
+              0.33954453272142077,
+              0.9999999999999999
+            ]
+          ],
+          "discrete_total_variation_vs_full_training": {
+            "L4_DST_PORT": 0.22305917798984107,
+            "L4_SRC_PORT": 0.6289414072463647,
+            "PROTOCOL": 0.008228833727534907
+          },
+          "duplicate_rate": 0.02400000000000002,
+          "invalid_rate": 0.0,
+          "max_counter_correlation_difference_vs_full_training": 0.3445958908328118,
+          "max_counter_correlation_difference_vs_paired_anchors": 0.0,
+          "max_counter_correlation_difference_vs_reference_sample": 0.5408621234283695,
+          "novel_rate_all_training": 0.0,
+          "source_composition": {
+            "benign": 5000
+          }
+        },
+        "synthetic": {
+          "IN_BYTES": {
+            "mean": 2238.7282,
+            "quantiles_p0_p50_p90_p99_p100": [
+              35.0,
+              145.0,
+              1891.0,
+              16302.350000000051,
+              4398658.0
+            ]
+          },
+          "IN_PKTS": {
+            "mean": 8.6366,
+            "quantiles_p0_p50_p90_p99_p100": [
+              1.0,
+              2.0,
+              14.0,
+              95.0,
+              2942.0
+            ]
+          },
+          "L4_DST_PORT": {
+            "top_10": [
+              [
+                53,
+                1398
+              ],
+              [
+                443,
+                920
+              ],
+              [
+                3389,
+                888
+              ],
+              [
+                80,
+                284
+              ],
+              [
+                445,
+                245
+              ],
+              [
+                23,
+                29
+              ],
+              [
+                138,
+                25
+              ],
+              [
+                0,
+                20
+              ],
+              [
+                5355,
+                15
+              ],
+              [
+                22,
+                12
+              ]
+            ],
+            "unique": 1085
+          },
+          "L4_SRC_PORT": {
+            "top_10": [
+              [
+                80,
+                317
+              ],
+              [
+                3389,
+                287
+              ],
+              [
+                21,
+                207
+              ],
+              [
+                22,
+                61
+              ],
+              [
+                443,
+                48
+              ],
+              [
+                138,
+                25
+              ],
+              [
+                49672,
+                23
+              ],
+              [
+                0,
+                20
+              ],
+              [
+                49673,
+                14
+              ],
+              [
+                53,
+                12
+              ]
+            ],
+            "unique": 3471
+          },
+          "OUT_BYTES": {
+            "mean": 10675.2,
+            "quantiles_p0_p50_p90_p99_p100": [
+              0.0,
+              138.0,
+              2127.1000000000004,
+              29155.290000000314,
+              36350772.0
+            ]
+          },
+          "OUT_PKTS": {
+            "mean": 10.5752,
+            "quantiles_p0_p50_p90_p99_p100": [
+              0.0,
+              1.0,
+              10.0,
+              36.01000000000022,
+              24546.0
+            ]
+          },
+          "PROTOCOL": {
+            "top_10": [
+              [
+                6,
+                3489
+              ],
+              [
+                17,
+                1491
+              ],
+              [
+                2,
+                8
+              ],
+              [
+                1,
+                7
+              ],
+              [
+                58,
+                5
+              ]
+            ],
+            "unique": 5
+          },
+          "counter_correlation_order": [
+            "IN_BYTES",
+            "OUT_BYTES",
+            "IN_PKTS",
+            "OUT_PKTS"
+          ],
+          "counter_pearson": [
+            [
+              0.9999999999999999,
+              0.013494158100359886,
+              0.719294623318352,
+              0.013484760744946003
+            ],
+            [
+              0.013494158100359886,
+              0.9999999999999999,
+              0.34137241050875944,
+              0.9993189306352596
+            ],
+            [
+              0.719294623318352,
+              0.34137241050875944,
+              0.9999999999999999,
+              0.34267705216123273
+            ],
+            [
+              0.013484760744946003,
+              0.9993189306352597,
+              0.34267705216123273,
+              0.9999999999999999
+            ]
+          ],
+          "discrete_total_variation_vs_full_training": {
+            "L4_DST_PORT": 0.22305917798984107,
+            "L4_SRC_PORT": 0.6289414072463647,
+            "PROTOCOL": 0.008228833727534907
+          },
+          "duplicate_rate": 0.0028000000000000247,
+          "invalid_rate": 0.0,
+          "max_counter_correlation_difference_vs_full_training": 0.3414633713929998,
+          "max_counter_correlation_difference_vs_paired_anchors": 0.003132519439811965,
+          "max_counter_correlation_difference_vs_reference_sample": 0.5377296039885575,
+          "novel_rate_all_training": 0.9564,
+          "source_composition": {
+            "benign": 5000
+          }
+        }
+      },
+      "paired_anchor_reference": {
+        "IN_BYTES": {
+          "mean": 2244.188,
+          "quantiles_p0_p50_p90_p99_p100": [
+            34.0,
+            148.0,
+            1921.2000000000007,
+            16849.270000000157,
+            4377511.0
+          ]
+        },
+        "IN_PKTS": {
+          "mean": 8.63,
+          "quantiles_p0_p50_p90_p99_p100": [
+            1.0,
+            2.0,
+            14.0,
+            91.02000000000044,
+            2928.0
+          ]
+        },
+        "L4_DST_PORT": {
+          "top_10": [
+            [
+              53,
+              1398
+            ],
+            [
+              443,
+              920
+            ],
+            [
+              3389,
+              888
+            ],
+            [
+              80,
+              284
+            ],
+            [
+              445,
+              245
+            ],
+            [
+              23,
+              29
+            ],
+            [
+              138,
+              25
+            ],
+            [
+              0,
+              20
+            ],
+            [
+              5355,
+              15
+            ],
+            [
+              22,
+              12
+            ]
+          ],
+          "unique": 1085
+        },
+        "L4_SRC_PORT": {
+          "top_10": [
+            [
+              80,
+              317
+            ],
+            [
+              3389,
+              287
+            ],
+            [
+              21,
+              207
+            ],
+            [
+              22,
+              61
+            ],
+            [
+              443,
+              48
+            ],
+            [
+              138,
+              25
+            ],
+            [
+              49672,
+              23
+            ],
+            [
+              0,
+              20
+            ],
+            [
+              49673,
+              14
+            ],
+            [
+              53,
+              12
+            ]
+          ],
+          "unique": 3471
+        },
+        "OUT_BYTES": {
+          "mean": 10559.4726,
+          "quantiles_p0_p50_p90_p99_p100": [
+            0.0,
+            132.0,
+            2103.0,
+            28887.850000000064,
+            35862602.0
+          ]
+        },
+        "OUT_PKTS": {
+          "mean": 10.4832,
+          "quantiles_p0_p50_p90_p99_p100": [
+            0.0,
+            1.0,
+            9.0,
+            35.0,
+            24216.0
+          ]
+        },
+        "PROTOCOL": {
+          "top_10": [
+            [
+              6,
+              3489
+            ],
+            [
+              17,
+              1491
+            ],
+            [
+              2,
+              8
+            ],
+            [
+              1,
+              7
+            ],
+            [
+              58,
+              5
+            ]
+          ],
+          "unique": 5
+        },
+        "counter_correlation_order": [
+          "IN_BYTES",
+          "OUT_BYTES",
+          "IN_PKTS",
+          "OUT_PKTS"
+        ],
+        "counter_pearson": [
+          [
+            1.0,
+            0.013320237782003459,
+            0.7212539178715659,
+            0.013302750359897446
+          ],
+          [
+            0.013320237782003459,
+            1.0,
+            0.3382669379451043,
+            0.9993562567594605
+          ],
+          [
+            0.721253917871566,
+            0.33826693794510426,
+            1.0000000000000002,
+            0.33954453272142077
+          ],
+          [
+            0.013302750359897444,
+            0.9993562567594605,
+            0.33954453272142077,
+            0.9999999999999999
+          ]
+        ]
+      },
+      "weighted_training_reference_sample": {
+        "IN_BYTES": {
+          "mean": 1240.4296,
+          "quantiles_p0_p50_p90_p99_p100": [
+            28.0,
+            152.0,
+            1917.1000000000004,
+            19840.640000000123,
+            698094.0
+          ]
+        },
+        "IN_PKTS": {
+          "mean": 7.678,
+          "quantiles_p0_p50_p90_p99_p100": [
+            1.0,
+            2.0,
+            14.0,
+            89.08000000000175,
+            2740.0
+          ]
+        },
+        "L4_DST_PORT": {
+          "top_10": [
+            [
+              53,
+              1343
+            ],
+            [
+              443,
+              944
+            ],
+            [
+              3389,
+              874
+            ],
+            [
+              80,
+              285
+            ],
+            [
+              445,
+              247
+            ],
+            [
+              23,
+              36
+            ],
+            [
+              5355,
+              20
+            ],
+            [
+              8545,
+              18
+            ],
+            [
+              0,
+              18
+            ],
+            [
+              123,
+              16
+            ]
+          ],
+          "unique": 1137
+        },
+        "L4_SRC_PORT": {
+          "top_10": [
+            [
+              80,
+              322
+            ],
+            [
+              3389,
+              303
+            ],
+            [
+              21,
+              221
+            ],
+            [
+              22,
+              66
+            ],
+            [
+              443,
+              51
+            ],
+            [
+              49672,
+              19
+            ],
+            [
+              0,
+              18
+            ],
+            [
+              138,
+              15
+            ],
+            [
+              123,
+              15
+            ],
+            [
+              445,
+              11
+            ]
+          ],
+          "unique": 3473
+        },
+        "OUT_BYTES": {
+          "mean": 5151.7762,
+          "quantiles_p0_p50_p90_p99_p100": [
+            0.0,
+            132.0,
+            2258.0,
+            24901.660000000407,
+            8533808.0
+          ]
+        },
+        "OUT_PKTS": {
+          "mean": 6.6236,
+          "quantiles_p0_p50_p90_p99_p100": [
+            0.0,
+            1.0,
+            9.0,
+            33.01000000000022,
+            5724.0
+          ]
+        },
+        "PROTOCOL": {
+          "top_10": [
+            [
+              6,
+              3555
+            ],
+            [
+              17,
+              1427
+            ],
+            [
+              58,
+              6
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              2,
+              6
+            ]
+          ],
+          "unique": 5
+        },
+        "counter_correlation_order": [
+          "IN_BYTES",
+          "OUT_BYTES",
+          "IN_PKTS",
+          "OUT_PKTS"
+        ],
+        "counter_pearson": [
+          [
+            0.9999999999999998,
+            0.16384806695667134,
+            0.3954479829733104,
+            0.1652800303820229
+          ],
+          [
+            0.16384806695667134,
+            0.9999999999999998,
+            0.8773673990072186,
+            0.9990441164155327
+          ],
+          [
+            0.3954479829733104,
+            0.8773673990072187,
+            0.9999999999999999,
+            0.8804066561497902
+          ],
+          [
+            0.16528003038202294,
+            0.9990441164155326,
+            0.8804066561497902,
+            1.0
+          ]
+        ]
+      }
+    }
+  },
+  "reference": "Full multiplicity-weighted protocol/port histograms, counter means and Pearson correlations; separate deterministic weighted training bootstrap for counter quantiles/correlation sampling variability. Paired anchors isolate perturbation from anchor sampling variance. Novelty is exact membership against ALL training vectors, irrespective of source label.",
+  "sample_count_per_mode_profile": 5000,
+  "seed": 20261115
+}

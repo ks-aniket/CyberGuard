@@ -1,0 +1,17 @@
+{
+  "date": "2026-11-16",
+  "full_suite": {
+    "command": "uv run --frozen --offline pytest -q",
+    "passed": 511,
+    "seconds": 23.76
+  },
+  "focused_suite": {
+    "command": "uv run --frozen --offline pytest tests/unit/test_attack_family_study.py -q",
+    "passed": 22,
+    "seconds": 0.46
+  },
+  "ruff": "passed",
+  "diff_check": "passed",
+  "datasets": "Only synthetic fixtures in tests. Train/validation only in study; frozen test denied.",
+  "experiments": "Exactly four real fits; report/figure finalization used saved metrics only; no retries or hyperparameter search."
+}

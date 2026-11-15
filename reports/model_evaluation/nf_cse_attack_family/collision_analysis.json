@@ -1,0 +1,34 @@
+{
+  "train": {
+    "original_records": 5038454,
+    "compact_rows": 2855997,
+    "unique_vectors": 2836328,
+    "ambiguous_groups_any_label": 19638,
+    "records_in_ambiguous_groups": 306433,
+    "minimum_deterministic_errors": 78223,
+    "empirical_multiclass_collision_ceiling": 0.9844748011989392,
+    "attack_family_conflicting_groups": 8635,
+    "benign_attack_conflicting_groups": 11009,
+    "benign_attack_records_in_conflicts": 124171,
+    "attack_only_minimum_errors": 64871,
+    "attack_only_collision_ceiling": 0.8940374742529896,
+    "weighted_majority_share_ambiguous": 0.7447304957364252,
+    "scope": "Observed population lookup ceiling for identical seven-feature vectors, not a universal generalization bound"
+  },
+  "validation": {
+    "original_records": 1664752,
+    "compact_rows": 953316,
+    "unique_vectors": 946873,
+    "ambiguous_groups_any_label": 6435,
+    "records_in_ambiguous_groups": 95144,
+    "minimum_deterministic_errors": 25745,
+    "empirical_multiclass_collision_ceiling": 0.9845352340769076,
+    "attack_family_conflicting_groups": 2867,
+    "benign_attack_conflicting_groups": 3569,
+    "benign_attack_records_in_conflicts": 34565,
+    "attack_only_minimum_errors": 21531,
+    "attack_only_collision_ceiling": 0.8941653558788832,
+    "weighted_majority_share_ambiguous": 0.7294101572353485,
+    "scope": "Observed population lookup ceiling for identical seven-feature vectors, not a universal generalization bound"
+  }
+}

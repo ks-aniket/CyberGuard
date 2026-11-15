@@ -1,0 +1,61 @@
+split,family,feature,mean,median,p90,p99,invalid_weight
+validation,Benign,IN_BYTES,2016.041492165944,148.0,1924.0,19186.0,0
+validation,Benign,OUT_BYTES,5079.89340537818,133.0,2143.0,24325.0,0
+validation,Benign,IN_PKTS,8.174331696448123,2.0,14.0,88.0,0
+validation,Benign,OUT_PKTS,6.798240211535935,1.0,10.0,34.0,0
+validation,Bot,IN_BYTES,536.3710292249046,538.0,538.0,538.0,0
+validation,Bot,OUT_BYTES,346.2887547649301,341.0,341.0,352.0,0
+validation,Bot,IN_PKTS,4.991105463786531,5.0,5.0,5.0,0
+validation,Bot,OUT_PKTS,5.136594663278272,5.0,5.0,5.0,0
+validation,Brute Force -Web,IN_BYTES,2633.5573394495414,528.0,528.0,61207.0,0
+validation,Brute Force -Web,OUT_BYTES,2927.3990825688074,0.0,0.0,76706.0,0
+validation,Brute Force -Web,IN_PKTS,6.5504587155963305,1.0,1.0,155.0,0
+validation,Brute Force -Web,OUT_PKTS,3.7362385321100917,0.0,0.0,105.0,0
+validation,Brute Force -XSS,IN_BYTES,2788.1580188679245,528.0,528.0,64542.0,0
+validation,Brute Force -XSS,OUT_BYTES,6868.808962264151,0.0,0.0,194215.0,0
+validation,Brute Force -XSS,IN_PKTS,8.235849056603774,1.0,1.0,206.0,0
+validation,Brute Force -XSS,OUT_PKTS,3.714622641509434,0.0,0.0,105.0,0
+validation,DDOS attack-HOIC,IN_BYTES,39115.21276595745,61207.0,64542.0,64582.0,0
+validation,DDOS attack-HOIC,OUT_BYTES,85275.4255319149,76698.0,194215.0,194225.0,0
+validation,DDOS attack-HOIC,IN_PKTS,114.02127659574468,155.0,206.0,206.0,0
+validation,DDOS attack-HOIC,OUT_PKTS,66.48936170212765,105.0,105.0,105.0,0
+validation,DDOS attack-LOIC-UDP,IN_BYTES,6833079.705882353,7066620.0,8364960.0,9256860.0,0
+validation,DDOS attack-LOIC-UDP,OUT_BYTES,0.0,0.0,0.0,0.0,0
+validation,DDOS attack-LOIC-UDP,IN_PKTS,113884.66176470589,117777.0,139416.0,154281.0,0
+validation,DDOS attack-LOIC-UDP,OUT_PKTS,0.0,0.0,0.0,0.0,0
+validation,DDoS attacks-LOIC-HTTP,IN_BYTES,11210.816861043666,232.0,232.0,232.0,0
+validation,DDoS attacks-LOIC-HTTP,OUT_BYTES,0.0,0.0,0.0,0.0,0
+validation,DDoS attacks-LOIC-HTTP,IN_PKTS,187.70854064668498,5.0,5.0,5.0,0
+validation,DDoS attacks-LOIC-HTTP,OUT_PKTS,0.0,0.0,0.0,0.0,0
+validation,DoS attacks-GoldenEye,IN_BYTES,709.9960528313344,678.0,863.0,4284.0,0
+validation,DoS attacks-GoldenEye,OUT_BYTES,0.0,0.0,0.0,0.0,0
+validation,DoS attacks-GoldenEye,IN_PKTS,4.893881888568393,5.0,6.0,13.0,0
+validation,DoS attacks-GoldenEye,OUT_PKTS,0.0,0.0,0.0,0.0,0
+validation,DoS attacks-Hulk,IN_BYTES,11383.978496115427,11972.0,18946.0,20524.0,0
+validation,DoS attacks-Hulk,OUT_BYTES,0.0,0.0,0.0,0.0,0
+validation,DoS attacks-Hulk,IN_PKTS,90.0872641509434,95.0,148.0,154.0,0
+validation,DoS attacks-Hulk,OUT_PKTS,0.0,0.0,0.0,0.0,0
+validation,DoS attacks-SlowHTTPTest,IN_BYTES,60.0,60.0,60.0,60.0,0
+validation,DoS attacks-SlowHTTPTest,OUT_BYTES,0.0,0.0,0.0,0.0,0
+validation,DoS attacks-SlowHTTPTest,IN_PKTS,1.0,1.0,1.0,1.0,0
+validation,DoS attacks-SlowHTTPTest,OUT_PKTS,0.0,0.0,0.0,0.0,0
+validation,DoS attacks-Slowloris,IN_BYTES,715.6621205455345,282.0,2710.0,2710.0,0
+validation,DoS attacks-Slowloris,OUT_BYTES,0.0,0.0,0.0,0.0,0
+validation,DoS attacks-Slowloris,IN_PKTS,3.6854377474703037,2.0,12.0,12.0,0
+validation,DoS attacks-Slowloris,OUT_PKTS,0.0,0.0,0.0,0.0,0
+validation,FTP-BruteForce,IN_BYTES,60.0,60.0,60.0,60.0,0
+validation,FTP-BruteForce,OUT_BYTES,0.0,0.0,0.0,0.0,0
+validation,FTP-BruteForce,IN_PKTS,1.0,1.0,1.0,1.0,0
+validation,FTP-BruteForce,OUT_PKTS,0.0,0.0,0.0,0.0,0
+validation,Infilteration,IN_BYTES,438.248291571754,122.0,1472.0,3216.0,0
+validation,Infilteration,OUT_BYTES,1621.9166124308492,160.0,3981.0,21722.0,0
+validation,Infilteration,IN_PKTS,3.980719166937846,2.0,10.0,26.0,0
+validation,Infilteration,OUT_PKTS,4.096892287666775,1.0,10.0,32.0,0
+validation,SQL Injection,IN_BYTES,773.1428571428571,859.0,983.0,983.0,0
+validation,SQL Injection,OUT_BYTES,2240.5714285714284,2115.0,4264.0,4264.0,0
+validation,SQL Injection,IN_PKTS,5.714285714285714,6.0,6.0,6.0,0
+validation,SQL Injection,OUT_PKTS,4.428571428571429,5.0,6.0,6.0,0
+validation,SSH-Bruteforce,IN_BYTES,3160.286770140429,3148.0,3252.0,3340.0,0
+validation,SSH-Bruteforce,OUT_BYTES,0.0,0.0,0.0,0.0,0
+validation,SSH-Bruteforce,IN_PKTS,23.43817970647239,23.0,25.0,27.0,0
+validation,SSH-Bruteforce,OUT_PKTS,0.0,0.0,0.0,0.0,0

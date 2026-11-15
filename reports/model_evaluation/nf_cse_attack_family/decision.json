@@ -1,0 +1,87 @@
+{
+  "recommendation": "CONDITIONAL GO",
+  "resource_gates_passed": true,
+  "criteria": {
+    "macro_f1_min": 0.8,
+    "benign_fpr_max": 0.01,
+    "attack_detection_recall_min": 0.9,
+    "supported_family_recall_min": 0.7,
+    "reliable_validation_groups_min": 100,
+    "reliable_validation_records_min": 100,
+    "peak_rss_mib_max": 12288,
+    "total_wall_seconds_max": 1800,
+    "all_family_go": "All original families must meet recall/support gates; rare families block an unqualified GO.",
+    "conditional_go": "At least half the attack families meet recall and support gates; an end-to-end candidate meets detection/FPR gates and resource budget. Unsupported families must remain explicit/experimental."
+  },
+  "assessments": {
+    "direct_linear": {
+      "families_meeting_support_and_recall": [],
+      "aggregate_detection_gates": false,
+      "all_family_go": false,
+      "conditional_go": false
+    },
+    "direct_histogram": {
+      "families_meeting_support_and_recall": [
+        "Bot",
+        "DDOS attack-LOIC-UDP",
+        "DDoS attacks-LOIC-HTTP",
+        "DoS attacks-GoldenEye",
+        "DoS attacks-Hulk",
+        "DoS attacks-Slowloris",
+        "FTP-BruteForce",
+        "SSH-Bruteforce"
+      ],
+      "aggregate_detection_gates": true,
+      "all_family_go": false,
+      "conditional_go": true
+    },
+    "hierarchical_linear_standard": {
+      "families_meeting_support_and_recall": [
+        "DoS attacks-Hulk",
+        "FTP-BruteForce"
+      ],
+      "aggregate_detection_gates": true,
+      "all_family_go": false,
+      "conditional_go": false
+    },
+    "hierarchical_linear_high_sensitivity": {
+      "families_meeting_support_and_recall": [
+        "DoS attacks-Hulk",
+        "FTP-BruteForce"
+      ],
+      "aggregate_detection_gates": true,
+      "all_family_go": false,
+      "conditional_go": false
+    },
+    "hierarchical_histogram_standard": {
+      "families_meeting_support_and_recall": [
+        "Bot",
+        "DDOS attack-LOIC-UDP",
+        "DDoS attacks-LOIC-HTTP",
+        "DoS attacks-GoldenEye",
+        "DoS attacks-Hulk",
+        "DoS attacks-Slowloris",
+        "FTP-BruteForce",
+        "SSH-Bruteforce"
+      ],
+      "aggregate_detection_gates": true,
+      "all_family_go": false,
+      "conditional_go": true
+    },
+    "hierarchical_histogram_high_sensitivity": {
+      "families_meeting_support_and_recall": [
+        "Bot",
+        "DDOS attack-LOIC-UDP",
+        "DDoS attacks-LOIC-HTTP",
+        "DoS attacks-GoldenEye",
+        "DoS attacks-Hulk",
+        "DoS attacks-Slowloris",
+        "FTP-BruteForce",
+        "SSH-Bruteforce"
+      ],
+      "aggregate_detection_gates": true,
+      "all_family_go": false,
+      "conditional_go": true
+    }
+  }
+}

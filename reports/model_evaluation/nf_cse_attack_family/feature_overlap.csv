@@ -1,0 +1,37 @@
+split,family_a,family_b,shared_vectors,a_records,b_records
+train,Benign,Brute Force -Web,2,235,44
+train,Benign,Brute Force -XSS,2,235,44
+train,Benign,DDOS attack-HOIC,2,2,2
+train,Benign,DDoS attacks-LOIC-HTTP,669,987,3448
+train,Benign,DoS attacks-GoldenEye,3,3,3
+train,Benign,DoS attacks-SlowHTTPTest,2,2,15
+train,Benign,DoS attacks-Slowloris,4,4,4
+train,Benign,FTP-BruteForce,2,2,28
+train,Benign,Infilteration,10328,106923,12589
+train,Benign,SQL Injection,2,2,2
+train,Brute Force -Web,Brute Force -XSS,11,1263,1263
+train,Brute Force -Web,DDOS attack-HOIC,78,78,78
+train,Brute Force -Web,Infilteration,1,2,21
+train,Brute Force -Web,SQL Injection,4,4,4
+train,Brute Force -XSS,DDOS attack-HOIC,39,39,39
+train,Brute Force -XSS,Infilteration,1,2,21
+train,DDOS attack-HOIC,SQL Injection,24,24,24
+train,DoS attacks-GoldenEye,DoS attacks-Hulk,11,11,11
+train,DoS attacks-GoldenEye,DoS attacks-Slowloris,1,1,1
+train,DoS attacks-SlowHTTPTest,FTP-BruteForce,8479,63437,116120
+train,DoS attacks-SlowHTTPTest,SSH-Bruteforce,18,126,18
+train,FTP-BruteForce,SSH-Bruteforce,18,252,18
+validation,Benign,DDoS attacks-LOIC-HTTP,209,223,1060
+validation,Benign,DoS attacks-GoldenEye,3,3,3
+validation,Benign,DoS attacks-SlowHTTPTest,1,1,7
+validation,Benign,FTP-BruteForce,1,1,13
+validation,Benign,Infilteration,3356,29257,3998
+validation,Brute Force -Web,Brute Force -XSS,2,410,410
+validation,Brute Force -Web,DDOS attack-HOIC,27,27,27
+validation,Brute Force -Web,SQL Injection,1,1,1
+validation,Brute Force -XSS,DDOS attack-HOIC,15,15,15
+validation,DDOS attack-HOIC,SQL Injection,7,7,7
+validation,DoS attacks-GoldenEye,DoS attacks-Hulk,1,1,1
+validation,DoS attacks-SlowHTTPTest,FTP-BruteForce,2818,21067,38611
+validation,DoS attacks-SlowHTTPTest,SSH-Bruteforce,5,35,5
+validation,FTP-BruteForce,SSH-Bruteforce,5,70,5

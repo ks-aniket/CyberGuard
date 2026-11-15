@@ -18,6 +18,7 @@ from cyberguard.dashboard.pages import (
     batch_testing,
     model_performance,
     overview,
+    simulation_lab,
     test_lab,
 )
 from cyberguard.dashboard.report_loader import (
@@ -86,6 +87,12 @@ def main():
             title="Model Performance",
             icon=":material/monitoring:",
             url_path="performance",
+        ),
+        st.Page(
+            page(simulation_lab),
+            title="Simulation Lab",
+            icon=":material/science:",
+            url_path="simulation",
         ),
         st.Page(
             page(about),

@@ -66,6 +66,8 @@ reports/test_sessions/*
 !reports/model_evaluation/bot_iot_*.csv
 !reports/model_evaluation/nf_cse_binary/
 !reports/model_evaluation/nf_cse_binary/**
+!reports/model_evaluation/nf_cse_attack_family/
+!reports/model_evaluation/nf_cse_attack_family/**
 !reports/benchmarks/.gitkeep
 !reports/test_sessions/.gitkeep
 

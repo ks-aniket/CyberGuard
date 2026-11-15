@@ -21,6 +21,10 @@ from cyberguard.core.schemas import (
 class APIError(ValueError):
     """A sanitized, user-facing communication/contract failure."""
 
+    def __init__(self, message, *, status=None):
+        super().__init__(message)
+        self.status = status
+
 
 @dataclass(frozen=True)
 class Connection:
@@ -75,7 +79,7 @@ class APIClient:
         self.timeout = timeout
         self.opener = opener or urlopen
 
-    def _request(self, path, payload=None):
+    def _request(self, path, payload=None, *, method=None):
         data = (
             None if payload is None else json.dumps(payload, allow_nan=False).encode()
         )
@@ -83,7 +87,7 @@ class APIClient:
             self.base_url + path,
             data=data,
             headers={"Accept": "application/json", "Content-Type": "application/json"},
-            method="GET" if data is None else "POST",
+            method=method or ("GET" if data is None else "POST"),
         )
         try:
             with self.opener(request, timeout=self.timeout) as response:
@@ -101,11 +105,22 @@ class APIClient:
                 404: "The selected model is no longer registered. Refresh model details.",
                 503: "The backend model is unavailable. Check the API and retry the connection.",
             }
+            if path.startswith("/api/v1/simulations"):
+                messages.update(
+                    {
+                        404: "Simulation no longer exists. The backend may have restarted; refresh simulation history.",
+                        409: "The simulation state changed. Refresh it before trying another lifecycle action.",
+                        429: "Simulation capacity reached. Stop active runs or delete finished runs.",
+                        422: "Simulation configuration was rejected. Refresh API limits and check the values.",
+                        413: "The simulation request exceeds the backend size limit.",
+                    }
+                )
             raise APIError(
                 messages.get(
                     exc.code,
                     f"The API returned HTTP {exc.code}. Check the backend and retry.",
-                )
+                ),
+                status=exc.code,
             ) from None
         except (TimeoutError, URLError, OSError) as exc:
             timed_out = isinstance(exc, TimeoutError) or isinstance(
@@ -476,4 +491,175 @@ class APIClient:
             )
             if progress:
                 progress(len(result), len(records))
+        return result
+
+    def simulation_schema(self):
+        try:
+            spec = self._request("/openapi.json")
+            schema = spec["paths"]["/api/v1/simulations"]["post"]["requestBody"][
+                "content"
+            ]["application/json"]["schema"]
+            schema = self._resolve(spec, schema["$ref"]) if "$ref" in schema else schema
+            required = {
+                "model_id",
+                "mode",
+                "benign_ratio",
+                "attack_ratio",
+                "seed",
+                "generation_rate",
+                "max_duration",
+                "max_records",
+                "batch_size",
+                "queue_capacity",
+                "event_capacity",
+                "history_capacity",
+                "operating_mode",
+            }
+            if not required <= schema["properties"].keys():
+                raise ValueError("Missing simulation fields")
+            if not {"empirical", "synthetic"} <= set(
+                schema["properties"]["mode"].get("enum", [])
+            ) or not {"standard", "high_sensitivity"} <= set(
+                schema["properties"]["operating_mode"].get("enum", [])
+            ):
+                raise ValueError("Missing supported simulation modes")
+            for name in (
+                "seed",
+                "generation_rate",
+                "max_duration",
+                "max_records",
+                "batch_size",
+                "queue_capacity",
+                "event_capacity",
+                "history_capacity",
+            ):
+                rule = schema["properties"][name]
+                if type(rule.get("maximum")) not in (float, int) or not (
+                    "minimum" in rule or "exclusiveMinimum" in rule
+                ):
+                    raise ValueError("Missing resource bounds")
+            return schema
+        except APIError:
+            raise
+        except (KeyError, ValueError, TypeError):
+            raise APIError(
+                "The backend simulation configuration schema is unavailable or incompatible."
+            ) from None
+
+    def _simulation_response(self, body, kind, identifier=None):
+        try:
+            result = kind.model_validate(body)
+            if identifier is not None and result.id != identifier:
+                raise ValueError("Simulation ID mismatch")
+            return result.model_dump()
+        except (ValidationError, ValueError, KeyError, TypeError):
+            raise APIError(
+                "The API returned an incompatible simulation response. Refresh simulation history."
+            ) from None
+
+    def list_simulations(self):
+        from cyberguard.dashboard.simulation_contracts import Snapshot
+
+        try:
+            body = self._request("/api/v1/simulations")
+            if (
+                not isinstance(body["simulations"], list)
+                or len(body["simulations"]) > 100
+            ):
+                raise ValueError("Unbounded simulation history")
+            values = [
+                self._simulation_response(v, Snapshot) for v in body["simulations"]
+            ]
+            if len({v["id"] for v in values}) != len(values):
+                raise ValueError("Duplicate simulation IDs")
+            return values
+        except (KeyError, TypeError, ValueError) as exc:
+            if isinstance(exc, APIError):
+                raise
+            raise APIError("The API returned invalid simulation history.") from None
+
+    def create_simulation(self, payload):
+        from cyberguard.dashboard.simulation_contracts import Snapshot
+
+        return self._simulation_response(
+            self._request("/api/v1/simulations", payload), Snapshot
+        )
+
+    @staticmethod
+    def _simulation_path(identifier):
+        from cyberguard.dashboard.simulation_contracts import simulation_path
+
+        try:
+            return simulation_path(identifier)
+        except ValueError:
+            raise APIError(
+                "Invalid simulation selection. Refresh Lab and select a current run."
+            ) from None
+
+    def get_simulation(self, identifier):
+        from cyberguard.dashboard.simulation_contracts import Snapshot
+
+        return self._simulation_response(
+            self._request(self._simulation_path(identifier)), Snapshot, identifier
+        )
+
+    def _simulation_action(self, identifier, action):
+        from cyberguard.dashboard.simulation_contracts import Snapshot
+
+        return self._simulation_response(
+            self._request(self._simulation_path(identifier) + "/" + action, {}),
+            Snapshot,
+            identifier,
+        )
+
+    def start_simulation(self, identifier):
+        return self._simulation_action(identifier, "start")
+
+    def pause_simulation(self, identifier):
+        return self._simulation_action(identifier, "pause")
+
+    def resume_simulation(self, identifier):
+        return self._simulation_action(identifier, "resume")
+
+    def stop_simulation(self, identifier):
+        return self._simulation_action(identifier, "stop")
+
+    def delete_simulation(self, identifier):
+
+        result = self._request(self._simulation_path(identifier), method="DELETE")
+        if result != {"id": identifier, "deleted": True}:
+            raise APIError("The API returned an invalid simulation deletion response.")
+        return result
+
+    def simulation_metrics(self, identifier):
+        from cyberguard.dashboard.simulation_contracts import Metrics
+
+        return self._simulation_response(
+            self._request(self._simulation_path(identifier) + "/metrics"),
+            Metrics,
+            identifier,
+        )
+
+    def simulation_events(self, identifier, *, after=-1, limit=500):
+        from cyberguard.dashboard.simulation_contracts import EventPage
+
+        if (
+            type(after) is not int
+            or after < -1
+            or type(limit) is not int
+            or not 1 <= limit <= 1000
+        ):
+            raise APIError("Invalid simulation cursor or page size")
+        result = self._simulation_response(
+            self._request(
+                self._simulation_path(identifier)
+                + f"/events?after={after}&limit={limit}"
+            ),
+            EventPage,
+            identifier,
+        )
+        if any(e["sequence"] <= after for e in result["events"]) or (
+            not result["events"] and result["next_cursor"] != after
+        ):
+            raise APIError("The API returned an invalid simulation cursor.")
         return result

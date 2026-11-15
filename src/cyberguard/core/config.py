@@ -17,6 +17,9 @@ class Settings:
     nf_cse_evaluation_dir: Path = (
         PROJECT_ROOT / "reports/model_evaluation/nf_cse_binary/final_test"
     )
+    simulation_profiles_path: Path = PROJECT_ROOT / "models/simulation/nf_cse"
+    simulation_max_active: int = 1
+    simulation_max_sessions: int = 20
     max_model_request_bytes: int = 1048576
     api_host: str = "127.0.0.1"
     api_port: int = 8000
@@ -26,11 +29,21 @@ class Settings:
     def __post_init__(self):
         path = Path(self.network_model_path).expanduser()
         object.__setattr__(self, "network_model_path", (PROJECT_ROOT / path).resolve())
-        for name in ("nf_cse_model_path", "nf_cse_evaluation_dir"):
+        for name in (
+            "nf_cse_model_path",
+            "nf_cse_evaluation_dir",
+            "simulation_profiles_path",
+        ):
             object.__setattr__(
                 self,
                 name,
                 (PROJECT_ROOT / Path(getattr(self, name)).expanduser()).resolve(),
+            )
+        if not 1 <= self.simulation_max_active <= 4:
+            raise ValueError("CYBERGUARD_SIMULATION_MAX_ACTIVE must be in 1..4")
+        if not self.simulation_max_active <= self.simulation_max_sessions <= 100:
+            raise ValueError(
+                "CYBERGUARD_SIMULATION_MAX_SESSIONS must be >= active limit and <=100"
             )
         if self.max_model_request_bytes < 1:
             raise ValueError("CYBERGUARD_MAX_MODEL_REQUEST_BYTES must be positive")
@@ -76,6 +89,14 @@ class Settings:
                     ),
                 )
             ),
+            simulation_profiles_path=Path(
+                os.environ.get(
+                    "CYBERGUARD_SIMULATION_PROFILES_PATH",
+                    str(PROJECT_ROOT / "models/simulation/nf_cse"),
+                )
+            ),
+            simulation_max_active=integer("CYBERGUARD_SIMULATION_MAX_ACTIVE", 1),
+            simulation_max_sessions=integer("CYBERGUARD_SIMULATION_MAX_SESSIONS", 20),
             max_model_request_bytes=integer(
                 "CYBERGUARD_MAX_MODEL_REQUEST_BYTES", 1048576
             ),

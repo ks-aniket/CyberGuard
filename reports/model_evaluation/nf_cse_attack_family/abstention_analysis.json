@@ -1,0 +1,3024 @@
+{
+  "score_semantics": "Uncalibrated maximum class score; exploratory cutoffs, no selected deployment threshold. Hierarchical abstention rejects routed attacks only; binary Benign stays Benign.",
+  "experiments": {
+    "direct_linear": [
+      {
+        "raw_max_score_cutoff": 0.0,
+        "coverage": 1.0,
+        "selective_accuracy": 0.8776976991167453,
+        "accepted_error_rate": 0.12230230088325467,
+        "selective_macro_f1_fixed_taxonomy": 0.06233370042901775,
+        "accepted_families_with_support": [
+          "Benign",
+          "Bot",
+          "Brute Force -Web",
+          "Brute Force -XSS",
+          "DDOS attack-HOIC",
+          "DDOS attack-LOIC-UDP",
+          "DDoS attacks-LOIC-HTTP",
+          "DoS attacks-GoldenEye",
+          "DoS attacks-Hulk",
+          "DoS attacks-SlowHTTPTest",
+          "DoS attacks-Slowloris",
+          "FTP-BruteForce",
+          "Infilteration",
+          "SQL Injection",
+          "SSH-Bruteforce"
+        ],
+        "per_family": {
+          "Benign": {
+            "support": 1461312,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "Bot": {
+            "support": 3148,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "Brute Force -Web": {
+            "support": 436,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "Brute Force -XSS": {
+            "support": 424,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DDOS attack-HOIC": {
+            "support": 47,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DDOS attack-LOIC-UDP": {
+            "support": 340,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DDoS attacks-LOIC-HTTP": {
+            "support": 75369,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DoS attacks-GoldenEye": {
+            "support": 6587,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DoS attacks-Hulk": {
+            "support": 21624,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DoS attacks-SlowHTTPTest": {
+            "support": 21067,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DoS attacks-Slowloris": {
+            "support": 4546,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "FTP-BruteForce": {
+            "support": 38611,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "Infilteration": {
+            "support": 12292,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "SQL Injection": {
+            "support": 7,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "SSH-Bruteforce": {
+            "support": 18942,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          }
+        }
+      },
+      {
+        "raw_max_score_cutoff": 0.5,
+        "coverage": 0.999432347881246,
+        "selective_accuracy": 0.8780309254619075,
+        "accepted_error_rate": 0.12196907453809247,
+        "selective_macro_f1_fixed_taxonomy": 0.06233698735966968,
+        "accepted_families_with_support": [
+          "Benign",
+          "Bot",
+          "Brute Force -Web",
+          "Brute Force -XSS",
+          "DDOS attack-HOIC",
+          "DDoS attacks-LOIC-HTTP",
+          "DoS attacks-GoldenEye",
+          "DoS attacks-Hulk",
+          "DoS attacks-SlowHTTPTest",
+          "DoS attacks-Slowloris",
+          "FTP-BruteForce",
+          "Infilteration",
+          "SQL Injection",
+          "SSH-Bruteforce"
+        ],
+        "per_family": {
+          "Benign": {
+            "support": 1461312,
+            "rejected": 421,
+            "rejection_rate": 0.0002880972714930145
+          },
+          "Bot": {
+            "support": 3148,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "Brute Force -Web": {
+            "support": 436,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "Brute Force -XSS": {
+            "support": 424,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DDOS attack-HOIC": {
+            "support": 47,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DDOS attack-LOIC-UDP": {
+            "support": 340,
+            "rejected": 340,
+            "rejection_rate": 1.0
+          },
+          "DDoS attacks-LOIC-HTTP": {
+            "support": 75369,
+            "rejected": 128,
+            "rejection_rate": 0.001698310976661492
+          },
+          "DoS attacks-GoldenEye": {
+            "support": 6587,
+            "rejected": 56,
+            "rejection_rate": 0.008501594048884165
+          },
+          "DoS attacks-Hulk": {
+            "support": 21624,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DoS attacks-SlowHTTPTest": {
+            "support": 21067,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DoS attacks-Slowloris": {
+            "support": 4546,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "FTP-BruteForce": {
+            "support": 38611,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "Infilteration": {
+            "support": 12292,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "SQL Injection": {
+            "support": 7,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "SSH-Bruteforce": {
+            "support": 18942,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          }
+        }
+      },
+      {
+        "raw_max_score_cutoff": 0.7,
+        "coverage": 0.9977576239584034,
+        "selective_accuracy": 0.8786738742904205,
+        "accepted_error_rate": 0.12132612570957946,
+        "selective_macro_f1_fixed_taxonomy": 0.06236128482720629,
+        "accepted_families_with_support": [
+          "Benign",
+          "Bot",
+          "Brute Force -Web",
+          "Brute Force -XSS",
+          "DDOS attack-HOIC",
+          "DDoS attacks-LOIC-HTTP",
+          "DoS attacks-GoldenEye",
+          "DoS attacks-Hulk",
+          "DoS attacks-SlowHTTPTest",
+          "DoS attacks-Slowloris",
+          "FTP-BruteForce",
+          "Infilteration",
+          "SQL Injection",
+          "SSH-Bruteforce"
+        ],
+        "per_family": {
+          "Benign": {
+            "support": 1461312,
+            "rejected": 1818,
+            "rejection_rate": 0.0012440875049270792
+          },
+          "Bot": {
+            "support": 3148,
+            "rejected": 1,
+            "rejection_rate": 0.0003176620076238882
+          },
+          "Brute Force -Web": {
+            "support": 436,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "Brute Force -XSS": {
+            "support": 424,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DDOS attack-HOIC": {
+            "support": 47,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DDOS attack-LOIC-UDP": {
+            "support": 340,
+            "rejected": 340,
+            "rejection_rate": 1.0
+          },
+          "DDoS attacks-LOIC-HTTP": {
+            "support": 75369,
+            "rejected": 128,
+            "rejection_rate": 0.001698310976661492
+          },
+          "DoS attacks-GoldenEye": {
+            "support": 6587,
+            "rejected": 201,
+            "rejection_rate": 0.03051465006831638
+          },
+          "DoS attacks-Hulk": {
+            "support": 21624,
+            "rejected": 1244,
+            "rejection_rate": 0.05752867184609693
+          },
+          "DoS attacks-SlowHTTPTest": {
+            "support": 21067,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DoS attacks-Slowloris": {
+            "support": 4546,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "FTP-BruteForce": {
+            "support": 38611,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "Infilteration": {
+            "support": 12292,
+            "rejected": 1,
+            "rejection_rate": 8.135372600065082e-05
+          },
+          "SQL Injection": {
+            "support": 7,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "SSH-Bruteforce": {
+            "support": 18942,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          }
+        }
+      },
+      {
+        "raw_max_score_cutoff": 0.9,
+        "coverage": 0.9797573452382097,
+        "selective_accuracy": 0.8903567204744419,
+        "accepted_error_rate": 0.10964327952555808,
+        "selective_macro_f1_fixed_taxonomy": 0.0627999086684535,
+        "accepted_families_with_support": [
+          "Benign",
+          "Bot",
+          "Brute Force -Web",
+          "Brute Force -XSS",
+          "DDOS attack-HOIC",
+          "DDoS attacks-LOIC-HTTP",
+          "DoS attacks-GoldenEye",
+          "DoS attacks-Hulk",
+          "DoS attacks-SlowHTTPTest",
+          "DoS attacks-Slowloris",
+          "FTP-BruteForce",
+          "Infilteration",
+          "SQL Injection",
+          "SSH-Bruteforce"
+        ],
+        "per_family": {
+          "Benign": {
+            "support": 1461312,
+            "rejected": 9093,
+            "rejection_rate": 0.006222490474313494
+          },
+          "Bot": {
+            "support": 3148,
+            "rejected": 4,
+            "rejection_rate": 0.0012706480304955528
+          },
+          "Brute Force -Web": {
+            "support": 436,
+            "rejected": 409,
+            "rejection_rate": 0.9380733944954128
+          },
+          "Brute Force -XSS": {
+            "support": 424,
+            "rejected": 409,
+            "rejection_rate": 0.964622641509434
+          },
+          "DDOS attack-HOIC": {
+            "support": 47,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DDOS attack-LOIC-UDP": {
+            "support": 340,
+            "rejected": 340,
+            "rejection_rate": 1.0
+          },
+          "DDoS attacks-LOIC-HTTP": {
+            "support": 75369,
+            "rejected": 11526,
+            "rejection_rate": 0.1529275962265653
+          },
+          "DoS attacks-GoldenEye": {
+            "support": 6587,
+            "rejected": 391,
+            "rejection_rate": 0.0593593441627448
+          },
+          "DoS attacks-Hulk": {
+            "support": 21624,
+            "rejected": 10370,
+            "rejection_rate": 0.47955974842767296
+          },
+          "DoS attacks-SlowHTTPTest": {
+            "support": 21067,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DoS attacks-Slowloris": {
+            "support": 4546,
+            "rejected": 1150,
+            "rejection_rate": 0.25296964364276286
+          },
+          "FTP-BruteForce": {
+            "support": 38611,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "Infilteration": {
+            "support": 12292,
+            "rejected": 7,
+            "rejection_rate": 0.0005694760820045558
+          },
+          "SQL Injection": {
+            "support": 7,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "SSH-Bruteforce": {
+            "support": 18942,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          }
+        }
+      },
+      {
+        "raw_max_score_cutoff": 0.95,
+        "coverage": 0.9186731717396945,
+        "selective_accuracy": 0.9350481213420228,
+        "accepted_error_rate": 0.06495187865797725,
+        "selective_macro_f1_fixed_taxonomy": 0.06442893149299973,
+        "accepted_families_with_support": [
+          "Benign",
+          "Bot",
+          "Brute Force -Web",
+          "Brute Force -XSS",
+          "DDOS attack-HOIC",
+          "DDoS attacks-LOIC-HTTP",
+          "DoS attacks-GoldenEye",
+          "DoS attacks-Hulk",
+          "DoS attacks-SlowHTTPTest",
+          "DoS attacks-Slowloris",
+          "FTP-BruteForce",
+          "Infilteration",
+          "SQL Injection",
+          "SSH-Bruteforce"
+        ],
+        "per_family": {
+          "Benign": {
+            "support": 1461312,
+            "rejected": 31284,
+            "rejection_rate": 0.02140815924320063
+          },
+          "Bot": {
+            "support": 3148,
+            "rejected": 14,
+            "rejection_rate": 0.0044472681067344345
+          },
+          "Brute Force -Web": {
+            "support": 436,
+            "rejected": 409,
+            "rejection_rate": 0.9380733944954128
+          },
+          "Brute Force -XSS": {
+            "support": 424,
+            "rejected": 409,
+            "rejection_rate": 0.964622641509434
+          },
+          "DDOS attack-HOIC": {
+            "support": 47,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DDOS attack-LOIC-UDP": {
+            "support": 340,
+            "rejected": 340,
+            "rejection_rate": 1.0
+          },
+          "DDoS attacks-LOIC-HTTP": {
+            "support": 75369,
+            "rejected": 53687,
+            "rejection_rate": 0.7123220422189495
+          },
+          "DoS attacks-GoldenEye": {
+            "support": 6587,
+            "rejected": 1579,
+            "rejection_rate": 0.2397145893426446
+          },
+          "DoS attacks-Hulk": {
+            "support": 21624,
+            "rejected": 16368,
+            "rejection_rate": 0.7569367369589345
+          },
+          "DoS attacks-SlowHTTPTest": {
+            "support": 21067,
+            "rejected": 7241,
+            "rejection_rate": 0.34371291593487446
+          },
+          "DoS attacks-Slowloris": {
+            "support": 4546,
+            "rejected": 2711,
+            "rejection_rate": 0.5963484381874176
+          },
+          "FTP-BruteForce": {
+            "support": 38611,
+            "rejected": 14306,
+            "rejection_rate": 0.37051617414726373
+          },
+          "Infilteration": {
+            "support": 12292,
+            "rejected": 124,
+            "rejection_rate": 0.010087862024080702
+          },
+          "SQL Injection": {
+            "support": 7,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "SSH-Bruteforce": {
+            "support": 18942,
+            "rejected": 6917,
+            "rejection_rate": 0.365167352972231
+          }
+        }
+      }
+    ],
+    "family_linear_standard": [
+      {
+        "raw_max_score_cutoff": 0.0,
+        "coverage": 1.0,
+        "selective_accuracy": 0.9100190298615048,
+        "accepted_error_rate": 0.08998097013849515,
+        "selective_macro_f1_fixed_taxonomy": 0.18579368189381293,
+        "accepted_families_with_support": [
+          "Benign",
+          "Bot",
+          "Brute Force -Web",
+          "Brute Force -XSS",
+          "DDOS attack-HOIC",
+          "DDOS attack-LOIC-UDP",
+          "DDoS attacks-LOIC-HTTP",
+          "DoS attacks-GoldenEye",
+          "DoS attacks-Hulk",
+          "DoS attacks-SlowHTTPTest",
+          "DoS attacks-Slowloris",
+          "FTP-BruteForce",
+          "Infilteration",
+          "SQL Injection",
+          "SSH-Bruteforce"
+        ],
+        "per_family": {
+          "Benign": {
+            "support": 1461312,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "Bot": {
+            "support": 3148,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "Brute Force -Web": {
+            "support": 436,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "Brute Force -XSS": {
+            "support": 424,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DDOS attack-HOIC": {
+            "support": 47,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DDOS attack-LOIC-UDP": {
+            "support": 340,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DDoS attacks-LOIC-HTTP": {
+            "support": 75369,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DoS attacks-GoldenEye": {
+            "support": 6587,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DoS attacks-Hulk": {
+            "support": 21624,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DoS attacks-SlowHTTPTest": {
+            "support": 21067,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DoS attacks-Slowloris": {
+            "support": 4546,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "FTP-BruteForce": {
+            "support": 38611,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "Infilteration": {
+            "support": 12292,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "SQL Injection": {
+            "support": 7,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "SSH-Bruteforce": {
+            "support": 18942,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          }
+        }
+      },
+      {
+        "raw_max_score_cutoff": 0.5,
+        "coverage": 0.9383691985352773,
+        "selective_accuracy": 0.9574881317567049,
+        "accepted_error_rate": 0.042511868243295114,
+        "selective_macro_f1_fixed_taxonomy": 0.20381920413453242,
+        "accepted_families_with_support": [
+          "Benign",
+          "Bot",
+          "Brute Force -Web",
+          "Brute Force -XSS",
+          "DDOS attack-HOIC",
+          "DDOS attack-LOIC-UDP",
+          "DDoS attacks-LOIC-HTTP",
+          "DoS attacks-GoldenEye",
+          "DoS attacks-Hulk",
+          "DoS attacks-SlowHTTPTest",
+          "DoS attacks-Slowloris",
+          "FTP-BruteForce",
+          "Infilteration",
+          "SQL Injection",
+          "SSH-Bruteforce"
+        ],
+        "per_family": {
+          "Benign": {
+            "support": 1461312,
+            "rejected": 348,
+            "rejection_rate": 0.0002381421626593089
+          },
+          "Bot": {
+            "support": 3148,
+            "rejected": 1,
+            "rejection_rate": 0.0003176620076238882
+          },
+          "Brute Force -Web": {
+            "support": 436,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "Brute Force -XSS": {
+            "support": 424,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DDOS attack-HOIC": {
+            "support": 47,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DDOS attack-LOIC-UDP": {
+            "support": 340,
+            "rejected": 221,
+            "rejection_rate": 0.65
+          },
+          "DDoS attacks-LOIC-HTTP": {
+            "support": 75369,
+            "rejected": 62861,
+            "rejection_rate": 0.8340431742493598
+          },
+          "DoS attacks-GoldenEye": {
+            "support": 6587,
+            "rejected": 3169,
+            "rejection_rate": 0.48109913465917714
+          },
+          "DoS attacks-Hulk": {
+            "support": 21624,
+            "rejected": 8125,
+            "rejection_rate": 0.375739918608953
+          },
+          "DoS attacks-SlowHTTPTest": {
+            "support": 21067,
+            "rejected": 6269,
+            "rejection_rate": 0.2975744054682679
+          },
+          "DoS attacks-Slowloris": {
+            "support": 4546,
+            "rejected": 347,
+            "rejection_rate": 0.07633084029916411
+          },
+          "FTP-BruteForce": {
+            "support": 38611,
+            "rejected": 12416,
+            "rejection_rate": 0.3215663929968144
+          },
+          "Infilteration": {
+            "support": 12292,
+            "rejected": 58,
+            "rejection_rate": 0.004718516108037748
+          },
+          "SQL Injection": {
+            "support": 7,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "SSH-Bruteforce": {
+            "support": 18942,
+            "rejected": 8785,
+            "rejection_rate": 0.46378418329637844
+          }
+        }
+      },
+      {
+        "raw_max_score_cutoff": 0.7,
+        "coverage": 0.9181025161705768,
+        "selective_accuracy": 0.9727868056605119,
+        "accepted_error_rate": 0.0272131943394881,
+        "selective_macro_f1_fixed_taxonomy": 0.21492749466731842,
+        "accepted_families_with_support": [
+          "Benign",
+          "Bot",
+          "Brute Force -Web",
+          "Brute Force -XSS",
+          "DDOS attack-HOIC",
+          "DDOS attack-LOIC-UDP",
+          "DDoS attacks-LOIC-HTTP",
+          "DoS attacks-GoldenEye",
+          "DoS attacks-Hulk",
+          "DoS attacks-SlowHTTPTest",
+          "DoS attacks-Slowloris",
+          "FTP-BruteForce",
+          "Infilteration",
+          "SQL Injection",
+          "SSH-Bruteforce"
+        ],
+        "per_family": {
+          "Benign": {
+            "support": 1461312,
+            "rejected": 398,
+            "rejection_rate": 0.0002723579906276004
+          },
+          "Bot": {
+            "support": 3148,
+            "rejected": 22,
+            "rejection_rate": 0.00698856416772554
+          },
+          "Brute Force -Web": {
+            "support": 436,
+            "rejected": 409,
+            "rejection_rate": 0.9380733944954128
+          },
+          "Brute Force -XSS": {
+            "support": 424,
+            "rejected": 409,
+            "rejection_rate": 0.964622641509434
+          },
+          "DDOS attack-HOIC": {
+            "support": 47,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DDOS attack-LOIC-UDP": {
+            "support": 340,
+            "rejected": 292,
+            "rejection_rate": 0.8588235294117647
+          },
+          "DDoS attacks-LOIC-HTTP": {
+            "support": 75369,
+            "rejected": 71300,
+            "rejection_rate": 0.9460122862184718
+          },
+          "DoS attacks-GoldenEye": {
+            "support": 6587,
+            "rejected": 4266,
+            "rejection_rate": 0.6476392895096402
+          },
+          "DoS attacks-Hulk": {
+            "support": 21624,
+            "rejected": 14722,
+            "rejection_rate": 0.6808176100628931
+          },
+          "DoS attacks-SlowHTTPTest": {
+            "support": 21067,
+            "rejected": 9409,
+            "rejection_rate": 0.44662268002088573
+          },
+          "DoS attacks-Slowloris": {
+            "support": 4546,
+            "rejected": 1216,
+            "rejection_rate": 0.26748790145182577
+          },
+          "FTP-BruteForce": {
+            "support": 38611,
+            "rejected": 18057,
+            "rejection_rate": 0.46766465515008676
+          },
+          "Infilteration": {
+            "support": 12292,
+            "rejected": 96,
+            "rejection_rate": 0.0078099576960624795
+          },
+          "SQL Injection": {
+            "support": 7,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "SSH-Bruteforce": {
+            "support": 18942,
+            "rejected": 15743,
+            "rejection_rate": 0.8311160384331117
+          }
+        }
+      },
+      {
+        "raw_max_score_cutoff": 0.9,
+        "coverage": 0.8995405922323565,
+        "selective_accuracy": 0.9832528887915423,
+        "accepted_error_rate": 0.016747111208457732,
+        "selective_macro_f1_fixed_taxonomy": 0.21524378594619084,
+        "accepted_families_with_support": [
+          "Benign",
+          "Bot",
+          "Brute Force -Web",
+          "Brute Force -XSS",
+          "DDOS attack-HOIC",
+          "DDOS attack-LOIC-UDP",
+          "DDoS attacks-LOIC-HTTP",
+          "DoS attacks-GoldenEye",
+          "DoS attacks-Hulk",
+          "DoS attacks-SlowHTTPTest",
+          "DoS attacks-Slowloris",
+          "FTP-BruteForce",
+          "Infilteration",
+          "SQL Injection",
+          "SSH-Bruteforce"
+        ],
+        "per_family": {
+          "Benign": {
+            "support": 1461312,
+            "rejected": 411,
+            "rejection_rate": 0.0002812541058993562
+          },
+          "Bot": {
+            "support": 3148,
+            "rejected": 1770,
+            "rejection_rate": 0.5622617534942821
+          },
+          "Brute Force -Web": {
+            "support": 436,
+            "rejected": 418,
+            "rejection_rate": 0.9587155963302753
+          },
+          "Brute Force -XSS": {
+            "support": 424,
+            "rejected": 409,
+            "rejection_rate": 0.964622641509434
+          },
+          "DDOS attack-HOIC": {
+            "support": 47,
+            "rejected": 9,
+            "rejection_rate": 0.19148936170212766
+          },
+          "DDOS attack-LOIC-UDP": {
+            "support": 340,
+            "rejected": 296,
+            "rejection_rate": 0.8705882352941177
+          },
+          "DDoS attacks-LOIC-HTTP": {
+            "support": 75369,
+            "rejected": 75349,
+            "rejection_rate": 0.9997346389098967
+          },
+          "DoS attacks-GoldenEye": {
+            "support": 6587,
+            "rejected": 5413,
+            "rejection_rate": 0.8217701533323213
+          },
+          "DoS attacks-Hulk": {
+            "support": 21624,
+            "rejected": 15969,
+            "rejection_rate": 0.7384850166481687
+          },
+          "DoS attacks-SlowHTTPTest": {
+            "support": 21067,
+            "rejected": 16601,
+            "rejection_rate": 0.7880096833910856
+          },
+          "DoS attacks-Slowloris": {
+            "support": 4546,
+            "rejected": 2521,
+            "rejection_rate": 0.5545534535855697
+          },
+          "FTP-BruteForce": {
+            "support": 38611,
+            "rejected": 30577,
+            "rejection_rate": 0.7919245810779312
+          },
+          "Infilteration": {
+            "support": 12292,
+            "rejected": 128,
+            "rejection_rate": 0.010413276928083305
+          },
+          "SQL Injection": {
+            "support": 7,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "SSH-Bruteforce": {
+            "support": 18942,
+            "rejected": 17369,
+            "rejection_rate": 0.9169570267131243
+          }
+        }
+      },
+      {
+        "raw_max_score_cutoff": 0.95,
+        "coverage": 0.8966404605610926,
+        "selective_accuracy": 0.9856567096585748,
+        "accepted_error_rate": 0.01434329034142523,
+        "selective_macro_f1_fixed_taxonomy": 0.22728650669775843,
+        "accepted_families_with_support": [
+          "Benign",
+          "Bot",
+          "Brute Force -Web",
+          "Brute Force -XSS",
+          "DDOS attack-HOIC",
+          "DDOS attack-LOIC-UDP",
+          "DDoS attacks-LOIC-HTTP",
+          "DoS attacks-GoldenEye",
+          "DoS attacks-Hulk",
+          "DoS attacks-SlowHTTPTest",
+          "DoS attacks-Slowloris",
+          "FTP-BruteForce",
+          "Infilteration",
+          "SQL Injection",
+          "SSH-Bruteforce"
+        ],
+        "per_family": {
+          "Benign": {
+            "support": 1461312,
+            "rejected": 416,
+            "rejection_rate": 0.00028467568869618533
+          },
+          "Bot": {
+            "support": 3148,
+            "rejected": 3143,
+            "rejection_rate": 0.9984116899618806
+          },
+          "Brute Force -Web": {
+            "support": 436,
+            "rejected": 420,
+            "rejection_rate": 0.963302752293578
+          },
+          "Brute Force -XSS": {
+            "support": 424,
+            "rejected": 409,
+            "rejection_rate": 0.964622641509434
+          },
+          "DDOS attack-HOIC": {
+            "support": 47,
+            "rejected": 11,
+            "rejection_rate": 0.23404255319148937
+          },
+          "DDOS attack-LOIC-UDP": {
+            "support": 340,
+            "rejected": 317,
+            "rejection_rate": 0.9323529411764706
+          },
+          "DDoS attacks-LOIC-HTTP": {
+            "support": 75369,
+            "rejected": 75349,
+            "rejection_rate": 0.9997346389098967
+          },
+          "DoS attacks-GoldenEye": {
+            "support": 6587,
+            "rejected": 5769,
+            "rejection_rate": 0.8758160012145134
+          },
+          "DoS attacks-Hulk": {
+            "support": 21624,
+            "rejected": 16519,
+            "rejection_rate": 0.7639197188309286
+          },
+          "DoS attacks-SlowHTTPTest": {
+            "support": 21067,
+            "rejected": 16969,
+            "rejection_rate": 0.8054777614278255
+          },
+          "DoS attacks-Slowloris": {
+            "support": 4546,
+            "rejected": 2826,
+            "rejection_rate": 0.6216454025516938
+          },
+          "FTP-BruteForce": {
+            "support": 38611,
+            "rejected": 31175,
+            "rejection_rate": 0.8074123954313538
+          },
+          "Infilteration": {
+            "support": 12292,
+            "rejected": 146,
+            "rejection_rate": 0.011877643996095021
+          },
+          "SQL Injection": {
+            "support": 7,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "SSH-Bruteforce": {
+            "support": 18942,
+            "rejected": 18599,
+            "rejection_rate": 0.9818920916481892
+          }
+        }
+      }
+    ],
+    "family_linear_high_sensitivity": [
+      {
+        "raw_max_score_cutoff": 0.0,
+        "coverage": 1.0,
+        "selective_accuracy": 0.9023097734677598,
+        "accepted_error_rate": 0.09769022653224024,
+        "selective_macro_f1_fixed_taxonomy": 0.18704062979614278,
+        "accepted_families_with_support": [
+          "Benign",
+          "Bot",
+          "Brute Force -Web",
+          "Brute Force -XSS",
+          "DDOS attack-HOIC",
+          "DDOS attack-LOIC-UDP",
+          "DDoS attacks-LOIC-HTTP",
+          "DoS attacks-GoldenEye",
+          "DoS attacks-Hulk",
+          "DoS attacks-SlowHTTPTest",
+          "DoS attacks-Slowloris",
+          "FTP-BruteForce",
+          "Infilteration",
+          "SQL Injection",
+          "SSH-Bruteforce"
+        ],
+        "per_family": {
+          "Benign": {
+            "support": 1461312,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "Bot": {
+            "support": 3148,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "Brute Force -Web": {
+            "support": 436,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "Brute Force -XSS": {
+            "support": 424,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DDOS attack-HOIC": {
+            "support": 47,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DDOS attack-LOIC-UDP": {
+            "support": 340,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DDoS attacks-LOIC-HTTP": {
+            "support": 75369,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DoS attacks-GoldenEye": {
+            "support": 6587,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DoS attacks-Hulk": {
+            "support": 21624,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DoS attacks-SlowHTTPTest": {
+            "support": 21067,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DoS attacks-Slowloris": {
+            "support": 4546,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "FTP-BruteForce": {
+            "support": 38611,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "Infilteration": {
+            "support": 12292,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "SQL Injection": {
+            "support": 7,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "SSH-Bruteforce": {
+            "support": 18942,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          }
+        }
+      },
+      {
+        "raw_max_score_cutoff": 0.5,
+        "coverage": 0.9379973713802416,
+        "selective_accuracy": 0.9496488386732781,
+        "accepted_error_rate": 0.050351161326721905,
+        "selective_macro_f1_fixed_taxonomy": 0.20537859234269837,
+        "accepted_families_with_support": [
+          "Benign",
+          "Bot",
+          "Brute Force -Web",
+          "Brute Force -XSS",
+          "DDOS attack-HOIC",
+          "DDOS attack-LOIC-UDP",
+          "DDoS attacks-LOIC-HTTP",
+          "DoS attacks-GoldenEye",
+          "DoS attacks-Hulk",
+          "DoS attacks-SlowHTTPTest",
+          "DoS attacks-Slowloris",
+          "FTP-BruteForce",
+          "Infilteration",
+          "SQL Injection",
+          "SSH-Bruteforce"
+        ],
+        "per_family": {
+          "Benign": {
+            "support": 1461312,
+            "rejected": 943,
+            "rejection_rate": 0.0006453105154819778
+          },
+          "Bot": {
+            "support": 3148,
+            "rejected": 1,
+            "rejection_rate": 0.0003176620076238882
+          },
+          "Brute Force -Web": {
+            "support": 436,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "Brute Force -XSS": {
+            "support": 424,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DDOS attack-HOIC": {
+            "support": 47,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DDOS attack-LOIC-UDP": {
+            "support": 340,
+            "rejected": 221,
+            "rejection_rate": 0.65
+          },
+          "DDoS attacks-LOIC-HTTP": {
+            "support": 75369,
+            "rejected": 62866,
+            "rejection_rate": 0.8341095145218856
+          },
+          "DoS attacks-GoldenEye": {
+            "support": 6587,
+            "rejected": 3173,
+            "rejection_rate": 0.4817063913769546
+          },
+          "DoS attacks-Hulk": {
+            "support": 21624,
+            "rejected": 8131,
+            "rejection_rate": 0.3760173880873104
+          },
+          "DoS attacks-SlowHTTPTest": {
+            "support": 21067,
+            "rejected": 6269,
+            "rejection_rate": 0.2975744054682679
+          },
+          "DoS attacks-Slowloris": {
+            "support": 4546,
+            "rejected": 347,
+            "rejection_rate": 0.07633084029916411
+          },
+          "FTP-BruteForce": {
+            "support": 38611,
+            "rejected": 12416,
+            "rejection_rate": 0.3215663929968144
+          },
+          "Infilteration": {
+            "support": 12292,
+            "rejected": 67,
+            "rejection_rate": 0.005450699642043606
+          },
+          "SQL Injection": {
+            "support": 7,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "SSH-Bruteforce": {
+            "support": 18942,
+            "rejected": 8785,
+            "rejection_rate": 0.46378418329637844
+          }
+        }
+      },
+      {
+        "raw_max_score_cutoff": 0.7,
+        "coverage": 0.9175138398992763,
+        "selective_accuracy": 0.9649811153746187,
+        "accepted_error_rate": 0.035018884625381275,
+        "selective_macro_f1_fixed_taxonomy": 0.21662963975853308,
+        "accepted_families_with_support": [
+          "Benign",
+          "Bot",
+          "Brute Force -Web",
+          "Brute Force -XSS",
+          "DDOS attack-HOIC",
+          "DDOS attack-LOIC-UDP",
+          "DDoS attacks-LOIC-HTTP",
+          "DoS attacks-GoldenEye",
+          "DoS attacks-Hulk",
+          "DoS attacks-SlowHTTPTest",
+          "DoS attacks-Slowloris",
+          "FTP-BruteForce",
+          "Infilteration",
+          "SQL Injection",
+          "SSH-Bruteforce"
+        ],
+        "per_family": {
+          "Benign": {
+            "support": 1461312,
+            "rejected": 1307,
+            "rejection_rate": 0.00089440174309114
+          },
+          "Bot": {
+            "support": 3148,
+            "rejected": 22,
+            "rejection_rate": 0.00698856416772554
+          },
+          "Brute Force -Web": {
+            "support": 436,
+            "rejected": 409,
+            "rejection_rate": 0.9380733944954128
+          },
+          "Brute Force -XSS": {
+            "support": 424,
+            "rejected": 409,
+            "rejection_rate": 0.964622641509434
+          },
+          "DDOS attack-HOIC": {
+            "support": 47,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DDOS attack-LOIC-UDP": {
+            "support": 340,
+            "rejected": 292,
+            "rejection_rate": 0.8588235294117647
+          },
+          "DDoS attacks-LOIC-HTTP": {
+            "support": 75369,
+            "rejected": 71305,
+            "rejection_rate": 0.9460786264909976
+          },
+          "DoS attacks-GoldenEye": {
+            "support": 6587,
+            "rejected": 4270,
+            "rejection_rate": 0.6482465462274176
+          },
+          "DoS attacks-Hulk": {
+            "support": 21624,
+            "rejected": 14729,
+            "rejection_rate": 0.68114132445431
+          },
+          "DoS attacks-SlowHTTPTest": {
+            "support": 21067,
+            "rejected": 9409,
+            "rejection_rate": 0.44662268002088573
+          },
+          "DoS attacks-Slowloris": {
+            "support": 4546,
+            "rejected": 1216,
+            "rejection_rate": 0.26748790145182577
+          },
+          "FTP-BruteForce": {
+            "support": 38611,
+            "rejected": 18057,
+            "rejection_rate": 0.46766465515008676
+          },
+          "Infilteration": {
+            "support": 12292,
+            "rejected": 147,
+            "rejection_rate": 0.011958997722095672
+          },
+          "SQL Injection": {
+            "support": 7,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "SSH-Bruteforce": {
+            "support": 18942,
+            "rejected": 15747,
+            "rejection_rate": 0.8313272093759899
+          }
+        }
+      },
+      {
+        "raw_max_score_cutoff": 0.9,
+        "coverage": 0.8988401876075235,
+        "selective_accuracy": 0.9754060892333725,
+        "accepted_error_rate": 0.024593910766627536,
+        "selective_macro_f1_fixed_taxonomy": 0.21716432707976702,
+        "accepted_families_with_support": [
+          "Benign",
+          "Bot",
+          "Brute Force -Web",
+          "Brute Force -XSS",
+          "DDOS attack-HOIC",
+          "DDOS attack-LOIC-UDP",
+          "DDoS attacks-LOIC-HTTP",
+          "DoS attacks-GoldenEye",
+          "DoS attacks-Hulk",
+          "DoS attacks-SlowHTTPTest",
+          "DoS attacks-Slowloris",
+          "FTP-BruteForce",
+          "Infilteration",
+          "SQL Injection",
+          "SSH-Bruteforce"
+        ],
+        "per_family": {
+          "Benign": {
+            "support": 1461312,
+            "rejected": 1493,
+            "rejection_rate": 0.0010216846231331845
+          },
+          "Bot": {
+            "support": 3148,
+            "rejected": 1770,
+            "rejection_rate": 0.5622617534942821
+          },
+          "Brute Force -Web": {
+            "support": 436,
+            "rejected": 418,
+            "rejection_rate": 0.9587155963302753
+          },
+          "Brute Force -XSS": {
+            "support": 424,
+            "rejected": 409,
+            "rejection_rate": 0.964622641509434
+          },
+          "DDOS attack-HOIC": {
+            "support": 47,
+            "rejected": 9,
+            "rejection_rate": 0.19148936170212766
+          },
+          "DDOS attack-LOIC-UDP": {
+            "support": 340,
+            "rejected": 296,
+            "rejection_rate": 0.8705882352941177
+          },
+          "DDoS attacks-LOIC-HTTP": {
+            "support": 75369,
+            "rejected": 75354,
+            "rejection_rate": 0.9998009791824225
+          },
+          "DoS attacks-GoldenEye": {
+            "support": 6587,
+            "rejected": 5417,
+            "rejection_rate": 0.8223774100500987
+          },
+          "DoS attacks-Hulk": {
+            "support": 21624,
+            "rejected": 15976,
+            "rejection_rate": 0.7388087310395857
+          },
+          "DoS attacks-SlowHTTPTest": {
+            "support": 21067,
+            "rejected": 16601,
+            "rejection_rate": 0.7880096833910856
+          },
+          "DoS attacks-Slowloris": {
+            "support": 4546,
+            "rejected": 2521,
+            "rejection_rate": 0.5545534535855697
+          },
+          "FTP-BruteForce": {
+            "support": 38611,
+            "rejected": 30577,
+            "rejection_rate": 0.7919245810779312
+          },
+          "Infilteration": {
+            "support": 12292,
+            "rejected": 192,
+            "rejection_rate": 0.015619915392124959
+          },
+          "SQL Injection": {
+            "support": 7,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "SSH-Bruteforce": {
+            "support": 18942,
+            "rejected": 17373,
+            "rejection_rate": 0.9171681976560025
+          }
+        }
+      },
+      {
+        "raw_max_score_cutoff": 0.95,
+        "coverage": 0.8958018972195257,
+        "selective_accuracy": 0.9779157345864783,
+        "accepted_error_rate": 0.02208426541352171,
+        "selective_macro_f1_fixed_taxonomy": 0.23046323387816187,
+        "accepted_families_with_support": [
+          "Benign",
+          "Bot",
+          "Brute Force -Web",
+          "Brute Force -XSS",
+          "DDOS attack-HOIC",
+          "DDOS attack-LOIC-UDP",
+          "DDoS attacks-LOIC-HTTP",
+          "DoS attacks-GoldenEye",
+          "DoS attacks-Hulk",
+          "DoS attacks-SlowHTTPTest",
+          "DoS attacks-Slowloris",
+          "FTP-BruteForce",
+          "Infilteration",
+          "SQL Injection",
+          "SSH-Bruteforce"
+        ],
+        "per_family": {
+          "Benign": {
+            "support": 1461312,
+            "rejected": 1692,
+            "rejection_rate": 0.0011578636184469847
+          },
+          "Bot": {
+            "support": 3148,
+            "rejected": 3143,
+            "rejection_rate": 0.9984116899618806
+          },
+          "Brute Force -Web": {
+            "support": 436,
+            "rejected": 421,
+            "rejection_rate": 0.9655963302752294
+          },
+          "Brute Force -XSS": {
+            "support": 424,
+            "rejected": 409,
+            "rejection_rate": 0.964622641509434
+          },
+          "DDOS attack-HOIC": {
+            "support": 47,
+            "rejected": 12,
+            "rejection_rate": 0.2553191489361702
+          },
+          "DDOS attack-LOIC-UDP": {
+            "support": 340,
+            "rejected": 317,
+            "rejection_rate": 0.9323529411764706
+          },
+          "DDoS attacks-LOIC-HTTP": {
+            "support": 75369,
+            "rejected": 75354,
+            "rejection_rate": 0.9998009791824225
+          },
+          "DoS attacks-GoldenEye": {
+            "support": 6587,
+            "rejected": 5773,
+            "rejection_rate": 0.8764232579322909
+          },
+          "DoS attacks-Hulk": {
+            "support": 21624,
+            "rejected": 16526,
+            "rejection_rate": 0.7642434332223456
+          },
+          "DoS attacks-SlowHTTPTest": {
+            "support": 21067,
+            "rejected": 16969,
+            "rejection_rate": 0.8054777614278255
+          },
+          "DoS attacks-Slowloris": {
+            "support": 4546,
+            "rejected": 2826,
+            "rejection_rate": 0.6216454025516938
+          },
+          "FTP-BruteForce": {
+            "support": 38611,
+            "rejected": 31175,
+            "rejection_rate": 0.8074123954313538
+          },
+          "Infilteration": {
+            "support": 12292,
+            "rejected": 244,
+            "rejection_rate": 0.019850309144158803
+          },
+          "SQL Injection": {
+            "support": 7,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "SSH-Bruteforce": {
+            "support": 18942,
+            "rejected": 18603,
+            "rejection_rate": 0.9821032625910675
+          }
+        }
+      }
+    ],
+    "direct_histogram": [
+      {
+        "raw_max_score_cutoff": 0.0,
+        "coverage": 1.0,
+        "selective_accuracy": 0.9793176401049526,
+        "accepted_error_rate": 0.02068235989504741,
+        "selective_macro_f1_fixed_taxonomy": 0.6881596388267947,
+        "accepted_families_with_support": [
+          "Benign",
+          "Bot",
+          "Brute Force -Web",
+          "Brute Force -XSS",
+          "DDOS attack-HOIC",
+          "DDOS attack-LOIC-UDP",
+          "DDoS attacks-LOIC-HTTP",
+          "DoS attacks-GoldenEye",
+          "DoS attacks-Hulk",
+          "DoS attacks-SlowHTTPTest",
+          "DoS attacks-Slowloris",
+          "FTP-BruteForce",
+          "Infilteration",
+          "SQL Injection",
+          "SSH-Bruteforce"
+        ],
+        "per_family": {
+          "Benign": {
+            "support": 1461312,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "Bot": {
+            "support": 3148,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "Brute Force -Web": {
+            "support": 436,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "Brute Force -XSS": {
+            "support": 424,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DDOS attack-HOIC": {
+            "support": 47,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DDOS attack-LOIC-UDP": {
+            "support": 340,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DDoS attacks-LOIC-HTTP": {
+            "support": 75369,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DoS attacks-GoldenEye": {
+            "support": 6587,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DoS attacks-Hulk": {
+            "support": 21624,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DoS attacks-SlowHTTPTest": {
+            "support": 21067,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DoS attacks-Slowloris": {
+            "support": 4546,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "FTP-BruteForce": {
+            "support": 38611,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "Infilteration": {
+            "support": 12292,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "SQL Injection": {
+            "support": 7,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "SSH-Bruteforce": {
+            "support": 18942,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          }
+        }
+      },
+      {
+        "raw_max_score_cutoff": 0.5,
+        "coverage": 0.9999183061501052,
+        "selective_accuracy": 0.9793580020857663,
+        "accepted_error_rate": 0.020641997914233712,
+        "selective_macro_f1_fixed_taxonomy": 0.644106861194997,
+        "accepted_families_with_support": [
+          "Benign",
+          "Bot",
+          "Brute Force -Web",
+          "Brute Force -XSS",
+          "DDOS attack-HOIC",
+          "DDOS attack-LOIC-UDP",
+          "DDoS attacks-LOIC-HTTP",
+          "DoS attacks-GoldenEye",
+          "DoS attacks-Hulk",
+          "DoS attacks-SlowHTTPTest",
+          "DoS attacks-Slowloris",
+          "FTP-BruteForce",
+          "Infilteration",
+          "SQL Injection",
+          "SSH-Bruteforce"
+        ],
+        "per_family": {
+          "Benign": {
+            "support": 1461312,
+            "rejected": 16,
+            "rejection_rate": 1.0949064949853282e-05
+          },
+          "Bot": {
+            "support": 3148,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "Brute Force -Web": {
+            "support": 436,
+            "rejected": 24,
+            "rejection_rate": 0.05504587155963303
+          },
+          "Brute Force -XSS": {
+            "support": 424,
+            "rejected": 12,
+            "rejection_rate": 0.02830188679245283
+          },
+          "DDOS attack-HOIC": {
+            "support": 47,
+            "rejected": 38,
+            "rejection_rate": 0.8085106382978723
+          },
+          "DDOS attack-LOIC-UDP": {
+            "support": 340,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DDoS attacks-LOIC-HTTP": {
+            "support": 75369,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DoS attacks-GoldenEye": {
+            "support": 6587,
+            "rejected": 26,
+            "rejection_rate": 0.0039471686655533625
+          },
+          "DoS attacks-Hulk": {
+            "support": 21624,
+            "rejected": 5,
+            "rejection_rate": 0.00023122456529781724
+          },
+          "DoS attacks-SlowHTTPTest": {
+            "support": 21067,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DoS attacks-Slowloris": {
+            "support": 4546,
+            "rejected": 2,
+            "rejection_rate": 0.0004399472063352398
+          },
+          "FTP-BruteForce": {
+            "support": 38611,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "Infilteration": {
+            "support": 12292,
+            "rejected": 9,
+            "rejection_rate": 0.0007321835340058575
+          },
+          "SQL Injection": {
+            "support": 7,
+            "rejected": 4,
+            "rejection_rate": 0.5714285714285714
+          },
+          "SSH-Bruteforce": {
+            "support": 18942,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          }
+        }
+      },
+      {
+        "raw_max_score_cutoff": 0.7,
+        "coverage": 0.962329524157352,
+        "selective_accuracy": 0.992569473920751,
+        "accepted_error_rate": 0.007430526079248989,
+        "selective_macro_f1_fixed_taxonomy": 0.5366539474350769,
+        "accepted_families_with_support": [
+          "Benign",
+          "Bot",
+          "Brute Force -Web",
+          "Brute Force -XSS",
+          "DDOS attack-HOIC",
+          "DDOS attack-LOIC-UDP",
+          "DDoS attacks-LOIC-HTTP",
+          "DoS attacks-GoldenEye",
+          "DoS attacks-Hulk",
+          "DoS attacks-Slowloris",
+          "Infilteration",
+          "SQL Injection",
+          "SSH-Bruteforce"
+        ],
+        "per_family": {
+          "Benign": {
+            "support": 1461312,
+            "rejected": 562,
+            "rejection_rate": 0.00038458590636359654
+          },
+          "Bot": {
+            "support": 3148,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "Brute Force -Web": {
+            "support": 436,
+            "rejected": 433,
+            "rejection_rate": 0.9931192660550459
+          },
+          "Brute Force -XSS": {
+            "support": 424,
+            "rejected": 421,
+            "rejection_rate": 0.9929245283018868
+          },
+          "DDOS attack-HOIC": {
+            "support": 47,
+            "rejected": 40,
+            "rejection_rate": 0.851063829787234
+          },
+          "DDOS attack-LOIC-UDP": {
+            "support": 340,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DDoS attacks-LOIC-HTTP": {
+            "support": 75369,
+            "rejected": 3,
+            "rejection_rate": 3.980416351550372e-05
+          },
+          "DoS attacks-GoldenEye": {
+            "support": 6587,
+            "rejected": 737,
+            "rejection_rate": 0.11188705025049339
+          },
+          "DoS attacks-Hulk": {
+            "support": 21624,
+            "rejected": 398,
+            "rejection_rate": 0.01840547539770625
+          },
+          "DoS attacks-SlowHTTPTest": {
+            "support": 21067,
+            "rejected": 21067,
+            "rejection_rate": 1.0
+          },
+          "DoS attacks-Slowloris": {
+            "support": 4546,
+            "rejected": 6,
+            "rejection_rate": 0.0013198416190057193
+          },
+          "FTP-BruteForce": {
+            "support": 38611,
+            "rejected": 38611,
+            "rejection_rate": 1.0
+          },
+          "Infilteration": {
+            "support": 12292,
+            "rejected": 419,
+            "rejection_rate": 0.034087211194272694
+          },
+          "SQL Injection": {
+            "support": 7,
+            "rejected": 6,
+            "rejection_rate": 0.8571428571428571
+          },
+          "SSH-Bruteforce": {
+            "support": 18942,
+            "rejected": 9,
+            "rejection_rate": 0.0004751346214760849
+          }
+        }
+      },
+      {
+        "raw_max_score_cutoff": 0.9,
+        "coverage": 0.9607136678616395,
+        "selective_accuracy": 0.9929139963110013,
+        "accepted_error_rate": 0.007086003688998699,
+        "selective_macro_f1_fixed_taxonomy": 0.5390358932318707,
+        "accepted_families_with_support": [
+          "Benign",
+          "Bot",
+          "Brute Force -Web",
+          "Brute Force -XSS",
+          "DDOS attack-HOIC",
+          "DDOS attack-LOIC-UDP",
+          "DDoS attacks-LOIC-HTTP",
+          "DoS attacks-GoldenEye",
+          "DoS attacks-Hulk",
+          "DoS attacks-Slowloris",
+          "Infilteration",
+          "SQL Injection",
+          "SSH-Bruteforce"
+        ],
+        "per_family": {
+          "Benign": {
+            "support": 1461312,
+            "rejected": 1193,
+            "rejection_rate": 0.0008163896553234354
+          },
+          "Bot": {
+            "support": 3148,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "Brute Force -Web": {
+            "support": 436,
+            "rejected": 433,
+            "rejection_rate": 0.9931192660550459
+          },
+          "Brute Force -XSS": {
+            "support": 424,
+            "rejected": 422,
+            "rejection_rate": 0.9952830188679245
+          },
+          "DDOS attack-HOIC": {
+            "support": 47,
+            "rejected": 41,
+            "rejection_rate": 0.8723404255319149
+          },
+          "DDOS attack-LOIC-UDP": {
+            "support": 340,
+            "rejected": 32,
+            "rejection_rate": 0.09411764705882353
+          },
+          "DDoS attacks-LOIC-HTTP": {
+            "support": 75369,
+            "rejected": 574,
+            "rejection_rate": 0.007615863285966379
+          },
+          "DoS attacks-GoldenEye": {
+            "support": 6587,
+            "rejected": 1631,
+            "rejection_rate": 0.24760892667375134
+          },
+          "DoS attacks-Hulk": {
+            "support": 21624,
+            "rejected": 685,
+            "rejection_rate": 0.03167776544580096
+          },
+          "DoS attacks-SlowHTTPTest": {
+            "support": 21067,
+            "rejected": 21067,
+            "rejection_rate": 1.0
+          },
+          "DoS attacks-Slowloris": {
+            "support": 4546,
+            "rejected": 23,
+            "rejection_rate": 0.005059392872855257
+          },
+          "FTP-BruteForce": {
+            "support": 38611,
+            "rejected": 38611,
+            "rejection_rate": 1.0
+          },
+          "Infilteration": {
+            "support": 12292,
+            "rejected": 675,
+            "rejection_rate": 0.05491376505043931
+          },
+          "SQL Injection": {
+            "support": 7,
+            "rejected": 6,
+            "rejection_rate": 0.8571428571428571
+          },
+          "SSH-Bruteforce": {
+            "support": 18942,
+            "rejected": 9,
+            "rejection_rate": 0.0004751346214760849
+          }
+        }
+      },
+      {
+        "raw_max_score_cutoff": 0.95,
+        "coverage": 0.957807529289648,
+        "selective_accuracy": 0.9931283050864466,
+        "accepted_error_rate": 0.006871694913553439,
+        "selective_macro_f1_fixed_taxonomy": 0.539922075642074,
+        "accepted_families_with_support": [
+          "Benign",
+          "Bot",
+          "Brute Force -Web",
+          "Brute Force -XSS",
+          "DDOS attack-HOIC",
+          "DDOS attack-LOIC-UDP",
+          "DDoS attacks-LOIC-HTTP",
+          "DoS attacks-GoldenEye",
+          "DoS attacks-Hulk",
+          "DoS attacks-Slowloris",
+          "Infilteration",
+          "SSH-Bruteforce"
+        ],
+        "per_family": {
+          "Benign": {
+            "support": 1461312,
+            "rejected": 4532,
+            "rejection_rate": 0.003101322647045942
+          },
+          "Bot": {
+            "support": 3148,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "Brute Force -Web": {
+            "support": 436,
+            "rejected": 434,
+            "rejection_rate": 0.9954128440366973
+          },
+          "Brute Force -XSS": {
+            "support": 424,
+            "rejected": 422,
+            "rejection_rate": 0.9952830188679245
+          },
+          "DDOS attack-HOIC": {
+            "support": 47,
+            "rejected": 43,
+            "rejection_rate": 0.9148936170212766
+          },
+          "DDOS attack-LOIC-UDP": {
+            "support": 340,
+            "rejected": 37,
+            "rejection_rate": 0.10882352941176471
+          },
+          "DDoS attacks-LOIC-HTTP": {
+            "support": 75369,
+            "rejected": 862,
+            "rejection_rate": 0.011437062983454736
+          },
+          "DoS attacks-GoldenEye": {
+            "support": 6587,
+            "rejected": 2170,
+            "rejection_rate": 0.3294367693942614
+          },
+          "DoS attacks-Hulk": {
+            "support": 21624,
+            "rejected": 1002,
+            "rejection_rate": 0.046337402885682576
+          },
+          "DoS attacks-SlowHTTPTest": {
+            "support": 21067,
+            "rejected": 21067,
+            "rejection_rate": 1.0
+          },
+          "DoS attacks-Slowloris": {
+            "support": 4546,
+            "rejected": 53,
+            "rejection_rate": 0.011658600967883855
+          },
+          "FTP-BruteForce": {
+            "support": 38611,
+            "rejected": 38611,
+            "rejection_rate": 1.0
+          },
+          "Infilteration": {
+            "support": 12292,
+            "rejected": 991,
+            "rejection_rate": 0.08062154246664498
+          },
+          "SQL Injection": {
+            "support": 7,
+            "rejected": 7,
+            "rejection_rate": 1.0
+          },
+          "SSH-Bruteforce": {
+            "support": 18942,
+            "rejected": 9,
+            "rejection_rate": 0.0004751346214760849
+          }
+        }
+      }
+    ],
+    "family_histogram_standard": [
+      {
+        "raw_max_score_cutoff": 0.0,
+        "coverage": 1.0,
+        "selective_accuracy": 0.9795428988822359,
+        "accepted_error_rate": 0.02045710111776411,
+        "selective_macro_f1_fixed_taxonomy": 0.6625972852398565,
+        "accepted_families_with_support": [
+          "Benign",
+          "Bot",
+          "Brute Force -Web",
+          "Brute Force -XSS",
+          "DDOS attack-HOIC",
+          "DDOS attack-LOIC-UDP",
+          "DDoS attacks-LOIC-HTTP",
+          "DoS attacks-GoldenEye",
+          "DoS attacks-Hulk",
+          "DoS attacks-SlowHTTPTest",
+          "DoS attacks-Slowloris",
+          "FTP-BruteForce",
+          "Infilteration",
+          "SQL Injection",
+          "SSH-Bruteforce"
+        ],
+        "per_family": {
+          "Benign": {
+            "support": 1461312,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "Bot": {
+            "support": 3148,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "Brute Force -Web": {
+            "support": 436,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "Brute Force -XSS": {
+            "support": 424,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DDOS attack-HOIC": {
+            "support": 47,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DDOS attack-LOIC-UDP": {
+            "support": 340,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DDoS attacks-LOIC-HTTP": {
+            "support": 75369,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DoS attacks-GoldenEye": {
+            "support": 6587,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DoS attacks-Hulk": {
+            "support": 21624,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DoS attacks-SlowHTTPTest": {
+            "support": 21067,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DoS attacks-Slowloris": {
+            "support": 4546,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "FTP-BruteForce": {
+            "support": 38611,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "Infilteration": {
+            "support": 12292,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "SQL Injection": {
+            "support": 7,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "SSH-Bruteforce": {
+            "support": 18942,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          }
+        }
+      },
+      {
+        "raw_max_score_cutoff": 0.5,
+        "coverage": 0.9999819792978173,
+        "selective_accuracy": 0.9795557456440175,
+        "accepted_error_rate": 0.020444254355982516,
+        "selective_macro_f1_fixed_taxonomy": 0.6589177402754448,
+        "accepted_families_with_support": [
+          "Benign",
+          "Bot",
+          "Brute Force -Web",
+          "Brute Force -XSS",
+          "DDOS attack-HOIC",
+          "DDOS attack-LOIC-UDP",
+          "DDoS attacks-LOIC-HTTP",
+          "DoS attacks-GoldenEye",
+          "DoS attacks-Hulk",
+          "DoS attacks-SlowHTTPTest",
+          "DoS attacks-Slowloris",
+          "FTP-BruteForce",
+          "Infilteration",
+          "SQL Injection",
+          "SSH-Bruteforce"
+        ],
+        "per_family": {
+          "Benign": {
+            "support": 1461312,
+            "rejected": 12,
+            "rejection_rate": 8.211798712389962e-06
+          },
+          "Bot": {
+            "support": 3148,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "Brute Force -Web": {
+            "support": 436,
+            "rejected": 4,
+            "rejection_rate": 0.009174311926605505
+          },
+          "Brute Force -XSS": {
+            "support": 424,
+            "rejected": 4,
+            "rejection_rate": 0.009433962264150943
+          },
+          "DDOS attack-HOIC": {
+            "support": 47,
+            "rejected": 8,
+            "rejection_rate": 0.1702127659574468
+          },
+          "DDOS attack-LOIC-UDP": {
+            "support": 340,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DDoS attacks-LOIC-HTTP": {
+            "support": 75369,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DoS attacks-GoldenEye": {
+            "support": 6587,
+            "rejected": 1,
+            "rejection_rate": 0.0001518141794443601
+          },
+          "DoS attacks-Hulk": {
+            "support": 21624,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DoS attacks-SlowHTTPTest": {
+            "support": 21067,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DoS attacks-Slowloris": {
+            "support": 4546,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "FTP-BruteForce": {
+            "support": 38611,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "Infilteration": {
+            "support": 12292,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "SQL Injection": {
+            "support": 7,
+            "rejected": 1,
+            "rejection_rate": 0.14285714285714285
+          },
+          "SSH-Bruteforce": {
+            "support": 18942,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          }
+        }
+      },
+      {
+        "raw_max_score_cutoff": 0.7,
+        "coverage": 0.9628881659250147,
+        "selective_accuracy": 0.9924770894027961,
+        "accepted_error_rate": 0.007522910597203891,
+        "selective_macro_f1_fixed_taxonomy": 0.5386856657975029,
+        "accepted_families_with_support": [
+          "Benign",
+          "Bot",
+          "Brute Force -Web",
+          "Brute Force -XSS",
+          "DDOS attack-HOIC",
+          "DDOS attack-LOIC-UDP",
+          "DDoS attacks-LOIC-HTTP",
+          "DoS attacks-GoldenEye",
+          "DoS attacks-Hulk",
+          "DoS attacks-Slowloris",
+          "Infilteration",
+          "SQL Injection",
+          "SSH-Bruteforce"
+        ],
+        "per_family": {
+          "Benign": {
+            "support": 1461312,
+            "rejected": 32,
+            "rejection_rate": 2.1898129899706564e-05
+          },
+          "Bot": {
+            "support": 3148,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "Brute Force -Web": {
+            "support": 436,
+            "rejected": 424,
+            "rejection_rate": 0.9724770642201835
+          },
+          "Brute Force -XSS": {
+            "support": 424,
+            "rejected": 421,
+            "rejection_rate": 0.9929245283018868
+          },
+          "DDOS attack-HOIC": {
+            "support": 47,
+            "rejected": 27,
+            "rejection_rate": 0.574468085106383
+          },
+          "DDOS attack-LOIC-UDP": {
+            "support": 340,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DDoS attacks-LOIC-HTTP": {
+            "support": 75369,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DoS attacks-GoldenEye": {
+            "support": 6587,
+            "rejected": 702,
+            "rejection_rate": 0.1065735539699408
+          },
+          "DoS attacks-Hulk": {
+            "support": 21624,
+            "rejected": 489,
+            "rejection_rate": 0.022613762486126527
+          },
+          "DoS attacks-SlowHTTPTest": {
+            "support": 21067,
+            "rejected": 21067,
+            "rejection_rate": 1.0
+          },
+          "DoS attacks-Slowloris": {
+            "support": 4546,
+            "rejected": 2,
+            "rejection_rate": 0.0004399472063352398
+          },
+          "FTP-BruteForce": {
+            "support": 38611,
+            "rejected": 38611,
+            "rejection_rate": 1.0
+          },
+          "Infilteration": {
+            "support": 12292,
+            "rejected": 1,
+            "rejection_rate": 8.135372600065082e-05
+          },
+          "SQL Injection": {
+            "support": 7,
+            "rejected": 1,
+            "rejection_rate": 0.14285714285714285
+          },
+          "SSH-Bruteforce": {
+            "support": 18942,
+            "rejected": 5,
+            "rejection_rate": 0.00026396367859782494
+          }
+        }
+      },
+      {
+        "raw_max_score_cutoff": 0.9,
+        "coverage": 0.9622718579103674,
+        "selective_accuracy": 0.9925840104273308,
+        "accepted_error_rate": 0.0074159895726692016,
+        "selective_macro_f1_fixed_taxonomy": 0.5407676741821457,
+        "accepted_families_with_support": [
+          "Benign",
+          "Bot",
+          "Brute Force -Web",
+          "Brute Force -XSS",
+          "DDOS attack-HOIC",
+          "DDOS attack-LOIC-UDP",
+          "DDoS attacks-LOIC-HTTP",
+          "DoS attacks-GoldenEye",
+          "DoS attacks-Hulk",
+          "DoS attacks-Slowloris",
+          "Infilteration",
+          "SQL Injection",
+          "SSH-Bruteforce"
+        ],
+        "per_family": {
+          "Benign": {
+            "support": 1461312,
+            "rejected": 53,
+            "rejection_rate": 3.6268777646389e-05
+          },
+          "Bot": {
+            "support": 3148,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "Brute Force -Web": {
+            "support": 436,
+            "rejected": 424,
+            "rejection_rate": 0.9724770642201835
+          },
+          "Brute Force -XSS": {
+            "support": 424,
+            "rejected": 421,
+            "rejection_rate": 0.9929245283018868
+          },
+          "DDOS attack-HOIC": {
+            "support": 47,
+            "rejected": 27,
+            "rejection_rate": 0.574468085106383
+          },
+          "DDOS attack-LOIC-UDP": {
+            "support": 340,
+            "rejected": 32,
+            "rejection_rate": 0.09411764705882353
+          },
+          "DDoS attacks-LOIC-HTTP": {
+            "support": 75369,
+            "rejected": 12,
+            "rejection_rate": 0.0001592166540620149
+          },
+          "DoS attacks-GoldenEye": {
+            "support": 6587,
+            "rejected": 1442,
+            "rejection_rate": 0.21891604675876727
+          },
+          "DoS attacks-Hulk": {
+            "support": 21624,
+            "rejected": 683,
+            "rejection_rate": 0.03158527561968184
+          },
+          "DoS attacks-SlowHTTPTest": {
+            "support": 21067,
+            "rejected": 21067,
+            "rejection_rate": 1.0
+          },
+          "DoS attacks-Slowloris": {
+            "support": 4546,
+            "rejected": 29,
+            "rejection_rate": 0.0063792344918609765
+          },
+          "FTP-BruteForce": {
+            "support": 38611,
+            "rejected": 38611,
+            "rejection_rate": 1.0
+          },
+          "Infilteration": {
+            "support": 12292,
+            "rejected": 1,
+            "rejection_rate": 8.135372600065082e-05
+          },
+          "SQL Injection": {
+            "support": 7,
+            "rejected": 1,
+            "rejection_rate": 0.14285714285714285
+          },
+          "SSH-Bruteforce": {
+            "support": 18942,
+            "rejected": 5,
+            "rejection_rate": 0.00026396367859782494
+          }
+        }
+      },
+      {
+        "raw_max_score_cutoff": 0.95,
+        "coverage": 0.961464530452584,
+        "selective_accuracy": 0.9926496313882294,
+        "accepted_error_rate": 0.00735036861177063,
+        "selective_macro_f1_fixed_taxonomy": 0.5414490507210329,
+        "accepted_families_with_support": [
+          "Benign",
+          "Bot",
+          "Brute Force -Web",
+          "Brute Force -XSS",
+          "DDOS attack-HOIC",
+          "DDOS attack-LOIC-UDP",
+          "DDoS attacks-LOIC-HTTP",
+          "DoS attacks-GoldenEye",
+          "DoS attacks-Hulk",
+          "DoS attacks-Slowloris",
+          "Infilteration",
+          "SQL Injection",
+          "SSH-Bruteforce"
+        ],
+        "per_family": {
+          "Benign": {
+            "support": 1461312,
+            "rejected": 60,
+            "rejection_rate": 4.105899356194981e-05
+          },
+          "Bot": {
+            "support": 3148,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "Brute Force -Web": {
+            "support": 436,
+            "rejected": 424,
+            "rejection_rate": 0.9724770642201835
+          },
+          "Brute Force -XSS": {
+            "support": 424,
+            "rejected": 421,
+            "rejection_rate": 0.9929245283018868
+          },
+          "DDOS attack-HOIC": {
+            "support": 47,
+            "rejected": 27,
+            "rejection_rate": 0.574468085106383
+          },
+          "DDOS attack-LOIC-UDP": {
+            "support": 340,
+            "rejected": 32,
+            "rejection_rate": 0.09411764705882353
+          },
+          "DDoS attacks-LOIC-HTTP": {
+            "support": 75369,
+            "rejected": 12,
+            "rejection_rate": 0.0001592166540620149
+          },
+          "DoS attacks-GoldenEye": {
+            "support": 6587,
+            "rejected": 2554,
+            "rejection_rate": 0.3877334143008957
+          },
+          "DoS attacks-Hulk": {
+            "support": 21624,
+            "rejected": 876,
+            "rejection_rate": 0.04051054384017758
+          },
+          "DoS attacks-SlowHTTPTest": {
+            "support": 21067,
+            "rejected": 21067,
+            "rejection_rate": 1.0
+          },
+          "DoS attacks-Slowloris": {
+            "support": 4546,
+            "rejected": 61,
+            "rejection_rate": 0.013418389793224813
+          },
+          "FTP-BruteForce": {
+            "support": 38611,
+            "rejected": 38611,
+            "rejection_rate": 1.0
+          },
+          "Infilteration": {
+            "support": 12292,
+            "rejected": 1,
+            "rejection_rate": 8.135372600065082e-05
+          },
+          "SQL Injection": {
+            "support": 7,
+            "rejected": 1,
+            "rejection_rate": 0.14285714285714285
+          },
+          "SSH-Bruteforce": {
+            "support": 18942,
+            "rejected": 5,
+            "rejection_rate": 0.00026396367859782494
+          }
+        }
+      }
+    ],
+    "family_histogram_high_sensitivity": [
+      {
+        "raw_max_score_cutoff": 0.0,
+        "coverage": 1.0,
+        "selective_accuracy": 0.9718678818226378,
+        "accepted_error_rate": 0.028132118177362164,
+        "selective_macro_f1_fixed_taxonomy": 0.6919216933693718,
+        "accepted_families_with_support": [
+          "Benign",
+          "Bot",
+          "Brute Force -Web",
+          "Brute Force -XSS",
+          "DDOS attack-HOIC",
+          "DDOS attack-LOIC-UDP",
+          "DDoS attacks-LOIC-HTTP",
+          "DoS attacks-GoldenEye",
+          "DoS attacks-Hulk",
+          "DoS attacks-SlowHTTPTest",
+          "DoS attacks-Slowloris",
+          "FTP-BruteForce",
+          "Infilteration",
+          "SQL Injection",
+          "SSH-Bruteforce"
+        ],
+        "per_family": {
+          "Benign": {
+            "support": 1461312,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "Bot": {
+            "support": 3148,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "Brute Force -Web": {
+            "support": 436,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "Brute Force -XSS": {
+            "support": 424,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DDOS attack-HOIC": {
+            "support": 47,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DDOS attack-LOIC-UDP": {
+            "support": 340,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DDoS attacks-LOIC-HTTP": {
+            "support": 75369,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DoS attacks-GoldenEye": {
+            "support": 6587,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DoS attacks-Hulk": {
+            "support": 21624,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DoS attacks-SlowHTTPTest": {
+            "support": 21067,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DoS attacks-Slowloris": {
+            "support": 4546,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "FTP-BruteForce": {
+            "support": 38611,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "Infilteration": {
+            "support": 12292,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "SQL Injection": {
+            "support": 7,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "SSH-Bruteforce": {
+            "support": 18942,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          }
+        }
+      },
+      {
+        "raw_max_score_cutoff": 0.5,
+        "coverage": 0.9998288033292646,
+        "selective_accuracy": 0.9720252789631756,
+        "accepted_error_rate": 0.027974721036824413,
+        "selective_macro_f1_fixed_taxonomy": 0.687891494248199,
+        "accepted_families_with_support": [
+          "Benign",
+          "Bot",
+          "Brute Force -Web",
+          "Brute Force -XSS",
+          "DDOS attack-HOIC",
+          "DDOS attack-LOIC-UDP",
+          "DDoS attacks-LOIC-HTTP",
+          "DoS attacks-GoldenEye",
+          "DoS attacks-Hulk",
+          "DoS attacks-SlowHTTPTest",
+          "DoS attacks-Slowloris",
+          "FTP-BruteForce",
+          "Infilteration",
+          "SQL Injection",
+          "SSH-Bruteforce"
+        ],
+        "per_family": {
+          "Benign": {
+            "support": 1461312,
+            "rejected": 253,
+            "rejection_rate": 0.00017313208951955504
+          },
+          "Bot": {
+            "support": 3148,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "Brute Force -Web": {
+            "support": 436,
+            "rejected": 10,
+            "rejection_rate": 0.022935779816513763
+          },
+          "Brute Force -XSS": {
+            "support": 424,
+            "rejected": 4,
+            "rejection_rate": 0.009433962264150943
+          },
+          "DDOS attack-HOIC": {
+            "support": 47,
+            "rejected": 15,
+            "rejection_rate": 0.3191489361702128
+          },
+          "DDOS attack-LOIC-UDP": {
+            "support": 340,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DDoS attacks-LOIC-HTTP": {
+            "support": 75369,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DoS attacks-GoldenEye": {
+            "support": 6587,
+            "rejected": 1,
+            "rejection_rate": 0.0001518141794443601
+          },
+          "DoS attacks-Hulk": {
+            "support": 21624,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DoS attacks-SlowHTTPTest": {
+            "support": 21067,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DoS attacks-Slowloris": {
+            "support": 4546,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "FTP-BruteForce": {
+            "support": 38611,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "Infilteration": {
+            "support": 12292,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "SQL Injection": {
+            "support": 7,
+            "rejected": 2,
+            "rejection_rate": 0.2857142857142857
+          },
+          "SSH-Bruteforce": {
+            "support": 18942,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          }
+        }
+      },
+      {
+        "raw_max_score_cutoff": 0.7,
+        "coverage": 0.9626520947264217,
+        "selective_accuracy": 0.9847377068309354,
+        "accepted_error_rate": 0.015262293169064578,
+        "selective_macro_f1_fixed_taxonomy": 0.5378520666559742,
+        "accepted_families_with_support": [
+          "Benign",
+          "Bot",
+          "Brute Force -Web",
+          "Brute Force -XSS",
+          "DDOS attack-HOIC",
+          "DDOS attack-LOIC-UDP",
+          "DDoS attacks-LOIC-HTTP",
+          "DoS attacks-GoldenEye",
+          "DoS attacks-Hulk",
+          "DoS attacks-Slowloris",
+          "Infilteration",
+          "SQL Injection",
+          "SSH-Bruteforce"
+        ],
+        "per_family": {
+          "Benign": {
+            "support": 1461312,
+            "rejected": 394,
+            "rejection_rate": 0.0002696207243901371
+          },
+          "Bot": {
+            "support": 3148,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "Brute Force -Web": {
+            "support": 436,
+            "rejected": 434,
+            "rejection_rate": 0.9954128440366973
+          },
+          "Brute Force -XSS": {
+            "support": 424,
+            "rejected": 422,
+            "rejection_rate": 0.9952830188679245
+          },
+          "DDOS attack-HOIC": {
+            "support": 47,
+            "rejected": 41,
+            "rejection_rate": 0.8723404255319149
+          },
+          "DDOS attack-LOIC-UDP": {
+            "support": 340,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DDoS attacks-LOIC-HTTP": {
+            "support": 75369,
+            "rejected": 0,
+            "rejection_rate": 0.0
+          },
+          "DoS attacks-GoldenEye": {
+            "support": 6587,
+            "rejected": 702,
+            "rejection_rate": 0.1065735539699408
+          },
+          "DoS attacks-Hulk": {
+            "support": 21624,
+            "rejected": 490,
+            "rejection_rate": 0.02266000739918609
+          },
+          "DoS attacks-SlowHTTPTest": {
+            "support": 21067,
+            "rejected": 21067,
+            "rejection_rate": 1.0
+          },
+          "DoS attacks-Slowloris": {
+            "support": 4546,
+            "rejected": 2,
+            "rejection_rate": 0.0004399472063352398
+          },
+          "FTP-BruteForce": {
+            "support": 38611,
+            "rejected": 38611,
+            "rejection_rate": 1.0
+          },
+          "Infilteration": {
+            "support": 12292,
+            "rejected": 2,
+            "rejection_rate": 0.00016270745200130165
+          },
+          "SQL Injection": {
+            "support": 7,
+            "rejected": 5,
+            "rejection_rate": 0.7142857142857143
+          },
+          "SSH-Bruteforce": {
+            "support": 18942,
+            "rejected": 5,
+            "rejection_rate": 0.00026396367859782494
+          }
+        }
+      },
+      {
+        "raw_max_score_cutoff": 0.9,
+        "coverage": 0.9619390756100609,
+        "selective_accuracy": 0.9849324649210998,
+        "accepted_error_rate": 0.01506753507890024,
+        "selective_macro_f1_fixed_taxonomy": 0.54020819831198,
+        "accepted_families_with_support": [
+          "Benign",
+          "Bot",
+          "Brute Force -Web",
+          "Brute Force -XSS",
+          "DDOS attack-HOIC",
+          "DDOS attack-LOIC-UDP",
+          "DDoS attacks-LOIC-HTTP",
+          "DoS attacks-GoldenEye",
+          "DoS attacks-Hulk",
+          "DoS attacks-Slowloris",
+          "Infilteration",
+          "SQL Injection",
+          "SSH-Bruteforce"
+        ],
+        "per_family": {
+          "Benign": {
+            "support": 1461312,
+            "rejected": 565,
+            "rejection_rate": 0.00038663885604169404
+          },
+          "Bot": {
+            "support": 3148,
+            "rejected": 5,
+            "rejection_rate": 0.0015883100381194409
+          },
+          "Brute Force -Web": {
+            "support": 436,
+            "rejected": 434,
+            "rejection_rate": 0.9954128440366973
+          },
+          "Brute Force -XSS": {
+            "support": 424,
+            "rejected": 422,
+            "rejection_rate": 0.9952830188679245
+          },
+          "DDOS attack-HOIC": {
+            "support": 47,
+            "rejected": 41,
+            "rejection_rate": 0.8723404255319149
+          },
+          "DDOS attack-LOIC-UDP": {
+            "support": 340,
+            "rejected": 32,
+            "rejection_rate": 0.09411764705882353
+          },
+          "DDoS attacks-LOIC-HTTP": {
+            "support": 75369,
+            "rejected": 13,
+            "rejection_rate": 0.0001724847085671828
+          },
+          "DoS attacks-GoldenEye": {
+            "support": 6587,
+            "rejected": 1442,
+            "rejection_rate": 0.21891604675876727
+          },
+          "DoS attacks-Hulk": {
+            "support": 21624,
+            "rejected": 688,
+            "rejection_rate": 0.031816500184979654
+          },
+          "DoS attacks-SlowHTTPTest": {
+            "support": 21067,
+            "rejected": 21067,
+            "rejection_rate": 1.0
+          },
+          "DoS attacks-Slowloris": {
+            "support": 4546,
+            "rejected": 29,
+            "rejection_rate": 0.0063792344918609765
+          },
+          "FTP-BruteForce": {
+            "support": 38611,
+            "rejected": 38611,
+            "rejection_rate": 1.0
+          },
+          "Infilteration": {
+            "support": 12292,
+            "rejected": 3,
+            "rejection_rate": 0.00024406117800195249
+          },
+          "SQL Injection": {
+            "support": 7,
+            "rejected": 5,
+            "rejection_rate": 0.7142857142857143
+          },
+          "SSH-Bruteforce": {
+            "support": 18942,
+            "rejected": 5,
+            "rejection_rate": 0.00026396367859782494
+          }
+        }
+      },
+      {
+        "raw_max_score_cutoff": 0.95,
+        "coverage": 0.9611035157188578,
+        "selective_accuracy": 0.9850193656371036,
+        "accepted_error_rate": 0.014980634362896428,
+        "selective_macro_f1_fixed_taxonomy": 0.5408256779535155,
+        "accepted_families_with_support": [
+          "Benign",
+          "Bot",
+          "Brute Force -Web",
+          "Brute Force -XSS",
+          "DDOS attack-HOIC",
+          "DDOS attack-LOIC-UDP",
+          "DDoS attacks-LOIC-HTTP",
+          "DoS attacks-GoldenEye",
+          "DoS attacks-Hulk",
+          "DoS attacks-Slowloris",
+          "Infilteration",
+          "SQL Injection",
+          "SSH-Bruteforce"
+        ],
+        "per_family": {
+          "Benign": {
+            "support": 1461312,
+            "rejected": 617,
+            "rejection_rate": 0.0004222233171287172
+          },
+          "Bot": {
+            "support": 3148,
+            "rejected": 5,
+            "rejection_rate": 0.0015883100381194409
+          },
+          "Brute Force -Web": {
+            "support": 436,
+            "rejected": 434,
+            "rejection_rate": 0.9954128440366973
+          },
+          "Brute Force -XSS": {
+            "support": 424,
+            "rejected": 422,
+            "rejection_rate": 0.9952830188679245
+          },
+          "DDOS attack-HOIC": {
+            "support": 47,
+            "rejected": 41,
+            "rejection_rate": 0.8723404255319149
+          },
+          "DDOS attack-LOIC-UDP": {
+            "support": 340,
+            "rejected": 32,
+            "rejection_rate": 0.09411764705882353
+          },
+          "DDoS attacks-LOIC-HTTP": {
+            "support": 75369,
+            "rejected": 13,
+            "rejection_rate": 0.0001724847085671828
+          },
+          "DoS attacks-GoldenEye": {
+            "support": 6587,
+            "rejected": 2554,
+            "rejection_rate": 0.3877334143008957
+          },
+          "DoS attacks-Hulk": {
+            "support": 21624,
+            "rejected": 882,
+            "rejection_rate": 0.04078801331853496
+          },
+          "DoS attacks-SlowHTTPTest": {
+            "support": 21067,
+            "rejected": 21067,
+            "rejection_rate": 1.0
+          },
+          "DoS attacks-Slowloris": {
+            "support": 4546,
+            "rejected": 61,
+            "rejection_rate": 0.013418389793224813
+          },
+          "FTP-BruteForce": {
+            "support": 38611,
+            "rejected": 38611,
+            "rejection_rate": 1.0
+          },
+          "Infilteration": {
+            "support": 12292,
+            "rejected": 4,
+            "rejection_rate": 0.0003254149040026033
+          },
+          "SQL Injection": {
+            "support": 7,
+            "rejected": 5,
+            "rejection_rate": 0.7142857142857143
+          },
+          "SSH-Bruteforce": {
+            "support": 18942,
+            "rejected": 5,
+            "rejection_rate": 0.00026396367859782494
+          }
+        }
+      }
+    ]
+  }
+}

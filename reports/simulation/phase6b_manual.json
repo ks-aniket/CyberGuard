@@ -1,0 +1,980 @@
+{
+  "configuration": {
+    "model_id": "nf_cse_binary_completed_flow",
+    "mode": "synthetic",
+    "benign_ratio": 0.9,
+    "attack_ratio": 0.1,
+    "seed": 42,
+    "generation_rate": 100,
+    "max_duration": 60,
+    "max_records": 6000,
+    "batch_size": 32,
+    "queue_capacity": 256,
+    "event_capacity": 1000,
+    "history_capacity": 120,
+    "operating_mode": "standard"
+  },
+  "pause_generated_before": 203,
+  "pause_generated_after": 203,
+  "stopped": {
+    "id": "c5491e1cca9c47e4bd19fbec1df1b342",
+    "state": "stopped",
+    "finished": true,
+    "generated": 403,
+    "classified": 403,
+    "discarded": 0,
+    "generation_attempts": 403,
+    "cancelled_before_enqueue": 0,
+    "benign_profile": 363,
+    "attack_profile": 40,
+    "predicted_benign": 379,
+    "predicted_attack": 24,
+    "source_agreement": 385,
+    "queue_full": 0,
+    "worker_errors": 0,
+    "batches": 56,
+    "queue_depth": 0,
+    "queue_capacity": 256,
+    "queue_high_water": 3,
+    "inflight": 0,
+    "queue_backpressure_seconds": 0.0,
+    "elapsed_seconds": 4.716312384000048,
+    "requested_generation_rate": 100.0,
+    "actual_generation_rate": 85.44811437155133,
+    "actual_inference_rate": 85.44811437155133,
+    "source_agreement_fraction": 0.9553349875930521,
+    "latency_seconds": {
+      "queue_wait": {
+        "mean_lifetime": 0.03607032281923207,
+        "p95_recent": 0.06860699580065556,
+        "recent_samples": 403
+      },
+      "batch_processing": {
+        "mean_lifetime": 0.024339784456401222,
+        "p95_recent": 0.029211538996605668,
+        "recent_samples": 403
+      },
+      "end_to_end": {
+        "mean_lifetime": 0.06041010727563329,
+        "p95_recent": 0.09223711949598509,
+        "recent_samples": 403
+      }
+    },
+    "history": [
+      {
+        "elapsed_seconds": 0.013734132000536192,
+        "generated": 0,
+        "classified": 0,
+        "queue_depth": 0
+      },
+      {
+        "elapsed_seconds": 1.0153911469969898,
+        "generated": 74,
+        "classified": 66,
+        "queue_depth": 1
+      },
+      {
+        "elapsed_seconds": 2.0174590250026085,
+        "generated": 173,
+        "classified": 170,
+        "queue_depth": 3
+      },
+      {
+        "elapsed_seconds": 3.025358637001773,
+        "generated": 237,
+        "classified": 231,
+        "queue_depth": 1
+      },
+      {
+        "elapsed_seconds": 4.033491579997644,
+        "generated": 337,
+        "classified": 328,
+        "queue_depth": 2
+      },
+      {
+        "elapsed_seconds": 4.716312384000048,
+        "generated": 403,
+        "classified": 403,
+        "queue_depth": 0
+      }
+    ],
+    "error": null,
+    "warning": "Training-derived source profiles are not verified ground truth. Agreement is not test accuracy or deployment evidence."
+  },
+  "completed": {
+    "id": "8af56d5ece6846d982ade03881e8fbaf",
+    "state": "completed",
+    "finished": true,
+    "generated": 1000,
+    "classified": 1000,
+    "discarded": 0,
+    "generation_attempts": 1000,
+    "cancelled_before_enqueue": 0,
+    "benign_profile": 900,
+    "attack_profile": 100,
+    "predicted_benign": 939,
+    "predicted_attack": 61,
+    "source_agreement": 957,
+    "queue_full": 0,
+    "worker_errors": 0,
+    "batches": 136,
+    "queue_depth": 0,
+    "queue_capacity": 256,
+    "queue_high_water": 4,
+    "inflight": 0,
+    "queue_backpressure_seconds": 0.0,
+    "elapsed_seconds": 10.053607305999321,
+    "requested_generation_rate": 100.0,
+    "actual_generation_rate": 99.46678536004353,
+    "actual_inference_rate": 99.46678536004353,
+    "source_agreement_fraction": 0.957,
+    "latency_seconds": {
+      "queue_wait": {
+        "mean_lifetime": 0.03672082834588218,
+        "p95_recent": 0.06895953445273335,
+        "recent_samples": 1000
+      },
+      "batch_processing": {
+        "mean_lifetime": 0.023828014268001425,
+        "p95_recent": 0.029836465997505,
+        "recent_samples": 1000
+      },
+      "end_to_end": {
+        "mean_lifetime": 0.06054884261388361,
+        "p95_recent": 0.09296127969646475,
+        "recent_samples": 1000
+      }
+    },
+    "history": [
+      {
+        "elapsed_seconds": 0.03765134599962039,
+        "generated": 1,
+        "classified": 0,
+        "queue_depth": 1
+      },
+      {
+        "elapsed_seconds": 1.0381294529943261,
+        "generated": 101,
+        "classified": 94,
+        "queue_depth": 1
+      },
+      {
+        "elapsed_seconds": 2.047654246998718,
+        "generated": 202,
+        "classified": 198,
+        "queue_depth": 1
+      },
+      {
+        "elapsed_seconds": 3.0519889289935236,
+        "generated": 302,
+        "classified": 294,
+        "queue_depth": 1
+      },
+      {
+        "elapsed_seconds": 4.057775087996561,
+        "generated": 403,
+        "classified": 397,
+        "queue_depth": 1
+      },
+      {
+        "elapsed_seconds": 5.057950897993578,
+        "generated": 503,
+        "classified": 493,
+        "queue_depth": 3
+      },
+      {
+        "elapsed_seconds": 6.067706301997532,
+        "generated": 604,
+        "classified": 596,
+        "queue_depth": 1
+      },
+      {
+        "elapsed_seconds": 7.068260660998931,
+        "generated": 704,
+        "classified": 694,
+        "queue_depth": 3
+      },
+      {
+        "elapsed_seconds": 8.071254806993238,
+        "generated": 804,
+        "classified": 796,
+        "queue_depth": 1
+      },
+      {
+        "elapsed_seconds": 9.077685006996035,
+        "generated": 905,
+        "classified": 902,
+        "queue_depth": 1
+      },
+      {
+        "elapsed_seconds": 10.053607305999321,
+        "generated": 1000,
+        "classified": 1000,
+        "queue_depth": 0
+      }
+    ],
+    "error": null,
+    "warning": "Training-derived source profiles are not verified ground truth. Agreement is not test accuracy or deployment evidence."
+  },
+  "reproduced": {
+    "id": "72781e2c8e3f446d961b9f7f86113452",
+    "state": "completed",
+    "finished": true,
+    "generated": 1000,
+    "classified": 1000,
+    "discarded": 0,
+    "generation_attempts": 1000,
+    "cancelled_before_enqueue": 0,
+    "benign_profile": 900,
+    "attack_profile": 100,
+    "predicted_benign": 939,
+    "predicted_attack": 61,
+    "source_agreement": 957,
+    "queue_full": 0,
+    "worker_errors": 0,
+    "batches": 63,
+    "queue_depth": 0,
+    "queue_capacity": 256,
+    "queue_high_water": 12,
+    "inflight": 0,
+    "queue_backpressure_seconds": 0.0,
+    "elapsed_seconds": 2.3733060369995655,
+    "requested_generation_rate": 500.0,
+    "actual_generation_rate": 421.3531607007761,
+    "actual_inference_rate": 421.3531607007761,
+    "source_agreement_fraction": 0.957,
+    "latency_seconds": {
+      "queue_wait": {
+        "mean_lifetime": 0.015504819517889701,
+        "p95_recent": 0.03301423200500721,
+        "recent_samples": 1000
+      },
+      "batch_processing": {
+        "mean_lifetime": 0.02086096851201728,
+        "p95_recent": 0.03079263199470006,
+        "recent_samples": 1000
+      },
+      "end_to_end": {
+        "mean_lifetime": 0.03636578802990698,
+        "p95_recent": 0.056213596199086155,
+        "recent_samples": 1000
+      }
+    },
+    "history": [
+      {
+        "elapsed_seconds": 0.034241553003084846,
+        "generated": 1,
+        "classified": 0,
+        "queue_depth": 1
+      },
+      {
+        "elapsed_seconds": 1.0351380280044395,
+        "generated": 433,
+        "classified": 416,
+        "queue_depth": 1
+      },
+      {
+        "elapsed_seconds": 2.0362721600031364,
+        "generated": 874,
+        "classified": 864,
+        "queue_depth": 1
+      },
+      {
+        "elapsed_seconds": 2.3733060369995655,
+        "generated": 1000,
+        "classified": 1000,
+        "queue_depth": 0
+      }
+    ],
+    "error": null,
+    "warning": "Training-derived source profiles are not verified ground truth. Agreement is not test accuracy or deployment evidence."
+  },
+  "example_event": {
+    "sequence": 0,
+    "simulation_time": 0.0376483969957917,
+    "source_profile": "benign",
+    "record": {
+      "PROTOCOL": 6,
+      "L4_SRC_PORT": 53597,
+      "L4_DST_PORT": 443,
+      "IN_BYTES": 2668,
+      "OUT_BYTES": 652434,
+      "IN_PKTS": 39,
+      "OUT_PKTS": 461
+    },
+    "model_id": "nf_cse_binary_completed_flow",
+    "prediction": {
+      "predicted_class": "Benign",
+      "attack_score": 0.012303024987551068,
+      "operating_mode": "standard",
+      "applied_threshold": 0.5,
+      "model_version": "sha256:598129ae5580ad386937f78f4a9d7f8a668557e63cd15db20fcbde9696665e7a"
+    },
+    "latency_seconds": {
+      "queue_wait": 0.050653081001655664,
+      "batch_processing": 0.022738722997019067,
+      "end_to_end": 0.07339180399867473
+    }
+  },
+  "rss": [
+    "VmHWM:\t  404772 kB",
+    "VmRSS:\t  306932 kB"
+  ],
+  "http_checks": [
+    {
+      "method": "GET",
+      "path": "/api/v1/models/nf_cse_binary_completed_flow/ready",
+      "status": 200,
+      "request_seconds": 0.09262319299887167
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/unknown",
+      "status": 404,
+      "request_seconds": 0.017281537999224383
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/simulations",
+      "status": 422,
+      "request_seconds": 0.009696102002635598
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/simulations",
+      "status": 201,
+      "request_seconds": 0.012271711995708756
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/simulations/c5491e1cca9c47e4bd19fbec1df1b342/start",
+      "status": 200,
+      "request_seconds": 0.012382683002215344
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/c5491e1cca9c47e4bd19fbec1df1b342/metrics",
+      "status": 200,
+      "request_seconds": 0.013490049001120497
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/c5491e1cca9c47e4bd19fbec1df1b342/metrics",
+      "status": 200,
+      "request_seconds": 0.00670800800435245
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/c5491e1cca9c47e4bd19fbec1df1b342/metrics",
+      "status": 200,
+      "request_seconds": 0.022506867004267406
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/c5491e1cca9c47e4bd19fbec1df1b342/metrics",
+      "status": 200,
+      "request_seconds": 0.013562319996708538
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/c5491e1cca9c47e4bd19fbec1df1b342/metrics",
+      "status": 200,
+      "request_seconds": 0.012157894001575187
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/c5491e1cca9c47e4bd19fbec1df1b342/metrics",
+      "status": 200,
+      "request_seconds": 0.01013713300199015
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/c5491e1cca9c47e4bd19fbec1df1b342/metrics",
+      "status": 200,
+      "request_seconds": 0.011161321999679785
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/c5491e1cca9c47e4bd19fbec1df1b342/metrics",
+      "status": 200,
+      "request_seconds": 0.012635428996873088
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/c5491e1cca9c47e4bd19fbec1df1b342/metrics",
+      "status": 200,
+      "request_seconds": 0.033013393003784586
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/c5491e1cca9c47e4bd19fbec1df1b342/metrics",
+      "status": 200,
+      "request_seconds": 0.006374552998750005
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/c5491e1cca9c47e4bd19fbec1df1b342/metrics",
+      "status": 200,
+      "request_seconds": 0.00926342099410249
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/c5491e1cca9c47e4bd19fbec1df1b342/metrics",
+      "status": 200,
+      "request_seconds": 0.012837109999964014
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/c5491e1cca9c47e4bd19fbec1df1b342/metrics",
+      "status": 200,
+      "request_seconds": 0.013258674996905029
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/c5491e1cca9c47e4bd19fbec1df1b342/metrics",
+      "status": 200,
+      "request_seconds": 0.02245816300273873
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/c5491e1cca9c47e4bd19fbec1df1b342/metrics",
+      "status": 200,
+      "request_seconds": 0.011793295001552906
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/simulations/c5491e1cca9c47e4bd19fbec1df1b342/pause",
+      "status": 200,
+      "request_seconds": 0.009900361001200508
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/c5491e1cca9c47e4bd19fbec1df1b342/metrics",
+      "status": 200,
+      "request_seconds": 0.01240539200080093
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/c5491e1cca9c47e4bd19fbec1df1b342/metrics",
+      "status": 200,
+      "request_seconds": 0.013778988002741244
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/simulations",
+      "status": 201,
+      "request_seconds": 0.011597618999076076
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/simulations/e7f3a3442a344f86a4b0f361e4937474/start",
+      "status": 429,
+      "request_seconds": 0.009795895995921455
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/simulations/e7f3a3442a344f86a4b0f361e4937474/stop",
+      "status": 200,
+      "request_seconds": 0.01101042800291907
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/simulations/e7f3a3442a344f86a4b0f361e4937474",
+      "status": 200,
+      "request_seconds": 0.008757785995840095
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/simulations/c5491e1cca9c47e4bd19fbec1df1b342/resume",
+      "status": 200,
+      "request_seconds": 0.01105447099689627
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/c5491e1cca9c47e4bd19fbec1df1b342/metrics",
+      "status": 200,
+      "request_seconds": 0.009898411000904161
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/c5491e1cca9c47e4bd19fbec1df1b342/metrics",
+      "status": 200,
+      "request_seconds": 0.010861932001716923
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/c5491e1cca9c47e4bd19fbec1df1b342/metrics",
+      "status": 200,
+      "request_seconds": 0.013649628999701235
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/c5491e1cca9c47e4bd19fbec1df1b342/metrics",
+      "status": 200,
+      "request_seconds": 0.0152527669997653
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/c5491e1cca9c47e4bd19fbec1df1b342/metrics",
+      "status": 200,
+      "request_seconds": 0.012213433998113032
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/c5491e1cca9c47e4bd19fbec1df1b342/metrics",
+      "status": 200,
+      "request_seconds": 0.010835462999239098
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/c5491e1cca9c47e4bd19fbec1df1b342/metrics",
+      "status": 200,
+      "request_seconds": 0.013970006999443285
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/c5491e1cca9c47e4bd19fbec1df1b342/metrics",
+      "status": 200,
+      "request_seconds": 0.012451080001483206
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/c5491e1cca9c47e4bd19fbec1df1b342/metrics",
+      "status": 200,
+      "request_seconds": 0.029782483004964888
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/c5491e1cca9c47e4bd19fbec1df1b342/metrics",
+      "status": 200,
+      "request_seconds": 0.009698554997157771
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/c5491e1cca9c47e4bd19fbec1df1b342/metrics",
+      "status": 200,
+      "request_seconds": 0.012313908999203704
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/c5491e1cca9c47e4bd19fbec1df1b342/metrics",
+      "status": 200,
+      "request_seconds": 0.014814905000093859
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/c5491e1cca9c47e4bd19fbec1df1b342/metrics",
+      "status": 200,
+      "request_seconds": 0.02076840900554089
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/simulations/c5491e1cca9c47e4bd19fbec1df1b342/stop",
+      "status": 200,
+      "request_seconds": 0.010055260005174205
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/c5491e1cca9c47e4bd19fbec1df1b342",
+      "status": 200,
+      "request_seconds": 0.013216491999628488
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/c5491e1cca9c47e4bd19fbec1df1b342",
+      "status": 200,
+      "request_seconds": 0.014596408997022081
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/c5491e1cca9c47e4bd19fbec1df1b342/metrics",
+      "status": 200,
+      "request_seconds": 0.010526739002671093
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/simulations/c5491e1cca9c47e4bd19fbec1df1b342/start",
+      "status": 409,
+      "request_seconds": 0.009707181001431309
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/c5491e1cca9c47e4bd19fbec1df1b342/events?after=-1&limit=1000",
+      "status": 200,
+      "request_seconds": 0.02960314500523964
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/simulations",
+      "status": 201,
+      "request_seconds": 0.007717210006376263
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/simulations/8af56d5ece6846d982ade03881e8fbaf/start",
+      "status": 200,
+      "request_seconds": 0.009804039997106884
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/8af56d5ece6846d982ade03881e8fbaf",
+      "status": 200,
+      "request_seconds": 0.0077427340002032
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/8af56d5ece6846d982ade03881e8fbaf",
+      "status": 200,
+      "request_seconds": 0.023813013998733368
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/8af56d5ece6846d982ade03881e8fbaf",
+      "status": 200,
+      "request_seconds": 0.010193260997766629
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/8af56d5ece6846d982ade03881e8fbaf",
+      "status": 200,
+      "request_seconds": 0.012912493999465369
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/8af56d5ece6846d982ade03881e8fbaf",
+      "status": 200,
+      "request_seconds": 0.012852988002123311
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/8af56d5ece6846d982ade03881e8fbaf",
+      "status": 200,
+      "request_seconds": 0.017690929998934735
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/8af56d5ece6846d982ade03881e8fbaf",
+      "status": 200,
+      "request_seconds": 0.006326440998236649
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/8af56d5ece6846d982ade03881e8fbaf",
+      "status": 200,
+      "request_seconds": 0.010434750001877546
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/8af56d5ece6846d982ade03881e8fbaf",
+      "status": 200,
+      "request_seconds": 0.011889647001225967
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/8af56d5ece6846d982ade03881e8fbaf",
+      "status": 200,
+      "request_seconds": 0.02428950499597704
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/8af56d5ece6846d982ade03881e8fbaf",
+      "status": 200,
+      "request_seconds": 0.007559890997072216
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/8af56d5ece6846d982ade03881e8fbaf",
+      "status": 200,
+      "request_seconds": 0.011264161999861244
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/8af56d5ece6846d982ade03881e8fbaf",
+      "status": 200,
+      "request_seconds": 0.012551308995170984
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/8af56d5ece6846d982ade03881e8fbaf",
+      "status": 200,
+      "request_seconds": 0.023285408002266195
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/8af56d5ece6846d982ade03881e8fbaf",
+      "status": 200,
+      "request_seconds": 0.0064270399961969815
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/8af56d5ece6846d982ade03881e8fbaf",
+      "status": 200,
+      "request_seconds": 0.011970684005063958
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/8af56d5ece6846d982ade03881e8fbaf",
+      "status": 200,
+      "request_seconds": 0.013569161004852504
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/8af56d5ece6846d982ade03881e8fbaf",
+      "status": 200,
+      "request_seconds": 0.019865032998495735
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/8af56d5ece6846d982ade03881e8fbaf",
+      "status": 200,
+      "request_seconds": 0.005702526003005914
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/8af56d5ece6846d982ade03881e8fbaf",
+      "status": 200,
+      "request_seconds": 0.010790647997055203
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/8af56d5ece6846d982ade03881e8fbaf",
+      "status": 200,
+      "request_seconds": 0.011495844999444671
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/8af56d5ece6846d982ade03881e8fbaf",
+      "status": 200,
+      "request_seconds": 0.012960328000190202
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/8af56d5ece6846d982ade03881e8fbaf",
+      "status": 200,
+      "request_seconds": 0.022999273001914844
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/8af56d5ece6846d982ade03881e8fbaf",
+      "status": 200,
+      "request_seconds": 0.008515117995557375
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/8af56d5ece6846d982ade03881e8fbaf",
+      "status": 200,
+      "request_seconds": 0.007819391001248732
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/8af56d5ece6846d982ade03881e8fbaf",
+      "status": 200,
+      "request_seconds": 0.013333526003407314
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/8af56d5ece6846d982ade03881e8fbaf",
+      "status": 200,
+      "request_seconds": 0.026023689002613537
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/8af56d5ece6846d982ade03881e8fbaf",
+      "status": 200,
+      "request_seconds": 0.010205454003880732
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/8af56d5ece6846d982ade03881e8fbaf",
+      "status": 200,
+      "request_seconds": 0.011498637002659962
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/8af56d5ece6846d982ade03881e8fbaf",
+      "status": 200,
+      "request_seconds": 0.012144482003350276
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/8af56d5ece6846d982ade03881e8fbaf",
+      "status": 200,
+      "request_seconds": 0.01478732300165575
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/8af56d5ece6846d982ade03881e8fbaf",
+      "status": 200,
+      "request_seconds": 0.016069200006313622
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/8af56d5ece6846d982ade03881e8fbaf",
+      "status": 200,
+      "request_seconds": 0.011000038000929635
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/8af56d5ece6846d982ade03881e8fbaf",
+      "status": 200,
+      "request_seconds": 0.01298681199841667
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/8af56d5ece6846d982ade03881e8fbaf/metrics",
+      "status": 200,
+      "request_seconds": 0.010993317999236751
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/8af56d5ece6846d982ade03881e8fbaf/events?after=-1&limit=1000",
+      "status": 200,
+      "request_seconds": 0.06429190299968468
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/simulations",
+      "status": 201,
+      "request_seconds": 0.0078050820011412725
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/simulations/72781e2c8e3f446d961b9f7f86113452/start",
+      "status": 200,
+      "request_seconds": 0.007966356999531854
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/72781e2c8e3f446d961b9f7f86113452",
+      "status": 200,
+      "request_seconds": 0.00827302600373514
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/72781e2c8e3f446d961b9f7f86113452",
+      "status": 200,
+      "request_seconds": 0.013727746001677588
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/72781e2c8e3f446d961b9f7f86113452",
+      "status": 200,
+      "request_seconds": 0.024234805998275988
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/72781e2c8e3f446d961b9f7f86113452",
+      "status": 200,
+      "request_seconds": 0.01653058700321708
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/72781e2c8e3f446d961b9f7f86113452",
+      "status": 200,
+      "request_seconds": 0.009903477999614552
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/72781e2c8e3f446d961b9f7f86113452",
+      "status": 200,
+      "request_seconds": 0.015437223002663814
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/72781e2c8e3f446d961b9f7f86113452",
+      "status": 200,
+      "request_seconds": 0.00704982800380094
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/72781e2c8e3f446d961b9f7f86113452",
+      "status": 200,
+      "request_seconds": 0.010120566999830771
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/72781e2c8e3f446d961b9f7f86113452",
+      "status": 200,
+      "request_seconds": 0.008247120000305586
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/72781e2c8e3f446d961b9f7f86113452",
+      "status": 200,
+      "request_seconds": 0.019525720999808982
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/72781e2c8e3f446d961b9f7f86113452",
+      "status": 200,
+      "request_seconds": 0.011681468000460882
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/72781e2c8e3f446d961b9f7f86113452",
+      "status": 200,
+      "request_seconds": 0.009036212002683897
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/72781e2c8e3f446d961b9f7f86113452",
+      "status": 200,
+      "request_seconds": 0.019268003998149652
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/72781e2c8e3f446d961b9f7f86113452",
+      "status": 200,
+      "request_seconds": 0.015104990998224821
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/72781e2c8e3f446d961b9f7f86113452",
+      "status": 200,
+      "request_seconds": 0.01889785200182814
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/72781e2c8e3f446d961b9f7f86113452",
+      "status": 200,
+      "request_seconds": 0.012664182002481539
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/72781e2c8e3f446d961b9f7f86113452/events?after=-1&limit=1000",
+      "status": 200,
+      "request_seconds": 0.0606349070003489
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/simulations/72781e2c8e3f446d961b9f7f86113452/metrics",
+      "status": 200,
+      "request_seconds": 0.009003858001960907
+    }
+  ],
+  "assertions": "Lifecycle, paused admission freeze, active limit, drain consistency, no restart, exact 900/100 composition, natural completion, ordered bounded events, and identical real-model records/scores across rate/batch changes all passed.",
+  "shutdown_verification": {
+    "signal": "SIGTERM",
+    "application_shutdown_complete": true,
+    "launcher_exit_code": 143,
+    "server_process_absent": true,
+    "note": "Uvicorn logged application shutdown complete and finished server process after lifespan joined active workers; launcher propagated SIGTERM status 143."
+  },
+  "literal_readme_verification": {
+    "launcher": "OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=2 CYBERGUARD_API_PORT=18006 bash scripts/start_api.sh",
+    "operations": [
+      "create/id capture",
+      "start",
+      "metrics",
+      "events",
+      "pause",
+      "resume",
+      "stop",
+      "inspect finished",
+      "final metrics",
+      "delete"
+    ],
+    "completed": true,
+    "note": "Final backend code and README shell/curl workflow were verified again on a fresh temporary server."
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "candidates": {
+    "direct_linear": {
+      "fit_seconds": 20.90300100499735,
+      "peak_process_rss_mib": 1942.26171875,
+      "training_compact_rows": 2855997,
+      "training_original_weight": 5038454,
+      "warnings": [],
+      "predict_seconds": 0.5108267680043355,
+      "compact_rows_per_second": 1866221.701193053,
+      "scope": "All compact validation rows including encoding transform, excludes data loading; does not expand duplicates"
+    },
+    "family_linear": {
+      "fit_seconds": 1.666994153005362,
+      "peak_process_rss_mib": 1942.26171875,
+      "training_compact_rows": 229272,
+      "training_original_weight": 612207,
+      "warnings": [],
+      "predict_seconds": 0.5415364720029174,
+      "compact_rows_per_second": 1760391.1265183708,
+      "scope": "All compact validation rows including encoding transform, excludes data loading; does not expand duplicates"
+    },
+    "direct_histogram": {
+      "fit_seconds": 62.11588768300135,
+      "peak_process_rss_mib": 2370.08984375,
+      "training_compact_rows": 2855997,
+      "training_original_weight": 5038454,
+      "warnings": [],
+      "predict_seconds": 6.0717693909973605,
+      "compact_rows_per_second": 157007.93930241914,
+      "scope": "All compact validation rows including encoding transform, excludes data loading; does not expand duplicates"
+    },
+    "family_histogram": {
+      "fit_seconds": 5.252527370997996,
+      "peak_process_rss_mib": 2370.08984375,
+      "training_compact_rows": 229272,
+      "training_original_weight": 612207,
+      "warnings": [],
+      "predict_seconds": 6.1285531370012905,
+      "compact_rows_per_second": 155553.19154276908,
+      "scope": "All compact validation rows including encoding transform, excludes data loading; does not expand duplicates"
+    }
+  },
+  "binary_validation_predict_seconds": 1.1720651739960886,
+  "wall_seconds_before_report": 162.1199227629986,
+  "peak_process_rss_mib": 2370.08984375,
+  "threads": 4,
+  "memory_scope": "Cumulative process high-water RSS including analysis/training; not incremental per-model memory"
+}

@@ -1,0 +1,61 @@
+split,family,feature_a,feature_b,weighted_log1p_pearson,undefined_status_policy
+validation,Benign,IN_BYTES,OUT_BYTES,0.4432378305973433,Negative statuses excluded from scalar quantiles; zero-filled with separate status in model. Correlations descriptive after zero fill.
+validation,Benign,IN_PKTS,OUT_PKTS,0.6647488411047863,Negative statuses excluded from scalar quantiles; zero-filled with separate status in model. Correlations descriptive after zero fill.
+validation,Benign,IN_BYTES,IN_PKTS,0.9517875441444444,Negative statuses excluded from scalar quantiles; zero-filled with separate status in model. Correlations descriptive after zero fill.
+validation,Benign,OUT_BYTES,OUT_PKTS,0.9168438778888195,Negative statuses excluded from scalar quantiles; zero-filled with separate status in model. Correlations descriptive after zero fill.
+validation,Bot,IN_BYTES,OUT_BYTES,-0.10794777709530312,Negative statuses excluded from scalar quantiles; zero-filled with separate status in model. Correlations descriptive after zero fill.
+validation,Bot,IN_PKTS,OUT_PKTS,-0.34013309056841723,Negative statuses excluded from scalar quantiles; zero-filled with separate status in model. Correlations descriptive after zero fill.
+validation,Bot,IN_BYTES,IN_PKTS,0.8829361345974481,Negative statuses excluded from scalar quantiles; zero-filled with separate status in model. Correlations descriptive after zero fill.
+validation,Bot,OUT_BYTES,OUT_PKTS,0.9637655121972579,Negative statuses excluded from scalar quantiles; zero-filled with separate status in model. Correlations descriptive after zero fill.
+validation,Brute Force -Web,IN_BYTES,OUT_BYTES,0.9291836816123109,Negative statuses excluded from scalar quantiles; zero-filled with separate status in model. Correlations descriptive after zero fill.
+validation,Brute Force -Web,IN_PKTS,OUT_PKTS,0.9975630434132964,Negative statuses excluded from scalar quantiles; zero-filled with separate status in model. Correlations descriptive after zero fill.
+validation,Brute Force -Web,IN_BYTES,IN_PKTS,0.9883335111607123,Negative statuses excluded from scalar quantiles; zero-filled with separate status in model. Correlations descriptive after zero fill.
+validation,Brute Force -Web,OUT_BYTES,OUT_PKTS,0.9868032891273982,Negative statuses excluded from scalar quantiles; zero-filled with separate status in model. Correlations descriptive after zero fill.
+validation,Brute Force -XSS,IN_BYTES,OUT_BYTES,0.9999999347132814,Negative statuses excluded from scalar quantiles; zero-filled with separate status in model. Correlations descriptive after zero fill.
+validation,Brute Force -XSS,IN_PKTS,OUT_PKTS,0.9999998593152654,Negative statuses excluded from scalar quantiles; zero-filled with separate status in model. Correlations descriptive after zero fill.
+validation,Brute Force -XSS,IN_BYTES,IN_PKTS,0.9999997521684539,Negative statuses excluded from scalar quantiles; zero-filled with separate status in model. Correlations descriptive after zero fill.
+validation,Brute Force -XSS,OUT_BYTES,OUT_PKTS,0.9999999997747582,Negative statuses excluded from scalar quantiles; zero-filled with separate status in model. Correlations descriptive after zero fill.
+validation,DDOS attack-HOIC,IN_BYTES,OUT_BYTES,0.9741460514640143,Negative statuses excluded from scalar quantiles; zero-filled with separate status in model. Correlations descriptive after zero fill.
+validation,DDOS attack-HOIC,IN_PKTS,OUT_PKTS,0.9962005222488834,Negative statuses excluded from scalar quantiles; zero-filled with separate status in model. Correlations descriptive after zero fill.
+validation,DDOS attack-HOIC,IN_BYTES,IN_PKTS,0.9948888108881999,Negative statuses excluded from scalar quantiles; zero-filled with separate status in model. Correlations descriptive after zero fill.
+validation,DDOS attack-HOIC,OUT_BYTES,OUT_PKTS,0.9722942420815549,Negative statuses excluded from scalar quantiles; zero-filled with separate status in model. Correlations descriptive after zero fill.
+validation,DDOS attack-LOIC-UDP,IN_BYTES,OUT_BYTES,,Negative statuses excluded from scalar quantiles; zero-filled with separate status in model. Correlations descriptive after zero fill.
+validation,DDOS attack-LOIC-UDP,IN_PKTS,OUT_PKTS,,Negative statuses excluded from scalar quantiles; zero-filled with separate status in model. Correlations descriptive after zero fill.
+validation,DDOS attack-LOIC-UDP,IN_BYTES,IN_PKTS,0.9999999974697532,Negative statuses excluded from scalar quantiles; zero-filled with separate status in model. Correlations descriptive after zero fill.
+validation,DDOS attack-LOIC-UDP,OUT_BYTES,OUT_PKTS,,Negative statuses excluded from scalar quantiles; zero-filled with separate status in model. Correlations descriptive after zero fill.
+validation,DDoS attacks-LOIC-HTTP,IN_BYTES,OUT_BYTES,,Negative statuses excluded from scalar quantiles; zero-filled with separate status in model. Correlations descriptive after zero fill.
+validation,DDoS attacks-LOIC-HTTP,IN_PKTS,OUT_PKTS,,Negative statuses excluded from scalar quantiles; zero-filled with separate status in model. Correlations descriptive after zero fill.
+validation,DDoS attacks-LOIC-HTTP,IN_BYTES,IN_PKTS,0.980003235230523,Negative statuses excluded from scalar quantiles; zero-filled with separate status in model. Correlations descriptive after zero fill.
+validation,DDoS attacks-LOIC-HTTP,OUT_BYTES,OUT_PKTS,,Negative statuses excluded from scalar quantiles; zero-filled with separate status in model. Correlations descriptive after zero fill.
+validation,DoS attacks-GoldenEye,IN_BYTES,OUT_BYTES,,Negative statuses excluded from scalar quantiles; zero-filled with separate status in model. Correlations descriptive after zero fill.
+validation,DoS attacks-GoldenEye,IN_PKTS,OUT_PKTS,,Negative statuses excluded from scalar quantiles; zero-filled with separate status in model. Correlations descriptive after zero fill.
+validation,DoS attacks-GoldenEye,IN_BYTES,IN_PKTS,0.9268435634039218,Negative statuses excluded from scalar quantiles; zero-filled with separate status in model. Correlations descriptive after zero fill.
+validation,DoS attacks-GoldenEye,OUT_BYTES,OUT_PKTS,,Negative statuses excluded from scalar quantiles; zero-filled with separate status in model. Correlations descriptive after zero fill.
+validation,DoS attacks-Hulk,IN_BYTES,OUT_BYTES,,Negative statuses excluded from scalar quantiles; zero-filled with separate status in model. Correlations descriptive after zero fill.
+validation,DoS attacks-Hulk,IN_PKTS,OUT_PKTS,,Negative statuses excluded from scalar quantiles; zero-filled with separate status in model. Correlations descriptive after zero fill.
+validation,DoS attacks-Hulk,IN_BYTES,IN_PKTS,0.9975105256718535,Negative statuses excluded from scalar quantiles; zero-filled with separate status in model. Correlations descriptive after zero fill.
+validation,DoS attacks-Hulk,OUT_BYTES,OUT_PKTS,,Negative statuses excluded from scalar quantiles; zero-filled with separate status in model. Correlations descriptive after zero fill.
+validation,DoS attacks-SlowHTTPTest,IN_BYTES,OUT_BYTES,,Negative statuses excluded from scalar quantiles; zero-filled with separate status in model. Correlations descriptive after zero fill.
+validation,DoS attacks-SlowHTTPTest,IN_PKTS,OUT_PKTS,,Negative statuses excluded from scalar quantiles; zero-filled with separate status in model. Correlations descriptive after zero fill.
+validation,DoS attacks-SlowHTTPTest,IN_BYTES,IN_PKTS,-1.0,Negative statuses excluded from scalar quantiles; zero-filled with separate status in model. Correlations descriptive after zero fill.
+validation,DoS attacks-SlowHTTPTest,OUT_BYTES,OUT_PKTS,,Negative statuses excluded from scalar quantiles; zero-filled with separate status in model. Correlations descriptive after zero fill.
+validation,DoS attacks-Slowloris,IN_BYTES,OUT_BYTES,,Negative statuses excluded from scalar quantiles; zero-filled with separate status in model. Correlations descriptive after zero fill.
+validation,DoS attacks-Slowloris,IN_PKTS,OUT_PKTS,,Negative statuses excluded from scalar quantiles; zero-filled with separate status in model. Correlations descriptive after zero fill.
+validation,DoS attacks-Slowloris,IN_BYTES,IN_PKTS,0.8872576104905657,Negative statuses excluded from scalar quantiles; zero-filled with separate status in model. Correlations descriptive after zero fill.
+validation,DoS attacks-Slowloris,OUT_BYTES,OUT_PKTS,,Negative statuses excluded from scalar quantiles; zero-filled with separate status in model. Correlations descriptive after zero fill.
+validation,FTP-BruteForce,IN_BYTES,OUT_BYTES,,Negative statuses excluded from scalar quantiles; zero-filled with separate status in model. Correlations descriptive after zero fill.
+validation,FTP-BruteForce,IN_PKTS,OUT_PKTS,,Negative statuses excluded from scalar quantiles; zero-filled with separate status in model. Correlations descriptive after zero fill.
+validation,FTP-BruteForce,IN_BYTES,IN_PKTS,-1.0,Negative statuses excluded from scalar quantiles; zero-filled with separate status in model. Correlations descriptive after zero fill.
+validation,FTP-BruteForce,OUT_BYTES,OUT_PKTS,,Negative statuses excluded from scalar quantiles; zero-filled with separate status in model. Correlations descriptive after zero fill.
+validation,Infilteration,IN_BYTES,OUT_BYTES,0.8016119929138303,Negative statuses excluded from scalar quantiles; zero-filled with separate status in model. Correlations descriptive after zero fill.
+validation,Infilteration,IN_PKTS,OUT_PKTS,0.9342945630068576,Negative statuses excluded from scalar quantiles; zero-filled with separate status in model. Correlations descriptive after zero fill.
+validation,Infilteration,IN_BYTES,IN_PKTS,0.9691181556898135,Negative statuses excluded from scalar quantiles; zero-filled with separate status in model. Correlations descriptive after zero fill.
+validation,Infilteration,OUT_BYTES,OUT_PKTS,0.9072528451343826,Negative statuses excluded from scalar quantiles; zero-filled with separate status in model. Correlations descriptive after zero fill.
+validation,SQL Injection,IN_BYTES,OUT_BYTES,0.9127326595143301,Negative statuses excluded from scalar quantiles; zero-filled with separate status in model. Correlations descriptive after zero fill.
+validation,SQL Injection,IN_PKTS,OUT_PKTS,0.9041608572155465,Negative statuses excluded from scalar quantiles; zero-filled with separate status in model. Correlations descriptive after zero fill.
+validation,SQL Injection,IN_BYTES,IN_PKTS,0.9825640600830317,Negative statuses excluded from scalar quantiles; zero-filled with separate status in model. Correlations descriptive after zero fill.
+validation,SQL Injection,OUT_BYTES,OUT_PKTS,0.8144857630724873,Negative statuses excluded from scalar quantiles; zero-filled with separate status in model. Correlations descriptive after zero fill.
+validation,SSH-Bruteforce,IN_BYTES,OUT_BYTES,,Negative statuses excluded from scalar quantiles; zero-filled with separate status in model. Correlations descriptive after zero fill.
+validation,SSH-Bruteforce,IN_PKTS,OUT_PKTS,,Negative statuses excluded from scalar quantiles; zero-filled with separate status in model. Correlations descriptive after zero fill.
+validation,SSH-Bruteforce,IN_BYTES,IN_PKTS,0.8513579072259724,Negative statuses excluded from scalar quantiles; zero-filled with separate status in model. Correlations descriptive after zero fill.
+validation,SSH-Bruteforce,OUT_BYTES,OUT_PKTS,,Negative statuses excluded from scalar quantiles; zero-filled with separate status in model. Correlations descriptive after zero fill.

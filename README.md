@@ -13,9 +13,13 @@ Implemented:
 - Model inspection, repeated interactive predictions, chunked CSV predictions and labeled offline evaluation through the network testing CLI.
 - A lifespan-managed FastAPI backend with an allowlisted two-model registry, per-model discovery/readiness, typed single/batch predictions and unchanged BoT legacy endpoints.
 - A cyberpunk-inspired Streamlit intelligence console with Overview, Interactive Testing, Batch Testing, Model Performance and About pages, using HTTP inference and saved historical reports.
+- Training-only Simulation Lab feature-record generator: multiplicity-weighted empirical replay, bounded joint-counter synthesis, deterministic diagnostics, incremental CSV/JSONL export. No inference or network traffic is performed by this generator.
+- FastAPI Simulation Lab backend: controlled background generation → bounded FIFO → shared NF inference → bounded events/metrics, with pause/resume/stop and graceful shutdown.
+- Streamlit Simulation Lab: HTTP-only configuration and lifecycle controls, fragment-based monitoring, bounded charts/events, retained history and downloadable results.
+- Experimental attack-family feasibility study using only frozen NF-CSE train/validation partitions; research results are separate from deployed binary inference.
 - Unit/integration tests, reports and reproducible baseline artifacts.
 
-Planned, not implemented: packet capture/live monitoring, streaming replay and alert/storage services. Those components remain scaffolding. The dashboard and Swagger UI provide manual testing, with no live monitoring. Authentication, persistence and background workers are not implemented in this phase.
+Planned, not implemented: packet capture/live monitoring, streaming replay and alert/storage services. Those components remain scaffolding. The dashboard and Swagger UI provide manual testing, with no live monitoring. Authentication and persistence are not implemented. Simulation-specific in-process workers are implemented; other background services remain planned.
 
 Known limitations:
 
@@ -85,12 +89,15 @@ CyberGuard/
 ├── data/processed/nf_cse_cic_ids2018/ # sealed compact binary partitions + manifests (Git-ignored)
 ├── data/samples/                   # optional local CSV samples (Git-ignored)
 ├── models/network/                 # fitted pipeline and group manifest (Git-ignored)
+├── models/simulation/nf_cse/        # train-derived simulation arrays/index/metadata (Git-ignored)
 ├── reports/dataset_analysis/        # EDA and DNS investigation
 ├── reports/model_evaluation/        # baseline and user-requested evaluation reports
 ├── runtime/                        # local predictions/output (Git-ignored)
 ├── scripts/                        # EDA, training, network testing, API/dashboard launchers
 ├── src/cyberguard/features/         # BoT pipeline; nf_cse normalizer + disk-backed preparation
 ├── src/cyberguard/training/         # group assignment, baseline fit, validation reporting
+├── src/cyberguard/research/         # isolated weighted attack-family feasibility study
+├── src/cyberguard/simulation/       # profiles, incremental generator, background engine, validation/export/audit
 ├── src/cyberguard/testing/          # implemented network_model_cli.py; other files are placeholders
 ├── src/cyberguard/api/              # app factory, lifespan, dependency injection and routes
 ├── src/cyberguard/inference/        # artifact loaders, model_registry.py adapters and NetworkDetector
@@ -115,8 +122,11 @@ All examples below run from the repository root. The table lists working user-fa
 | `scripts/prepare_nf_cse.py` | Normalize and prepare sealed binary NF-CSE partitions | `uv run python scripts/prepare_nf_cse.py --chunk-size 50000 --seed 20261115` |
 | `scripts/train_network_baseline.py` | Train the fixed restricted network baseline | `uv run python scripts/train_network_baseline.py` |
 | `scripts/evaluate_nf_cse.py` | Evaluate the frozen NF-CSE test once; inspect published results | `uv run python scripts/evaluate_nf_cse.py --inspect` |
+| `scripts/study_attack_families.py` | Research direct/hierarchical attack-family feasibility on frozen train/validation | `uv run python scripts/study_attack_families.py --threads 4` |
 | `scripts/train_nf_cse.py` | Train/validate two NF-CSE binary candidates, inspect or verify the selected artifact | `uv run python scripts/train_nf_cse.py train --threads 4` |
 | `scripts/test_network_model.py` | Inspect, predict and evaluate using a fitted model | `uv run python scripts/test_network_model.py interactive` |
+| `scripts/build_traffic_profiles.py` | Build training-only NF simulation profiles and diagnostics | `uv run python scripts/build_traffic_profiles.py` |
+| `scripts/generate_traffic.py` | Stream training-derived NF feature records | `uv run python scripts/generate_traffic.py --count 10000 --benign-ratio 0.9 --mode empirical --seed 42` |
 | `scripts/start_api.sh` | Serve the fitted model over localhost HTTP | `bash scripts/start_api.sh` |
 | `scripts/start_dashboard.sh` | Launch the HTTP-based Streamlit testing workspace | `bash scripts/start_dashboard.sh` |
 | `main.py` | Initial greeting stub only | `uv run python main.py` |
@@ -463,6 +473,9 @@ uv run pytest -q tests/unit/test_network_inference.py
 uv run pytest -q tests/integration/test_api.py
 uv run pytest -q tests/unit/test_dashboard.py
 uv run pytest -q tests/unit/test_dashboard_design.py
+uv run pytest -q tests/unit/test_simulation.py
+uv run pytest -q tests/unit/test_simulation_engine.py
+uv run pytest -q tests/unit/test_simulation_dashboard.py
 
 # CLI and EDA help (safe; no model fitting)
 uv run python scripts/test_network_model.py --help
@@ -470,9 +483,202 @@ uv run python scripts/test_network_model.py evaluate --help
 uv run python scripts/inspect_datasets.py --help
 ```
 
-Tests use temporary small fixtures; they do not evaluate the real official test dataset. Training tests fit only synthetic software fixtures and do not alter the saved baseline. The CLI test fixtures exercise model loading, input handling, chunking/order, probability alignment, metrics, exclusions, overwrite protection and no-refit/protected-path behavior. API tests use FastAPI TestClient (`httpx2` is a locked dev dependency for the installed Starlette version), synthetic serialized predictors and temporary files; they verify partial model availability, model reuse, strict schemas, bounds, error responses and model integrity. If a restricted execution sandbox blocks local sockets or cross-thread event-loop wakeups, run API integration tests in a normal local environment; do not disable the tests or protections.
+The Phase 7A full suite passed **511 tests** (22 research cases); see [attack-family feasibility](reports/model_evaluation/nf_cse_attack_family/feasibility_report.md). The Phase 6C full suite passed **489 tests** (45 Simulation Lab tests), with no warnings; see [dashboard verification](reports/simulation/phase6c_dashboard.md). The Phase 6B full suite passed **444 tests** (46 new engine/API tests; one SQLite resource warning); see [backend verification](reports/simulation/phase6b_engine.md). The Phase 6A full suite passed **398 tests** (54 generator tests); see [the generator verification report](reports/simulation/phase6a_generator.md). Tests use temporary small fixtures; they do not evaluate the real official test dataset. Training tests fit only synthetic software fixtures and do not alter the saved baseline. The CLI test fixtures exercise model loading, input handling, chunking/order, probability alignment, metrics, exclusions, overwrite protection and no-refit/protected-path behavior. API tests use FastAPI TestClient (`httpx2` is a locked dev dependency for the installed Starlette version), synthetic serialized predictors and temporary files; they verify partial model availability, model reuse, strict schemas, bounds, error responses and model integrity. If a restricted execution sandbox blocks local sockets or cross-thread event-loop wakeups, run API integration tests in a normal local environment; do not disable the tests or protections.
 
 Before completing development work, update this root README for every introduced/changed script, CLI interface, entry point, configuration requirement or workflow; verify commands and paths, correct stale examples and distinguish implemented features from plans. This maintenance requirement also lives in [AGENTS.md](AGENTS.md).
+
+## Attack-family feasibility study (Phase 7A)
+
+This research CLI compares direct 15-class classification against the frozen binary detector plus an attack-only family classifier. It uses the existing seven completed-flow inputs and all original family names; no categories are merged. It does not change/register models, thresholds, API routes, Streamlit or Simulation Lab. Generator source labels are not evaluation ground truth.
+
+Prerequisites: the existing sealed NF-CSE root at `data/processed/nf_cse_cic_ids2018`, its common manifest/contract, and the trusted frozen binary model plus adjacent metadata in `models/network`. Use Python 3.13 and the existing `uv` environment; no new dependencies, environment variables or GPU are required. Do not regenerate partitions to run the study.
+
+```bash
+uv run python scripts/study_attack_families.py --help
+OMP_NUM_THREADS=4 OPENBLAS_NUM_THREADS=4 uv run python scripts/study_attack_families.py --threads 4
+uv run pytest tests/unit/test_attack_family_study.py -q
+```
+
+There are no required CLI arguments. `--data-dir PATH` selects a compatible sealed root (default above); only `train/` and `validation/` are loaded. `--output-dir PATH` selects a **new** research report directory (default `reports/model_evaluation/nf_cse_attack_family`); existing output is refused, and dataset/model destinations are prohibited. `--threads N` bounds native CPU threads to 1..8 (default 4). To reproduce after a published run, choose a new output directory, for example `--output-dir reports/model_evaluation/nf_cse_attack_family_repeat`. A failed run leaves its predeclared plan and partial artifacts for diagnosis; retry in a new directory. There is no overwrite flag.
+
+The CLI verifies hashes, original multiplicities, labels, canonical group lineage and train/validation disjointness; an access guard prohibits reserved-test shards and processed-data writes. It never reads raw records or the reserved test partition. Four predetermined CPU fits use full compact training records with multiplicity weights: direct and attack-only linear SGD log-loss baselines, plus histogram boosting. Five linear epochs and 60 boosting iterations are fixed in advance; no hyperparameter search, internal random-row validation, class balancing or binary retraining occurs. Both existing binary operating thresholds are read from verified registry configuration/metadata. All candidate metrics use full original validation multiplicities.
+
+Outputs include the predeclared experiment plan/criteria, class mapping/inventory, collision/overlap statistics, full weighted protocol/port/counter/conditional distributions, direct/conditional/hierarchical metrics and confusion matrices, per-family error decomposition, exploratory abstention coverage/rejection/error statistics, measured time/peak RSS, SVG figures, integrity/access ledger and artifact checksums. Experimental estimators are not serialized. The [feasibility report](reports/model_evaluation/nf_cse_attack_family/feasibility_report.md) records the final decision, per-family reliability and observed costs; machine-readable evidence is adjacent.
+
+Observed Phase 7A result: **CONDITIONAL GO for further research on a supported subset; NO-GO for a reliable full-taxonomy deployment now**. Direct histogram macro-F1 was **0.6882** (benign FPR **0.0510%**, attack detection recall **94.4804%**). Hierarchical histogram macro-F1 was **0.6626 standard / 0.6919 high sensitivity** (FPR **0.0320% / 0.9987%**, attack detection recall **94.4352% / 95.1072%**). Eight of fourteen attack families meet predeclared support/recall gates; SlowHTTPTest and FTP share all vectors, SQL is exceptionally rare/ambiguous, and Infilteration remains a binary-detection bottleneck. A 0.9 raw-score abstention cutoff rejects all SlowHTTPTest/FTP validation records despite high accepted accuracy. Four fixed fits plus analysis took **162.12 s**, peak process RSS **2,370.09 MiB** at four threads. These are exploratory validation estimates, not production approval. See the linked report for every family and all linear/boosting results.
+
+Do not interpret collision lookup ceilings as universal bounds, raw class scores as calibrated confidence, conditional family performance as end-to-end detection, or duplicate multiplicities as independent episodes. Validation has already informed the existing binary model, and this study reuses it exploratorily. The reserved test remains untouched by this phase; its existing binary evaluation history is not reset. Independent capture/host/time/exporter evidence is still needed before deployment claims. Extremely rare SQL Injection and low-group Web/XSS categories require explicit support/uncertainty disclosure.
+
+## Simulation Lab: feature-record generator (Phase 6A)
+
+This offline component produces **seven-field completed-flow feature records**, without sending packets, loading classifiers, making predictions, or starting FastAPI/Streamlit. The generator remains service-independent; Phase 6B below adds the background simulation backend. The Phase 6C Simulation Lab page now controls the backend through HTTP. Profiles are derived exclusively from the existing sealed **training** partition. Do not rebuild data partitions to run it. No environment variables or new dependencies are required.
+
+Build profiles once (requires processed training shards and their common sealed manifest/contract):
+
+```bash
+uv run python scripts/build_traffic_profiles.py --help
+uv run python scripts/build_traffic_profiles.py
+uv run python scripts/generate_traffic.py --help
+```
+
+The builder verifies source checksums, preprocessing identity, feature order, training population and unique-vector count. It opens only `train/*.npz` and three common metadata files. Shared manifest bytes are hashed/scanned for structure, but validation/test objects are skipped before decoding; their records are never opened. Unsupported canonical statuses fail the build rather than silently dropping rows. Profiles go to `models/simulation/nf_cse/`: read-only-loadable `vectors.npy`, `weights.npy`, `labels.npy`, an exact all-training-vector `membership.sqlite` index, and versioned `metadata.json` with artifact hashes. These are simulation artifacts, separate from classifier models. The builder also writes `reports/simulation/statistical_validation.json` (5,000 deterministic samples per mode/profile by default). Existing profile/output/report paths are not overwritten; select new paths for another run.
+
+Builder options: `--processed-dir PATH`, `--output-dir PATH`, `--audit-count N` (1..100000), `--audit-seed N` (default 20261115), `--audit-report PATH`. Defaults target the locations above. The audit compares full weighted protocol/port histograms, counter means/correlations, a separate deterministic weighted training sample for counter quantiles and sampling variability, and paired anchors to isolate perturbation effects; novelty checks exact canonical membership against **all training vectors**, ignoring labels. The report includes duplicate/invalid rates and source composition. See [methodology, measured fidelity and performance](reports/simulation/phase6a_generator.md).
+
+Generate records (profile artifacts are the only data dependency):
+
+```bash
+# Exact 90% benign / 10% attack-profile composition; empirical training replay.
+uv run python scripts/generate_traffic.py --count 10000 --benign-ratio 0.9 --mode empirical --seed 42
+# Benign-only JSONL with separate simulation metadata.
+uv run python scripts/generate_traffic.py --count 1000 --benign-ratio 1 --mode empirical --seed 42 --metadata --output runtime/simulation/benign.jsonl
+# Attack-profile-only bounded synthesis, exported as CSV.
+uv run python scripts/generate_traffic.py --count 1000 --attack-ratio 1 --mode synthetic --seed 42 --format csv --output runtime/simulation/attack.csv
+# Mixed synthetic records conditioned on TCP destination port 443.
+uv run python scripts/generate_traffic.py --count 1000 --benign-ratio 0.9 --mode synthetic --protocol 6 --destination-port 443 --output runtime/simulation/tcp443.jsonl
+# Identical configuration/artifacts/seed -> identical record bytes in another file.
+uv run python scripts/generate_traffic.py --count 10000 --benign-ratio 0.9 --mode empirical --seed 42 --output runtime/simulation/reproduced.jsonl
+cmp runtime/simulation/traffic.jsonl runtime/simulation/reproduced.jsonl
+```
+
+Generator options:
+
+| Option | Meaning / default |
+| --- | --- |
+| `--profiles PATH` | Profile directory; `models/simulation/nf_cse/` |
+| `--count N`, `--seed N` | Positive output count (up to 2^63−1), nonnegative private NumPy seed; 10000 / 42 |
+| `--benign-ratio R` / `--attack-ratio R` | Mutually exclusive fractions in [0,1]; default benign 0.9. Attack ratio is converted to its benign complement. Benign count is decimal `count * benign_ratio` rounded half up; attack count is the remainder. |
+| `--mode empirical\|synthetic` | Complete-vector weighted replay / conditional anchor with joint bounded counter perturbation; empirical default |
+| `--protocol BYTE` | Optional repeatable byte restriction, e.g. `--protocol 6 --protocol 17`; restricted original weights are renormalized |
+| `--destination-port PORT` | Optional repeatable 0..65535 TCP/UDP service restriction; nontransport placeholders cannot satisfy it |
+| `--perturbation R` | Synthetic common counter scale ±R, default 0.1, range (0,0.25]; integer rounding, positive/zero preservation and upper bound apply |
+| `--format jsonl\|csv` | JSONL default; extension is not auto-detected |
+| `--output PATH` | New file; default `runtime/simulation/traffic.<format>` |
+| `--metadata` | JSONL `{record,simulation}` envelope or `simulation_*` CSV columns; metadata never belongs in a model input |
+
+Unsupported restrictions fail if any requested source profile has no support; there is no distribution fallback. Output without `--metadata` has exactly `PROTOCOL,L4_SRC_PORT,L4_DST_PORT,IN_BYTES,OUT_BYTES,IN_PKTS,OUT_PKTS` in that order. Every output gets an adjacent `.simulation.json` provenance sidecar with configuration, profile/output hashes and evidence warning. JSONL metadata envelopes must be unwrapped and CSV `simulation_*` columns removed before a strict seven-field API request. Neither timestamps nor wall-clock performance measurements are inserted into record sequences. CLI stdout reports load/filter time, streaming export throughput and process peak RSS (Linux MiB).
+
+`Profiles(path)` can be reused across generators. `TrafficGenerator(profiles, GeneratorConfig(...))` is an iterator; `next(generator)` returns one `{record, simulation}` item. Profile arrays are memory-mapped; filtering/cumulative weights use memory proportional to compact profile size, never output count. Serialization streams records and audits cap diagnostic sample size. Generation never rescans source training shards; default output grows on disk with count. Run `uv run pytest tests/unit/test_simulation.py -q` for fixture-only generator tests.
+
+Reproducibility requires identical profile files, complete configuration, software versions and seed. Empirical replay preserves the complete **normalized model information**, not discarded raw tokens: nontransport ports use raw 0 (normalizes back to not-applicable), and a transport sentinel uses raw -1. Coalesced/missing protocols and missing/invalid counters cannot be reconstructed and fail closed. No training records in the built profiles were excluded.
+
+Synthetic mode samples a complete weighted anchor conditional on source profile and restrictions, retains protocol/ports, and applies one shared uniform bounded scale to its four counters. This preserves directional coupling approximately, including structural zeros, but integer rounding changes ratios and large-counter boundary handling can make the scale asymmetric. Packet-size/MTU/timeout/exporter rules have not been established and are not invented. Statistical fidelity and novelty are measured, not guaranteed. Repeated training vectors may carry conflicting source labels. **Neither mode is an independent evaluation dataset**: source profiles are not verified attack behavior, prediction agreement would not be test accuracy, and simulated results must never be combined with final-test metrics or used to update frozen classifiers without a separate approved experiment.
+
+## Simulation Lab backend (Phase 6B)
+
+The API owns `SimulationController → TrafficGenerator → bounded FIFO → inference worker → bounded aggregator`. Each active run has one producer and one inference thread, independent of HTTP request lifetimes. Profiles load lazily in a worker and are reused; the existing registry owns the **same NF model instance** used by prediction endpoints. Registry input validation, preprocessing and verified operating-mode thresholds are reused. This backend generates feature records only; the Phase 6C Streamlit Simulation Lab controls it through HTTP. No packets are sent.
+
+Use a **single Uvicorn process**, without reload: state/limits are in memory per process and disappear on restart. The existing launcher does this. Prerequisites are the ready frozen NF artifact/metadata and published registry verification reports, plus the Phase 6A simulation profiles. No dataset partitions are opened by the engine. Optional server settings (export before launch; no automatic `.env` loading):
+
+| Environment variable | Default / limit |
+| --- | --- |
+| `CYBERGUARD_SIMULATION_PROFILES_PATH` | `models/simulation/nf_cse/`; trusted server-side profile directory; clients cannot choose paths |
+| `CYBERGUARD_SIMULATION_MAX_ACTIVE` | 1; 1..4. Paused, starting and draining runs count toward the limit. |
+| `CYBERGUARD_SIMULATION_MAX_SESSIONS` | 20 retained runs; active limit..100. Stop then delete finished runs to free slots. |
+
+No new executable script is needed: `scripts/start_api.sh` also serves simulations. Existing `CYBERGUARD_MAX_MODEL_REQUEST_BYTES` applies to simulation POST bodies, and simulation batches cannot exceed `CYBERGUARD_MAX_BATCH_SIZE`. Native CPU thread limits can be set before process startup, as in the verified example below.
+
+### Simulation API and configuration
+
+| Method | Path | Purpose |
+| --- | --- | --- |
+| POST / GET | `/api/v1/simulations` | Create without work (201) / list retained runs |
+| GET | `/api/v1/simulations/{id}` | State, configuration, termination reason, safe error, `finished` |
+| POST | `/api/v1/simulations/{id}/start` | Start a created run asynchronously |
+| POST | `/api/v1/simulations/{id}/pause` | Pause generation and new batch work; an already gathering/processing batch may finish |
+| POST | `/api/v1/simulations/{id}/resume` | Resume paused work |
+| POST | `/api/v1/simulations/{id}/stop` | End generation and drain accepted records; poll `finished` |
+| GET | `/api/v1/simulations/{id}/metrics` | Lifetime counters/rates/means, rolling latency p95, bounded history |
+| GET | `/api/v1/simulations/{id}/events?after=-1&limit=100` | Sequence cursor, ascending events, `next_cursor`, `oldest_available`, `cursor_gap` |
+| DELETE | `/api/v1/simulations/{id}` | Delete a finished run; active/created runs must first be stopped |
+
+Unknown IDs return structured 404; invalid transitions 409; resource exhaustion 429; unsupported models/schema 422; unavailable models/shutdown/startup resources 503. Worker failures become inspectable `failed` runs with sanitized stage/code and server-side logs. POST body limits return 413. No raw tracebacks or artifact paths are returned.
+
+Creation fields (all optional, unexpected fields forbidden):
+
+| Field | Default | Allowed |
+| --- | ---: | --- |
+| `model_id` | `nf_cse_binary_completed_flow` | This model only |
+| `mode` | `empirical` | `empirical`, `synthetic` |
+| `benign_ratio`, `attack_ratio` | 0.9 / 0.1 | [0,1]; either infers the complement, both must sum to 1 within 1e−12 |
+| `seed` | 42 | Integral 0..2^63−1 |
+| `generation_rate` | 100 | 1..500 feature records/s |
+| `max_duration` | 60 | >0..3600 seconds from start; includes profile initialization and pauses |
+| `max_records` | 6000 | Integral 1..1000000 |
+| `batch_size` | 32 | Integral 1..128 and ≤ server batch limit |
+| `queue_capacity` | 256 | Integral 1..4096 |
+| `event_capacity` | 500 | Integral 1..2000 recent classified events |
+| `history_capacity` | 120 | Integral 1..600 recent history samples |
+| `operating_mode` | `standard` | `standard`, `high_sensitivity`; thresholds come from verified registry configuration |
+
+Lifecycle: `created → running ↔ paused`; exhaustion/duration ends as `completed`; explicit stop ends as `stopped` after drain; worker errors end as `failed`. Stopping a created run is immediate. Terminal runs cannot restart. During draining, state may still be `running`/`paused` with `stop_requested=true`; control operations are rejected. `finished=true` means both worker finalizers completed (shutdown/delete also join their threads). Stop is not an immediate thread kill.
+
+Pacing uses monotonic target slots, skips missed slots rather than emitting catch-up bursts, and uses condition waits. Queue-full backpressure blocks the producer without dropping accepted records. Capacity excludes the bounded in-flight batch and at most one pending generated candidate. A stop/duration can admit that one pending candidate before drain. `generated` counts FIFO admissions; `generation_attempts` includes generated candidates and `cancelled_before_enqueue` counts abandoned pending candidates on failure. At successful completion/stop, `generated == classified`, queue/in-flight/discarded counts are zero. On failure, accepted unclassified records are counted as `discarded`; final `generated == classified + discarded`.
+
+Rates are lifetime admissions/classifications divided by monotonic elapsed seconds, including pauses/setup/draining; the requested rate is a target, not a scheduling guarantee. Duration ends **generation**, then queued records drain, so final elapsed time can exceed the duration cap. The exact source composition rounding from Phase 6A applies when all `max_records` are generated; duration/stop produces only a deterministic prefix and need not have the full planned ratio. Different wall-clock scheduling can change prefix length, not the seeded feature sequence.
+
+Latency definitions: queue wait = admission → batch processing start (includes batch gathering); batch processing = registry call plus prediction count/score verification, assigned to each participating record, not divided by batch size; end-to-end = admission → that verification completing (excludes event aggregation/HTTP serialization). Means are lifetime record-weighted values. `p95_recent` is the exact percentile of the latest **2,000 classified-record latency samples**, not a lifetime percentile or confidence interval. Bounded history records cumulative counters at most once/second plus the final sample; ring buffers overwrite oldest entries. Event polling uses exclusive sequence cursors (`after`), default limit 100, maximum 1000; `cursor_gap=true` reports overwritten events, not pipeline drops. Resume polling with `next_cursor`.
+
+### Verified curl lifecycle
+
+From the repository root, start the backend in one terminal (the verification used port 18006):
+
+```bash
+OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=2 CYBERGUARD_API_PORT=18006 bash scripts/start_api.sh
+```
+
+In another terminal, use `curl` and Python 3.13 from the uv environment to capture the opaque ID:
+
+```bash
+SIM_BASE=http://127.0.0.1:18006/api/v1/simulations
+SIM_ID=$(curl --fail-with-body -sS -X POST "$SIM_BASE" \
+  -H 'Content-Type: application/json' \
+  --data '{"model_id":"nf_cse_binary_completed_flow","mode":"synthetic","benign_ratio":0.9,"attack_ratio":0.1,"seed":42,"generation_rate":100,"max_duration":60,"max_records":6000,"batch_size":32,"queue_capacity":256,"event_capacity":1000,"history_capacity":120,"operating_mode":"standard"}' \
+  | uv run python -c 'import json,sys; print(json.load(sys.stdin)["id"])')
+curl --fail-with-body -sS -X POST "$SIM_BASE/$SIM_ID/start"
+curl --fail-with-body -sS "$SIM_BASE/$SIM_ID/metrics"
+curl --fail-with-body -sS "$SIM_BASE/$SIM_ID/events?after=-1&limit=100"
+curl --fail-with-body -sS -X POST "$SIM_BASE/$SIM_ID/pause"
+curl --fail-with-body -sS -X POST "$SIM_BASE/$SIM_ID/resume"
+curl --fail-with-body -sS -X POST "$SIM_BASE/$SIM_ID/stop"
+# Repeat these GETs until finished=true; verify generated == classified and queue_depth=0.
+curl --fail-with-body -sS "$SIM_BASE/$SIM_ID"
+curl --fail-with-body -sS "$SIM_BASE/$SIM_ID/metrics"
+curl --fail-with-body -sS -X DELETE "$SIM_BASE/$SIM_ID"
+```
+
+Pause/resume before the run reaches its duration/record limit. Stop returns promptly; wait for `finished=true` before deleting. For a naturally completed exact 90/10 example, create with `max_records:1000`, keep `max_duration:60` and rate 100, start, then poll to completion. The measured run classified all 1,000 records at about **99.47/s**; mean/p95 end-to-end latency was **60.55/92.96 ms**, with about **395.29 MiB** peak process RSS. Timing is machine/load dependent. See [Phase 6B evidence and measurements](reports/simulation/phase6b_engine.md).
+
+Shutdown requests stop for all runs and joins producer/inference threads **before** closing the shared model registry; HTTP disconnects do not cancel simulations. Native inference/profile I/O cannot be forcibly interrupted safely by Python threads, so shutdown waits for in-flight calls before draining. There is no hard wall-clock kill, durable storage, distributed scheduling, SSE/WebSocket stream or packet-traffic integration. Source-label agreement is a descriptive training-derived statistic, **not test accuracy**. Model scores remain uncalibrated; no simulation establishes live deployment performance.
+
+## Simulation Lab dashboard (Phase 6C)
+
+Choose **Simulation Lab** in the dashboard navigation. It uses only FastAPI simulation/model/OpenAPI endpoints; it does not import workers, read profiles, load a classifier or run inference locally. Its target is always NF-CSE, independently of the sidebar model workspace. Existing pages keep their selected model and inputs.
+
+Start the existing launchers in separate terminals from the repository root:
+
+```bash
+OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=2 bash scripts/start_api.sh
+bash scripts/start_dashboard.sh
+```
+
+Open `http://127.0.0.1:8501`, then select Simulation Lab. The API defaults to localhost:8000; set exported `CYBERGUARD_API_URL` before starting Streamlit to use another backend. For an occupied dashboard port, use the equivalent `uv run streamlit run src/cyberguard/dashboard/app.py --server.address 127.0.0.1 --server.port 8503`. Backend models/verification metadata and the existing Phase 6A profiles are prerequisites; the dashboard needs only HTTP access. Keep the API to one process as documented above.
+
+1. **Configure:** expand Configure a simulation. Choose empirical training replay or bounded synthetic perturbation, attack-profile percentage (benign is its complement), a rate preset (10/50/100/250/500 flows/s), duration cap, maximum records, optional seed and operating mode. Limits come from the current API OpenAPI schema, while mode IDs/thresholds come from NF model metadata. Blank seed uses the backend default; record/prediction reproducibility does not guarantee reproducible timing. The UI offers whole-second durations (1..3600 today); backend accepts >0..3600 seconds. Advanced settings expose batch size, queue capacity and backend event retention, respecting advertised bounds and the server model batch limit.
+2. **Create, then Start:** creation performs no generation. Create is locked after submission; use Prepare new simulation to explicitly prepare another run. An uncertain POST outcome is never automatically retried: Refresh Lab and inspect history before trying again.
+3. **Monitor:** Auto-refresh uses supported Streamlit fragments at 500/750/1000 ms, default 1000. It refreshes state, metrics and incremental event cursors without a polling thread or blocking loop. Turn it off for manual Refresh Lab. A terminal run stops polling after available events are fetched; any API error stops polling until explicit refresh. Created runs do not poll continuously.
+4. **Pause/Resume/Stop:** only currently valid controls appear. Pause allows an already gathering/processing batch to finish and does not suspend the wall-duration cap. Stop ends generation and drains accepted records; it preserves results. Wait for finished status and reconciled counters. Completed/stopped/failed runs cannot silently restart.
+5. **Inspect or delete:** select a retained simulation in history, inspect its state/configuration/metrics/events, or prepare another run. The history table is explicitly a snapshot from its last refresh. Only finished runs can be deleted; deleting retained results requires a confirmation checkbox. Deletion differs from stopping and cannot be undone. In-memory backend history is transient; a restart removes IDs. Missing IDs are marked unavailable and cached results stay visible/exportable until selecting another run.
+
+KPI cards show generated/classified/predicted counts, rates, queue depth and end-to-end mean/recent p95. Generated means accepted into the queue; classified can lag while work is queued/in flight. Chart A derives interval rates from adjacent **observed backend cumulative counters divided by the actual interval**—it does not interpolate missing history. Predictions, queue depth, lifetime inference throughput and latency charts use bounded poll snapshots. Latency means are lifetime record-weighted values; recent p95 covers up to 2,000 backend records. They are not interval-specific latency measurements. Mean/p95 display milliseconds; queue gathering, model-lock contention and exclusions retain the backend definitions above.
+
+The event table shows the latest 100 frontend events, with sequence/time/profile, all seven inputs and prediction/score/mode. Its inspector and CSV cover up to **1,000 frontend-retained events**. Rows remain sorted/deduplicated, and evicted selections recover safely. Cursor gaps are disclosed when backend retention overwrites unseen events. At most two 500-event pages are fetched per poll; no full-history refetch occurs. Chart snapshots are capped at 120; backend history also remains bounded. Navigation preserves the selected run, committed form settings, preferences, cursor, events and charts without creating another simulation. Unsaved form edits follow Streamlit form submission behavior.
+
+**Prediction Agreement with Generator Profiles** displays the backend lifetime agreement and separate profile/prediction marginals. Source-profile counts refer to generated inputs and prediction counts to classifications, so denominators can differ during execution. The API does not expose joint cross-counts; no confusion matrix is inferred from a truncated event buffer. Training-derived source labels are not verified ground truth, and agreement is **not independent test accuracy**.
+
+Downloads provide retained-event CSV, configuration JSON and backend aggregate-metrics JSON. CSV is labeled partial unless the frontend holds every classified sequence for a finished run with no known gaps. It never claims all generated records were exported. Charts/prediction history only cover observed polls; exports cannot restore overwritten events. Connection errors preserve the last verified snapshot; Refresh Lab rechecks metadata/history and reports restarts. A missing/unavailable model, missing profiles, configuration rejection, worker failure or transition race produces a readable message, without exposing tracebacks or retrying mutations.
+
+See [Phase 6C implementation, screenshots and verification](reports/simulation/phase6c_dashboard.md). Tests: `uv run pytest tests/unit/test_simulation_dashboard.py -q`; the complete suite remains `uv run pytest -q`.
 
 ## Running the application
 
@@ -679,7 +885,7 @@ Stop with Ctrl-C. Imports work under the existing `src/` layout. The launcher fi
 
 The generic form machinery reads feature names/scalar types from public schemas. NF's JSON schema omits some semantic string/sentinel rules, so a narrowly scoped adapter for `nf-cse-netflow-v1-completed-flow-v1` supplies validation and human-readable roles while retaining API field ordering. NF numeric text tokens are limited to 128 ASCII characters locally before conversion (a frontend resource bound); it validates only and returns original tokens; the API pipeline owns preprocessing. Unsupported schemas require a reviewed frontend adapter rather than guessed field types. Predictions verify model/version/classes/mode/threshold metadata before display so incompatible/stale responses are rejected. Prediction errors clear results and block that selection until refresh; another model can be chosen explicitly.
 
-Software tests use mocked HTTP, synthetic records, temporary report fixtures and Streamlit AppTest; no model or reserved dataset is loaded. Run `uv run pytest tests/unit/test_dashboard_models.py tests/unit/test_dashboard.py tests/unit/test_dashboard_design.py -q`, or `uv run pytest -q` for the complete suite. The final full suite passed **344 tests**, including 35 new multi-model dashboard tests. See [Phase 5F frontend report](reports/phase5f_frontend.md) and its screenshots for browser verification. Historical [Phase 4B](reports/phase4b_dashboard.md), [redesign](reports/dashboard_redesign.md) and [Phase 5E](reports/phase5e_backend.md) records describe their respective earlier implementation states.
+Software tests use mocked HTTP, synthetic records, temporary report fixtures and Streamlit AppTest; no model or reserved dataset is loaded. Run `uv run pytest tests/unit/test_dashboard_models.py tests/unit/test_dashboard.py tests/unit/test_dashboard_design.py -q`, or `uv run pytest -q` for the complete suite. At Phase 5F completion, the full suite passed **344 tests**, including 35 new multi-model dashboard tests. See [Phase 5F frontend report](reports/phase5f_frontend.md) and its screenshots for browser verification. Historical [Phase 4B](reports/phase4b_dashboard.md), [redesign](reports/dashboard_redesign.md) and [Phase 5E](reports/phase5e_backend.md) records describe their respective earlier implementation states.
 
 ## Troubleshooting
 
@@ -688,6 +894,13 @@ Software tests use mocked HTTP, synthetic records, temporary report fixtures and
 | Missing pandas/sklearn/joblib or pytest | Run `uv sync --frozen --group dev`; use `uv run`, not an unrelated system Python. For offline use, install/cache the locked dependencies first. |
 | Python version/environment mismatch | Check `uv run python --version` is 3.13 and run from the repo root. Confirm `.python-version`, `pyproject.toml`, and `uv.lock` are present. |
 | uv cache permission errors | Set `UV_CACHE_DIR` to a writable path. A direct `.venv/bin/python` invocation also works once provisioned. |
+| Simulation profile missing / checksum mismatch | Build once from sealed training with `scripts/build_traffic_profiles.py`; for mismatch restore trusted profiles or build into a new dedicated directory. No classifier is needed. |
+| Simulation Lab polling stopped / cached run unavailable | Refresh Lab explicitly. If the backend restarted, keep/export cached results or select a current ID; never restart a completed ID. Refresh the sidebar connection too if model batch limits are missing. |
+| Simulation Lab cursor gap / partial CSV | Older events were overwritten or the frontend reached its 1,000-event bound. Metrics still cover the backend run; a bounded event export cannot recover missing history. |
+| Simulation API returns 429 | Stop/drain active runs (paused runs still occupy slots), or delete finished runs. Server-side active/retained caps are separate. |
+| Simulation API run is failed | Inspect its sanitized `error` stage and server logs. Restore profiles/ready NF artifact, then create a new run; terminal runs never restart. |
+| Simulation filter has no support | Choose restrictions represented in each requested training source profile, or explicitly change composition. The generator never substitutes another profile. |
+| Simulation output already exists | Choose a new `--output`; for profile rebuilding choose new `--output-dir` and `--audit-report`. No overwrite flag is provided. |
 | Missing model artifact | Supply the existing trusted model via `--model`. Git ignores models. Recreating the baseline requires the documented training workflow and overwrites its artifacts; the testing CLI does not train automatically. |
 | Invalid/incompatible model artifact | Use the trusted fitted pipeline and matching dependencies. Run `info`; a readable file without a callable `predict()` is rejected. |
 | Missing raw dataset | Check the exact paths above. EDA requires all four CSVs; baseline training requires its training CSV only. Manual prediction requires neither. |

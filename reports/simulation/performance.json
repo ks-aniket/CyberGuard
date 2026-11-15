@@ -1,0 +1,62 @@
+{
+  "mixed_empirical": {
+    "output": "runtime/simulation/final/mixed.jsonl",
+    "records": 10000,
+    "benign_records": 9000,
+    "attack_profile_records": 1000,
+    "load_and_filter_seconds": 0.3871230270015076,
+    "export_seconds": 0.3141902290008147,
+    "export_records_per_second": 31827.851654718612,
+    "peak_rss_mib_linux": 427.44140625
+  },
+  "benign_empirical": {
+    "output": "runtime/simulation/final/benign.jsonl",
+    "records": 1000,
+    "benign_records": 1000,
+    "attack_profile_records": 0,
+    "load_and_filter_seconds": 0.30533394999656593,
+    "export_seconds": 0.02855927600467112,
+    "export_records_per_second": 35014.89322896145,
+    "peak_rss_mib_linux": 327.12109375
+  },
+  "attack_synthetic": {
+    "output": "runtime/simulation/final/attack.csv",
+    "records": 1000,
+    "benign_records": 0,
+    "attack_profile_records": 1000,
+    "load_and_filter_seconds": 0.277872398000909,
+    "export_seconds": 0.03157418200134998,
+    "export_records_per_second": 31671.445992084424,
+    "peak_rss_mib_linux": 264.76953125
+  },
+  "mixed_filtered": {
+    "output": "runtime/simulation/final/tcp443.jsonl",
+    "records": 1000,
+    "benign_records": 900,
+    "attack_profile_records": 100,
+    "load_and_filter_seconds": 0.3724769850014127,
+    "export_seconds": 0.03384964399447199,
+    "export_records_per_second": 29542.408190860464,
+    "peak_rss_mib_linux": 377.6484375
+  },
+  "reproduced": {
+    "output": "runtime/simulation/final/reproduced.jsonl",
+    "records": 10000,
+    "benign_records": 9000,
+    "attack_profile_records": 1000,
+    "load_and_filter_seconds": 0.31059146500047063,
+    "export_seconds": 0.2631586459974642,
+    "export_records_per_second": 37999.891518275865,
+    "peak_rss_mib_linux": 427.70703125
+  },
+  "benchmark_synthetic": {
+    "output": "runtime/simulation/final/benchmark.csv",
+    "records": 100000,
+    "benign_records": 90000,
+    "attack_profile_records": 10000,
+    "load_and_filter_seconds": 0.32209972599957837,
+    "export_seconds": 3.178191668004729,
+    "export_records_per_second": 31464.43337785857,
+    "peak_rss_mib_linux": 431.671875
+  }
+}

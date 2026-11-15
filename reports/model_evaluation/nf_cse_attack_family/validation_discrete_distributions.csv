@@ -1,0 +1,354 @@
+split,family,distribution,key,weight,within_family_fraction
+validation,Benign,protocol,[6],1034547,0.7079576435422414
+validation,Benign,protocol,[17],425515,0.2911869607585512
+validation,Benign,protocol,[1],1246,0.0008526584329698243
+validation,Benign,protocol,[0],3,2.0529496780974904e-06
+validation,Benign,protocol,[2],1,6.843165593658301e-07
+validation,Bot,protocol,[6],3148,1.0
+validation,Brute Force -Web,protocol,[17],409,0.9380733944954128
+validation,Brute Force -Web,protocol,[6],27,0.06192660550458716
+validation,Brute Force -XSS,protocol,[17],409,0.964622641509434
+validation,Brute Force -XSS,protocol,[6],15,0.03537735849056604
+validation,DDOS attack-HOIC,protocol,[6],47,1.0
+validation,DDOS attack-LOIC-UDP,protocol,[17],340,1.0
+validation,DDoS attacks-LOIC-HTTP,protocol,[6],75241,0.9983016890233385
+validation,DDoS attacks-LOIC-HTTP,protocol,[17],128,0.001698310976661492
+validation,DoS attacks-GoldenEye,protocol,[6],6587,1.0
+validation,DoS attacks-Hulk,protocol,[6],21624,1.0
+validation,DoS attacks-SlowHTTPTest,protocol,[6],21067,1.0
+validation,DoS attacks-Slowloris,protocol,[6],4546,1.0
+validation,FTP-BruteForce,protocol,[6],38611,1.0
+validation,Infilteration,protocol,[17],6572,0.5346566872762772
+validation,Infilteration,protocol,[6],5720,0.46534331272372276
+validation,SQL Injection,protocol,[6],7,1.0
+validation,SSH-Bruteforce,protocol,[6],18942,1.0
+validation,Benign,source_port,[80],90317,0.06180541869224368
+validation,Benign,source_port,[3389],88094,0.06028418298077344
+validation,Benign,source_port,[21],58928,0.04032540621030964
+validation,Benign,source_port,[22],19141,0.013098503262821356
+validation,Benign,source_port,[443],15824,0.010828625235404897
+validation,Benign,source_port,[49674],5647,0.0038643356107388427
+validation,Benign,source_port,[546],4370,0.002990463364428678
+validation,Benign,source_port,[138],3954,0.0027057876757324924
+validation,Benign,source_port,[445],2859,0.001956461043226908
+validation,Benign,source_port,[53],2713,0.0018565508255594973
+validation,Bot,source_port,[50716],2,0.0006353240152477764
+validation,Bot,source_port,[50733],2,0.0006353240152477764
+validation,Bot,source_port,[50736],2,0.0006353240152477764
+validation,Bot,source_port,[50748],2,0.0006353240152477764
+validation,Bot,source_port,[50760],2,0.0006353240152477764
+validation,Bot,source_port,[50773],2,0.0006353240152477764
+validation,Bot,source_port,[50776],2,0.0006353240152477764
+validation,Bot,source_port,[50778],2,0.0006353240152477764
+validation,Bot,source_port,[50783],2,0.0006353240152477764
+validation,Bot,source_port,[50788],2,0.0006353240152477764
+validation,Brute Force -Web,source_port,[1028],409,0.9380733944954128
+validation,Brute Force -Web,source_port,[49237],1,0.0022935779816513763
+validation,Brute Force -Web,source_port,[49833],1,0.0022935779816513763
+validation,Brute Force -Web,source_port,[50252],1,0.0022935779816513763
+validation,Brute Force -Web,source_port,[50665],1,0.0022935779816513763
+validation,Brute Force -Web,source_port,[51495],1,0.0022935779816513763
+validation,Brute Force -Web,source_port,[53157],1,0.0022935779816513763
+validation,Brute Force -Web,source_port,[53158],1,0.0022935779816513763
+validation,Brute Force -Web,source_port,[53817],1,0.0022935779816513763
+validation,Brute Force -Web,source_port,[53989],1,0.0022935779816513763
+validation,Brute Force -XSS,source_port,[1028],409,0.964622641509434
+validation,Brute Force -XSS,source_port,[49915],1,0.0023584905660377358
+validation,Brute Force -XSS,source_port,[50220],1,0.0023584905660377358
+validation,Brute Force -XSS,source_port,[52078],1,0.0023584905660377358
+validation,Brute Force -XSS,source_port,[55482],1,0.0023584905660377358
+validation,Brute Force -XSS,source_port,[55788],1,0.0023584905660377358
+validation,Brute Force -XSS,source_port,[58575],1,0.0023584905660377358
+validation,Brute Force -XSS,source_port,[59201],1,0.0023584905660377358
+validation,Brute Force -XSS,source_port,[59777],1,0.0023584905660377358
+validation,Brute Force -XSS,source_port,[60087],1,0.0023584905660377358
+validation,DDOS attack-HOIC,source_port,[49187],1,0.02127659574468085
+validation,DDOS attack-HOIC,source_port,[49202],1,0.02127659574468085
+validation,DDOS attack-HOIC,source_port,[49211],1,0.02127659574468085
+validation,DDOS attack-HOIC,source_port,[49224],1,0.02127659574468085
+validation,DDOS attack-HOIC,source_port,[49226],1,0.02127659574468085
+validation,DDOS attack-HOIC,source_port,[49237],1,0.02127659574468085
+validation,DDOS attack-HOIC,source_port,[49833],1,0.02127659574468085
+validation,DDOS attack-HOIC,source_port,[49915],1,0.02127659574468085
+validation,DDOS attack-HOIC,source_port,[50220],1,0.02127659574468085
+validation,DDOS attack-HOIC,source_port,[50252],1,0.02127659574468085
+validation,DDOS attack-LOIC-UDP,source_port,[58715],8,0.023529411764705882
+validation,DDOS attack-LOIC-UDP,source_port,[52533],7,0.020588235294117647
+validation,DDOS attack-LOIC-UDP,source_port,[53059],7,0.020588235294117647
+validation,DDOS attack-LOIC-UDP,source_port,[49691],6,0.01764705882352941
+validation,DDOS attack-LOIC-UDP,source_port,[52528],6,0.01764705882352941
+validation,DDOS attack-LOIC-UDP,source_port,[52847],6,0.01764705882352941
+validation,DDOS attack-LOIC-UDP,source_port,[58711],6,0.01764705882352941
+validation,DDOS attack-LOIC-UDP,source_port,[60763],6,0.01764705882352941
+validation,DDOS attack-LOIC-UDP,source_port,[60778],6,0.01764705882352941
+validation,DDOS attack-LOIC-UDP,source_port,[62602],6,0.01764705882352941
+validation,DDoS attacks-LOIC-HTTP,source_port,[51126],30,0.0003980416351550372
+validation,DDoS attacks-LOIC-HTTP,source_port,[51500],30,0.0003980416351550372
+validation,DDoS attacks-LOIC-HTTP,source_port,[60907],30,0.0003980416351550372
+validation,DDoS attacks-LOIC-HTTP,source_port,[51521],29,0.0003847735806498693
+validation,DDoS attacks-LOIC-HTTP,source_port,[55658],29,0.0003847735806498693
+validation,DDoS attacks-LOIC-HTTP,source_port,[55967],29,0.0003847735806498693
+validation,DDoS attacks-LOIC-HTTP,source_port,[56002],29,0.0003847735806498693
+validation,DDoS attacks-LOIC-HTTP,source_port,[56655],29,0.0003847735806498693
+validation,DDoS attacks-LOIC-HTTP,source_port,[59919],29,0.0003847735806498693
+validation,DDoS attacks-LOIC-HTTP,source_port,[60920],29,0.0003847735806498693
+validation,DoS attacks-GoldenEye,source_port,[40518],4,0.0006072567177774404
+validation,DoS attacks-GoldenEye,source_port,[50016],4,0.0006072567177774404
+validation,DoS attacks-GoldenEye,source_port,[33404],3,0.0004554425383330803
+validation,DoS attacks-GoldenEye,source_port,[33472],3,0.0004554425383330803
+validation,DoS attacks-GoldenEye,source_port,[33626],3,0.0004554425383330803
+validation,DoS attacks-GoldenEye,source_port,[34348],3,0.0004554425383330803
+validation,DoS attacks-GoldenEye,source_port,[34352],3,0.0004554425383330803
+validation,DoS attacks-GoldenEye,source_port,[34360],3,0.0004554425383330803
+validation,DoS attacks-GoldenEye,source_port,[34538],3,0.0004554425383330803
+validation,DoS attacks-GoldenEye,source_port,[36958],3,0.0004554425383330803
+validation,DoS attacks-Hulk,source_port,[53922],7,0.0003237143914169441
+validation,DoS attacks-Hulk,source_port,[33470],6,0.0002774694783573807
+validation,DoS attacks-Hulk,source_port,[34390],6,0.0002774694783573807
+validation,DoS attacks-Hulk,source_port,[35164],6,0.0002774694783573807
+validation,DoS attacks-Hulk,source_port,[36566],6,0.0002774694783573807
+validation,DoS attacks-Hulk,source_port,[36822],6,0.0002774694783573807
+validation,DoS attacks-Hulk,source_port,[37896],6,0.0002774694783573807
+validation,DoS attacks-Hulk,source_port,[38090],6,0.0002774694783573807
+validation,DoS attacks-Hulk,source_port,[41134],6,0.0002774694783573807
+validation,DoS attacks-Hulk,source_port,[41900],6,0.0002774694783573807
+validation,DoS attacks-SlowHTTPTest,source_port,[37350],8,0.00037974082688565055
+validation,DoS attacks-SlowHTTPTest,source_port,[37352],8,0.00037974082688565055
+validation,DoS attacks-SlowHTTPTest,source_port,[37366],8,0.00037974082688565055
+validation,DoS attacks-SlowHTTPTest,source_port,[37376],8,0.00037974082688565055
+validation,DoS attacks-SlowHTTPTest,source_port,[37390],8,0.00037974082688565055
+validation,DoS attacks-SlowHTTPTest,source_port,[37392],8,0.00037974082688565055
+validation,DoS attacks-SlowHTTPTest,source_port,[37462],8,0.00037974082688565055
+validation,DoS attacks-SlowHTTPTest,source_port,[37474],8,0.00037974082688565055
+validation,DoS attacks-SlowHTTPTest,source_port,[37482],8,0.00037974082688565055
+validation,DoS attacks-SlowHTTPTest,source_port,[37494],8,0.00037974082688565055
+validation,DoS attacks-Slowloris,source_port,[37732],26,0.005719313682358117
+validation,DoS attacks-Slowloris,source_port,[37648],25,0.005499340079190497
+validation,DoS attacks-Slowloris,source_port,[37658],25,0.005499340079190497
+validation,DoS attacks-Slowloris,source_port,[37660],25,0.005499340079190497
+validation,DoS attacks-Slowloris,source_port,[37714],25,0.005499340079190497
+validation,DoS attacks-Slowloris,source_port,[37716],25,0.005499340079190497
+validation,DoS attacks-Slowloris,source_port,[37772],25,0.005499340079190497
+validation,DoS attacks-Slowloris,source_port,[37824],25,0.005499340079190497
+validation,DoS attacks-Slowloris,source_port,[37832],25,0.005499340079190497
+validation,DoS attacks-Slowloris,source_port,[37836],25,0.005499340079190497
+validation,FTP-BruteForce,source_port,[39924],14,0.00036259097148481
+validation,FTP-BruteForce,source_port,[39934],14,0.00036259097148481
+validation,FTP-BruteForce,source_port,[39936],14,0.00036259097148481
+validation,FTP-BruteForce,source_port,[39940],14,0.00036259097148481
+validation,FTP-BruteForce,source_port,[39952],14,0.00036259097148481
+validation,FTP-BruteForce,source_port,[39954],14,0.00036259097148481
+validation,FTP-BruteForce,source_port,[39970],14,0.00036259097148481
+validation,FTP-BruteForce,source_port,[39976],14,0.00036259097148481
+validation,FTP-BruteForce,source_port,[39984],14,0.00036259097148481
+validation,FTP-BruteForce,source_port,[39986],14,0.00036259097148481
+validation,Infilteration,source_port,[49674],418,0.03400585746827205
+validation,Infilteration,source_port,[58179],224,0.018223234624145785
+validation,Infilteration,source_port,[33918],201,0.016352098926130817
+validation,Infilteration,source_port,[58829],196,0.015945330296127564
+validation,Infilteration,source_port,[58834],193,0.01570126911812561
+validation,Infilteration,source_port,[58692],186,0.015131793036121055
+validation,Infilteration,source_port,[443],52,0.004230393752033843
+validation,Infilteration,source_port,[49671],24,0.0019524894240156199
+validation,Infilteration,source_port,[63401],20,0.0016270745200130166
+validation,Infilteration,source_port,[49675],18,0.001464367068011715
+validation,SQL Injection,source_port,[49187],1,0.14285714285714285
+validation,SQL Injection,source_port,[49202],1,0.14285714285714285
+validation,SQL Injection,source_port,[49211],1,0.14285714285714285
+validation,SQL Injection,source_port,[49224],1,0.14285714285714285
+validation,SQL Injection,source_port,[49226],1,0.14285714285714285
+validation,SQL Injection,source_port,[49237],1,0.14285714285714285
+validation,SQL Injection,source_port,[65530],1,0.14285714285714285
+validation,SSH-Bruteforce,source_port,[34462],7,0.0003695491500369549
+validation,SSH-Bruteforce,source_port,[45218],7,0.0003695491500369549
+validation,SSH-Bruteforce,source_port,[45876],7,0.0003695491500369549
+validation,SSH-Bruteforce,source_port,[46132],7,0.0003695491500369549
+validation,SSH-Bruteforce,source_port,[46832],7,0.0003695491500369549
+validation,SSH-Bruteforce,source_port,[50004],7,0.0003695491500369549
+validation,SSH-Bruteforce,source_port,[51150],7,0.0003695491500369549
+validation,SSH-Bruteforce,source_port,[55858],7,0.0003695491500369549
+validation,SSH-Bruteforce,source_port,[56630],7,0.0003695491500369549
+validation,SSH-Bruteforce,source_port,[57550],7,0.0003695491500369549
+validation,Benign,destination_port,[53],403175,0.2758993288223186
+validation,Benign,destination_port,[443],274153,0.18760743769982044
+validation,Benign,destination_port,[3389],260435,0.17821998313843998
+validation,Benign,destination_port,[80],90260,0.06176641264835983
+validation,Benign,destination_port,[445],70071,0.04795074563132309
+validation,Benign,destination_port,[23],8567,0.005862539964087067
+validation,Benign,destination_port,[5355],5395,0.0036918878377786538
+validation,Benign,destination_port,[547],4370,0.002990463364428678
+validation,Benign,destination_port,[135],4142,0.0028344391888932684
+validation,Benign,destination_port,[8545],4058,0.0027769565979065386
+validation,Bot,destination_port,[8080],3148,1.0
+validation,Brute Force -Web,destination_port,[500],409,0.9380733944954128
+validation,Brute Force -Web,destination_port,[80],27,0.06192660550458716
+validation,Brute Force -XSS,destination_port,[500],409,0.964622641509434
+validation,Brute Force -XSS,destination_port,[80],15,0.03537735849056604
+validation,DDOS attack-HOIC,destination_port,[80],47,1.0
+validation,DDOS attack-LOIC-UDP,destination_port,[80],340,1.0
+validation,DDoS attacks-LOIC-HTTP,destination_port,[80],75369,1.0
+validation,DoS attacks-GoldenEye,destination_port,[80],6587,1.0
+validation,DoS attacks-Hulk,destination_port,[80],21624,1.0
+validation,DoS attacks-SlowHTTPTest,destination_port,[21],21067,1.0
+validation,DoS attacks-Slowloris,destination_port,[80],4546,1.0
+validation,FTP-BruteForce,destination_port,[21],38611,1.0
+validation,Infilteration,destination_port,[53],6519,0.5303449397982427
+validation,Infilteration,destination_port,[443],3094,0.2517084282460137
+validation,Infilteration,destination_port,[3389],720,0.0585746827204686
+validation,Infilteration,destination_port,[80],328,0.026684022128213473
+validation,Infilteration,destination_port,[445],268,0.021802798568174422
+validation,Infilteration,destination_port,[135],99,0.008054018874064432
+validation,Infilteration,destination_port,[139],39,0.0031727953140253825
+validation,Infilteration,destination_port,[22],20,0.0016270745200130166
+validation,Infilteration,destination_port,[1900],18,0.001464367068011715
+validation,Infilteration,destination_port,[23],11,0.0008948909860071591
+validation,SQL Injection,destination_port,[80],7,1.0
+validation,SSH-Bruteforce,destination_port,[22],18937,0.9997360363214022
+validation,SSH-Bruteforce,destination_port,[21],5,0.00026396367859782494
+validation,Benign,protocol_port_pair,"[6, 49674, 443]",5594,0.0038280668330924537
+validation,Benign,protocol_port_pair,"[17, 546, 547]",4370,0.002990463364428678
+validation,Benign,protocol_port_pair,"[17, 138, 138]",3954,0.0027057876757324924
+validation,Benign,protocol_port_pair,"[6, 49685, 443]",2213,0.001514392545876582
+validation,Benign,protocol_port_pair,"[1, -3, -3]",1246,0.0008526584329698243
+validation,Benign,protocol_port_pair,"[6, 49673, 443]",1032,0.0007062146892655367
+validation,Benign,protocol_port_pair,"[6, 49681, 443]",940,0.0006432575658038804
+validation,Benign,protocol_port_pair,"[6, 49672, 443]",916,0.0006268339683791005
+validation,Benign,protocol_port_pair,"[6, 49687, 443]",872,0.0005967240397670039
+validation,Benign,protocol_port_pair,"[6, 65534, 8545]",721,0.0004933922393027635
+validation,Bot,protocol_port_pair,"[6, 50716, 8080]",2,0.0006353240152477764
+validation,Bot,protocol_port_pair,"[6, 50733, 8080]",2,0.0006353240152477764
+validation,Bot,protocol_port_pair,"[6, 50736, 8080]",2,0.0006353240152477764
+validation,Bot,protocol_port_pair,"[6, 50748, 8080]",2,0.0006353240152477764
+validation,Bot,protocol_port_pair,"[6, 50760, 8080]",2,0.0006353240152477764
+validation,Bot,protocol_port_pair,"[6, 50773, 8080]",2,0.0006353240152477764
+validation,Bot,protocol_port_pair,"[6, 50776, 8080]",2,0.0006353240152477764
+validation,Bot,protocol_port_pair,"[6, 50778, 8080]",2,0.0006353240152477764
+validation,Bot,protocol_port_pair,"[6, 50783, 8080]",2,0.0006353240152477764
+validation,Bot,protocol_port_pair,"[6, 50788, 8080]",2,0.0006353240152477764
+validation,Brute Force -Web,protocol_port_pair,"[17, 1028, 500]",409,0.9380733944954128
+validation,Brute Force -Web,protocol_port_pair,"[6, 49237, 80]",1,0.0022935779816513763
+validation,Brute Force -Web,protocol_port_pair,"[6, 49833, 80]",1,0.0022935779816513763
+validation,Brute Force -Web,protocol_port_pair,"[6, 50252, 80]",1,0.0022935779816513763
+validation,Brute Force -Web,protocol_port_pair,"[6, 50665, 80]",1,0.0022935779816513763
+validation,Brute Force -Web,protocol_port_pair,"[6, 51495, 80]",1,0.0022935779816513763
+validation,Brute Force -Web,protocol_port_pair,"[6, 53157, 80]",1,0.0022935779816513763
+validation,Brute Force -Web,protocol_port_pair,"[6, 53158, 80]",1,0.0022935779816513763
+validation,Brute Force -Web,protocol_port_pair,"[6, 53817, 80]",1,0.0022935779816513763
+validation,Brute Force -Web,protocol_port_pair,"[6, 53989, 80]",1,0.0022935779816513763
+validation,Brute Force -XSS,protocol_port_pair,"[17, 1028, 500]",409,0.964622641509434
+validation,Brute Force -XSS,protocol_port_pair,"[6, 49915, 80]",1,0.0023584905660377358
+validation,Brute Force -XSS,protocol_port_pair,"[6, 50220, 80]",1,0.0023584905660377358
+validation,Brute Force -XSS,protocol_port_pair,"[6, 52078, 80]",1,0.0023584905660377358
+validation,Brute Force -XSS,protocol_port_pair,"[6, 55482, 80]",1,0.0023584905660377358
+validation,Brute Force -XSS,protocol_port_pair,"[6, 55788, 80]",1,0.0023584905660377358
+validation,Brute Force -XSS,protocol_port_pair,"[6, 58575, 80]",1,0.0023584905660377358
+validation,Brute Force -XSS,protocol_port_pair,"[6, 59201, 80]",1,0.0023584905660377358
+validation,Brute Force -XSS,protocol_port_pair,"[6, 59777, 80]",1,0.0023584905660377358
+validation,Brute Force -XSS,protocol_port_pair,"[6, 60087, 80]",1,0.0023584905660377358
+validation,DDOS attack-HOIC,protocol_port_pair,"[6, 49187, 80]",1,0.02127659574468085
+validation,DDOS attack-HOIC,protocol_port_pair,"[6, 49202, 80]",1,0.02127659574468085
+validation,DDOS attack-HOIC,protocol_port_pair,"[6, 49211, 80]",1,0.02127659574468085
+validation,DDOS attack-HOIC,protocol_port_pair,"[6, 49224, 80]",1,0.02127659574468085
+validation,DDOS attack-HOIC,protocol_port_pair,"[6, 49226, 80]",1,0.02127659574468085
+validation,DDOS attack-HOIC,protocol_port_pair,"[6, 49237, 80]",1,0.02127659574468085
+validation,DDOS attack-HOIC,protocol_port_pair,"[6, 49833, 80]",1,0.02127659574468085
+validation,DDOS attack-HOIC,protocol_port_pair,"[6, 49915, 80]",1,0.02127659574468085
+validation,DDOS attack-HOIC,protocol_port_pair,"[6, 50220, 80]",1,0.02127659574468085
+validation,DDOS attack-HOIC,protocol_port_pair,"[6, 50252, 80]",1,0.02127659574468085
+validation,DDOS attack-LOIC-UDP,protocol_port_pair,"[17, 58715, 80]",8,0.023529411764705882
+validation,DDOS attack-LOIC-UDP,protocol_port_pair,"[17, 52533, 80]",7,0.020588235294117647
+validation,DDOS attack-LOIC-UDP,protocol_port_pair,"[17, 53059, 80]",7,0.020588235294117647
+validation,DDOS attack-LOIC-UDP,protocol_port_pair,"[17, 49691, 80]",6,0.01764705882352941
+validation,DDOS attack-LOIC-UDP,protocol_port_pair,"[17, 52528, 80]",6,0.01764705882352941
+validation,DDOS attack-LOIC-UDP,protocol_port_pair,"[17, 52847, 80]",6,0.01764705882352941
+validation,DDOS attack-LOIC-UDP,protocol_port_pair,"[17, 58711, 80]",6,0.01764705882352941
+validation,DDOS attack-LOIC-UDP,protocol_port_pair,"[17, 60763, 80]",6,0.01764705882352941
+validation,DDOS attack-LOIC-UDP,protocol_port_pair,"[17, 60778, 80]",6,0.01764705882352941
+validation,DDOS attack-LOIC-UDP,protocol_port_pair,"[17, 62602, 80]",6,0.01764705882352941
+validation,DDoS attacks-LOIC-HTTP,protocol_port_pair,"[6, 51126, 80]",30,0.0003980416351550372
+validation,DDoS attacks-LOIC-HTTP,protocol_port_pair,"[6, 51500, 80]",30,0.0003980416351550372
+validation,DDoS attacks-LOIC-HTTP,protocol_port_pair,"[6, 60907, 80]",30,0.0003980416351550372
+validation,DDoS attacks-LOIC-HTTP,protocol_port_pair,"[6, 51521, 80]",29,0.0003847735806498693
+validation,DDoS attacks-LOIC-HTTP,protocol_port_pair,"[6, 55658, 80]",29,0.0003847735806498693
+validation,DDoS attacks-LOIC-HTTP,protocol_port_pair,"[6, 55967, 80]",29,0.0003847735806498693
+validation,DDoS attacks-LOIC-HTTP,protocol_port_pair,"[6, 56002, 80]",29,0.0003847735806498693
+validation,DDoS attacks-LOIC-HTTP,protocol_port_pair,"[6, 56655, 80]",29,0.0003847735806498693
+validation,DDoS attacks-LOIC-HTTP,protocol_port_pair,"[6, 59919, 80]",29,0.0003847735806498693
+validation,DDoS attacks-LOIC-HTTP,protocol_port_pair,"[6, 60920, 80]",29,0.0003847735806498693
+validation,DoS attacks-GoldenEye,protocol_port_pair,"[6, 40518, 80]",4,0.0006072567177774404
+validation,DoS attacks-GoldenEye,protocol_port_pair,"[6, 50016, 80]",4,0.0006072567177774404
+validation,DoS attacks-GoldenEye,protocol_port_pair,"[6, 33404, 80]",3,0.0004554425383330803
+validation,DoS attacks-GoldenEye,protocol_port_pair,"[6, 33472, 80]",3,0.0004554425383330803
+validation,DoS attacks-GoldenEye,protocol_port_pair,"[6, 33626, 80]",3,0.0004554425383330803
+validation,DoS attacks-GoldenEye,protocol_port_pair,"[6, 34348, 80]",3,0.0004554425383330803
+validation,DoS attacks-GoldenEye,protocol_port_pair,"[6, 34352, 80]",3,0.0004554425383330803
+validation,DoS attacks-GoldenEye,protocol_port_pair,"[6, 34360, 80]",3,0.0004554425383330803
+validation,DoS attacks-GoldenEye,protocol_port_pair,"[6, 34538, 80]",3,0.0004554425383330803
+validation,DoS attacks-GoldenEye,protocol_port_pair,"[6, 36958, 80]",3,0.0004554425383330803
+validation,DoS attacks-Hulk,protocol_port_pair,"[6, 53922, 80]",7,0.0003237143914169441
+validation,DoS attacks-Hulk,protocol_port_pair,"[6, 33470, 80]",6,0.0002774694783573807
+validation,DoS attacks-Hulk,protocol_port_pair,"[6, 34390, 80]",6,0.0002774694783573807
+validation,DoS attacks-Hulk,protocol_port_pair,"[6, 35164, 80]",6,0.0002774694783573807
+validation,DoS attacks-Hulk,protocol_port_pair,"[6, 36566, 80]",6,0.0002774694783573807
+validation,DoS attacks-Hulk,protocol_port_pair,"[6, 36822, 80]",6,0.0002774694783573807
+validation,DoS attacks-Hulk,protocol_port_pair,"[6, 37896, 80]",6,0.0002774694783573807
+validation,DoS attacks-Hulk,protocol_port_pair,"[6, 38090, 80]",6,0.0002774694783573807
+validation,DoS attacks-Hulk,protocol_port_pair,"[6, 41134, 80]",6,0.0002774694783573807
+validation,DoS attacks-Hulk,protocol_port_pair,"[6, 41900, 80]",6,0.0002774694783573807
+validation,DoS attacks-SlowHTTPTest,protocol_port_pair,"[6, 37350, 21]",8,0.00037974082688565055
+validation,DoS attacks-SlowHTTPTest,protocol_port_pair,"[6, 37352, 21]",8,0.00037974082688565055
+validation,DoS attacks-SlowHTTPTest,protocol_port_pair,"[6, 37366, 21]",8,0.00037974082688565055
+validation,DoS attacks-SlowHTTPTest,protocol_port_pair,"[6, 37376, 21]",8,0.00037974082688565055
+validation,DoS attacks-SlowHTTPTest,protocol_port_pair,"[6, 37390, 21]",8,0.00037974082688565055
+validation,DoS attacks-SlowHTTPTest,protocol_port_pair,"[6, 37392, 21]",8,0.00037974082688565055
+validation,DoS attacks-SlowHTTPTest,protocol_port_pair,"[6, 37462, 21]",8,0.00037974082688565055
+validation,DoS attacks-SlowHTTPTest,protocol_port_pair,"[6, 37474, 21]",8,0.00037974082688565055
+validation,DoS attacks-SlowHTTPTest,protocol_port_pair,"[6, 37482, 21]",8,0.00037974082688565055
+validation,DoS attacks-SlowHTTPTest,protocol_port_pair,"[6, 37494, 21]",8,0.00037974082688565055
+validation,DoS attacks-Slowloris,protocol_port_pair,"[6, 37732, 80]",26,0.005719313682358117
+validation,DoS attacks-Slowloris,protocol_port_pair,"[6, 37648, 80]",25,0.005499340079190497
+validation,DoS attacks-Slowloris,protocol_port_pair,"[6, 37658, 80]",25,0.005499340079190497
+validation,DoS attacks-Slowloris,protocol_port_pair,"[6, 37660, 80]",25,0.005499340079190497
+validation,DoS attacks-Slowloris,protocol_port_pair,"[6, 37714, 80]",25,0.005499340079190497
+validation,DoS attacks-Slowloris,protocol_port_pair,"[6, 37716, 80]",25,0.005499340079190497
+validation,DoS attacks-Slowloris,protocol_port_pair,"[6, 37772, 80]",25,0.005499340079190497
+validation,DoS attacks-Slowloris,protocol_port_pair,"[6, 37824, 80]",25,0.005499340079190497
+validation,DoS attacks-Slowloris,protocol_port_pair,"[6, 37832, 80]",25,0.005499340079190497
+validation,DoS attacks-Slowloris,protocol_port_pair,"[6, 37836, 80]",25,0.005499340079190497
+validation,FTP-BruteForce,protocol_port_pair,"[6, 39924, 21]",14,0.00036259097148481
+validation,FTP-BruteForce,protocol_port_pair,"[6, 39934, 21]",14,0.00036259097148481
+validation,FTP-BruteForce,protocol_port_pair,"[6, 39936, 21]",14,0.00036259097148481
+validation,FTP-BruteForce,protocol_port_pair,"[6, 39940, 21]",14,0.00036259097148481
+validation,FTP-BruteForce,protocol_port_pair,"[6, 39952, 21]",14,0.00036259097148481
+validation,FTP-BruteForce,protocol_port_pair,"[6, 39954, 21]",14,0.00036259097148481
+validation,FTP-BruteForce,protocol_port_pair,"[6, 39970, 21]",14,0.00036259097148481
+validation,FTP-BruteForce,protocol_port_pair,"[6, 39976, 21]",14,0.00036259097148481
+validation,FTP-BruteForce,protocol_port_pair,"[6, 39984, 21]",14,0.00036259097148481
+validation,FTP-BruteForce,protocol_port_pair,"[6, 39986, 21]",14,0.00036259097148481
+validation,Infilteration,protocol_port_pair,"[6, 49674, 443]",417,0.0339245037422714
+validation,Infilteration,protocol_port_pair,"[6, 49671, 443]",23,0.001871135698014969
+validation,Infilteration,protocol_port_pair,"[6, 49675, 443]",18,0.001464367068011715
+validation,Infilteration,protocol_port_pair,"[17, 63401, 1900]",18,0.001464367068011715
+validation,Infilteration,protocol_port_pair,"[6, 50691, 443]",11,0.0008948909860071591
+validation,Infilteration,protocol_port_pair,"[6, 52460, 443]",9,0.0007321835340058575
+validation,Infilteration,protocol_port_pair,"[6, 52438, 443]",8,0.0006508298080052066
+validation,Infilteration,protocol_port_pair,"[6, 50885, 443]",7,0.0005694760820045558
+validation,Infilteration,protocol_port_pair,"[6, 52394, 443]",7,0.0005694760820045558
+validation,Infilteration,protocol_port_pair,"[6, 53199, 443]",7,0.0005694760820045558
+validation,SQL Injection,protocol_port_pair,"[6, 49187, 80]",1,0.14285714285714285
+validation,SQL Injection,protocol_port_pair,"[6, 49202, 80]",1,0.14285714285714285
+validation,SQL Injection,protocol_port_pair,"[6, 49211, 80]",1,0.14285714285714285
+validation,SQL Injection,protocol_port_pair,"[6, 49224, 80]",1,0.14285714285714285
+validation,SQL Injection,protocol_port_pair,"[6, 49226, 80]",1,0.14285714285714285
+validation,SQL Injection,protocol_port_pair,"[6, 49237, 80]",1,0.14285714285714285
+validation,SQL Injection,protocol_port_pair,"[6, 65530, 80]",1,0.14285714285714285
+validation,SSH-Bruteforce,protocol_port_pair,"[6, 34462, 22]",7,0.0003695491500369549
+validation,SSH-Bruteforce,protocol_port_pair,"[6, 45218, 22]",7,0.0003695491500369549
+validation,SSH-Bruteforce,protocol_port_pair,"[6, 45876, 22]",7,0.0003695491500369549
+validation,SSH-Bruteforce,protocol_port_pair,"[6, 46132, 22]",7,0.0003695491500369549
+validation,SSH-Bruteforce,protocol_port_pair,"[6, 46832, 22]",7,0.0003695491500369549
+validation,SSH-Bruteforce,protocol_port_pair,"[6, 50004, 22]",7,0.0003695491500369549
+validation,SSH-Bruteforce,protocol_port_pair,"[6, 51150, 22]",7,0.0003695491500369549
+validation,SSH-Bruteforce,protocol_port_pair,"[6, 55858, 22]",7,0.0003695491500369549
+validation,SSH-Bruteforce,protocol_port_pair,"[6, 56630, 22]",7,0.0003695491500369549
+validation,SSH-Bruteforce,protocol_port_pair,"[6, 57550, 22]",7,0.0003695491500369549

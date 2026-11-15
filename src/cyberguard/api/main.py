@@ -1,5 +1,6 @@
 """FastAPI inference application; one trusted model load per lifespan/process."""
 
+import asyncio
 import logging
 from contextlib import asynccontextmanager
 from itertools import count
@@ -14,9 +15,11 @@ from cyberguard.api.dependencies import APIError
 from cyberguard.api.routes.health import router as health_router
 from cyberguard.api.routes.models import model_router
 from cyberguard.api.routes.predictions import prediction_router
+from cyberguard.api.routes.simulations import router as simulation_router
 from cyberguard.core.config import PROJECT_ROOT, Settings
 from cyberguard.core.logging import configure_logging
 from cyberguard.inference.model_registry import BOT_ID, ModelRegistry
+from cyberguard.simulation.engine import SimulationController
 
 logger = logging.getLogger(__name__)
 
@@ -33,8 +36,13 @@ def create_app(settings=None):
             application.state.registry.load()
             legacy = application.state.registry.entries[BOT_ID].adapter
             application.state.detector = legacy.detector if legacy is not None else None
+            application.state.simulations = SimulationController(
+                application.state.registry, settings
+            )
             yield
         finally:
+            if application.state.simulations is not None:
+                await asyncio.to_thread(application.state.simulations.close)
             application.state.detector = None
             if application.state.registry is not None:
                 application.state.registry.close()
@@ -49,6 +57,7 @@ def create_app(settings=None):
     application.state.settings = settings
     application.state.detector = None
     application.state.registry = None
+    application.state.simulations = None
     application.state.prediction_requests = count(1)
 
     @application.exception_handler(APIError)
@@ -110,6 +119,7 @@ def create_app(settings=None):
         ModelRequestBodyLimit, maximum=settings.max_model_request_bytes
     )
     application.include_router(model_router(settings))
+    application.include_router(simulation_router)
     application.include_router(health_router)
     application.include_router(prediction_router(settings))
     return application
