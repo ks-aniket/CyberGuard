@@ -59,6 +59,9 @@ reports/test_sessions/*
 !reports/dataset_analysis/*.svg
 !reports/dataset_analysis/*_correlations.csv
 !reports/model_evaluation/.gitkeep
+!reports/model_evaluation/bot_iot_*.md
+!reports/model_evaluation/bot_iot_*.json
+!reports/model_evaluation/bot_iot_*.csv
 !reports/benchmarks/.gitkeep
 !reports/test_sessions/.gitkeep
 

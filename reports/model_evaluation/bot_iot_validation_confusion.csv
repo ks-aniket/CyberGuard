@@ -1,0 +1,5 @@
+actual / predicted,Normal,DoS,DDoS,Reconnaissance
+Normal,67,3,6,3
+DoS,0,163698,98559,0
+DDoS,1,150048,157173,0
+Reconnaissance,83,5,124,13051

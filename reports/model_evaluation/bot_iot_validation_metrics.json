@@ -1,0 +1,390 @@
+{
+  "source": "data/raw/bot_iot/train/UNSW_2018_IoT_Botnet_Final_10_best_Training.csv",
+  "source_sha256": "047e577cd9c7f8f61d44ac170114497904c33091bf80d1dd5e682e353a69c15b",
+  "preprocessing_version": "bot-iot-header-v1",
+  "supplied_test_opened": false,
+  "dns_model_trained": false,
+  "raw_class_counts": {
+    "DDoS": 1541315,
+    "DoS": 1320148,
+    "Reconnaissance": 72919,
+    "Normal": 370,
+    "Theft": 65
+  },
+  "eligible_class_order": [
+    "Normal",
+    "DoS",
+    "DDoS",
+    "Reconnaissance"
+  ],
+  "theft_policy": "Exclude from the four-class development task; unsupported malicious category, never Normal. No Theft detection claim.",
+  "normalization_counts": {
+    "protocol=udp": 1596819,
+    "protocol=tcp": 1330536,
+    "protocol=icmp": 7228,
+    "protocol=arp": 163,
+    "sport_status=valid": 2927355,
+    "sport_status=not_applicable": 7397,
+    "dport_status=valid": 2927355,
+    "dport_status=not_applicable": 7397,
+    "protocol=ipv6-icmp": 6
+  },
+  "split_counts": {
+    "train": {
+      "Normal": 291,
+      "DoS": 1057891,
+      "DDoS": 1234093,
+      "Reconnaissance": 59656
+    },
+    "validation": {
+      "Normal": 79,
+      "DoS": 262257,
+      "DDoS": 307222,
+      "Reconnaissance": 13263
+    }
+  },
+  "split_unique_groups": {
+    "train": 157444,
+    "validation": 39383
+  },
+  "class_unique_groups": {
+    "train": {
+      "Normal": 229,
+      "DoS": 105274,
+      "DDoS": 107141,
+      "Reconnaissance": 50219
+    },
+    "validation": {
+      "Normal": 51,
+      "DoS": 26209,
+      "DDoS": 26655,
+      "Reconnaissance": 12709
+    }
+  },
+  "split_method": "SHA256(seed + ':' + canonical retained feature vector), first 64 bits < 2^64//5 is validation; labels excluded from group key",
+  "split_seed": 20261115,
+  "vector_groups": 196827,
+  "feature_label_records": 328487,
+  "duplicate_feature_label_excess": 2606265,
+  "conflicting_feature_vector_groups": 131086,
+  "rows_in_conflicting_groups": 2866209,
+  "cross_partition_shared_groups": 0,
+  "class_weights_train_only": {
+    "Normal": 2020.5592783505156,
+    "DoS": 0.5558065528490175,
+    "DDoS": 0.4764493032534825,
+    "Reconnaissance": 9.856221503285504
+  },
+  "classifier_parameters": {
+    "ccp_alpha": 0.0,
+    "class_weight": null,
+    "criterion": "gini",
+    "max_depth": 6,
+    "max_features": null,
+    "max_leaf_nodes": 32,
+    "min_impurity_decrease": 0.0,
+    "min_samples_leaf": 5,
+    "min_samples_split": 2,
+    "min_weight_fraction_leaf": 0.0,
+    "monotonic_cst": null,
+    "random_state": 20261115,
+    "splitter": "best"
+  },
+  "encoded_feature_names": [
+    "categories__protocol_arp",
+    "categories__protocol_icmp",
+    "categories__protocol_ipv6-icmp",
+    "categories__protocol_tcp",
+    "categories__protocol_udp",
+    "categories__sport_status_not_applicable",
+    "categories__sport_status_valid",
+    "categories__dport_status_not_applicable",
+    "categories__dport_status_valid",
+    "categories__sport_range_dynamic",
+    "categories__sport_range_none",
+    "categories__sport_range_registered",
+    "categories__sport_range_well_known",
+    "categories__dport_range_dynamic",
+    "categories__dport_range_none",
+    "categories__dport_range_registered",
+    "categories__dport_range_well_known",
+    "ports__sport_value",
+    "ports__dport_value"
+  ],
+  "feature_importances": {
+    "categories__protocol_arp": 0.0,
+    "categories__protocol_icmp": 0.0,
+    "categories__protocol_ipv6-icmp": 0.0,
+    "categories__protocol_tcp": 0.03682547291128492,
+    "categories__protocol_udp": 0.0874091881813253,
+    "categories__sport_status_not_applicable": 0.0,
+    "categories__sport_status_valid": 0.0,
+    "categories__dport_status_not_applicable": 0.0,
+    "categories__dport_status_valid": 0.0,
+    "categories__sport_range_dynamic": 0.0,
+    "categories__sport_range_none": 0.0,
+    "categories__sport_range_registered": 0.01029945779589245,
+    "categories__sport_range_well_known": 0.0,
+    "categories__dport_range_dynamic": 0.0,
+    "categories__dport_range_none": 0.0,
+    "categories__dport_range_registered": 0.0,
+    "categories__dport_range_well_known": 0.0,
+    "ports__sport_value": 0.05414224276724622,
+    "ports__dport_value": 0.8113236383442511
+  },
+  "evaluation": {
+    "class_order": [
+      "Normal",
+      "DoS",
+      "DDoS",
+      "Reconnaissance"
+    ],
+    "macro_f1": 0.6752704469895632,
+    "per_class": {
+      "Normal": {
+        "precision": 0.44370860927152317,
+        "recall": 0.8481012658227848,
+        "f1-score": 0.5826086956521739,
+        "support": 79.0
+      },
+      "DoS": {
+        "precision": 0.521739961880964,
+        "recall": 0.6241892494766584,
+        "f1-score": 0.5683849787590862,
+        "support": 262257.0
+      },
+      "DDoS": {
+        "precision": 0.614288170967162,
+        "recall": 0.5115942217679723,
+        "f1-score": 0.5582577377442797,
+        "support": 307222.0
+      },
+      "Reconnaissance": {
+        "precision": 0.9997701853837904,
+        "recall": 0.9840156827263816,
+        "f1-score": 0.991830375802713,
+        "support": 13263.0
+      },
+      "accuracy": 0.5730558782198995,
+      "macro avg": {
+        "precision": 0.6448767318758599,
+        "recall": 0.7419751049484493,
+        "f1-score": 0.6752704469895632,
+        "support": 582821.0
+      },
+      "weighted avg": {
+        "precision": 0.5813925760958633,
+        "recall": 0.5730558782198995,
+        "f1-score": 0.5726847015480271,
+        "support": 582821.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        67,
+        3,
+        6,
+        3
+      ],
+      [
+        0,
+        163698,
+        98559,
+        0
+      ],
+      [
+        1,
+        150048,
+        157173,
+        0
+      ],
+      [
+        83,
+        5,
+        124,
+        13051
+      ]
+    ],
+    "benign_false_positive_rate": 0.1518987341772152,
+    "benign_false_positives": 12.0,
+    "benign_support": 79.0,
+    "balanced_accuracy": 0.7419751049484493
+  },
+  "equal_vector_weight_evaluation": {
+    "class_order": [
+      "Normal",
+      "DoS",
+      "DDoS",
+      "Reconnaissance"
+    ],
+    "macro_f1": 0.6678331905162316,
+    "per_class": {
+      "Normal": {
+        "precision": 0.36363636363636365,
+        "recall": 0.9729729729729729,
+        "f1-score": 0.5294117647058824,
+        "support": 49.333333333333336
+      },
+      "DoS": {
+        "precision": 0.521874899377951,
+        "recall": 0.567933216909415,
+        "f1-score": 0.5439307819393103,
+        "support": 11931.940880829918
+      },
+      "DDoS": {
+        "precision": 0.6246039646159425,
+        "recall": 0.5807093615117438,
+        "f1-score": 0.6018573952967369,
+        "support": 14808.694253602762
+      },
+      "Reconnaissance": {
+        "precision": 0.9999199871979517,
+        "recall": 0.9923742323689968,
+        "f1-score": 0.9961328201229966,
+        "support": 12593.031532234718
+      },
+      "accuracy": 0.7089630793300407,
+      "macro avg": {
+        "precision": 0.6275088037070522,
+        "recall": 0.7784974459407821,
+        "f1-score": 0.6678331905162316,
+        "support": 39383.00000000073
+      },
+      "weighted avg": {
+        "precision": 0.7131633677116218,
+        "recall": 0.7089630793300273,
+        "f1-score": 0.7102892554082637,
+        "support": 39383.00000000073
+      }
+    },
+    "confusion_matrix": [
+      [
+        48.0,
+        0.1111111111111111,
+        0.2222222222222222,
+        1.0
+      ],
+      [
+        0.0,
+        6776.545568422694,
+        5155.395312407476,
+        0.0
+      ],
+      [
+        1.0,
+        6208.146868769774,
+        8599.547384832289,
+        0.0
+      ],
+      [
+        83.0,
+        0.19645169645169647,
+        12.835080538282849,
+        12497.0
+      ]
+    ],
+    "benign_false_positive_rate": 0.027027027027027025,
+    "benign_false_positives": 1.3333333333333333,
+    "benign_support": 49.333333333333336,
+    "balanced_accuracy": 0.7784974459407856
+  },
+  "majority_reference": {
+    "class_order": [
+      "Normal",
+      "DoS",
+      "DDoS",
+      "Reconnaissance"
+    ],
+    "macro_f1": 0.17258829067809084,
+    "per_class": {
+      "Normal": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 79.0
+      },
+      "DoS": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 262257.0
+      },
+      "DDoS": {
+        "precision": 0.5271292558092451,
+        "recall": 1.0,
+        "f1-score": 0.6903531627123634,
+        "support": 307222.0
+      },
+      "Reconnaissance": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 13263.0
+      },
+      "accuracy": 0.5271292558092451,
+      "macro avg": {
+        "precision": 0.13178231395231127,
+        "recall": 0.25,
+        "f1-score": 0.17258829067809084,
+        "support": 582821.0
+      },
+      "weighted avg": {
+        "precision": 0.2778652523300085,
+        "recall": 0.5271292558092451,
+        "f1-score": 0.36390534890612675,
+        "support": 582821.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        0,
+        0,
+        79,
+        0
+      ],
+      [
+        0,
+        0,
+        262257,
+        0
+      ],
+      [
+        0,
+        0,
+        307222,
+        0
+      ],
+      [
+        0,
+        0,
+        13263,
+        0
+      ]
+    ],
+    "benign_false_positive_rate": 1.0,
+    "benign_false_positives": 79.0,
+    "benign_support": 79.0,
+    "balanced_accuracy": 0.25
+  },
+  "classifier_depth": 6,
+  "classifier_leaves": 32,
+  "fit_seconds": 2.8620061990004615,
+  "model_path": "models/network/bot_iot_restricted_baseline.joblib",
+  "model_sha256": "93b744ada3af044e2d0e7d4dd6d5fa70870536e7a972443c806a232ce9052c6f",
+  "model_bytes": 4747,
+  "manifest_path": "models/network/bot_iot_split_manifest.csv.gz",
+  "manifest_sha256": "d992d69683082595823adb269fb1fa6f2a43664d00c810fddbfc1e7a4fbe3b2d",
+  "python": "3.13.12",
+  "sklearn": "1.9.1",
+  "numpy": "2.5.4",
+  "pandas": "3.1.1",
+  "code_sha256": {
+    "src/cyberguard/features/network.py": "b9d41e1d01bb3c691bf9687d55b1127b705e9c213f3902fb34f4471f304553e1",
+    "src/cyberguard/features/preprocessing.py": "6d3404c5fa5d5a0b30866ad729b89c888b7ff35808bf3b9ad8dc73cb461d05fe",
+    "src/cyberguard/training/sampling.py": "83d7283cf45838997cf02e52a593ea98505550809f594bd2b6cc004fcc233a7e",
+    "src/cyberguard/training/evaluate.py": "28cf12efb043ac316bb015b5aa846561125dcc1637eb855438b81568591987e4",
+    "src/cyberguard/training/train_network.py": "8098f286324fc9f834112f5b82c32ddd03f77e187a7dc551ca95e744956a875d"
+  },
+  "wall_seconds": 59.71115322500009,
+  "peak_rss_mib": 500.21875
+}
